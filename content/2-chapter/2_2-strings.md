@@ -4,8 +4,334 @@ weight: 31
 pre: "2.2. "
 ---
 
-{{% encrypt encrypted="true" %}}
+We saw before that there is no string type in C. This is true – but you can simulate a string by using an array of characters that is terminated with a special end-of-string character, '\0'.
 
-IntcIml2XCI6XCIzOC83eEpudnVXWHd4NkhYV01rSE53PT1cIixcInZcIjoxLFwiaXRlclwiOjEwMDAwLFwia3NcIjoxMjgsXCJ0c1wiOjY0LFwibW9kZVwiOlwiY2NtXCIsXCJhZGF0YVwiOlwiXCIsXCJjaXBoZXJcIjpcImFlc1wiLFwic2FsdFwiOlwiQUVIWHcraU1uQzQ9XCIsXCJjdFwiOlwiOEZweEtkWi8yL3Z6UU9sSWhEMy9acnd5NWs5Tm43RzFlb0UxRlJKU1BlcjFDVTc4Q1QxWGJaWWdrd2Y5Mk43STdCeGxZdzd6UGZJWVk3VGVISDM0OUwvL1FhUjBWRkpUcU5vTHpibVlPWUlOREdldmhla1U5TFBZVWpTUXdkNHVTWHkvSkcyR1hTNnllVk4xTk1KY1JVMGROM09uMjNFTXFYdFFZckFSMDVUcTZMMnNGK1pMZ2pUSGhwODhtcEJ6TGxMZjliTncxZndQTHZGU3lSSy9jczRlZ084dW9naGZLUno0eG8xV3pkMGZHNm1qRkZGMUJpVkpwL3d0dU5SY0t2TDhBNVNDWFZ2dXdvbnlxd3Q2ME1xUVZoWnVlRHhYSEo0ZkpzUzdPUkhNckdPUSs5MUlxMjl2Z3I4UTVPUktuWmtxdlpFNG1PcWoyWTZ6OFZQdHFWSXliK3hxQnVMRU9zSmpjbHV3eGRCMGNVdDlreE1ieGVKOTJyMFMvYXQ3SUhsVUVkV1RBMXRJYmlwbllIMWNLOUhDellPM1Q3OHlac3V1WmJyYVZydjNQK0JIM2xCZmNZWlBib28ySkFqQmQ1b1FrdEMvZjRrMWkzVHJ1cDF3cGtBd0ZQVVlQZVErY1E3dVNxUXhRVjZVVkRRVGNsK2ZacnV4RFdaSUMyTVB5WXhwcEc4a2IrZHd0UlQwUENBL0Z1VkN4aGw2UjJNMEtHTWdQenVJSlBHRnZ6RDU2ck1uaDR0QlNzMU9XdDNxRVVNN1VNR2RCNWkvelVNYWZLNlNIeGVwc1RST0tXcTAvcXVobThqYVVzYmV2bWlFZHVYc1dkTXZDL3p4Wis0QVpFY3c0L2QvWHRJbUMrZDRvUUxEN09TcnpINzB6U1dadk5zb1V5dEVkL2NiZXBKUXVMZjN2S1VISmVGWDFlR3puOHlpU0p1bWROZUJaVHd5dXM2Q0lrSEkvaEZSZURKcTc2aTJranFxRkNBTDlCQi9aMmtWOERSdmE4ODkxK2FsQlVBTEJDemNGTUpWTHZ3amR5LzJ3ZG90MGZZOVkvc0tTcWsrVUZDRVcvUTBNNFlkMGx2eGN1bmE1WkxwOUtNZ0hySFB2cDAySmNUL0VoM0dWRkUxMkpYdWFtY0ZDVktucEU3ckJZdHUwbTZZTzJBVWEvdmEzb21VTzVOU0t5VUhmREh4VTZEQ3phN1Z6NkZ3ei9VRi85QXFxYjVBTU9nTWFWQjZDRUZjbzRkRWp5TWtNQzJpOEcvcGxmOVFJUnN4MjVxek5QWWpIdm5ZYXdRTHhrWjZqUHcrVGNjeWp3R1I3enkzZFZWcDFQVDNDQWovMlVYanc1ZHUwV0xlTTZXTzk1Z3NOdGxOQ2hyT3NJeUFOUmFhbVRsY2xBendoc0hCaUlIaVdpNHdDUmJkUjB4aFdrOFJ3dlYzdmtzUzJqSmtJa2szZ1JLOTNyVUxQM3Y3dVkwcDkrT3JaT1A5S2JIQm50cEtVVVhlUkRqRUNDNHkrWmV2bmZSRzRQcG1uRUdocjdDQ0dhL29kelVnTy9yWlp1QXJWb21LVlNTWlFBdUFrVTdWZUxLTEpWVE16RmZvNE9ZTURaR1RJSjkySjRLQkljM0RIZTFNM3dKMFpWOUpIKzQyb1VHNnJBOHNaNGlSSFJLeEVUNndTb1dhdGxLYzA4bUMxeVc5MkovcFpaeS9wZDE4Mk1zM0dzTmgxaEg1K0xrL2tQT0dDN1VNSFc1R2ZJLzJiNjZBcUZnVyt4T1VjK0p5bWtSRTVsWjd6eUhsd0M3Q3MwcC9TS0ttMUZ1MTBHTm1yWmZ5cDlHUnROR0Z0T2xBQ084WG1Fem5zZHV4eHNJbHZPcENDWXZoREx2Y3Z2dVJ6OFBDU1Bpazh4R2lKeVNWU0c3ellWNEtoZ2sxWE1zb00vVFN1V3RqRGdLRDJzSGFGMzI5dTdYa29jRkhnd2pSZHVhYWNNUG90b0k1dzg5cHozakRzUlVxa0RGdHJGTFVzdE9KcUhpWHR0UzhKNHFhdjZoSXlJTjhtSm5CUENlbGtvZUNLRThjcnRzUXlqZEorVzVlcXg0ZjNDOFd0dlBaVERnS2lIZzc3U1Rwc05EUjZudmlVbnd0Vjh0VElqaE92MW4rMWE5WkNkYVk4VVhZSXpwREUyb3lPMmJmdFFxdTBqcC9YWFJvTXd1LzFPR01kV0VhZWtmVy9ZY3laUEZHbFppSldyZThiaUdKc1NuTDJDdFJMQ1hhTGRKN3VIRmttdHhhcFZsU3dJd0RibWNkVVRTQVUrKzhza1lRNUhjYWZRZjE0aDdMS0tjNkJJRVpxU054UGJtaXQ1RlcwS0VtbUtHdWlGVkRDcitKYnJwWUJEcTh4RHJZTllpdkk5UlFyMWdiN0JidnFDSjdtbFFUVzhuVGMxUDB0UFpkdXFvb2VhalZnOXc5RTBQSFBWTm5YVEZiMjU2UlA3NVZIQ0NtU1VoZlhpb1c1YmFIM3FxbG5tVm9iclB6OXNyWWp3cVpHNGNpMExOQkZGTDEvbGo5OG9XR0tEMloxQ1BlUlB5cGU2UkxnaGkxQlk4UmNxaERyTDg3ckpmV3NrTDc3MWxubkxlWGczMkRvOHU3MHY1VzB1NGl1dUdxWTJteWZ1RnVwUm14cTZ6c3FrSW9rTmFBQWRjdjgyWkpwei9ZT0NhTXpUdThWSjhyR1RKNkZYbEk3Qmxhczg2NDhiTnZPVDNlYUNBTUh6dHBJSkw5QzhTUldhNmlKN3d4UTV4b3BiVlhyVE5jOEl4bCtiVGNsaUhWQ2R2R2QrelRBRk9YU2pjNDlxOGp2WXJSSEcwanJHVmsrenRHYmlKQktJTmFDdlk0MGlna0RnaVJ5czkyR0h3djN2bUJMS0Fic0Z0ODkwcVdTRDhSQWlVWlNJM3p1SnZWZ3M1ZFlXd2Ivb3M0d2tLcXExSXkwbTh5YktpZGJQTjRLeUNLdmN0L0cxdWRmRm9MVVgycVpRZmVtUVl3L0d3YVFoSUVWL09wUGg0YWw5Sk5uNWtWa1E2ZmIyOU8velUrMGVqMUQ3Yk5lSEhuV0tUcERueW12MzJCSkcybklkUFEzU1JSTnBoYndNZG9VTVJaTzVLT0RFZDZPakNnNm13RjJIRksxMUpoTTJuQ1FjUVlZQ2JGb3ZqVjNFekFCM3lGVk03S2I5Wko4cHU1dUxTZSswR2JQVFZIejd1MmRpOXhDMUdJSUdnK2IycXN6Wld3bnovb3luZWZyellQamJjSTJ4eUxseFR0enV1K2ZQMlZMZmpZUEJ0RDlQWlI0eTVIYkNXV2hOajQzM0ZwWXBucEl0eVo0UWRpSVhTN3VHdXdnQlhyTk1BSXp6UGM1STdIbjRrc2dvay9KeWpZaGIxNUo5anlCUk02cCtqMkRZS1dBZFZNM3Vub1dybS9kQlYxZzIwd2VLb0dUNjJiV0cwdVlYTEkvVk5xZEZvbWtJTldoQXpyOWtuaXIwUEFoaEVLcDFLV2dHUFk2RUpOZEV0QXN6R2NEcVhGeEFNTXY1ZFFnOVlpRE1jeHRiMkxrd0ZoRjc3dnFpOFF1Qk00L3drdmpmREJlS0tBblM0aE1hWGZqdE9IL2h1ZldLRWxBYVZDQUJiRk1aZytTa01sbWFJNTUrczZzU0V2QjVLWmtxL1FkVTNPVXZRTlYxL0FpNEhaY3NPNkN2bDd6MXFYMGdDb1luK2x3cXBqcE4rbEN4MzFjVlkwRWpGZTJzbGI0YkZrbmxmTVc0Y1VrZHREUkJPSGtNVWpkblBQb3B6R3dtNVNtdEJ5OU5icU5VTW5DZGtBTkIycnRWdHFFbHVXRVlHNXZTOVBrWU0rRSsvUi95MkxIUkMzRDFkbjQ2TmcrTXhKMzRRMitTbXZZa2Z3bUlUeE15NlpicEk5NENPWHp3QXpnVDhZMW1MaWxQL216eXBGaTVscFF5TlNjaEhoaHlscndDWjZwSExpOWpVTWVFWC9FTTZuYUFxQ01oVnZ1Y2JjWnpVaDlDM3VRVE5laS85akRwN0xkU0JudC9aYldNNkpaenVsYVFMZytxQUFlTzlWY2FYQ09iSXQxTnhlbXRrR3crWjNoTFVLS0Jjcy93aFgwMFVMRUNPM3RvMHBQUnkzRVozWTI2aFh1cmNMdW5jOTA5eDZrVGprbVBkU2JubkZaNGNpWjQyckFQR2h0MkVvTHd5UU5MSDBkM1EvOGNHREpCZkxLMjN0Y0dObTBNcGw5R2RNUFhPdStLblBNaGp5ZVdaQlNZeXlhaURiZDdWOG84NUpxajFua2V6ZnZSaHY0bjBEREJHM2t5NzFKN1dmVUp5VGZkY0F5eGw2V3k4Zi90NVhvbHArVlNvNnFoRGNxb09sN1V6eGxDTGZMbEE0YnJsem9QcFJzQkk3dUt2SmVxRldPWnhJSFo1UVoyL2s1MVZ6K091Y3h1cVI1czVkK0RDZG55MmRISVdYcEY5aC80NE13QUFZV0gvSXVtblM4NHR3N2NZdnZzb0FYTENVZG5WQTY0MTU4TzZGeld1dERNcWtsQ3BHdlAwKzM0Z1dxK3NKSjhxTXZRL0VwaC8vRW5DVVpYY0gwNFZzVm4yWXJUb1p2NlM1YzgvS0xYb3dOeEE3dlIzc2NrVFBSak9pVUY5ZklYM0xZZEZmY2wvNG5SUnhBcVlRZlI4ZXdaajZNdFpMNHdGUWM4Z25BZ3d3cm5QOEh0RFkrOHNtRjhiM3JoUm1STHBzN0RXTDJJV1pXUFJReFhSWkZjcUt2Ri9IRzR5WTJOVGFlRVBScEcvV01iZzYyZUN3UzlHcHRGN1NNWmxRTHNoK1dlaXVtUE1NekZSM1l4ck5ZUHVHMWJWYkxpOUd4Nk9QZ09TZmk2VXVkS3k5cDFxQUFLa214RjZTNkV0cVVjVlMvSFZpMWo3RXBLamxnUGlYUGNGWU5QN3FHVllXaStmbG5aSlNjbWNOMGN1L09zdktRSnhGQ05DK21FRlpncGlrSy9Ld2tPeEpmbEdDM3dKZXR5WXlUS0dCU2xaenpOeEJ1dGh6VTd0M1RqemwxMTYxZlRQTG1Rc3J1elVXa1pHcFdIWWZ1Z1lQd2dqZnVuZStOMzl2ZkIxZnBaN3poaFVBWjBTMXJLU2xPMVBFY0lWS3VDSjRMZzBuRWVzaStsSkNNS3huQjZvRHJGR0NOczIxMnZvb0dYSVlzTGtiSmhCSW5jZlZBcHlZakdBVkoxN25oOGR6OVc1YnRXeGVRR0pOL0wrb3FXTGtHQ1E2cUtSM0FyK3Jpcmptd0x4akZMMU1oNks2VHBCOUEvNlRvaWZTRUxOTStUVTVRSGY5c21tNGtJcFdteHJGdktnVUs1dEd5MFBrRlhtcTgwTnI5Smw5MnQxTlZjMXoyWjUvM2lXbjcvRkxhVlV6Szd0NHVBeWwrZ2lDWXduNVVHMnMrb001QVRrTG5CMHlzRUJadkpKT0d5NmhTTjlPQUNzLzVnV0R6blNDVHpBR0Y1QUVmQXVFYW5uNVk0WXFOb0EyY1FuVTluL2NYRllXTEMwbFN0Uk43bjFFZTlaWVlrQUEyT3NUK2V0YlNaYTdmQ1JXNGxXWWZ3SkcwSFFTTmRvdWk5SjJHUGErbyt5Yk5heTlsTDdKSVhzOWY2Y1c3N3ZSL0ltMXFrMFZsWHBHUkdsM0hPTmpWVnBOeHBHV2toYld5VHpLdC9TMGhYbEwwaXg0OHdyNGxzR2g2ZUtBQTBHMVkyS3RJQzlHbjBUdE9Kbmx3c3FQSUY2OXk2eHVobXFwcW1zY2Z3UXRFY1ZVZjQrNUhWSzhxVThkQnVMYjM0ZFZsR1orUDdqcEFvM3BnWk93TWtyejNSNzNKeVpJb1hMaUtoYjF5c3I4NWp3MVlRMnRBbEZWUmZRVlZxbmUxK3k1ZXhYU25MbDYrSXRCeElIakY5dEZFSENUUXZFdkd1dVE5dVBEaDA4MEYzcXBHRFJ3ckpoQVhCd0ZrK3dBcUErR2ZEWVBiTThES1ZVUlVJSkloZHovQmZ4dzlGVTdGV085dUFjcHJDVkVGL2tiN0NZZm9Ed0FHOWNGYnZ2UFJUenZnVXhMOThpMklFWkdTMVM0dTE2eDZqdFZ6S1EwUXdxanlWVllQTmR6OEVCQlhXU1A0SUZUNW9NeGxFMGprU0JhVCtpL3AxZWxmelhTS3NiTVJ2QzFRYm1oRzVJVXY5aVBOWmJRb2RBTTI1WjNsTTc2VEZ0a2lyd29XKzJnbHA5SzY5VTVxNFdPKzdneVwifSI=
+## String Variables
+A *string constant* can be declared as follows:
 
-{{% /encrypt %}}
+```c
+char str[] = "Hello";
+```
+
+After this line, str references the following characters in memory:
+
+| 0 | 1 | 2 | 3 | 4 | 5  |
+|---|---|---|---|---|----|
+| H | e | l | l | o | \0 |
+
+
+We could have created the same string like this:
+
+```c
+char str[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+```
+
+Arrays (and strings) are constant memory addresses. We can change values in strings and arrays, but we can't change the memory address. So, we can do things like this:
+
+```c
+str[0] = 'h'; //OK
+```
+
+But we can't change the memory address (the entire string):
+
+```c
+str = "hi"; //Compiler error!
+```
+
+Later in this section, you will see a function called *strcpy* that copies the characters from one string to another.
+
+## String Variables
+If you want to be able to modify a string, you need to fill it like a normal array. For example:
+
+```c
+char str[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+```
+
+(You can create and fill an array like this.) Now we can modify the characters in *str*:
+
+```c
+str[0] = 'h';
+```
+
+## String Input and Output
+Strings can be inputted and outputted just like any other variable. To print a string, use *printf* with the *%s* control string character. To get a string as input, use *scanf* (again with the *%s* control string character). 
+
+Here's an example:
+
+```c
+char name[10];
+printf("Enter your name: "); //Suppose you enter "Fred"
+scanf("%s", name);
+printf("Hello, %s!\n", name); //Will print "Hello, Fred!"
+```
+
+Notice that when you use *scanf* to read in a string, you do not need to put an & in front of the string variable name. This is because a string is an array of characters, and arrays are already memory addresses. (We'll learn more about this in the section on Pointers.)
+
+The trouble with using *scanf* to input strings is that the function doesn't check the size of the array when it is reading input. So, if you typed the name "George Washington" in the above example (which needs 18 characters of space), *scanf* wouldn't stop writing once it reached the end of the array. Instead, it would try to write past the end of the array. This would
+cause some of your variables to be overwritten, or a segmentation fault.
+
+A better choice for reading in strings is the *fgets* function. Here's the prototype:
+
+```c
+char[] fgets(char s[], int size, FILE *stream);
+```
+
+You pass *fgets* the string buffer (*s*), the size of the buffer (*size*), and the stream you're reading from (use *stdin* to read as regular user input). It returns the string it read, or *NULL* if it was unable to read
+anything. 
+
+It will stop reading user input when either:
+- It has read *size-1* characters (it needs the last spot for a '\0')
+- It has reached the end of the input
+- It has reached a newline
+
+Here is same example using *fgets*:
+
+```c
+char name[10];
+printf("Enter your name: "); //Suppose you enter "Fred"
+fgets(name, 10, stdin);
+printf("Hello, %s!\n", name); //Will print "Hello, Fred!"
+```
+
+## Conversions
+It is sometimes necessary to convert between strings, ints, and doubles. Here is a list of conversion functions:
+- *atoi*: converts from a string to an int
+- *atof*: converts from a string to a double
+- *itoa*: converts from an int to a string
+- *ftoa*: converts from a double to a string
+
+To use any of these functions, you need to add:
+
+```c
+#include <stdlib.h>
+```
+
+To the top of the file.
+
+Here is an example of using the conversion functions:
+
+```c
+char buff[10];
+int num;
+double d;
+
+printf("Enter an integer: ");
+fgets(buff, 10, stdin); //Suppose you enter "47"
+num = atoi(buff); //num = 47
+
+printf("Enter a real number: ");
+fgets(buff, 10, stdin); //Suppose you enter "4.75"
+
+d = atof(buff); //d = 4.75
+itoa(num, buff, 10); //buff = "47"
+itof(d, buff, 10); //buff = "4.75"
+```
+
+## String Functions
+Below is a list of common string functions. To use any of these, you need to add:
+
+```c
+#include <string.h>
+```
+
+To to the top of the file.
+
+### strcat
+```c
+char[] strcat(char str1[], char str2[]);
+```
+
+This function copies the characters in *str2* onto the end of *str1*. It returns the newly concatenated string (although *str1* also references the concatenated string).
+
+For example:
+
+```c
+char str1[20];
+char str2[20];
+printf("Enter two words: "); //Suppose you entered "hi hello"
+scanf("%s %s", str1, str2);
+strcat(str1, str2); //str1 = "hihello", str2 = "hello"
+```
+
+### strcmp
+```c
+int strcmp(char str1[], char str2[]);
+```
+
+This function compares *str1* and *str2* to see which string comes alphabetically before the other. It returns:
+- A number less than 0, if *str1* comes alphabetically before *str2*
+- 0, if *str1* equals *str2*
+- A number greater than 0, if *str1* comes alphabetically after *str2*
+
+For example:
+
+```c
+char str1[20];
+char str2[20];
+printf("Enter two words: "); //Suppose you entered "hi hello"
+scanf("%s %s", str1, str2);
+
+if (strcmp(str1, str2) < 0) 
+{
+	printf("%s comes first\n", str1);
+}
+else if (strcmp(str1, str2) > 0) 
+{
+	printf("%s comes first\n", str2);
+}
+else 
+{
+	printf("The strings are equal\n");
+}
+```
+The code above would print "hello comes first".
+
+### strcpy
+```c
+char[] strcpy(char str1[], char str2[]);
+```
+
+This function copies the characters in *str2* into *str1*, overwriting anything that was already in *str1*. It returns the newly copied string (although *str1* also references the copied string).
+
+For example:
+
+```c
+char src[20];
+char dest[20];
+
+printf("Enter a word: ");
+scanf("%s", src); //Suppose you entered "hello"
+
+strcpy(dest, src); //Now dest also holds "hello"
+
+src[0] = 'B'; //Now src is "Bello", and dest is "hello"
+```
+
+### strcspn
+```c
+int strcspn(char str1[], char str2[]);
+```
+
+This function returns the number of characters appear in *str1* before reaching ANY character from *str2*.
+
+For example:
+
+```c
+char str[20];
+int index;
+
+printf("Enter a word: ");//Suppose you entered "hello"
+scanf("%s", str);
+
+index = strcpsn(str, "la"); //index is 2
+//2 characters appear in str before finding any character from "la"
+```
+
+### strlen
+```c
+int strlen(char str[]);
+```
+
+This function returns the number of characters in *str*.
+
+For example:
+
+```c
+char str[20];
+printf("Enter a word: ");//Suppose you entered "hello"
+scanf("%s", str);
+
+printf("%d\n", strlen(str)); //prints 5
+```
+
+### strtok
+```c
+char[] strtok(char str[], char delim[]);
+```
+
+This function returns the first token found in *str* before the occurrence of any character in *delim*. (After the first call to *strtok*, pass *NULL* as *str*. This will tell it to continue looking for tokens in the original string.)
+
+For example:
+
+```c
+char buff[200];
+char *token; //We'll learn about this notation in "Pointers"
+
+printf("Enter names, separated by commas: ");
+//Suppose you entered "Fred,James,Jane,Lynn"
+scanf("%s", buff);
+
+token = strtok(buff, ",");
+while (token != NULL) 
+{
+	printf("%s\n", token);
+	token = strtok(NULL, ",");
+}
+```
+
+The code above will print:
+```
+Fred
+James
+Jane
+Lynn
+```
+
+### strncpy
+```c
+char[] strncpy(char str1[], char str2[], int n);
+```
+
+This function copies the first *n* characters from *str2* to *str1*, overwriting anything that was already in *str1*. It returns the newly copied string (although *str1* also references the copied string).
+
+### strncmp
+```c
+int strncmp(char str1[], char str2[], int n);
+```
+
+This function compares the first *n* characters in *str1* and *str2* to see which length-n prefix comes first alphabetically. It returns:
+- A number less than 0, if the first *n* characters in *str1* come alphabetically before the first *n* characters in *str2*
+- 0, if the first *n* characters in *str1* equal the first *n* characters in *str2*
+- A number greater than 0, if the first *n* characters in *str1* come alphabetically after the first *n* characters in *str2*
+
+### strrchr
+```c
+char[] strrchr(char str[], char c);
+```
+
+This function finds the LAST occurrence of *c* in *str*. It returns the suffix of *str* that begins with the last occurrence of *c*.
+
+### strspn
+```c
+int strspn(char str1[], char str2[]);
+```
+
+This function returns the number of characters read in *str1* before reaching a character that is NOT in *str2*.
+
+### strstr
+```c
+char[] strstr(char str1[], char str2[]);
+```
+
+This function determines whether *str2* is a substring of *str1*. If *str2* is not a substring of *str1*, it returns *NULL*. If *str2* is a substring of *str1*, it returns the suffix of *str1* beginning with the *str2* substring.
+
+## Be Careful!
+It's very easy to make a mistake when using strings. Strings are arrays, so you will get in trouble if you try to access memory beyond the end of the array. 
+
+For example:
+
+```c
+char buff[5];
+printf("Enter a word: ");
+//Suppose you enter "Hello"
+scanf("%s", buff);
+```
+
+*scanf* will copy the characters 'H', 'e', 'l', 'l', 'o' into the array. However, it will then try to add the end-of-string character, '\0', into the 6th spot in the array. This is past the end of the array, so your program will either crash with a segmentation fault, or you will overwrite the
+value of some other variable. A lot of the string functions involve writing to strings, and none of them will handle an out-of-bounds error gracefully. 
+
+When you use the following functions, **MAKE SURE you have enough memory allocated**:
+- scanf
+- strcpy
+- strcat
+- strncpy
