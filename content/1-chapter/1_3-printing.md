@@ -6,7 +6,7 @@ pre: "1.3. "
 
 ## *printf* Function
 
-As you've seen, the *printf* function is used to display output in C. For example, to display a string of text:
+As you've seen, the `printf` function is used to display output in C. For example, to display a string of text:
 
 ```c
 printf("Hello\n");
@@ -35,7 +35,7 @@ It's easiest to see an example to figure out how printing works. Here's how to p
 	printf("The value of num is %d\n", num);
 
 Notice that where we want to print a variable, we put the control string
-(*%d* for int). After we've listed the entire string, we put the corresponding variable names as the next arguments to *printf*. The above example will print:
+(`%d` for int). After we've listed the entire string, we put the corresponding variable names as the next arguments to `printf`. The above example will print:
 
  	"The value of num is 4" 
 
@@ -53,11 +53,11 @@ This prints:
 
 	"The ASCII value of A is 65"
 
-to the screen. Notice that the *%c* corresponds to the *letter* argument, and the *%d* corresponds to the *val* argument.
+to the screen. Notice that the `%c` corresponds to the `letter` argument, and the `%d` corresponds to the `val` argument.
 
 ## Formatting
 
-The *printf* function also allows you some control over formatting your output. For example, if you want a value to take up exactly 6 spaces (padded with space characters on the left, if necessary), put a 6 between the % and the control string character. 
+The `printf` function also allows you some control over formatting your output. For example, if you want a value to take up exactly 6 spaces (padded with space characters on the left, if necessary), put a 6 between the % and the control string character. 
 
 For example:
 

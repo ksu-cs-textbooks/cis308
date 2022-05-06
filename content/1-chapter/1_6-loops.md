@@ -36,7 +36,7 @@ do
 } while (c != EOF);
 ```
 
-Notice that we don't have to give *c* a dummy initial value, as we did in the while loop.
+Notice that we don't have to give `c*`a dummy initial value, as we did in the while loop.
 
 ## For-Loop
 The syntax of a for-loop is just like it is in other languages:
@@ -48,7 +48,7 @@ for (initialization; condition; update)
 }
 ```
 
-The only caveat is that the loop variable must not be declared in the initialization section (like "int i = 0"). This is because variables in C should only be declared at the beginning of a block (an opening { ). If you forget, your code may compile for you, but it won't necessarily compiler elsewhere.
+The only caveat is that the loop variable must not be declared in the initialization section (like `int i = 0`). This is because variables in C should only be declared at the beginning of a block (an opening { ). If you forget, your code may compile for you, but it won't necessarily compiler elsewhere.
 
 Here's an example that computes the factorial of a number entered by the user:
 
@@ -65,7 +65,7 @@ printf("%d! = %d\n", num, factorial);
 ```
 
 ## Break
-The "break" statement immediately stops execution of a loop. For example, this code allows us to get and print 10 numbers, unless the user types a 0:
+The `break` statement immediately stops execution of a loop. For example, this code allows us to get and print 10 numbers, unless the user types a 0:
 
 ```c
 int i, num;
@@ -79,7 +79,7 @@ for (i = 0; i < 10; i++)
 ```
 
 ## Continue
-The "continue" statement skips the remaining code inside the loop, and continues with the next iteration. For example, this code allows us to add together 10 numbers inputted by the user, except any numbers that are negative:
+The `continue` statement skips the remaining code inside the loop, and continues with the next iteration. For example, this code allows us to add together 10 numbers inputted by the user, except any numbers that are negative:
 
 ```c
 int i, num;

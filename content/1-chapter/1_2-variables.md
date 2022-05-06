@@ -12,7 +12,7 @@ Variables in C are declared exactly like variables in Java or C#. Just say:
 type name;
 ```
 
-where *type* is the type of the variable, and *name* is its name. The most common types in C are:
+where `type` is the type of the variable, and `name` is its name. The most common types in C are:
 
 ```c
 int
@@ -37,7 +37,7 @@ To initialize:
 name = value;
 ```
 
-Where *name* is the name of the variable, and *value* is the value you want to store in it. You can also do:
+Where `name` is the name of the variable, and `value` is the value you want to store in it. You can also do:
 
 ```c
 type name = value;
@@ -87,8 +87,8 @@ But this is not:
 int main() 
 {
 	double a;
-	a = 7.2; //code begins – this is not a declaration
-	char b = 'T'; //b is declared AFTER the code begins
+	a = 7.2; 		//code begins – this is not a declaration
+	char b = 'T'; 	//b is declared AFTER the code begins
 }
 ```
 

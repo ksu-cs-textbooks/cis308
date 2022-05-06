@@ -17,9 +17,9 @@ int count(void)
 }
 ```
 
-Each time we call *count*, the *sum* variable is set back to 0, and the return value is 1. *sum* does not retain its value across function calls. 
+Each time we call `count`, the `sum` variable is set back to 0, and the return value is 1. `sum` does not retain its value across function calls. 
 
-If we did want this function to keep track of how many times it had been called, we could store *sum* as a *global variable*. Global variables are declared outside any function, and are visible to any function in the same file:
+If we did want this function to keep track of how many times it had been called, we could store `sum` as a *global variable*. Global variables are declared outside any function, and are visible to any function in the same file:
 
 ```c
 int sum = 0;
@@ -30,7 +30,7 @@ int count(void)
 }
 ```
 
-Now, *sum* does not get set back to 0 each time the function is called.
+Now, `sum` does not get set back to 0 each time the function is called.
 
 Global variables should be declared at the top of the file, near the function
 prototypes (but before any function implementation). If a global variable is

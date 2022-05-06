@@ -14,15 +14,15 @@ Whenever you are doing file I/O, you need to add:
 ```
 
 ## Opening a File
-Before we can interact with a file, we need to open it. The *fopen* function lets us open files for different kinds of input and output. Here's the prototype:
+Before we can interact with a file, we need to open it. The `fopen` function lets us open files for different kinds of input and output. Here's the prototype:
 
 ```c
 FILE* fopen(char[] filename, char[] mode)
 ```
 
-The *FILE** return type means that the function is returning the address of a *FILE* object. We'll learn more about pointers in the next section. If the file could not be opened, fopen returns *NULL*.
+The `FILE*` return type means that the function is returning the address of a `FILE` object. We'll learn more about pointers in the next section. If the file could not be opened, fopen returns `NULL`.
 
-Here, *filename* is a string representation of the filename, such as "data.txt". *fopen* searches the current directory for the file if no absolute path is given. The string *mode* specifies what type of operations you want to do on the file. 
+Here, `filename` is a string representation of the filename, such as "data.txt". `fopen` searches the current directory for the file if no absolute path is given. The string `mode` specifies what type of operations you want to do on the file. 
 
 Here are the different options for the mode:
 
@@ -44,7 +44,7 @@ if (fp == NULL) {
 }
 ```
 
-After we are done reading from a file or writing to a file, we must close the file with the *fclose* function. Here's the prototype:
+After we are done reading from a file or writing to a file, we must close the file with the `fclose` function. Here's the prototype:
 
 ```c
 int fclose(FILE* fp)
@@ -57,13 +57,13 @@ fclose(fp);
 ```
 
 ## Reading from a File
-There are two major functions for reading from a file – *fscanf* and *fgets*. *fgets* works exactly like we've seen before, except now we specify a *FILE** instead of *stdin*. *fscanf* works exactly like *scanf*, except we first specify the *FILE**. We'll start with *fscanf*:
+There are two major functions for reading from a file – `fscanf` and `fgets`. `fgets` works exactly like we've seen before, except now we specify a `FILE*` instead of `stdin`. `fscanf` works exactly like `scanf`, except we first specify the `FILE*`. We'll start with `fscanf`:
 
 ```c
 int fscanf(FILE *stream, char str[], variable addresses...)
 ```
 
-*fscanf*, like *scanf*, returns the number of variables that were correctly read in. If it was unable to read any more input, the *EOF* constant is returned. Thus we can compare the return value of *fscanf* to *EOF* to see if we've reached the end of the file.
+`fscanf`, like `scanf`, returns the number of variables that were correctly read in. If it was unable to read any more input, the `EOF` constant is returned. Thus we can compare the return value of `fscanf` to `EOF` to see if we've reached the end of the file.
 
 Suppose the file data.txt looks like this (a bunch of names and ages, each on separate lines):
 
@@ -88,16 +88,16 @@ if (fp != NULL) {
 }
 ```
 
-Now, lets try to do the same thing with the *fgets* function. Here's the prototype:
+Now, lets try to do the same thing with the `fgets` function. Here's the prototype:
 
 ```c
 char[] fgets(char s[], int size, FILE *stream)
 ```
 
-*fgets* reads a string from a specified file into the *s* array. The *size* parameter specifies the size of the string – it will not write past the end of the array. It returns a reference to the string that was read. If no string was read (specifying an error or the end of file), *NULL* is returned.
-*fgets* will attempt to read *size-1* characters _unless it reaches a newline or the end of the file_.
+`fgets` reads a string from a specified file into the `s` array. The `size` parameter specifies the size of the string – it will not write past the end of the array. It returns a reference to the string that was read. If no string was read (specifying an error or the end of file), `NULL` is returned.
+`fgets` will attempt to read `size-1` characters _unless it reaches a newline or the end of the file_.
 
-Here's the same example repeated with *fgets*:
+Here's the same example repeated with `fgets`:
 
 ```c
 FILE *fp = fopen("data.txt", "r");
@@ -119,10 +119,10 @@ if (fp != NULL) {
 }
 ```
 
-Reading files with *fscanf* is usually simpler (since it doesn't involve parsing lines), but it is more error-prone than *fgets*.
+Reading files with `fscanf` is usually simpler (since it doesn't involve parsing lines), but it is more error-prone than `fgets`.
 
 ## Writing to a File
-The primary function for writing to a file is *fprintf*. This function works exactly like *printf*, but the first argument is now a *FILE**. Here's the prototype:
+The primary function for writing to a file is `fprintf`. This function works exactly like `printf`, but the first argument is now a `FILE*`. Here's the prototype:
 
 ```c
 int fprintf(FILE* fp, char str[], variables to print...)
