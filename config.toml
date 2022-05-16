@@ -14,12 +14,11 @@ section = [ "HTML", "Iframeable", "Teleprompter"]
 
 [params]
   editURL = "https://gitlab.cs.ksu.edu/cs-textbooks/cis308-textbook/-/tree/master/content/"
-  description = "CIS 308 Textbook"
+  description = "CIS 308: C Language Lab"
   author = "Julie Thornton"
   showVisitedLinks = false
   themeVariant = "purple"
   disableLanguageSwitchingButton = true
-  landingPageURL = "/"
 
 [blackfriday]
   plainIDAnchors = true
