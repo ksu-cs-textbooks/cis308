@@ -9,5 +9,3 @@ pre = "<b>3. </b>"
 ### Chapter 3
 
 # Pointers and Dynamic Memory
-
-Chapter X tagline.

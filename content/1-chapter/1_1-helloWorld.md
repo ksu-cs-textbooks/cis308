@@ -17,4 +17,4 @@ int main()
 ```
 
 
-To write and run this program see the *Visual Studio guide* for more information. It should print "Hello, World!" to the console.
+To write and run this program see the Tools Guide in section 0.1 for more information. It should print "Hello, World!" to the console.

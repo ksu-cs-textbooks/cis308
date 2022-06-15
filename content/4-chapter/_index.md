@@ -9,5 +9,3 @@ pre = "<b>4. </b>"
 ### Chapter 4
 
 # Structs
-
-Chapter X tagline.

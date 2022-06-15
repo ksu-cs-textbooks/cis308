@@ -9,5 +9,3 @@ pre = "<b>1. </b>"
 ### Chapter 1
 
 # C Basics
-
-Chapter 1 tagline
