@@ -106,10 +106,87 @@ Within the integrated terminal, type:
 gcc hello.c
 ```
 
-If you have no errors, it will generate the executable `a.out`. Run your program as follows:
+If you have no errors, it will generate an executable named either `a.exe` or `a.out`. Run your program as follows, depending on the name of your executable:
 
 ```text
 ./a.out
 ```
 
+Or:
+
+```text
+./a.exe
+```
+
 You should now see "Hello, World!" in your terminal.
+
+## Working with git in assignments
+
+This class will use GitHub links to create initial repositories for both labs and programming projects, similarly to what you have done in CIS 300 and 301. 
+
+1. When you get a new assignment, first click the assignment link -- this will create an initial GitHub repository. 
+
+2. After opening your GitHub repository, click the green "Code" button and click the copy icon next to the URL name. This will copy the URL of your GitHub repository:
+
+![Clone repo](/images/gitHubRepo.png)
+
+3. Next, create a new, empty folder on your computer that you will use for your assignment. Open that folder in VS Code by either:
+
+- Right-clicking on the folder name and selecting "Open with Code"
+- Opening VS Code, and selecting "File->Open Folder" and selecting your new folder
+
+4. Open the Terminal within VS Code by selecting "Terminal->New Terminal". This should open a terminal in your new folder, like this:
+
+![Open terminal](/images/vsCodeTerminal.png)
+
+5. Clone your GitHub repository by typing in the terminal:
+
+```text
+git clone {repository-url}
+```
+
+Where `{repository-url}` is the URL you copied from your GitHub repository (leave off the `{` and `}` when you insert your URL). For example, I might type:
+
+![git clone](/images/gitClone.png)
+
+6. Add any the necessary programming files to your project. You can add a file in VS Code by clicking your project name under "Explorer", and then clicking the icon labeled "New File". Type the name of your new file and hit Enter to save it:
+
+![add file](/images/vsCodeAddFile.png)
+
+7. Write the code for your project. As you go, save it and test it with the `gcc` compiler. If it builds, run the resulting executable (either `a.exe` or `a.out`). Here is an example of compiling and running a Hello, World! program:
+
+![compile run](/images/compileRunHello.png)
+
+Note that GitHub might have created an extra folder within your new folder, as it did here. You can test this by typing:
+
+```text
+ls
+```
+
+in the terminal, which will list the contents of the current directory (Windows users might need to use `dir` instead, depending on which terminal they are using). If you see an extra folder, type:
+
+```text
+cd {folder-name}
+```
+
+where `{folder-name}` is the name of the contained folder. If you type `ls` or `dir` again, you should see your code. Now, you can compile and run as usual.
+
+8. Once you are ready to commit your changes, type the following in the integrated terminal:
+
+```text
+git add *
+```
+
+This will add all changes to the current commit. Then type:
+
+```text
+git commit -m "descriptive message"
+```
+
+to create a local commit, where "descriptive message" is replaced with a message describing your changes (you DO need to include the quotations). Finally, push your local commit to the current branch:
+
+```text
+git push
+```
+
+If you go to your GitHub repository URL, you should see the latest changes.
