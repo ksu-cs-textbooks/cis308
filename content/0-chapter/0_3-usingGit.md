@@ -28,15 +28,13 @@ Open the Terminal within VS Code by selecting "Terminal->New Terminal". This sho
 
 ![Open terminal](/images/vsCodeTerminal.png)
 
-Clone your GitHub repository by typing in the terminal:
+Clone your GitHub repository to your new, empty folder (which should be the current directory in VS Code) by typing in the terminal:
 
 ```text
-git clone {repository-url}
+git clone {repository-url} ./
 ```
 
-Where `{repository-url}` is the URL you copied from your GitHub repository (leave off the `{` and `}` when you insert your URL). For example, I might type:
-
-![git clone](/images/gitClone.png)
+Where `{repository-url}` is the URL you copied from your GitHub repository (leave off the `{` and `}` when you insert your URL). The `/.` tells git to clone the repository to the current directory.
 
 ## Add code and test
 
@@ -47,20 +45,6 @@ Add the necessary programming files to your project. You can add a file in VS Co
 Write the code for your project. As you go, save it and test it with the `gcc` compiler. If it builds, run the resulting executable (either `a.exe` or `a.out`). Here is an example of compiling and running a Hello, World! program:
 
 ![compile run](/images/compileRunHello.png)
-
-Note that GitHub might have created an extra folder within your new folder, as it did here. You can test this by typing:
-
-```text
-ls
-```
-
-in the terminal, which will list the contents of the current directory (Windows users might need to use `dir` instead, depending on which terminal they are using). If you see an extra folder, type:
-
-```text
-cd {folder-name}
-```
-
-where `{folder-name}` is the name of the contained folder. If you type `ls` or `dir` again, you should see your code. Now, you can compile and run as usual.
 
 ## Commit and push
 
