@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Linked Lists :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_6-linkedlists/" rel="canonical" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_6-linkedlists/index.xml" rel="alternate" type="application/rss+xml" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/_print/4-chapter/4_6-linkedlists/" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_6-linkedlists/embed.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549501" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549501" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549501" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1659549501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1659549501" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1659549501" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1659549501"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis308/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1659549501" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1659549501" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_6-linkedlists/">
+    
+    <div id="tele" class="tele mirror">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h1>Linked Lists</h1>
+    
+    
+<p>We can use structs to help implement all the common data structures in C. For example,
+whereas before we would have created a Node class to help us write a linked list, we will now
+create a node struct:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> node {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> data;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>next; <span style="color:#75715e">//pointer to next node in list
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><p>Suppose we want to create a linked list with a single node. First, we declare a head variable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>head;
+</span></span></code></pre></div><p>Then, we allocate memory for the node:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>head <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> node));
+</span></span></code></pre></div><p>Finally, we initialize the fields in <code>head</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>head<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>head<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+</span></span></code></pre></div><p>Here&rsquo;s a full C program that inserts values into a linked list and then prints them out:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> node {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> data;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>next;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>head;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">int</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">void</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    head <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>    add(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    add(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>    add(<span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>    add(<span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//prints 1, 2, 3, 4 on separate lines
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    print();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">int</span> num) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//create new node
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>newnode <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> node));
+</span></span><span style="display:flex;"><span>    newnode<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> num;
+</span></span><span style="display:flex;"><span>    newnode<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (head <span style="color:#f92672">==</span> NULL) {
+</span></span><span style="display:flex;"><span>        head <span style="color:#f92672">=</span> newnode;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//find end of list
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>cur <span style="color:#f92672">=</span> head;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (cur<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>            cur <span style="color:#f92672">=</span> cur<span style="color:#f92672">-&gt;</span>next;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//add newnode after cur
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        cur<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> newnode;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> node <span style="color:#f92672">*</span>cur <span style="color:#f92672">=</span> head;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (cur <span style="color:#f92672">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, cur<span style="color:#f92672">-&gt;</span>data);
+</span></span><span style="display:flex;"><span>        cur <span style="color:#f92672">=</span> cur<span style="color:#f92672">-&gt;</span>next;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Linked lists in C work almost exactly the same as linked lists in Java or C#. The only differences are:</p>
+<ol>
+<li>We use a struct instead of a class to represent a node</li>
+<li>We use -&gt; instead of . to access values in the node</li>
+</ol>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1659549501" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1659549501" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1659549501" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1659549501" defer></script>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/tele-scroll.js?1659549501 defer"></script>
+    
+  </body>
+</html>

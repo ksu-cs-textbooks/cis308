@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Functions :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_7-functions/" rel="canonical" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_7-functions/index.xml" rel="alternate" type="application/rss+xml" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/_print/1-chapter/1_7-functions/" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_7-functions/tele.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1659549500" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1659549500" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1659549500"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis308/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1659549500" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1659549500" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_7-functions/embed.html">
+    
+    <div class="embed">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<p>Functions in C are very similar to methods in other languages, except functions are not associated with any class. (They are like static methods in Java and C#.) They take a number of parameters, perform on operation on those parameters, and may or may not return a value.</p>
+<h2 id="function-prototypes">Function Prototypes</h2>
+<p>Some C compilers will complain if they see a call to a function before they’ve seen the function itself. To avoid this problem, it’s best to include a prototype for a function at the top of the file, and then to implement it someplace else in the file.</p>
+<p>A <em>prototype</em> lists the name, return type, and parameters for a function – but it does not implement the function. Here’s an example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> num1, <span style="color:#66d9ef">int</span> num2);
+</span></span></code></pre></div><p>We list the return type (<code>int</code>), the function name (<code>max</code>), and the parameters with their types (<code>int num1</code> and <code>int num2</code>). This is a prototype, so we don’t implement the function here. Instead, we end it with a semi-colon. (Note that this already looks very similar to other languages – the only difference is that C functions are not associated with classes, so they don&rsquo;t need a visibility modifier like <code>private</code> or <code>public</code>.)</p>
+<p>Return types can be any valid type (like <code>char</code>, <code>int</code>, <code>double</code>, etc.). If the function does not return a value, its return type should be <code>void</code>.</p>
+<p>In a prototype, you don’t have to list the names of the parameters – you just need to list the types. For example, this would also be a valid prototype for the <code>max</code> function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>);
+</span></span></code></pre></div><p>If you are writing a prototype for a function that takes no parameters, you can leave the parameter list blank, like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getNum</span>();
+</span></span></code></pre></div><p>However, a better way would be to put <code>void</code> in the parameter list, like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getNum</span>(<span style="color:#66d9ef">void</span>);
+</span></span></code></pre></div><p>When the compiler sees a blank parameter list in the prototype, it will allow ANY parameter list in the function implementation. However, if it sees <code>void</code> in the prototype’s parameter list, then the implementation must also have a <code>void</code> parameter list.</p>
+<h2 id="function-implementations">Function Implementations</h2>
+<p>A function implementation starts off the same as a prototype. Instead of ending with a semi-colon, it includes the code for the function in brackets { }.</p>
+<p>Here’s the implementation of the <code>max</code> function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> num1, <span style="color:#66d9ef">int</span> num2) 
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (num1 <span style="color:#f92672">&gt;=</span> num2) <span style="color:#66d9ef">return</span> num1;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> num2;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Like in other languages, if a C function has a non-void return type, it must include a <em>return statement</em> that returns a value of the designated type.</p>
+<h2 id="calling-functions">Calling Functions</h2>
+<p>For now, all our programs are in one file, so calling functions is pretty easy. You just put the function name and include appropriate parameters, as if you were calling function from within the same class in Java or C#.</p>
+<p>Here’s a full example of a C program that uses the <code>max</code> function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//max function prototype
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>); 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() 
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> val1, val2, big;
+</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;Enter two ints, separated by spaces: &#34;</span>);
+</span></span><span style="display:flex;"><span>	scanf(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>val1, <span style="color:#f92672">&amp;</span>val2);
+</span></span><span style="display:flex;"><span>	big <span style="color:#f92672">=</span> max(val1, val2);
+</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;The max is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, big);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//This indicates the program is ending normally
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; 
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//max function implementation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> num1, <span style="color:#66d9ef">int</span> num2) 
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (num1 <span style="color:#f92672">&gt;=</span> num2) <span style="color:#66d9ef">return</span> num1;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> num2;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1659549500" defer></script>
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/embed-iframe.js?1659549500 defer"></script>
+    
+    
+    
+  </body>
+</html>

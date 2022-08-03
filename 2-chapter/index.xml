@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arrays, Strings, and Files on CIS 308 Textbook</title>
+    <link>https://ksu-cs-textbooks.github.io/cis308/2-chapter/</link>
+    <description>Recent content in Arrays, Strings, and Files on CIS 308 Textbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Aug 2018 10:53:05 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arrays</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_1-arrays/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_1-arrays/</guid>
+      <description>Arrays in C are, for the most part, the same as arrays in Java or C#. Here are the key differences:
+Arrays in C must be of a constant size (not a variable size from user input, for example) Arrays in C do not have an associated length field that keep track of the number of slots in the array (you must keep track of this information yourself) Declaring Here is the format for declaring an array:</description>
+    </item>
+    <item>
+      <title>Strings</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_2-strings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_2-strings/</guid>
+      <description>We saw before that there is no string type in C. This is true – but you can simulate a string by using an array of characters that is terminated with a special end-of-string character, &amp;lsquo;\0&amp;rsquo;.
+String Variables A string constant can be declared as follows:
+char str[] = &amp;#34;Hello&amp;#34;; After this line, str references the following characters in memory:
+0 1 2 3 4 5 H e l l o \0 We could have created the same string like this:</description>
+    </item>
+    <item>
+      <title>Files</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_3-files/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_3-files/</guid>
+      <description>This section contains information on opening a file, reading from a file, and writing to a file. I only cover how to interact with text files – it is also possible to read from and write to binary files.
+Whenever you are doing file I/O, you need to add:
+#include &amp;lt;stdio.h&amp;gt; Opening a File Before we can interact with a file, we need to open it. The fopen function lets us open files for different kinds of input and output.</description>
+    </item>
+  </channel>
+</rss>

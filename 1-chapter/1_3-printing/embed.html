@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Printing :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_3-printing/" rel="canonical" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_3-printing/index.xml" rel="alternate" type="application/rss+xml" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/_print/1-chapter/1_3-printing/" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_3-printing/tele.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1659549500" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1659549500" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1659549500"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis308/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1659549500" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1659549500" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_3-printing/embed.html">
+    
+    <div class="embed">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h2 id="printf-function"><em>printf</em> Function</h2>
+<p>As you&rsquo;ve seen, the <code>printf</code> function is used to display output in C. For example, to display a string of text:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>printf(<span style="color:#e6db74">&#34;Hello</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span></code></pre></div><p>Note that you always need to specify the newline character (\n). There is
+no <em>println</em> equivalent in C.</p>
+<h2 id="printing-variables">Printing Variables</h2>
+<p>Printing variables works a bit differently. First, you specify the kind of variable that&rsquo;s going to be printed (called a control string). Then, outside the string, you give the corresponding variable name.</p>
+<p>Here are the different control strings:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Control String</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>%d</td>
+</tr>
+<tr>
+<td>double</td>
+<td>%lf</td>
+</tr>
+<tr>
+<td>float</td>
+<td>%f</td>
+</tr>
+<tr>
+<td>char</td>
+<td>%c</td>
+</tr>
+<tr>
+<td>char* (string)</td>
+<td>%s (see String section)</td>
+</tr>
+</tbody>
+</table>
+<p>It&rsquo;s easiest to see an example to figure out how printing works. Here&rsquo;s how to print the value of an integer to the screen:</p>
+<pre><code>int num = 4;
+printf(&quot;The value of num is %d\n&quot;, num);
+</code></pre>
+<p>Notice that where we want to print a variable, we put the control string
+(<code>%d</code> for int). After we&rsquo;ve listed the entire string, we put the corresponding variable names as the next arguments to <code>printf</code>. The above example will print:</p>
+<pre><code>&quot;The value of num is 4&quot; 
+</code></pre>
+<p>to the screen.</p>
+<p>We can also print several variables at once:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> letter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> val <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span>) letter;
+</span></span><span style="display:flex;"><span>printf(<span style="color:#e6db74">&#34;The ASCII value of %c is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, letter, val);
+</span></span></code></pre></div><p>This prints:</p>
+<pre><code>&quot;The ASCII value of A is 65&quot;
+</code></pre>
+<p>to the screen. Notice that the <code>%c</code> corresponds to the <code>letter</code> argument, and the <code>%d</code> corresponds to the <code>val</code> argument.</p>
+<h2 id="formatting">Formatting</h2>
+<p>The <code>printf</code> function also allows you some control over formatting your output. For example, if you want a value to take up exactly 6 spaces (padded with space characters on the left, if necessary), put a 6 between the % and the control string character.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>printf(<span style="color:#e6db74">&#34;The value of num is %6d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, num);
+</span></span></code></pre></div><p>This will print:</p>
+<pre><code>&quot;The value of num is 4&quot; 
+</code></pre>
+<p>to the screen (note the padding on the left of the 4).</p>
+<p>You can also only display a certain number of digits for decimal numbers. For
+example, put a .2 in between the % and the control string character to only display two decimal places.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> val <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14159</span>;
+</span></span><span style="display:flex;"><span>printf(<span style="color:#e6db74">&#34;Pi is %.2lf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, val);
+</span></span></code></pre></div><p>This will display:</p>
+<pre><code>&quot;Pi is 3.14&quot; 
+</code></pre>
+<p>You can specify both the width of the output (for example, six spaces) and the number of decimals to display by doing something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> val <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14159</span>;
+</span></span><span style="display:flex;"><span>printf(<span style="color:#e6db74">&#34;Pi is %6.2lf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, val);
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1659549500" defer></script>
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/embed-iframe.js?1659549500 defer"></script>
+    
+    
+    
+  </body>
+</html>

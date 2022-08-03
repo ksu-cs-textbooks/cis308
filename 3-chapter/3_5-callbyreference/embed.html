@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Call by Reference :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_5-callbyreference/" rel="canonical" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_5-callbyreference/index.xml" rel="alternate" type="application/rss+xml" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/_print/3-chapter/3_5-callbyreference/" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_5-callbyreference/tele.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1659549500" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1659549500" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1659549500"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis308/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1659549500" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1659549500" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_5-callbyreference/embed.html">
+    
+    <div class="embed">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<p>C functions are naturally call-by-value, which means that we don’t pass variables themselves –
+we pass their value. So, if we modify one of the parameters in our function, it does not modify
+the original variable passed to the function. Consider the following example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//This example doesn’t work!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> a;
+</span></span><span style="display:flex;"><span>	a <span style="color:#f92672">=</span> b;
+</span></span><span style="display:flex;"><span>	b <span style="color:#f92672">=</span> temp;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//assume the test code below is in another function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>swap(x, y);
+</span></span></code></pre></div><p>This code fragment is supposed to swap the values in <code>x</code> and <code>y</code>, so that <code>x == 4</code> and <code>y == 3</code>.
+However, when we call <code>swap</code>, only the VALUES 3 and 4 are passed – not <code>x</code> and <code>y</code> themselves.
+The values 3 and 4 get bound to the function parameters <code>a</code> and <code>b</code>. By the end of the function, we
+do have that <code>a == 4</code> and <code>b == 3</code>. However, <code>x</code> and <code>y</code> don’t change because they are completely
+different from <code>a</code> and <code>b</code>.
+If we do want to change <code>x</code> and <code>y</code>, we need to pass in the address of <code>x</code> and the address of <code>y</code>. Then,
+we can update the values at those memory locations. Here is our revised <code>swap</code> function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//Take two memory addresses (pointers)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a; 	<span style="color:#75715e">//Store the value pointed to by a
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>b; 		<span style="color:#75715e">//Update the contents of a to be the contents of b
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>b <span style="color:#f92672">=</span> temp; 		<span style="color:#75715e">//Update the contents of a to be temp
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>Now, when we call <code>swap</code>, we will need to pass the memory address of the variables we want to
+swap. This means we need to use the &amp; operator:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>swap(<span style="color:#f92672">&amp;</span>x, <span style="color:#f92672">&amp;</span>y);
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1659549500" defer></script>
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/embed-iframe.js?1659549500 defer"></script>
+    
+    
+    
+  </body>
+</html>

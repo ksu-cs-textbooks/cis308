@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Compiling and Running :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-compilerun/" rel="canonical" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-compilerun/index.xml" rel="alternate" type="application/rss+xml" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/_print/0-chapter/0_2-compilerun/" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-compilerun/tele.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1659549500" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1659549500" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1659549500"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis308/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1659549500" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1659549500" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-compilerun/embed.html">
+    
+    <div class="embed">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<p>After you have installed VS Code along with <code>gcc</code>, you can write C programs in the VS Code editor and then use the integrated terminal to compile and run.</p>
+<h2 id="hello-world-in-vs-code">Hello, World! in VS Code</h2>
+<p>Here is a Hello, World! program written in C using VS Code. It is saved to the file <code>hello.c</code> (note that <code>.c</code> is the extension for C programs):</p>
+<p><img src="https://ksu-cs-textbooks.github.io/cis308/images/helloC.png" alt="Hello C"></p>
+<h2 id="find-code-in-terminal">Find code in terminal</h2>
+<p>To compile and run a C program, make sure the integrated terminal appears below the code in VS Code (as shown above). If it doesn&rsquo;t, select &ldquo;Terminal-&gt;New Terminal&rdquo;. This will open a new terminal in your current directory.</p>
+<h3 id="list-directory-contents">List directory contents</h3>
+<p>In the integrated terminal, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ls
+</span></span></code></pre></div><p>This should list the contents of the current directory, which hopefully includes your <code>hello.c</code> file. If you get an error that <code>ls</code> is unrecognized (which it might be, depending on what kind of terminal you are using), try:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>dir
+</span></span></code></pre></div><p>instead.</p>
+<h3 id="change-directory">Change directory</h3>
+<p>If you do not see your code file displayed after typing <code>ls</code> or <code>dir</code>, then you are likely not in the folder that contains your code. If your code is contained within a subfolder of the current directory path displayed in the terminal, do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cd {dir-name}
+</span></span></code></pre></div><p>where <code>dir-name</code> is the name of a subfolder within the terminal&rsquo;s current directory. (Make sure to leave off the <code>{</code> and <code>}</code> when substiting a directory name.) This will change the terminal&rsquo;s current directory to be: <code>dir-name</code>.</p>
+<p>Alternatively, you may need to back out to the parent folder of the current directory. If you do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cd ..
+</span></span></code></pre></div><p>Then the terminal&rsquo;s current directory will update to be its parent folder.</p>
+<h2 id="compile-and-run">Compile and run</h2>
+<p>Once you have found the directory with your code (which was most likely the original terminal directory without having to make any changes), you are ready to compile your code. To compile our <code>hello.c</code> program, we type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc hello.c
+</span></span></code></pre></div><p>(replacing <code>hello.c</code> with the name of our C program file). If there were no errors, it will generate an executable file. If you type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ls
+</span></span></code></pre></div><p>(or <code>dir</code>), you should see either <code>a.out</code> or <code>a.exe</code> &ndash; this is the executable file for your program.</p>
+<p>To run your executable, type either:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>./a.out
+</span></span></code></pre></div><p>or:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>./a.exe
+</span></span></code></pre></div><p>Depending on the name of your executable file. You should see your program running in the terminal.</p>
+<p>Here is an example of compiling and running our Hello, World! program in the VS Code terminal:</p>
+<p><img src="https://ksu-cs-textbooks.github.io/cis308/images/compileRunHello.png" alt="C compile run"></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1659549500" defer></script>
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/embed-iframe.js?1659549500 defer"></script>
+    
+    
+    
+  </body>
+</html>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>User-Defined Types on CIS 308 Textbook</title>
+    <link>https://ksu-cs-textbooks.github.io/cis308/5-chapter/</link>
+    <description>Recent content in User-Defined Types on CIS 308 Textbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Aug 2018 10:53:05 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enums</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_1-enum/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_1-enum/</guid>
+      <description>enum provides a way to create integer constants. For instance, in Java we might declare:
+public static final int GOLD = 1; public static final int SILVER = 2; public static final int BRONZE = 3; ..but really what we want is to create a &amp;ldquo;medal&amp;rdquo; type that can take on the values GOLD, SILVER, and BRONZE. Moreover, we want GOLD to mean &amp;ldquo;1&amp;rdquo;, SILVER to mean &amp;ldquo;2&amp;rdquo;, and BRONZE to mean &amp;ldquo;3&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>Unions</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_2-union/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_2-union/</guid>
+      <description>A union is a construct in C that can hold one of several types. A union variable can only hold one value at a time, unlike a struct, but that value is not restricted to a single type.
+Here&amp;rsquo;s the format for declaring a union:
+union modelName { type1 name1; type2 name2; ... typeN nameN; } objectList; Here, modelName is the name of the type you&amp;rsquo;re creating, each type name is a type you want to be able to store in this union plus a name for it, and objectList is a list of variables you want to create with this union type.</description>
+    </item>
+    <item>
+      <title>typedef</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_3-typedef/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_3-typedef/</guid>
+      <description>It gets a bit cumbersome to use types called struct person and enum grade. It would be much nicer to be able to call them just person or grade. With C&amp;rsquo;s typedef construct, we can do just that.
+The format of typedef is:
+typedef oldType newType; Here, we rename type oldType to the new name newType. We can now create variables using the name newType. For example:
+typedef char letterGrade; letterGrade g; g = &amp;#39;A&amp;#39;; Notice that we treat our new letterGrade type just like it was a char.</description>
+    </item>
+    <item>
+      <title>User-Defined Types with Pointers</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_4-usertypes_w_ptrs/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_4-usertypes_w_ptrs/</guid>
+      <description>Consider the following struct:
+typedef struct { char name[20]; int age; union { struct { char major[20]; double gpa; } student; struct { char division[20]; int yearsWorked; } employee; } type; enum {employeeK, studentK} typeK; } person; Suppose we want to create a pointer to a struct variable with the following information:
+Name: Bob Jones Student Age: 18 Major: EECE GPA: 3.2 First, we&amp;rsquo;d declare a pointer of type person:</description>
+    </item>
+    <item>
+      <title>Preprocessor Directives</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_5-preprocessor/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_5-preprocessor/</guid>
+      <description>The C pre-processor is a special program that runs before the C compiler. It processes every line that begins with a #, such as a #include statement. The pre-processor may add, remove, or change your code when handling the # statements.
+#include We’ve been using the #include statement since our first program in order to get access to C&amp;rsquo;s library functions (like printf in stdio.h). When the pre-processor sees a #include statement, it replaces the #include line with the contents of the included file.</description>
+    </item>
+  </channel>
+</rss>

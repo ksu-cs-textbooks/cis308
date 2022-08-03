@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Dynamic Memory :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/index.xml" rel="alternate" type="application/rss+xml" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/_print/3-chapter/3_7-dynamicmemory/" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/tele.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/embed.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1659549500" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1659549500" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1659549500"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis308/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1659549500" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1659549500" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/">
+    
+    
+    <div id="body" class="default-animation">
+      
+      
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div class="navigation">
+             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_8-multidimdynarrays/" title="Multi-dimensional Dynamic Arrays (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+          </div>
+          <div class="navigation">
+             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_6-sizeof/" title="sizeof (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="top-print-link">
+            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis308/_print/3-chapter/3_7-dynamicmemory/">
+              <i class="fas fa-print fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cs-textbooks/cis308-textbook/edit/master/-/content/3-chapter/3_7-dynamicMemory.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/"><span itemprop="name">Homepage</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/"><span itemprop="name">Pointers and Dynamic Memory</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/" aria-disabled="true"><span itemprop="name">Dynamic Memory</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#malloc">malloc</a></li>
+    <li><a href="#calloc">calloc</a></li>
+    <li><a href="#realloc">realloc</a></li>
+    <li><a href="#free">free</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h1>Dynamic Memory</h1>
+    
+    
+<p>Currently, we can only declare arrays to be of a constant size (like 10). This is not always
+convenient – sometimes we want to make the size based on some user input. If we want to
+allocate a dynamic amount of space, we need to use C&rsquo;s dynamic memory functions. Each of
+these functions is in <code>&lt;stdlib.h&gt;</code>.</p>
+<h2 id="malloc">malloc</h2>
+<p>This function allocates a contiguous block of memory with the specifies size (number of bytes).
+It returns a void pointer to the block of memory. (This pointer will be automatically cast to the
+correct type when you store it.)</p>
+<p>Here is the prototype:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">int</span> numBytes);
+</span></span></code></pre></div><p>For example, we could allocate an array like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> nums1[<span style="color:#ae81ff">5</span>];
+</span></span></code></pre></div><p>Or we could do the same thing using <code>malloc</code>. If we use <code>malloc</code>, we need to specify the
+number of bytes to reserve. We want 5 ints, and each int takes up <code>sizeof(int)</code> bytes. So,
+the total needed is <code>5*sizeof(int)</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//The result of malloc is automatically cast to an int*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums2 <span style="color:#f92672">=</span> malloc(<span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span></code></pre></div><p>Now, we can treat <code>nums2</code> just like an array. For instance, if we wanted to initialize all elements
+in <code>nums2</code> to 0:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	nums2[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; 	<span style="color:#75715e">//The compiler converts this to *(nums2+i) = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>Allocating arrays with malloc has several key difference from standard array allocation:</p>
+<ul>
+<li><code>malloc</code> can handle a variable for the desired size; a standard array cannot</li>
+<li>The result of <code>malloc</code> is a pointer; the result of a standard array allocation is a constant pointer</li>
+<li><code>malloc</code> memory is allocated on the heap. If there is not enough space to do the allocation, <code>malloc</code> will return NULL. An array is allocated on the program stack – if there is not enough space, the program simply won&rsquo;t compile.</li>
+</ul>
+<h2 id="calloc">calloc</h2>
+<p>The <code>calloc</code> function is very similar to <code>malloc</code>. The only difference is that when arrays are
+allocated using <code>calloc</code>, all elements are automatically initialized to 0.</p>
+<p>Here is the prototype:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">calloc</span>(<span style="color:#66d9ef">int</span> numElems, <span style="color:#66d9ef">int</span> sizePerElem);
+</span></span></code></pre></div><p>The prototype of <code>calloc</code> is also a little different than the one for <code>malloc</code>. It takes two
+arguments – the number of elements you want in the array, and the number of bytes needed for
+each elements. Like <code>malloc</code>, <code>calloc</code> returns a void pointer to the contiguous block of
+memory it allocated. This pointer will be automatically cast to the appropriate type when you
+store it.</p>
+<p>Here&rsquo;s how to create an array of 10 ints, all initialized to 0:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> calloc(<span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span></code></pre></div><p>Now you can use <code>nums</code> just like an array. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>nums[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span></code></pre></div><p>Like <code>malloc</code>, <code>calloc</code> will return NULL if there is not enough space to do the allocation. In
+both cases, it&rsquo;s a good idea to check if the pointer is NULL before you use it.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> calloc(<span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (nums <span style="color:#f92672">==</span> NULL) {
+</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;Not enough space.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//Use nums as usual
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="realloc">realloc</h2>
+<p>The <code>realloc</code> function allows you to easily expand and shrink the space allocated for an array.</p>
+<p>Here is the prototype:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">realloc</span>(<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> origPtr, <span style="color:#66d9ef">int</span> newSize);
+</span></span></code></pre></div><p>This function takes your original pointer and the desired new size in bytes. It looks for a
+contiguous block of memory with the desired size. If it can find one, it copies the contents of the
+old array into the new block of memory. Then it releases the space needed for the old array, and
+returns a void pointer to the new block of memory.</p>
+<p>The <code>realloc</code> function doesn&rsquo;t always behave as you intend. Here are the possible return
+values of <code>realloc</code>:</p>
+<ul>
+<li>NULL (if not enough space is found)</li>
+<li>The original pointer (if there is enough space at that location)</li>
+<li>A new pointer to a different spot in memory</li>
+</ul>
+<p>Suppose we allocate the <code>nums</code> array like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> malloc(<span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span></code></pre></div><p>Now we decide that we want <code>nums</code> to hold 15 elements instead of 10. Here&rsquo;s what we might
+try:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>nums <span style="color:#f92672">=</span> realloc(nums, <span style="color:#ae81ff">15</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span></code></pre></div><p>Suppose that <code>realloc</code> could not find enough space to grant the request – so it returns NULL.
+This means that we assign NULL to our original <code>nums</code> pointer. Now <code>nums</code> does not reference
+the original array – in fact, nothing does. The original array is stuck in memory with no way to
+get at it – this is called a <em>memory leak</em>.</p>
+<p>To fix this problem, assign a temporary pointer to the result of <code>realloc</code>. Then, if it&rsquo;s not
+NULL, reassign the original pointer. This keeps you from losing your array:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>temp <span style="color:#f92672">=</span> realloc(nums, <span style="color:#ae81ff">15</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (temp <span style="color:#f92672">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>	nums <span style="color:#f92672">=</span> temp;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="free">free</h2>
+<p>In Java and C#, any memory that you&rsquo;re no longer using will be cleaned up by the garbage collector. C
+has no garbage collector, so you are in charge of releasing memory that you&rsquo;re done with. If you
+never release any allocated memory, you will eventually run out of space.</p>
+<p>The C function that releases dynamic memory is called <code>free</code>. Here is the prototype:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">free</span>(<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> pointer);
+</span></span></code></pre></div><p>Note that even though <code>free</code> takes a void pointer, it can take any type of pointer that has been
+dynamically allocated.</p>
+<p>Here&rsquo;s an example of using <code>free</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> malloc(<span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	nums[i] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//done using nums
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>free(nums);
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Julie Thornton
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis308-textbook/-/commit/168e51671f950458db76def9da876afc847e1ae5">Aug 3, 2022</a>
+</p>
+</div>
+
+    
+    </div>
+    
+    
+    
+    
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+
+<a id="logo" href="https://ksu-cs-textbooks.github.io/cis308/">
+  CIS 308: C Language Lab
+</a>
+
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="https://ksu-cs-textbooks.github.io/cis308/js/auto-complete.js?1659549500" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis308/js/lunr.min.js?1659549500" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis308/js/lunr.stemmer.support.min.js?1659549500" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis308/js/lunr.multi.min.js?1659549500" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis308/js/lunr.en.min.js?1659549500" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis308/js/search.js?1659549500" defer></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics collapsible-menu">
+          <li data-nav-id="/0-chapter/" title="Getting Started" class="dd-item"><input type="checkbox" id="section-c55c9f751a28ecc9415234375cddd395" class="toggle"/><label for="section-c55c9f751a28ecc9415234375cddd395" ></label><a href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/"><b>0. </b>Getting Started</a><ul>
+          <li data-nav-id="/0-chapter/0_1-vscode/" title="VS Code" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_1-vscode/">0.1. VS Code</a></li>
+          <li data-nav-id="/0-chapter/0_2-compilerun/" title="Compiling and Running" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-compilerun/">0.2. Compiling and Running</a></li>
+          <li data-nav-id="/0-chapter/0_3-usinggit/" title="Using git" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-usinggit/">0.3 Using git</a></li></ul></li>
+          <li data-nav-id="/1-chapter/" title="C Basics" class="dd-item"><input type="checkbox" id="section-7a71fe25dd66b523fca4004b7c4d01d0" class="toggle"/><label for="section-7a71fe25dd66b523fca4004b7c4d01d0" ></label><a href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/"><b>1. </b>C Basics</a><ul>
+          <li data-nav-id="/1-chapter/1_1-helloworld/" title="Hello, World" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_1-helloworld/">1.1. Hello, World</a></li>
+          <li data-nav-id="/1-chapter/1_2-variables/" title="Variables" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_2-variables/">1.2. Variables</a></li>
+          <li data-nav-id="/1-chapter/1_3-printing/" title="Printing" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_3-printing/">1.3. Printing</a></li>
+          <li data-nav-id="/1-chapter/1_4-userinput/" title="User Input" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_4-userinput/">1.4. User Input</a></li>
+          <li data-nav-id="/1-chapter/1_5-selectionstructures/" title="Selection Structures" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_5-selectionstructures/">1.5. Selection Structures</a></li>
+          <li data-nav-id="/1-chapter/1_6-loops/" title="Loops" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_6-loops/">1.6. Loops</a></li>
+          <li data-nav-id="/1-chapter/1_7-functions/" title="Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_7-functions/">1.7. Functions</a></li>
+          <li data-nav-id="/1-chapter/1_8-globalvariables/" title="Global Variables" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_8-globalvariables/">1.8. Global Variables</a></li></ul></li>
+          <li data-nav-id="/2-chapter/" title="Arrays, Strings, and Files" class="dd-item"><input type="checkbox" id="section-c23f766dd7728aa0e1cff094001eac05" class="toggle"/><label for="section-c23f766dd7728aa0e1cff094001eac05" ></label><a href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/"><b>2. </b>Arrays, Strings, and Files</a><ul>
+          <li data-nav-id="/2-chapter/2_1-arrays/" title="Arrays" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_1-arrays/">2.1. Arrays</a></li>
+          <li data-nav-id="/2-chapter/2_2-strings/" title="Strings" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_2-strings/">2.2. Strings</a></li>
+          <li data-nav-id="/2-chapter/2_3-files/" title="Files" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_3-files/">2.3. Files</a></li></ul></li>
+          <li data-nav-id="/3-chapter/" title="Pointers and Dynamic Memory" class="dd-item parent"><input type="checkbox" id="section-ccb531d159d5247057d21618514721b6" class="toggle" checked/><label for="section-ccb531d159d5247057d21618514721b6" ></label><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/"><b>3. </b>Pointers and Dynamic Memory</a><ul>
+          <li data-nav-id="/3-chapter/3_1-pointers/" title="Pointers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_1-pointers/">3.1. Pointers</a></li>
+          <li data-nav-id="/3-chapter/3_2-pointersvsarrays/" title="Pointers vs. Arrays" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_2-pointersvsarrays/">3.2. Pointers vs. Arrays</a></li>
+          <li data-nav-id="/3-chapter/3_3-interationwithpointers/" title="Iteration with Pointers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_3-interationwithpointers/">3.3. Iteration with Pointers</a></li>
+          <li data-nav-id="/3-chapter/3_4-pointerstopointers/" title="Pointers to Pointers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_4-pointerstopointers/">3.4. Pointers to Pointers</a></li>
+          <li data-nav-id="/3-chapter/3_5-callbyreference/" title="Call by Reference" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_5-callbyreference/">3.5. Call by Reference</a></li>
+          <li data-nav-id="/3-chapter/3_6-sizeof/" title="sizeof" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_6-sizeof/">3.6. sizeof</a></li>
+          <li data-nav-id="/3-chapter/3_7-dynamicmemory/" title="Dynamic Memory" class="dd-item active"><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/">3.7. Dynamic Memory</a></li>
+          <li data-nav-id="/3-chapter/3_8-multidimdynarrays/" title="Multi-dimensional Dynamic Arrays" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_8-multidimdynarrays/">3.8. Multi-dimensional Dynamic Arrays</a></li>
+          <li data-nav-id="/3-chapter/3_9-returningptrsfromfns/" title="Returning Pointers from Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_9-returningptrsfromfns/">3.9. Returning Pointers from Functions</a></li></ul></li>
+          <li data-nav-id="/4-chapter/" title="Structs" class="dd-item"><input type="checkbox" id="section-8ebf970484325d93d52075c7c72ba517" class="toggle"/><label for="section-8ebf970484325d93d52075c7c72ba517" ></label><a href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/"><b>4. </b>Structs</a><ul>
+          <li data-nav-id="/4-chapter/4_1-structsyntax/" title="Struct Syntax" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_1-structsyntax/">4.1. Struct Syntax</a></li>
+          <li data-nav-id="/4-chapter/4_2-structexample/" title="Struct Example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_2-structexample/">4.2. Struct Example</a></li>
+          <li data-nav-id="/4-chapter/4_3-structsandfunctions/" title="Structs and Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_3-structsandfunctions/">4.3. Structs and Functions</a></li>
+          <li data-nav-id="/4-chapter/4_4-arraysofstructs/" title="Arrays of Structs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_4-arraysofstructs/">4.4. Arrays of Structs</a></li>
+          <li data-nav-id="/4-chapter/4_5-pointerstostructs/" title="Pointers to Structs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_5-pointerstostructs/">4.5. Pointers to Structs</a></li>
+          <li data-nav-id="/4-chapter/4_6-linkedlists/" title="Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_6-linkedlists/">4.6. Linked Lists</a></li>
+          <li data-nav-id="/4-chapter/4_7-ptrstoptrs_linkedlists/" title="Pointers to Pointers in Linked Lists" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_7-ptrstoptrs_linkedlists/">4.7. Pointers to Pointers in Linked Lists</a></li></ul></li>
+          <li data-nav-id="/5-chapter/" title="User-Defined Types" class="dd-item"><input type="checkbox" id="section-b69c30f957b0ff55c1e9673979ceb29d" class="toggle"/><label for="section-b69c30f957b0ff55c1e9673979ceb29d" ></label><a href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/"><b>5. </b>User-Defined Types</a><ul>
+          <li data-nav-id="/5-chapter/5_1-enum/" title="Enums" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_1-enum/">5.1. Enums</a></li>
+          <li data-nav-id="/5-chapter/5_2-union/" title="Unions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_2-union/">5.2. Unions</a></li>
+          <li data-nav-id="/5-chapter/5_3-typedef/" title="typedef" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_3-typedef/">5.3. typedef</a></li>
+          <li data-nav-id="/5-chapter/5_4-usertypes_w_ptrs/" title="User-Defined Types with Pointers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_4-usertypes_w_ptrs/">5.4. User-Defined Types with Pointers</a></li>
+          <li data-nav-id="/5-chapter/5_5-preprocessor/" title="Preprocessor Directives" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_5-preprocessor/">5.5. Preprocessor Directives</a></li></ul></li>
+          <li data-nav-id="/6-chapter/" title="Multiple Files" class="dd-item"><input type="checkbox" id="section-482218cb3a05b9572157ed70ed9a5c02" class="toggle"/><label for="section-482218cb3a05b9572157ed70ed9a5c02" ></label><a href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/"><b>6. </b>Multiple Files</a><ul>
+          <li data-nav-id="/6-chapter/6_1-headerfiles/" title="Header Files" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_1-headerfiles/">6.1. Header Files</a></li>
+          <li data-nav-id="/6-chapter/6_2-makefiles/" title="Makefiles" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_2-makefiles/">6.2. Makefiles</a></li>
+          <li data-nav-id="/6-chapter/6_3-externvariables/" title="Extern Variables" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_3-externvariables/">6.3. Extern Variables</a></li></ul></li>
+          <li data-nav-id="/7-chapter/" title="Pointers to Functions" class="dd-item"><input type="checkbox" id="section-fc25ecfcb3d8e929949e8db759e88bab" class="toggle"/><label for="section-fc25ecfcb3d8e929949e8db759e88bab" ></label><a href="https://ksu-cs-textbooks.github.io/cis308/7-chapter/"><b>7. </b>Pointers to Functions</a><ul>
+          <li data-nav-id="/7-chapter/7_1-fnptrbasics/" title="Function Pointer Basics" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/7-chapter/7_1-fnptrbasics/">7.1. Function Pointer Basics</a></li>
+          <li data-nav-id="/7-chapter/7_2-fn_fnptr/" title="Functions and Function Pointers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/7-chapter/7_2-fn_fnptr/">7.2. Functions and Function Pointers</a></li>
+          <li data-nav-id="/7-chapter/7_3-arraysfnptrs/" title="Arrays of Function Pointers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis308/7-chapter/7_3-arraysfnptrs/">7.3. Arrays of Function Pointers</a></li></ul></li>
+        </ul>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="light-theme" value="light-theme" selected>Light Theme</option>
+                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter"><style>
+  #footer {
+      font-size: 13px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 1rem;
+      min-width: 230px;
+      max-width: 300px;
+  }
+  #footer p {
+      margin: 0;
+  }
+</style>
+  
+<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/K-State-Computational-Core/hugo-theme-relearn/tree/main">Hugo Relearn Theme</a>.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: .5rem auto" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        </div>
+      </div>
+    </aside>
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1659549500" defer></script>
+    
+    
+    
+    
+  </body>
+</html>

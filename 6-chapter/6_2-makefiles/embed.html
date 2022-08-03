@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Makefiles :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_2-makefiles/" rel="canonical" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_2-makefiles/index.xml" rel="alternate" type="application/rss+xml" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/_print/6-chapter/6_2-makefiles/" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_2-makefiles/tele.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549500" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549500" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1659549500" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1659549500" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1659549500" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1659549500" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1659549500"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis308/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1659549500" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1659549500" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_2-makefiles/embed.html">
+    
+    <div class="embed">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<p>It now takes three lines to compile our program, which is a pain to
+have to type every time we make a change. We can simplify
+compilation by placing all of the compilation instructions in a
+single file called a <em>Makefile</em>.</p>
+<h2 id="here-is-the-format-of-a-makefile">Here is the format of a Makefile:</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>compiler declaration
+</span></span><span style="display:flex;"><span>object list declaration
+</span></span><span style="display:flex;"><span>compiling/linking instruction
+</span></span><span style="display:flex;"><span>cleaning instruction (removing output files)
+</span></span></code></pre></div><p>Here is the Makefile for our 
+
+<a href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_1-headerfiles/">statistics program</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//saved in a file name Makefile, with no extension
+</span></span><span style="display:flex;"><span>CC = gcc
+</span></span><span style="display:flex;"><span>OBJECTS = prog.o stats.o
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nums: $(OBJECTS)
+</span></span><span style="display:flex;"><span>    $(CC) $(OBJECTS) –o nums
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>clean:
+</span></span><span style="display:flex;"><span>    rm *.o num
+</span></span></code></pre></div><p>Now, let&rsquo;s go through the Makefile one line at a time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>CC = gcc
+</span></span></code></pre></div><p>This line declares the variable <code>CC</code>, and says that we&rsquo;re using the
+gcc compiler.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>OBJECTS = prog.o stats.o
+</span></span></code></pre></div><p>This declares the variable <code>OBJECTS</code>, which contains a list of all
+object files for the program. (An object file is a single file
+converted to machine code.) We have a .o file for every .c file in
+our program. So, since we have the files <code>prog.c</code> and <code>stats.c</code>,
+will we get the object files <code>prog.o</code> and <code>stats.o</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>nums: $(OBJECTS)
+</span></span><span style="display:flex;"><span>    $(CC) $(OBJECTS) –o nums
+</span></span></code></pre></div><p>This line describes how to compile our program. The<code>nums</code> at
+the beginning is a name we&rsquo;re giving this compilation instruction –
+we could have called it anything. For our program to compile, all
+the .o files must be generated. The <code>$(OBJECTS)</code> on the top line
+gets the value out of the <code>OBJECTS</code> variable. This line says that to
+compile the program, all the object files must be made.</p>
+<p>When we substitute the values of the variables, the next line
+becomes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc prog.o stats.o –o nums
+</span></span></code></pre></div><p>This line says to link together the two object files, and rename the
+executable to <code>nums</code>. (That&rsquo;s the <code>–o nums</code> part).</p>
+<p>Next, we have:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>clean:
+</span></span><span style="display:flex;"><span>    rm *.o nums
+</span></span></code></pre></div><p>This line says that to clean our program, we want to delete the
+object files (*.o) and the executable (<code>nums</code>).</p>
+<h2 id="using-a-makefile">Using a Makefile</h2>
+<p>Now that we have a Makefile, we want to use it to compile our
+program. To compile a program with a Makefile, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>make
+</span></span></code></pre></div><p>This will generate all the object files, link them together, and
+create the executable called <code>nums</code>.</p>
+<p>To run our program, we do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>./nums
+</span></span></code></pre></div><p>This is the same as what we&rsquo;ve done before to run our program,
+but now the executable is named <code>nums</code> instead of <code>a.out</code>.</p>
+<p>To remove all the output files, we type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>make clean
+</span></span></code></pre></div><p>This will remove all the .o files and the executable <code>nums</code>.</p>
+<h2 id="makefile-rules">Makefile Rules</h2>
+<p>We could spend the rest of the semester talking about exactly how
+Makefiles work and different intricacies and still not cover
+everything. Makefiles are a very powerful tool – we&rsquo;ve only
+scratched the surface to be able to compile our program in a
+specific way.</p>
+<p>Here are some rules to follow as you write your own Makefiles:</p>
+<ul>
+<li>You should always define the variables <code>CC</code> and
+<code>OBJECTS</code>. The value of <code>OBJECTS</code> should include a .o
+file for every .c file in your program.</li>
+<li>You can rename your executable (<code>-o nums</code>) to be
+whatever you want.</li>
+<li>There should be a tab character at the beginning of the
+second line for the <code>nums: instruction</code> and the <code>clean: instruction</code>. This MUST be a tab – spaces won&rsquo;t work.</li>
+<li>For the most part, your Makefiles will remain the same
+from program to program. You&rsquo;ll just change the
+<code>OBJECTS</code> list and change the name of the executable.</li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1659549500" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1659549500" defer></script>
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/embed-iframe.js?1659549500 defer"></script>
+    
+    
+    
+  </body>
+</html>

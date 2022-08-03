@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Pointers :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_1-pointers/" rel="canonical" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_1-pointers/index.xml" rel="alternate" type="application/rss+xml" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/_print/3-chapter/3_1-pointers/" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_1-pointers/embed.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1659549501" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1659549501" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1659549501" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1659549501" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1659549501" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1659549501" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1659549501" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1659549501"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis308/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1659549501" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1659549501" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_1-pointers/">
+    
+    <div id="tele" class="tele mirror">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h1>Pointers</h1>
+    
+    
+<p>Pointers in C are variables that store the memory address of some other variable or data. They have an associated type of what kind of value they reference.</p>
+<p>Pointers are one of the most difficult concepts in the C language. However, mastering pointers allows you do have a deeper understanding of what actually happens when your program runs. Higher-level languages do not explicitly use pointers, but they do use pointers &ldquo;behind the scenes&rdquo;. Learning pointers in C can also help you understand what&rsquo;s going on in Java/C#/etc. programs.</p>
+<h2 id="declaring">Declaring</h2>
+<p>The type of a pointer variable is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>type*
+</span></span></code></pre></div><p>where <em>type</em> is the type of data this pointer will reference. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> intPtr;
+</span></span></code></pre></div><p><em>intPtr</em> can hold the address of an int variable. Another:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> charPtr;
+</span></span></code></pre></div><p><em>charPtr</em> can hold the address of a char variable.</p>
+<p>When you are declaring pointers, the * can go any where between the type and the variable name. For example, all of the following are acceptable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> intPtr;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span> intPtr;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>intPtr;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>intPtr;
+</span></span></code></pre></div><p>Variables in C are not automatically initialized – and this includes pointers. After declaring a pointer, it holds some garbage value that was left in that spot in memory.</p>
+<h2 id="-operator-address-of">&amp; Operator (Address-Of)</h2>
+<p>The &amp; operator returns the memory address of a variable. For example, if we have:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span></code></pre></div><p>And the <em>x</em> variable is stored at spot 1714 in memory (every variable is given a certain spot in memory, and these spots have an associated number), then if we do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#f92672">&amp;</span>x
+</span></span></code></pre></div><p>this will give us the 1714 spot.</p>
+<p>The address-of operator isn&rsquo;t very useful unless we&rsquo;re using pointers. Since pointers are supposed to hold memory addresses, we can initialize them to be the address of some other variable.</p>
+<p>So, suppose we have the following variable declarations:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>; <span style="color:#75715e">//x is given spot 1714 in memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>xPtr;
+</span></span></code></pre></div><p>We can make the <em>xPtr</em> variable reference <em>x</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xPtr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>x; <span style="color:#75715e">//Now xPtr &#34;points to&#34; x – it holds address 1714
+</span></span></span></code></pre></div><p>Notice that when we DECLARE a pointer, we include the *. However, when we INITIALIZE the pointer, we don&rsquo;t include the *.</p>
+<h2 id="-operator-dereferencing">* Operator (Dereferencing)</h2>
+<p>The * operator is an operator specifically for pointer variables. It returns the value of what is being pointed at.</p>
+<p>For example, if we have:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>; <span style="color:#75715e">//x is given spot 1714 in memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>xPtr;
+</span></span><span style="display:flex;"><span>xPtr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>x;
+</span></span></code></pre></div><p>Then saying *<em>xPtr</em> gets us the value pointed to by <em>xPtr</em>. <em>xPtr</em> holds memory address 1714, so if I say *<em>xPtr</em>, then I get the value stored in spot 1714 – which is a 4. I can also use this operator to modify the value at that spot in memory. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#f92672">*</span>xPtr <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span></code></pre></div><p>Now the value at spot 1714 is a 6. The <em>x</em> variable is stored in spot 1714, so now <em>x</em> has the value 6.</p>
+<h2 id="example">Example</h2>
+<p>The following example illustrates how pointers work:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i; <span style="color:#75715e">//i gets a memory location, say 3245, and has some random value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>ip; <span style="color:#75715e">//ip has some random address
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>i <span style="color:#f92672">=</span> <span style="color:#ae81ff">36</span>; <span style="color:#75715e">//i has the value 36
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">*</span>ip <span style="color:#f92672">=</span> <span style="color:#ae81ff">72</span>; <span style="color:#75715e">//Most likely, causes a segmentation fault
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ip <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span> i; <span style="color:#75715e">//ip references memory address 3245
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">*</span>ip <span style="color:#f92672">=</span> <span style="color:#ae81ff">72</span>; <span style="color:#75715e">//Memory address 3245 has value 72 (so i = 72)
+</span></span></span></code></pre></div><p>The reason <code>*ip = 72</code> will cause problems is that <code>*ip</code> currently holds some random memory address, since it has not been initialized. When we say <code>*ip</code>, we&rsquo;re trying to access the memory at that random spot. This is most likely not the program&rsquo;s memory, so we will get a segmentation fault when we try to change it. (The other possibility is that we could end up overwriting one of the other program variables.)</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1659549501" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1659549501" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1659549501" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1659549501" defer></script>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/tele-scroll.js?1659549501 defer"></script>
+    
+  </body>
+</html>
