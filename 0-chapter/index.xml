@@ -282,7 +282,7 @@ Find code in terminal To compile and run a C program, make sure the integrated t
       <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-usinggit/</guid>
       <description>This class will use GitHub links to create initial repositories for both labs and programming projects, similarly to what you have done in CIS 300 and 301.
 GitHub account First, you will need to create a GitHub account here. If you already have one, you can use your existing account.
-Clone the repository When you get a new assignment, first click the assignment link &amp;ndash; this will create an initial GitHub repository.</description>
+Verify a git install You will likely already have a command-line version of git installed on your machine. To check, open a folder in VS Code, display the integrated terminal, and type:</description>
     </item>
   </channel>
 </rss>
