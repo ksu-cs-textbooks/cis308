@@ -5,8 +5,7 @@ weight: 53
 date: 2018-08-24T10:53:26-05:00
 ---
 
-You can create arrays of structs in C just like you can create arrays of any other type. The
-format for creating constant-sized arrays is:
+You can create arrays of structs in C just like you can create arrays of any other type. The format for creating constant-sized arrays is:
 
 ```text
 type name[size];
