@@ -25,7 +25,7 @@ handled very similarly to how they are in C.)
 ## Defining Enums
 Here's the format for defining an enum in C:
 
-```c
+```text
 enum typeName {
     value1,
     value2,
@@ -41,6 +41,7 @@ variables we want to create of type `typeName`. In this definition,
 `typeName` and `objectList` are both optional.
 
 Here's how we would represent medals using an enum:
+
 ```c
 enum medal {gold, silver, bronze};
 ```
@@ -58,7 +59,7 @@ And here's how to give this variable the value `gold`:
 
 ```c
 medal100m = gold;
-```c
+```
 
 We can also use the possible values `gold`, `silver`, and
 `bronze` in comparisons:

@@ -67,7 +67,7 @@ int fscanf(FILE *stream, char str[], variable addresses...)
 
 Suppose the file data.txt looks like this (a bunch of names and ages, each on separate lines):
 
-```
+```text
 Bob 20
 Jill 15
 Tony 17

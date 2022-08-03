@@ -11,7 +11,7 @@ but that value is not restricted to a single type.
 
 Here's the format for declaring a union:
 
-```c
+```text
 union modelName {
     type1 name1;
     type2 name2;

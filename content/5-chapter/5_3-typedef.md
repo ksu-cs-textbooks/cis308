@@ -11,7 +11,7 @@ can do just that.
 
 The format of typedef is:
 
-```c
+```text
 typedef oldType newType;
 ```
 

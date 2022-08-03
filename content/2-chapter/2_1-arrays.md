@@ -14,7 +14,7 @@ Arrays in C are, for the most part, the same as arrays in Java or C#. Here are t
 
 Here is the format for declaring an array:
 
-```c
+```text
 type name[size];
 ```
 

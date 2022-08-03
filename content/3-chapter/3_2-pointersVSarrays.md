@@ -14,26 +14,30 @@ Then we get a spot in memory that looks like this:
 
 ![new array](/images/emptyArray.png)
 
-But what is *nums*? It is actually a constant pointer to the first spot in the array, **nums[0]**. So really, the picture looks like this:
+But what is *nums*? It is actually a constant pointer to the first spot in the array, `nums[0]`. So really, the picture looks like this:
 
 ![nums array](/images/numsArray.png)
 
-So, **&nums[0]** (the address of the first element in the array) is the same thing as *nums*.
+So, `&nums[0]` (the address of the first element in the array) is the same thing as `nums`.
 
 ## Pointer Notation
 Because pointers and arrays are essentially the same thing (except array addresses cannot be
 changed), we can also access elements in an array by treating it as a pointer. In the above
-example, *nums* is a pointer to the first spot in the array. Space for arrays is reserved
+example, `nums` is a pointer to the first spot in the array. Space for arrays is reserved
 contiguously, so the second element in the array is physically next to the first element. This
 means that I can say:
-*nums+1*
+
+```text
+nums+1
+```
+
 to get the memory address of the second element in the array.
 
-Note: an integer uses 4 bytes of space. However, you don’t say *nums+4* to move to the next
+Note: an integer uses 4 bytes of space. However, you don’t say `nums+4` to move to the next
 integer. This is because pointers have a particular type associated with them – like an int – and
-the compiler will automatically move over the space of an int when you say *+1*.
+the compiler will automatically move over the space of an int when you say `+1`.
 
-Suppose now that you want to initialize the value at index 4 in the *nums* array to 7. You could
+Suppose now that you want to initialize the value at index 4 in the `nums` array to 7. You could
 say:
 
 ```c

@@ -9,7 +9,7 @@ date: 2018-08-24T10:53:26-05:00
 
 Here is the syntax for declaring a function pointer:
 
-```c
+```text
 return_type (*ptr_name) (args);
 ```
 
@@ -17,7 +17,7 @@ This declares `ptr_name` as a pointer to a function that returns something of ty
 
 The extra parentheses around `(*ptr_name)` are needed because there are precedence relationships in declarations just as there are in expressions. If instead we did:
 
-```c
+```text
 //THIS IS INCORRECT FOR DECLARING A FUNCTION POINTER!
 return_type *ptr_name (args);
 ```

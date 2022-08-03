@@ -13,7 +13,7 @@ Pointers are one of the most difficult concepts in the C language. However, mast
 
 The type of a pointer variable is:
 
-```c
+```text
 type*
 ```
 
@@ -105,4 +105,4 @@ ip = & i; //ip references memory address 3245
 *ip = 72; //Memory address 3245 has value 72 (so i = 72)
 ```
 
-The reason ***ip = 72** will cause problems is that *ip* currently holds some random memory address, since it has not been initialized. When we say **ip*, we're trying to access the memory at that random spot. This is most likely not the program's memory, so we will get a segmentation fault when we try to change it. (The other possibility is that we could end up overwriting one of the other program variables.)
+The reason `*ip = 72` will cause problems is that `*ip` currently holds some random memory address, since it has not been initialized. When we say `*ip`, we're trying to access the memory at that random spot. This is most likely not the program's memory, so we will get a segmentation fault when we try to change it. (The other possibility is that we could end up overwriting one of the other program variables.)

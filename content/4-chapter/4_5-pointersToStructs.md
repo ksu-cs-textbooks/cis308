@@ -8,7 +8,7 @@ date: 2018-08-24T10:53:26-05:00
 You can declare a pointer to a struct just like you declare a pointer to another element type. The
 format for declaring a pointer is:
 
-```c
+```text
 type* name;
 ```
 

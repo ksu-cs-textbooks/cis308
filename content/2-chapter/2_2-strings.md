@@ -328,7 +328,7 @@ scanf("%s", buff);
 value of some other variable. A lot of the string functions involve writing to strings, and none of them will handle an out-of-bounds error gracefully. 
 
 When you use the following functions, **MAKE SURE you have enough memory allocated**:
-- scanf
-- strcpy
-- strcat
-- strncpy
+- `scanf`
+- `strcpy`
+- `strcat`
+- `strncpy`

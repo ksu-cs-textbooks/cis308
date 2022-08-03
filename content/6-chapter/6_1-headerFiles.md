@@ -202,19 +202,19 @@ corresponding .c file, like structs, unions, and enums.
 ## Compiling with Multiple Files
 The way we would compile the original statistics program (in the file `prog.c`) is:
 
-```c
+```text
 gcc prog.c
 ```
 
 Now that our program is in two files, we might try:
 
-```c
+```text
 gcc prog.c stats.c
 ```
 
 or
 
-```c
+```text
 gcc stats.c
 gcc prog.c
 ```
@@ -228,7 +228,7 @@ it won't be able to properly link them.
 To compile our new program, we must first compile each file
 separately:
 
-```c
+```text
 gcc –c stats.c
 gcc –c prog.c
 ```
@@ -241,7 +241,7 @@ respectively.
 Now, we need to link these two compiled files into
 an executable:
 
-```c
+```text
 gcc stats.o prog.o
 ```
 

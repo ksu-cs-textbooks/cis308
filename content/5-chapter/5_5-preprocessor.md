@@ -53,7 +53,7 @@ and to define macros (simplified functions).
 ### Constants
 A constant in C is defined like this:
 
-```c
+```text
 #define name value
 ```
 
@@ -172,7 +172,7 @@ buffer. It reads one character at a time until it runs out of input.
 There is also a pre-processor if-statement that checks to see
 whether or not a constant has been defined. Here's the format:
 
-```c
+```text
 #ifdef (pre-processor constant)
 code
 #endif

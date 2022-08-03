@@ -12,7 +12,7 @@ single file called a *Makefile*.
 
 ## Here is the format of a Makefile:
 
-```
+```text
 compiler declaration
 object list declaration
 compiling/linking instruction
@@ -21,7 +21,7 @@ cleaning instruction (removing output files)
 
 Here is the Makefile for our [statistics program]({{<ref "6-chapter/6_1-headerFiles.md" >}})
 
-```
+```text
 //saved in a file name Makefile, with no extension
 CC = gcc
 OBJECTS = prog.o stats.o
@@ -35,14 +35,14 @@ clean:
 
 Now, let's go through the Makefile one line at a time:
 
-```
+```text
 CC = gcc
 ```
 
 This line declares the variable `CC`, and says that we're using the
 gcc compiler. 
 
-```
+```text
 OBJECTS = prog.o stats.o
 ```
 
@@ -52,7 +52,7 @@ converted to machine code.) We have a .o file for every .c file in
 our program. So, since we have the files `prog.c` and `stats.c`,
 will we get the object files `prog.o` and `stats.o`.
 
-```
+```text
 nums: $(OBJECTS)
     $(CC) $(OBJECTS) –o nums
 ```
@@ -67,7 +67,7 @@ compile the program, all the object files must be made.
 When we substitute the values of the variables, the next line
 becomes:
 
-```
+```text
 gcc prog.o stats.o –o nums
 ```
 
@@ -76,7 +76,7 @@ executable to `nums`. (That's the `–o nums` part).
 
 Next, we have:
 
-```
+```text
 clean:
     rm *.o nums
 ```
@@ -87,7 +87,7 @@ object files (*.o) and the executable (`nums`).
 Now that we have a Makefile, we want to use it to compile our
 program. To compile a program with a Makefile, type:
 
-```
+```text
 make
 ```
 
@@ -96,7 +96,7 @@ create the executable called `nums`.
 
 To run our program, we do:
 
-```
+```text
 ./nums
 ```
 
@@ -105,7 +105,7 @@ but now the executable is named `nums` instead of `a.out`.
 
 To remove all the output files, we type:
 
-```
+```text
 make clean
 ```
 

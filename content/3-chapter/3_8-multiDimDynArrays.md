@@ -5,11 +5,11 @@ weight: 47
 date: 2018-08-24T10:53:26-05:00
 ---
 
-We can also create multi-dimensional dynamic arrays using *malloc*. This section will focus on
+We can also create multi-dimensional dynamic arrays using `malloc`. This section will focus on
 creating two-dimensional arrays. You can get more dimensions by adapting the following
 process:
 
-1. Use *malloc* to create an array of pointers. Each pointer in the array will point to a row
+1. Use `malloc` to create an array of pointers. Each pointer in the array will point to a row
 in the two-dimensional array. 
 
 For example:
@@ -18,7 +18,7 @@ For example:
 int **matrix = malloc(3*sizeof(int*));
 ```
 
-2. Use *malloc* to allocate space for each row:
+2. Use `malloc` to allocate space for each row:
 
 ```c
 int i;

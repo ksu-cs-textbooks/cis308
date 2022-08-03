@@ -69,7 +69,7 @@ function around `malloc` is exemplified by the `chkmalloc` function we've seen b
 One side point about pointers to pointers and memory allocation: although the `void*` type, as returned
 by `malloc`, is a *generic pointer*, suitable for assigning to or from pointers of any type, the hypothetical
 type `void**` is NOT a *generic pointer to pointer.* Our `allocstr` example can only be used for allocating
-pointers to ``char`. 
+pointers to `char`. 
 
 It would not be possible to use a function which returned generic pointers indirectly
 via a `void** pointer, because when you tried to use it, for example by declaring and calling:

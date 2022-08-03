@@ -18,7 +18,7 @@ corresponding .c file.
 variable
 3) When you want to use the variable, declare:
 
-```c
+```text
 extern type name;
 ```
 

@@ -11,7 +11,7 @@ Since a function pointer is a valid type, we can pass function pointers as argum
 
 Recall that the syntax for declaring a function ponter is:
 
-```c
+```text
 return_type (*ptr_name) (args);
 ```
 

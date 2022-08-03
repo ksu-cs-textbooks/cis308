@@ -5,7 +5,7 @@ weight: 45
 date: 2018-08-24T10:53:26-05:00
 ---
 
-The *sizeof* function in C returns the number of bytes needed to store a specified type. It is
+The `sizeof` function in C returns the number of bytes needed to store a specified type. It is
 needed for dynamic memory allocation because we need to know how many bytes we want to
 allocate.
 
@@ -15,7 +15,7 @@ Here is the prototype:
 int sizeof(type);
 ```
 
-where *type* is a defined type in C, like *char* or *int**. Here are a few examples:
+where `type` is a defined type in C, like `char` or `int`. Here are a few examples:
 
 ```c
 sizeof(int) 	//evaluates to 4

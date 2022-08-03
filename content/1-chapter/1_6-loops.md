@@ -41,7 +41,7 @@ Notice that we don't have to give `c*`a dummy initial value, as we did in the wh
 ## For-Loop
 The syntax of a for-loop is just like it is in other languages:
 
-```c
+```text
 for (initialization; condition; update) 
 {
 	//code

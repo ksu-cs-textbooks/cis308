@@ -8,7 +8,7 @@ pre: "1.2. "
 
 Variables in C are declared exactly like variables in Java or C#. Just say:
 
-```c
+```text
 type name;
 ```
 
@@ -33,13 +33,13 @@ double val;
 
 To initialize:
 
-```c
+```text
 name = value;
 ```
 
 Where `name` is the name of the variable, and `value` is the value you want to store in it. You can also do:
 
-```c
+```text
 type name = value;
 ```
 

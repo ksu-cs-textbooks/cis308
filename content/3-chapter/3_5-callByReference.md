@@ -23,13 +23,13 @@ int y = 4;
 swap(x, y);
 ```
 
-This code fragment is supposed to swap the values in *x* and *y*, so that **x = 4** and **y = 3**.
-However, when we call *swap*, only the VALUES 3 and 4 are passed – not *x* and *y* themselves.
-The values 3 and 4 get bound to the function parameters *a* and *b*. By the end of the function, we
-do have that **a = 4** and **b = 3**. However, *x* and *y* don’t change because they are completely
-different from *a* and *b*.
-If we do want to change *x* and *y*, we need to pass in the address of *x* and the address of *y*. Then,
-we can update the values at those memory locations. Here is our revised *swap* function:
+This code fragment is supposed to swap the values in `x` and `y`, so that `x == 4` and `y == 3`.
+However, when we call `swap`, only the VALUES 3 and 4 are passed – not `x` and `y` themselves.
+The values 3 and 4 get bound to the function parameters `a` and `b`. By the end of the function, we
+do have that `a == 4` and `b == 3`. However, `x` and `y` don’t change because they are completely
+different from `a` and `b`.
+If we do want to change `x` and `y`, we need to pass in the address of `x` and the address of `y`. Then,
+we can update the values at those memory locations. Here is our revised `swap` function:
 
 ```c
 //Take two memory addresses (pointers)
@@ -40,7 +40,7 @@ void swap(int *a, int *b) {
 }
 ```
 
-Now, when we call *swap*, we will need to pass the memory address of the variables we want to
+Now, when we call `swap`, we will need to pass the memory address of the variables we want to
 swap. This means we need to use the & operator:
 
 ```c

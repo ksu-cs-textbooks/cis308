@@ -26,7 +26,7 @@ for (ip = nums; ip < nums+10; ip++) {
 }
 ```
 
-Here, *ip* is a pointer that starts by pointing to the first element in the array. We loop while the
-value of *ip* (the memory address) is less than *nums+10* – which is the address of the last
-element in the array. Each time, *ip++* advances *ip* to point at the next element in the array.
-Inside the loop, we dereference ip to get the current array element, and set that element to 0.
+Here, `ip` is a pointer that starts by pointing to the first element in the array. We loop while the
+value of `ip` (the memory address) is less than `nums+10` – which is the address of the last
+element in the array. Each time, `ip++` advances `ip` to point at the next element in the array.
+Inside the loop, we dereference `ip` to get the current array element, and set that element to 0.

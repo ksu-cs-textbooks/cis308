@@ -11,7 +11,7 @@ class in Java. A struct is simply a new variable type that is a collection of re
 ## Syntax
 Here is the format of a struct declaration:
 
-```c
+```text
 struct name {
     type1 name1;
     type2 name2;
@@ -52,7 +52,7 @@ You can automatically declare struct variables by listing variable names at the 
 definition. You can also declare them outside the definition just like you do ordinary variables.
 The format for declaring variables in C is:
 
-```
+```text
 type name;
 ```
 
