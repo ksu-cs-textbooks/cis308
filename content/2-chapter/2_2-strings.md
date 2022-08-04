@@ -76,8 +76,7 @@ A better choice for reading in strings is the `fgets` function. Here's the proto
 char[] fgets(char s[], int size, FILE *stream);
 ```
 
-You pass `fgets` the string buffer (`s`), the size of the buffer (`size`), and the stream you're reading from (use `stdin` to read as regular user input). It returns the string it read, or `NULL` if it was unable to read
-anything. 
+You pass `fgets` the string buffer (`s`), the size of the buffer (`size`), and the stream you're reading from (use `stdin` to read as regular user input). It returns the string it read, or `NULL` if it was unable to read anything. 
 
 It will stop reading user input when either:
 - It has read `size-1` characters (it needs the last spot for a '\0')
@@ -90,8 +89,12 @@ Here is same example using `fgets`:
 char name[10];
 printf("Enter your name: "); //Suppose you enter "Fred"
 fgets(name, 10, stdin);
-printf("Hello, %s!\n", name); //Will print "Hello, Fred!"
+printf("Hello, %s", name); //Will print "Hello, Fred"
 ```
+
+NOTE: if `fgets` reaches a newline character before reading `size-1` characters, it WILL store the newline as its last character (just before the `\0`). If the user enters "Fred" in the example above, the `name` array will hold: `{'F', 'r', 'e', 'd', '\n', '\0', (garbage), (garbage), (garbage), (garbage)}`.
+
+If you want to remove that `\n` character, you will need to overwrite the `\n` to hold the end-of-string character instead (`\0`). We will see a convenient trick for doing this in the `strcspn` section below.
 
 ## Conversions
 It is sometimes necessary to convert between strings, ints, and doubles. Here is a list of conversion functions:
@@ -102,7 +105,7 @@ It is sometimes necessary to convert between strings, ints, and doubles. Here is
 
 To use any of these functions, you need to add:
 
-```c
+```text
 #include <stdlib.h>
 ```
 
@@ -130,7 +133,7 @@ itof(d, buff, 10); //buff = "4.75"
 ## String Functions
 Below is a list of common string functions. To use any of these, you need to add:
 
-```c
+```text
 #include <string.h>
 ```
 
@@ -209,7 +212,7 @@ src[0] = 'B'; 				//Now src is "Bello", and dest is "hello"
 int strcspn(char str1[], char str2[]);
 ```
 
-This function returns the number of characters appear in `str1` before reaching ANY character from `str2`.
+This function returns the number of characters that appear in `str1` before reaching ANY character from `str2`. (If the first character in `str1` also appears in `str2`, then `strcspn` returns 0.)
 
 For example:
 
@@ -223,6 +226,22 @@ scanf("%s", str);
 index = strcpsn(str, "la"); //index is 2
 //2 characters appear in str before finding any character from "la"
 ```
+
+`strcspn` is especially handy for removing the trailing `\n` that gets added to strings when using `fgets`. As we saw earlier in this section, if we do:
+
+```c
+char name[10];
+printf("Enter your name: ");
+fgets(name, 10, stdin);
+```
+
+And enter "Fred", then the `name` array will hold `{'F', 'r', 'e', 'd', '\n', '\0', (garbage), (garbage), (garbage), (garbage)}`. We can use `strcspn` to find the index of `\n` and then replace it with a `\0`:
+
+```c
+name[strcspn(name, "\n")] = '\0';
+```
+
+When `strcspn` gives us the number of characters read before reaching a `\n`, that IS the index of `\n`. In the same line, we can replace that position to be the end-of-string marker, which effectively deletes the newline from the end of the string.
 
 ### strlen
 ```c

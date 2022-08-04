@@ -9,7 +9,7 @@ This section contains information on opening a file, reading from a file, and wr
 
 Whenever you are doing file I/O, you need to add:
 
-```c
+```text
 #include <stdio.h>
 ```
 
@@ -118,6 +118,8 @@ if (fp != NULL) {
   fclose(fp);
 }
 ```
+
+As we saw when using `fgets` to read from `stdin`, it WILL store the newline character at the end of each string when reading from a file (assuming there is still room in the array). You may want to use `strcspn` to overwrite the `\n` with a `\0`.
 
 Reading files with `fscanf` is usually simpler (since it doesn't involve parsing lines), but it is more error-prone than `fgets`.
 
