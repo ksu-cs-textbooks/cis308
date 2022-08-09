@@ -65,7 +65,7 @@ Write the code for your project. As you go, save it and test it with the `gcc` c
 Once you are ready to commit your changes, type the following in the integrated terminal:
 
 ```text
-git add *
+git add .
 ```
 
 This will add all changes to the current commit. Then type:
