@@ -46,7 +46,9 @@ pacman -S base-devel gcc
 
 When prompted, say Y. You should now have both `gcc` and `make` installed.
 
-In order to use these commands from the command prompt, you will need to add C:\msys64\mingw64\bin to your Path (click Start, type *Environment variables*, and select "Edit the system environment variables"). Click "Environment Variables..", then find Path under System variables and click "Edit...". Click "New", paste in *C:\msys64\mingw64\bin*, and click OK three times to dismiss each frame.
+In order to use these commands from the command prompt, you will need to add their location to your Path. Check both `C:\msys64\mingw64\bin` and `C:\msys64\usr\bin` -- copy the address of whichever location contains `gcc.exe`.
+
+Next, add that location to your Path. Click Start, type *Environment variables*, and select "Edit the system environment variables"). Click "Environment Variables..", then find Path under System variables and click "Edit...". Click "New", paste in the address you copied in the previous step, and click OK three times to dismiss each frame.
 
 Open VS Code with an integrated terminal. Try typing:
 
