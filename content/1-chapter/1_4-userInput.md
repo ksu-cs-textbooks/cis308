@@ -76,21 +76,5 @@ input. The bad input will still be in the input buffer if you
 call `scanf` again. To fix this, call `getchar()` until you reach `EOF`. This
 will clear the input buffer.
 
-## `scanf_s(...)`
 
-The `scanf_s(...)` is a Microsoft function that is supposed to be safer.
-
-From MSDN Help:
-
-"Unlike scanf and wscanf, scanf_s and wscanf_s require the buffer size to be
-specified for all input parameters of type c, C, s, S, or string control sets that are enclosed in []. The buffer size in characters is passed as an additional parameter immediately following the pointer to the buffer or variable. For example, if you are reading a string, the buffer size for that string is passed as follows:
-
-```c
-char s[10];
-scanf_s("%9s", s, (unsigned)_countof(s)); 
-// buffer size is 10, width specification is 9
-```
-
-The buffer size includes the terminating `null`. You can use a width specification field to ensure that the token that's read in will fit into the buffer. If no width specification field is used, and the token read in is too big to fit in the buffer, nothing is written to that buffer."
-
-For more in depth discussion of Microsoft C programming language, please check the "C Language Reference" in the MSDN Help webpage 
+In the next chapter, we will see that `scanf` can be very dangerous to use when reading strings from user input. In short, if the user enters a string that is longer than expected, `scanf` can accidentally overwrite other parts of memory. This can even be exploited using a *buffer overflow attack* by tricking `scanf` into reading in program instructions.
