@@ -48,7 +48,7 @@ Clone your GitHub repository to your new, empty folder (which should be the curr
 git clone {repository-url} ./
 ```
 
-Where `{repository-url}` is the URL you copied from your GitHub repository (leave off the `{` and `}` when you insert your URL). The `/.` tells git to clone the repository to the current directory.
+Where `{repository-url}` is the URL you copied from your GitHub repository (leave off the `{` and `}` when you insert your URL). The `./` tells git to clone the repository to the current directory.
 
 ## Add code and test
 
