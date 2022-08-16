@@ -292,7 +292,7 @@ Printing Variables Printing variables works a bit differently. First, you specif
       <link>https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_4-userinput/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_4-userinput/</guid>
-      <description>User input in C is, in short, a pain. There are three major input functions: getchar(), scanf(...), and scanf_s(...). To use any of these functions, you must include the stdio.h library.
+      <description>User input in C is, in short, a pain. There are three major input functions: getchar(), scanf(...), and fgets(...). To use any of these functions, you must include the stdio.h library.
 getchar() The getchar() function takes no arguments and returns the very next character in the standard input stream. If there are no more characters in the input stream, it returns the constant EOF.
 Here&amp;rsquo;s an example that reads a student&amp;rsquo;s letter grade and then prints it back to the console.</description>
     </item>
