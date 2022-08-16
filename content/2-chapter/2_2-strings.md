@@ -68,7 +68,7 @@ printf("Hello, %s!\n", name); //Will print "Hello, Fred!"
 Notice that when you use `scanf` to read in a string, you do not need to put an & in front of the string variable name. This is because a string is an array of characters, and arrays are already memory addresses. (We'll learn more about this in the section on Pointers.)
 
 The trouble with using `scanf` to input strings is that the function doesn't check the size of the array when it is reading input. So, if you typed the name "George Washington" in the above example (which needs 18 characters of space), `scanf` wouldn't stop writing once it reached the end of the array. Instead, it would try to write past the end of the array. This would
-cause some of your variables to be overwritten, or a segmentation fault.
+cause some of your variables to be overwritten, or a segmentation fault. In the worst case, it could be exploited by a hacker with a *buffer overflow attack*, where the hacker knowingly inserted program instructions beyond the bounds of the input buffer.
 
 A better choice for reading in strings is the `fgets` function. Here's the prototype:
 

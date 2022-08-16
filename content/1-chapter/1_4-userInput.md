@@ -5,7 +5,7 @@ pre: "1.4. "
 ---
 
 User input in C is, in short, a pain. There are three major input functions:
-`getchar()`, `scanf(...)`, and `scanf_s(...)`. To use any of these functions, you must include the `stdio.h` library.
+`getchar()`, `scanf(...)`, and `fgets(...)`. To use any of these functions, you must include the `stdio.h` library.
 
 ## `getchar()`
 
@@ -78,3 +78,5 @@ will clear the input buffer.
 
 
 In the next chapter, we will see that `scanf` can be very dangerous to use when reading strings from user input. In short, if the user enters a string that is longer than expected, `scanf` can accidentally overwrite other parts of memory. This can even be exploited using a *buffer overflow attack* by tricking `scanf` into reading in program instructions.
+
+When we reach the section on strings (2.2), we will learn about the `fgets` function, which is a safer option for reading strings from both standard input and files.

@@ -5,14 +5,14 @@ weight: 48
 date: 2018-08-24T10:53:26-05:00
 ---
 
-We can also return pointers from functions, via
+We can also return pointers from functions via
 pointer arguments rather than as the formal return value. To explain this, let's first step back and
 consider the case of returning a simple type, such as int, from a function via a pointer argument. 
 
 If we write the function:
 
 ```c
-f(int *ip) {
+void f(int *ip) {
     *ip = 5;
 }
 ```
@@ -31,7 +31,7 @@ return one value via the return statement.) The important thing to notice is tha
 return a value of type int, it used a parameter of type pointer-to-int.
 
 Now,	suppose	that	a	function	wants	to	return	a pointer in	this	way.	The	corresponding	parameter	will	
-then	have	to	be	a	pointer	to	a	pointer.	For	example,	here	is	a	little	function	which	tries	to	allocate	
+then	have	to	be	a	pointer	to	a	pointer.	For	example,	here	is	a	function	which	tries	to	allocate	
 memory	for	a	string	of	length `n`,	and	which	returns	zero	(`false`)	if	it	fails	and	1	(nonzero,	or	`true`)	
 if	it	succeeds,	returning	the	actual	pointer	to	the	allocated	memory	via	a	pointer:
 
@@ -61,24 +61,3 @@ else {
     printf(stderr, "out of memory\n");
 }
 ```
-
-(This is a crude example; the `allocstr` function is not terribly useful. It would have been just about as
-easy for the caller to call `malloc` directly. A different, and more useful, approach to writing a *wrapper*
-function around `malloc` is exemplified by the `chkmalloc` function we've seen before.)
-
-One side point about pointers to pointers and memory allocation: although the `void*` type, as returned
-by `malloc`, is a *generic pointer*, suitable for assigning to or from pointers of any type, the hypothetical
-type `void**` is NOT a *generic pointer to pointer.* Our `allocstr` example can only be used for allocating
-pointers to `char`. 
-
-It would not be possible to use a function which returned generic pointers indirectly
-via a `void** pointer, because when you tried to use it, for example by declaring and calling:
-
-```c
-double *dptr;
-if(!hypotheticalwrapperfunc(100, sizeof(double), &dptr)) {
-    printf(stderr, "out of memory\n");
-}
-```
-
-you would not be passing a `void**`, but rather a `double**`.
