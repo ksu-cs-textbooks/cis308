@@ -53,7 +53,7 @@ num = 2;
 val = 4.7;
 ```
 
-Variables in C are not assigned an initial value. **However, they will hold whatever garbage value was left in the memory spot reserved for the variable.** This is usually a really big or really negative integer. In Java or C#, if you try to use a variable that has not been initialized, you will get a compiler error. The C compiler will NOT complain – it will just use the garbage value left in the memory spot. 
+The values of uninitialized variables in C are undefined. Some compilers *may* give default variables to such variables, but such behavior is not guaranteed. Other copmilers will do nothing, which will cause these uninitialized variables to **hold whatever garbage value was left in the memory spot reserved for the variable.** (usually a really big or really negative integer). In Java or C#, if you try to use a variable that has not been initialized, you will get a compiler error. The C compiler will NOT complain – it will just use whatever undefined value the variable happens to have. 
 
 For example:
 
@@ -67,9 +67,9 @@ You will find that C is far more lenient in compilation than Java or C#. Remembe
 
 ## Where to Declare
 
-There are probably a hundred different versions of C compilers. Consequently, a program may compile with one compiler (say, on cislinux) but not compile on another (such as when using Visual Studio .NET). Certain compilers require that variables only be initialized at the beginning of a block
+There are probably a hundred different versions of C compilers. Consequently, a program may compile with one compiler (say, on cslinux) but not compile on another (such as when using Visual Studio .NET). Certain compilers require that variables only be initialized at the beginning of a block
 (a block begins when a brace { is opened). Because some compilers have this
-requirement, please try to uphold this custom in your programs. For example, the following is fine:
+requirement, we will uphold this custom in our programs. For example, the following is fine:
 
 ```c
 int main() 

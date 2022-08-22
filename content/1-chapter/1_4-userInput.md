@@ -20,6 +20,8 @@ grade = getchar();
 printf("Your grade is %c\n", grade);
 ```
 
+Note that if you are using `getchar` to read characters one at a time from standard input, you will NEVEr reach `EOF` -- instead, the program will wait for you to type new input. If you have piped the contents of a file to be the input stream for the program, though, `getchar` will return `EOF` when you have reached the end of that file. If you want to use `getchar` to read all characters from standard input, a better check is to read until you reach `\n` (which would signify the user pressing Enter after supplying user input).
+
 ## `scanf(...)`
 
 The `scanf(...)` function allows us to read formatted input, like ints and
@@ -60,7 +62,7 @@ scanf("%d/%d", &numerator, &denominator);
 
 By putting the "/" in the format string, we specify that we expect the input to have a / there, but we don't wish to store it in a variable.
 
-`scanf` returns the number of variables that were correctly read in. If an error occurred during input, it returns the constant `EOF`.
+`scanf` returns the number of variables that were correctly read in.
 
 Here is an (incomplete) list of subtleties when using `scanf`:
 - In most cases, `scanf` skips whitespace. However, if you type a space (or tab or newline) where `scanf` expects a character,
@@ -73,7 +75,7 @@ a char to read the extra newline character.
 - If `scanf` reads input that it does not expect (for example, if it sees a
 character but is supposed to be reading an int), it will not discard the bad
 input. The bad input will still be in the input buffer if you
-call `scanf` again. To fix this, call `getchar()` until you reach `EOF`. This
+call `scanf` again. To fix this, call `getchar()` until you reach `\n`. This
 will clear the input buffer.
 
 

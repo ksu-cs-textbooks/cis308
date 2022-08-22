@@ -14,7 +14,7 @@ This example will read and print every character typed by the user (up until the
 ```c
 char c = ' ';
 printf("Type some text: ");
-while (c != EOF) 
+while (c != '\n') 
 {
 	c = getchar();
 	printf("%c\n", c);
@@ -33,10 +33,10 @@ do
 {
 	c = getchar();
 	printf("%c\n", c);
-} while (c != EOF);
+} while (c != '\n');
 ```
 
-Notice that we don't have to give `c*`a dummy initial value, as we did in the while loop.
+Notice that we don't have to give `c` a dummy initial value, as we did in the while loop. However, the loop will print the newline character from the user input in its last iteration.
 
 ## For-Loop
 The syntax of a for-loop is just like it is in other languages:
@@ -48,20 +48,20 @@ for (initialization; condition; update)
 }
 ```
 
-The only caveat is that the loop variable must not be declared in the initialization section (like `int i = 0`). This is because variables in C should only be declared at the beginning of a block (an opening { ). If you forget, your code may compile for you, but it won't necessarily compiler elsewhere.
+The only caveat is that the loop variable should not be declared in the initialization section (like `int i = 0`), and should instead be declared at the beginning of a block (an opening { ). If you forget, your code may compile for you, but it won't necessarily compile elsewhere.
 
-Here's an example that computes the factorial of a number entered by the user:
+Here's an example that adds together 10 numbers entered by the user:
 
 ```c
 int i, num;
-int factorial = 1;
-printf("Enter a positive integer: ");
-scanf("%d", &num);
-for (i = 1; i <= num; i++) 
+int sum = 0;
+for (i = 0; i < 10; i++) 
 {
-	factorial *= num;
+	printf("Enter an integer: ");
+	scanf("%d", &num);
+	sum += num;
 }
-printf("%d! = %d\n", num, factorial);
+printf("Sum is: %d"\n", sum);
 ```
 
 ## Break
