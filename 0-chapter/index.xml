@@ -294,7 +294,8 @@ Find code in terminal To compile and run a C program, make sure the integrated t
       <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_4-terminal/</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_4-terminal/</guid>
-      <description></description>
+      <description>A side goal of this class is for students to become more comfortable with using the terminal. With practice, you will find that you are faster at navigating folders, creating files/folders, compiling/running programs, using tools stuch as git, etc. using the terminal than you are using a GUI. Familiarity with a terminal is especially useful in system administration and web development.
+Summary of common terminal commands Here is a summary table of the most common terminal commands for this course:</description>
     </item>
   </channel>
 </rss>
