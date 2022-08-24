@@ -25,6 +25,11 @@
 	
 			
 			
+
+	
+	
+			
+			
 			
 
 	
@@ -254,10 +259,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compiling and Running on CIS 308 Textbook</title>
-    <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-compilerun/</link>
+    <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-compilerun/</link>
     <description>Recent content in Compiling and Running on CIS 308 Textbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Aug 2018 10:53:26 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-compilerun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Aug 2018 10:53:26 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-compilerun/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -25,6 +25,11 @@
 	
 			
 			
+
+	
+	
+			
+			
 			
 
 	
@@ -267,22 +272,29 @@
       <description>VS Code In CIS 308, we will edit our C programs using VS Code with C/C++ extensions. You likely already have Visual Studio (2019 or 2022) installed on your computer from CIS 300 and/or 400 &amp;ndash; however, we will not be using Visual Studio in CIS 308. While it does have a C++ compiler, it behaves differently than more widely accepted C compilers (versions of gcc and clang). Finally, this class has a secondary goal of exposing students to a variety of Unix/Linux tools &amp;ndash; something that cannot be done as easily in Visual Studio.</description>
     </item>
     <item>
-      <title>Compiling and Running</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-compilerun/</link>
+      <title>Using git</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-usinggit/</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-compilerun/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-usinggit/</guid>
+      <description>This class will use GitHub links to create initial repositories for both labs and programming projects, similarly to what you have done in CIS 300 and 301.
+GitHub account First, you will need to create a GitHub account here. If you already have one, you can use your existing account.
+Verify a git install You will likely already have a command-line version of git installed on your machine. To check, open a folder in VS Code, display the integrated terminal, and type:</description>
+    </item>
+    <item>
+      <title>Compiling and Running</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-compilerun/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-compilerun/</guid>
       <description>After you have installed VS Code along with gcc, you can write C programs in the VS Code editor and then use the integrated terminal to compile and run.
 Hello, World! in VS Code Here is a Hello, World! program written in C using VS Code. It is saved to the file hello.c (note that .c is the extension for C programs):
 Find code in terminal To compile and run a C program, make sure the integrated terminal appears below the code in VS Code (as shown above).</description>
     </item>
     <item>
-      <title>Using git</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-usinggit/</link>
+      <title>Terminal commands</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_4-terminal/</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-usinggit/</guid>
-      <description>This class will use GitHub links to create initial repositories for both labs and programming projects, similarly to what you have done in CIS 300 and 301.
-GitHub account First, you will need to create a GitHub account here. If you already have one, you can use your existing account.
-Verify a git install You will likely already have a command-line version of git installed on your machine. To check, open a folder in VS Code, display the integrated terminal, and type:</description>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_4-terminal/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -25,6 +25,11 @@
 	
 			
 			
+
+	
+	
+			
+			
 			
 
 	
@@ -253,11 +258,11 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Using git on CIS 308 Textbook</title>
-    <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-usinggit/</link>
-    <description>Recent content in Using git on CIS 308 Textbook</description>
+    <title>Terminal commands on CIS 308 Textbook</title>
+    <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_4-terminal/</link>
+    <description>Recent content in Terminal commands on CIS 308 Textbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Aug 2018 10:53:26 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-usinggit/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Aug 2018 10:53:26 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_4-terminal/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
