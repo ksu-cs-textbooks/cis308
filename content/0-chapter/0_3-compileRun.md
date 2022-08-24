@@ -1,8 +1,8 @@
 ---
 title: "Compiling and Running"
 pre: "0."
-weight: 11
-pre: "0.2. "
+weight: 12
+pre: "0.3. "
 date: 2018-08-24T10:53:26-05:00
 ---
 

@@ -81,3 +81,45 @@ xcode-select --install
 ```
 
 If you try `gcc --version` again, it should give you a version number.
+
+## Organizing labs
+
+I recommend that you create a folder specifically for CIS 308, and then create subfolders within that folder for each lab assignment. If you are using the lab machines, you will want to put this folder on the U: drive, as files saved in other locations may be deleted.
+
+When you are ready to start a lab assignment, right-click your CIS 308 folder and select "Open with Code":
+
+![Open with code](/images/openWithCode.png)
+
+This will open everything within your CIS 308 subfolder in VS Code:
+
+![Project view](/images/vsCodeProjView.png)
+
+Now, display the integrated terminal in VS Code (Terminal->New Terminal):
+
+![Terminal](/images/vsCodeWithTerminal.png)
+
+(My directory structure might look strange because I created a second CIS 308 folder for the purposes of making these screenshots.) 
+
+### Starting the next lab
+
+After following the instructions above to open VS Code to your CIS 308 folder with the integrated terminal displayed, you are ready to create a new, empty folder for the current lab. Suppose we are ready for lab 3. In the integrated terminal, type:
+
+```text
+mkdir lab3
+```
+
+You should see a new *lab3* folder in the project view on the left:
+
+![New folder](/images/newFolder.png)
+
+Next, use the `cd` command in the integrated terminal to change directories to your new folder. Type:
+
+```text
+cd lab3
+```
+
+(or whatever the current lab is). You should notice that the directory listed in the terminal prompt ends with you new folder, like this:
+
+![Change directories](/images/cd.png)
+
+You are now ready to follow the steps in the next section, "Using Git", to clone the starting repository for your lab.

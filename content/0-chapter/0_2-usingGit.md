@@ -1,8 +1,8 @@
 ---
 title: "Using git"
 pre: "0."
-weight: 12
-pre: "0.3 "
+weight: 11
+pre: "0.2 "
 date: 2018-08-24T10:53:26-05:00
 ---
 
@@ -33,16 +33,11 @@ After opening your GitHub repository, click the green "Code" button and click th
 
 ![Clone repo](/images/gitHubRepo.png)
 
-Next, create a new, empty folder on your computer that you will use for your assignment. Open that folder in VS Code by either:
+**For labs**, follow the instructions under "Organizing Labs" in section 0.1 to open your CIS 308 folder in VS Code, create a new lab folder, and change directories to your empty folder.
 
-- Right-clicking on the folder name and selecting "Open with Code"
-- Opening VS Code, and selecting "File->Open Folder" and selecting your new folder
+**For projects**, create an empty folder on your machine, right-click the folder name, and select "Open with Code". Then open the Terminal within VS Code by selecting "Terminal->New Terminal". The terminal should automatically display the empty folder you just created.
 
-Open the Terminal within VS Code by selecting "Terminal->New Terminal". This should open a terminal in your new folder, like this:
-
-![Open terminal](/images/vsCodeTerminal.png)
-
-Clone your GitHub repository to your new, empty folder (which should be the current directory in VS Code) by typing in the terminal:
+Clone your GitHub repository to your new, empty folder by typing in the terminal:
 
 ```text
 git clone {repository-url} ./
@@ -52,7 +47,7 @@ Where `{repository-url}` is the URL you copied from your GitHub repository (leav
 
 ## Add code and test
 
-Add the necessary programming files to your project. You can add a file in VS Code by clicking your project name under "Explorer", and then clicking the icon labeled "New File". Type the name of your new file and hit Enter to save it:
+Add the necessary programming files to your project. You can add a file in VS Code by clicking your project name under "Explorer", and then clicking the icon labeled "New File" (it looks a piece of paper with a plus sign). Type the name of your new file and hit Enter to save it:
 
 ![add file](/images/vsCodeAddFile.png)
 
