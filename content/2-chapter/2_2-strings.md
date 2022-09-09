@@ -97,11 +97,13 @@ NOTE: if `fgets` reaches a newline character before reading `size-1` characters,
 If you want to remove that `\n` character, you will need to overwrite the `\n` to hold the end-of-string character instead (`\0`). We will see a convenient trick for doing this in the `strcspn` section below.
 
 ## Conversions
-It is sometimes necessary to convert between strings, ints, and doubles. Here is a list of conversion functions:
+It is sometimes necessary to convert between strings, ints, and doubles. 
+
+### From string to int/double
+
+There are two conversion functions from a string to an int or double:
 - `atoi`: converts from a string to an int
 - `atof`: converts from a string to a double
-- `itoa`: converts from an int to a string
-- `ftoa`: converts from a double to a string
 
 To use any of these functions, you need to add:
 
@@ -126,8 +128,20 @@ printf("Enter a real number: ");
 fgets(buff, 10, stdin); //Suppose you enter "4.75"
 
 d = atof(buff); //d = 4.75
-itoa(num, buff, 10); //buff = "47"
-itof(d, buff, 10); //buff = "4.75"
+```
+
+### From int/double to string
+
+The easiest way to convert from an int or double to a string is to use the `sprintf` function, which is part of `stdio.h`. `sprintf` works exactly like `printf`, but lets you "print" to a string instead of to standard out. You can either print a single int or double (thus converting it to a string), or you can print longer a longer string that mixes variable values with other text. Here is an example of using `sprintf`:
+
+```c
+char buff1[10];
+char buff2[40];
+int num = 7;
+double dec = 14.23;
+
+sprintf(buff1, "%d", num);						//buff1 is now "7"
+sprintf(buff2, "Decimal value: %lf.", dec);		//buff2 is now "Decimal value: 14.23."
 ```
 
 ## String Functions
