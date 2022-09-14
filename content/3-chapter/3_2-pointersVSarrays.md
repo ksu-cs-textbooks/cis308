@@ -70,6 +70,6 @@ int *xp = a;	//OK – Now xp also points to the beginning of the array
 a = xp; 		//NO – The address of an array can’t change
 int b[5]; 		//OK – b points to a block of 5 ints in memory
 int *bp = b;	//OK – Now b also points to the beginning of the array
-xp++; 			//OK – Now b points to the second element in the array
+xp++; 			//OK – Now xp points to the second element in the array
 *xp = 14; 		//OK – The second element in the array is set to 14 (b[1] = 14)
 ```
