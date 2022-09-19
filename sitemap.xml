@@ -30,6 +30,11 @@
 	
 			
 			
+
+	
+	
+			
+			
 			
 
 	
@@ -304,6 +309,10 @@
   <url>
     <loc>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_4-terminal/</loc>
     <lastmod>2022-08-24T10:30:52-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/</loc>
+    <lastmod>2022-09-19T14:22:29-05:00</lastmod>
   </url>
   <url>
     <loc>https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_1-helloworld/</loc>

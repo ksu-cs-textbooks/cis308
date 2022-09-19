@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Debugging C programs :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/" rel="canonical" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/index.xml" rel="alternate" type="application/rss+xml" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/_print/0-chapter/0_5-debugging/" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/embed.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1663615378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1663615378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1663615378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1663615378" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1663615378" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1663615378" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1663615378" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1663615378" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1663615378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1663615378" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1663615378" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1663615378" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1663615378" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1663615378" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1663615378"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis308/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1663615378" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1663615378" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/">
+    
+    <div id="tele" class="tele mirror">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h1>Debugging C programs</h1>
+    
+    
+<p><code>gdb</code> is the C debugger. It allows you to create an executable specifically for debugging purposes.</p>
+<h2 id="getting-gdb">Getting gdb</h2>
+<p>First, ensure that you have gdb installed.</p>
+<h3 id="gdb-on-windows">gdb on Windows</h3>
+<p>Type in a terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gdb -- version
+</span></span></code></pre></div><p>If you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon-&gt;type MSYS2) and then type the following in MSYS2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>pacman -S mingw-w64-x86_64-gdb
+</span></span></code></pre></div><p>This should install gdb. Next, you will need to add the <code>gdb.exe</code> location to your Path. It may be in the same location as <code>gcc</code>, which for me is <code>C:\msys64\mingw64\bin</code>, but it may be in a different location. The <code>gdb.exe</code> file should be in a <code>\bin</code> folder somewhere within the <code>C:\msys64</code> folder - you may need to search for it. Copy the address where you find the <code>gdb.exe</code> file.</p>
+<p>Next, add the location of your <code>gdb.exe</code> file to your Path (if it is a different location than your <code>gcc.exe</code> file). Click Start, type <em>Environment variables</em>, and select &ldquo;Edit the system environment variables&rdquo;). Click &ldquo;Environment Variables..&rdquo;, then find Path under System variables and click &ldquo;Edit&hellip;&rdquo;. Look to see if the location of your <code>gdb.exe</code> file is already listed &ndash; if it is, you don&rsquo;t need to add anything. If it&rsquo;s not, click &ldquo;New&rdquo;, paste in the address you copied in the previous step, and click OK three times to dismiss each frame.</p>
+<h3 id="gdb-on-mac">gdb on Mac</h3>
+<p>I recommend following 
+
+<a href="https://dev.to/jasonelwood/setup-gdb-on-macos-in-2020-489k" target="_blank" rel="noopener">this tutorial</a> to get <code>gdb</code> on your machine.</p>
+<h2 id="first-tutorial">First tutorial</h2>
+<p>Suppose we have the following program, <code>test.c</code>. This program is supposed to multiply together the numbers 1 * 2 * 3 * 4 * 5, but it has some problems:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> prod <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        prod <span style="color:#f92672">=</span> prod <span style="color:#f92672">*</span> i;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Product is: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, prod);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>First, build an executable with debugging information:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc -g test.c -o debug
+</span></span></code></pre></div><p>This will create the executable <code>debug</code>. You can run <code>gdb</code> on <code>debug</code> as follows (this will launch <code>gdb</code>, but will not yet start running your program):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gdb debug
+</span></span></code></pre></div><p>You will see something like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>GNU gdb (GDB) 12.1
+</span></span><span style="display:flex;"><span>Copyright (C) 2022 Free Software Foundation, Inc.
+</span></span><span style="display:flex;"><span>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>Type &#34;show copying&#34; and &#34;show warranty&#34; for details.
+</span></span><span style="display:flex;"><span>This GDB was configured as &#34;x86_64-w64-mingw32&#34;.
+</span></span><span style="display:flex;"><span>Type &#34;show configuration&#34; for configuration details.
+</span></span><span style="display:flex;"><span>For bug reporting instructions, please see:
+</span></span><span style="display:flex;"><span>&lt;https://www.gnu.org/software/gdb/bugs/&gt;.
+</span></span><span style="display:flex;"><span>Find the GDB manual and other documentation resources online at:
+</span></span><span style="display:flex;"><span>    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>For help, type &#34;help&#34;.
+</span></span><span style="display:flex;"><span>Type &#34;apropos word&#34; to search for commands related to &#34;word&#34;...
+</span></span><span style="display:flex;"><span>Reading symbols from debug...
+</span></span><span style="display:flex;"><span>(gdb)
+</span></span></code></pre></div><p>That last <code>(gdb)</code> at the end is the debugging prompt.</p>
+<p>Before you execute your program in the debugger, you&rsquo;ll want to set a breakpoint (or several). For example, suppose we want to set a breakpoint at the start of the <code>main</code> function. Then we can type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>break main
+</span></span></code></pre></div><p>(We could have also typed <code>break 3</code>, which sets a breakpoint on line 3 &ndash; which is the beginning of the main function.) You can add more than one breakpoint in this way.</p>
+<p>When we have added our breakpoint(s) and are ready to run our program with debugging, we type at the debugging prompt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>run
+</span></span></code></pre></div><p>(If our program accepts command-line arguments, we include them after the <code>run</code> command.) We see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Starting program: C:\...\debug.exe 
+</span></span><span style="display:flex;"><span>[New Thread 22728.0x480c]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Thread 1 hit Breakpoint 1, main () at test.c:6
+</span></span><span style="display:flex;"><span>6           for (int i = 1; i &lt; 5; i++) {
+</span></span></code></pre></div><p>Which tells us that our program has stopped at our breakpoint just before executing line 6 (which is the first statement that performs an operation in our main function). From here, we can examine the values of different variables. If we enter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>print prod
+</span></span></code></pre></div><p>We might see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$1 = 0
+</span></span></code></pre></div><p>Telling us that the current value of <code>prod</code> is 0. We can use the <code>next</code> command to step line-by-line through the code. If we now do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>next
+</span></span></code></pre></div><p>We will see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>7               prod = prod*i;
+</span></span></code></pre></div><p>which shows us the next operation that will executed. If we now type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>print i
+</span></span></code></pre></div><p>We will see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$3 = 1
+</span></span></code></pre></div><p>Which tells us that <code>i</code> is currently 1. If we do <code>next</code> again (thus executing the <code>prod = prod * i</code> statement) and then do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>print prod
+</span></span></code></pre></div><p>We see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$4 = 0
+</span></span></code></pre></div><p>Which tells us that <code>prod</code> is still 0, even after multiplying on the first value of <code>i</code>. We can likely already see the first bug &ndash; <code>prod</code> should have been initialized to 1 instead of 0.</p>
+<p>We can continuing stepping though the lines of code, printing values as we go. When we step to the end of the for loop, we may realize that we never multiply <code>prod</code> by 5 &ndash; and we can see that this is because our for loop condition (<code>i &lt; 5</code>) does not include an iteration when <code>i</code> is 5.</p>
+<h2 id="invalid-memory-access">Invalid memory access</h2>
+<p>As another example, suppose we have this C program (test.c):</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> arr[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">100000</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;X is: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>If we build our program as usual (<code>gcc test.c</code>) and then run the executable (<code>./a.exe</code>) WITHOUT any debugging, we will likely see nothing at all. It appears as if our program mysteriously never makes it to the print statement.</p>
+<p>On the other hand, if we build our program for debugging (<code>gcc -g test.c -o debug</code>) and then run it in the debugger (<code>gdb debug</code>), we can get more information. In gdb, we might first set a breakpoint at our print statement:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>b 8
+</span></span></code></pre></div><p>And then run the program until it hits our breakpoint:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>run
+</span></span></code></pre></div><p>We will see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Starting program: C:\...\debug.exe 
+</span></span><span style="display:flex;"><span>[New Thread 17448.0x425c]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Thread 1 received signal SIGSEGV, Segmentation fault.
+</span></span><span style="display:flex;"><span>main () at test.c:6
+</span></span><span style="display:flex;"><span>6           int x = arr[100000];
+</span></span></code></pre></div><p>Which tells us that our program had a segmentation fault on line 6. A <em>segmentation fault</em> means we are trying to access memory that does not belong to us, which is very clear in this example &ndash; our array only has 10 spots, but we&rsquo;re trying to access spot 100000. Now we can see where we went wrong in our program. (This was a trivial example, but a similar approach is a great way to debug a program that is not producing any output. Most likely such a program is crashing with a segmentation fault, but without the debugger we have no way of knowing where the program crashed.)</p>
+<h2 id="debugging-recursive-functions">Debugging recursive functions</h2>
+<p>As a final example, suppose we have this C program in test.c:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">factorial</span>(<span style="color:#66d9ef">int</span> x) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> factorial(x<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> factorial(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Factorial of 2 is: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, result);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>If we build and run this program as usual, it will just hang &ndash; suggesting an infinite loop or infinite recursion. (You can kill a program in the terminal with Ctrl-C.) To find the problem, we can build our program with debugging information and run it with gdb. We might set a breakpoint at the factorial function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>b factorial
+</span></span></code></pre></div><p>And then:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>run
+</span></span></code></pre></div><p>It will pause on line 4 in the first call of the factorial function. We can view the program stack up to this point by typing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>bt
+</span></span></code></pre></div><p>We will see the current program stack:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#0  factorial (x=2) at test.c:4
+</span></span><span style="display:flex;"><span>#1  0x00007ff6956015ba in main () at test.c:8
+</span></span></code></pre></div><p>Which shows us that the main function called the factorial function with parameter <code>x = 2</code>. If we do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>s
+</span></span></code></pre></div><p>To step INTO the recursive function call, our program will pause again on line 4 in the next call to factorial. If we do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>bt
+</span></span></code></pre></div><p>again, we will see the program stack:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#0  factorial (x=1) at test.c:4
+</span></span><span style="display:flex;"><span>#1  0x00007ff695601599 in factorial (x=2) at test.c:4
+</span></span><span style="display:flex;"><span>#2  0x00007ff6956015ba in main () at test.c:8
+</span></span></code></pre></div><p>Which shows us that our program started in main, then called factorial with parameter <code>x=2</code>, then called factorial again with <code>x=1</code>. Suppose we type <code>s</code> two more times, and then try <code>bt</code> again. We would then see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>factorial (x=-1) at test.c:4
+</span></span><span style="display:flex;"><span>#1  0x00007ff695601599 in factorial (x=0) at test.c:4
+</span></span><span style="display:flex;"><span>#2  0x00007ff695601599 in factorial (x=1) at test.c:4
+</span></span><span style="display:flex;"><span>#3  0x00007ff695601599 in factorial (x=2) at test.c:4
+</span></span><span style="display:flex;"><span>#4  0x00007ff6956015ba in main () at test.c:8
+</span></span></code></pre></div><p>Now we can see that we made a recursive call with a parameter of -1, which is clearly incorrect. This can help us identify our error &ndash; we forgot to include a base case.</p>
+<h2 id="summary-of-gdb-commands">Summary of gdb commands</h2>
+<p>Here is a summary table of the most common gdb commands:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>break lineNumber</code> (or <code>b lineNumber</code>)</td>
+<td>Sets a breakpoint at the given line number. You can add breakpoints at any point &ndash; either before running the program in the debugger or in the middle of a debugging session.</td>
+</tr>
+<tr>
+<td><code>break functionName</code> (or <code>b functioNname</code>)</td>
+<td>Sets a breakpoint at the given function name</td>
+</tr>
+<tr>
+<td><code>run</code> (or <code>r</code>)</td>
+<td>Executes your program from the beginning, and lets it run until it hits your first breakpoint</td>
+</tr>
+<tr>
+<td><code>continue</code> (or <code>c</code>)</td>
+<td>Runs your program from its current point of execution until it hits the next breakpoint</td>
+</tr>
+<tr>
+<td><code>print variableName</code> (or <code>p variableName</code>)</td>
+<td>Prints the current value of the given variable</td>
+</tr>
+<tr>
+<td><code>print expression</code> (or <code>p expression</code>)</td>
+<td>Prints the result of the given expression using current variable values. For example, <code>print *ptr</code> would print the current value at the memory location held in <code>ptr</code>. Similarly, <code>print arr[2]+10</code> would print 10 more than the element at position 2 in the <code>arr</code> array.</td>
+</tr>
+<tr>
+<td><code>next</code> (or <code>n</code>)</td>
+<td>Steps to the next line in the program. If the next line is a function call, it steps OVER it (and does not go into the function).</td>
+</tr>
+<tr>
+<td><code>step</code> (or <code>s</code>)</td>
+<td>Steps to the next line in the program. If the next line is a function call, it steps INTO that function.</td>
+</tr>
+<tr>
+<td><code>disable breakPoint</code></td>
+<td>Disables an existing breakpoint, where <code>breakPoint</code> is either a line number or a function name</td>
+</tr>
+<tr>
+<td><code>enable breakPoint</code></td>
+<td>Enables an existing breakpoint, where <code>breakPoint</code> is either a line number or a function name</td>
+</tr>
+<tr>
+<td><code>list</code> (or <code>l</code>)</td>
+<td>Prints the 10 lines of source code around the current line in the debugger</td>
+</tr>
+<tr>
+<td><code>bt</code></td>
+<td>Prints the stack trace leading to the current point of execution</td>
+</tr>
+<tr>
+<td><code>kill</code></td>
+<td>Kills the program being run in the debugger</td>
+</tr>
+<tr>
+<td><code>quit</code></td>
+<td>Exits gdb</td>
+</tr>
+</tbody>
+</table>
+<h2 id="visualizing-program-memory">Visualizing program memory</h2>
+<p>I recommend using 
+
+<a href="https://pythontutor.com/visualize.html#mode=edit" target="_blank" rel="noopener">Python Tutor</a> with C/gcc selected as another tool for debugging. You can paste your C program into the text area and choose &ldquo;Visualize Execution&rdquo;. Then you can step line by line through your program. The site shows what memory is allocated on the stack and what is allocated on the heap, and shows how different variables are updated as you progress. It is especially useful for visualizing pointers. The only drawback is that it will only work on programs with no user/file input &ndash; but you could always hardcode any input values for debugging purposes.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1663615378" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1663615378" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1663615378" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1663615378" defer></script>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/tele-scroll.js?1663615378 defer"></script>
+    
+  </body>
+</html>
