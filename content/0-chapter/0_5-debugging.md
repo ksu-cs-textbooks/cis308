@@ -108,39 +108,36 @@ run
 
 ```text
 Starting program: C:\...\debug.exe 
-[New Thread 22728.0x480c]
+[New Thread 9144.0x47d8]
 
-Thread 1 hit Breakpoint 1, main () at test.c:6
-6           for (int i = 1; i < 5; i++) {
+Thread 1 hit Breakpoint 1, main () at test.c:4
+4           int prod = 0;
 ```
 
-Which tells us that our program has stopped at our breakpoint just before executing line 6 (which is the first statement that performs an operation in our main function). From here, we can examine the values of different variables. If we enter:
+Which tells us that our program has stopped at our breakpoint just before executing line 4 (which is the first statement that performs an operation in our main function). From here, we can graphically view the current line in the program by typing:
 
 ```text
-print prod
+layout src
 ```
 
-We might see:
+In this example, we will see:
 
-```text
-$1 = 0
-```
+![debugger](/images/debug.png)
 
-Telling us that the current value of `prod` is 0. We can use the `next` command to step line-by-line through the code. If we now do:
+Notice that the line that will be executed next (line 4, where we declare and initialized `prod`) is highlighted. We can also see our main function breakpoint indicated with a `B+`. To step line by line through the code, we can use the `next` command. If we now do:
 
 ```text
 next
 ```
 
-We will see:
+Then our layout view will highlight the next line in the program (the for loop), like this:
+
+![next statement](/images/nextDebug.png)
+
+We can also examine the values of different variables. If we enter:
 
 ```text
-7               prod = prod*i;
-```
-
-which shows us the next operation that will executed. If we now type:
-
-```text
+next
 print i
 ```
 
@@ -298,6 +295,7 @@ Here is a summary table of the most common gdb commands:
 | `break lineNumber` (or `b lineNumber`) | Sets a breakpoint at the given line number. You can add breakpoints at any point -- either before running the program in the debugger or in the middle of a debugging session. |
 | `break functionName` (or `b functioNname`) | Sets a breakpoint at the given function name |
 | `run` (or `r`) | Executes your program from the beginning, and lets it run until it hits your first breakpoint |
+| `layout src` | Displays a graphical view of your code and highlights the line that will be executed next |
 | `continue` (or `c`) | Runs your program from its current point of execution until it hits the next breakpoint |
 | `print variableName` (or `p variableName`) | Prints the current value of the given variable |
 | `print expression` (or `p expression`) | Prints the result of the given expression using current variable values. For example, `print *ptr` would print the current value at the memory location held in `ptr`. Similarly, `print arr[2]+10` would print 10 more than the element at position 2 in the `arr` array. |
