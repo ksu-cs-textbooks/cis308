@@ -1,7 +1,7 @@
 ---
 title: "Makefiles"
-pre: "6.2. "
-weight: 71
+pre: "5.2. "
+weight: 61
 date: 2018-08-24T10:53:26-05:00
 ---
 
@@ -19,7 +19,7 @@ compiling/linking instruction
 cleaning instruction (removing output files)
 ```
 
-Here is the Makefile for our [statistics program]({{<ref "6-chapter/6_1-headerFiles.md" >}})
+Here is the Makefile for our [statistics program]({{<ref "5-chapter/5_1-headerFiles.md" >}})
 
 ```text
 //saved in a file name Makefile, with no extension

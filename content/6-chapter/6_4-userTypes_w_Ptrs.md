@@ -1,7 +1,7 @@
 ---
 title: "User-Defined Types with Pointers"
-pre: "5.4. "
-weight: 63
+pre: "6.4. "
+weight: 73
 date: 2018-08-24T10:53:26-05:00
 ---
 Consider the following struct:
