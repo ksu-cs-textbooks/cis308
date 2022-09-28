@@ -210,6 +210,11 @@
 	
 			
 			
+			
+
+	
+	
+			
 
 	
 	
@@ -219,11 +224,6 @@
 	
 	
 			
-			
-			
-
-	
-	
 			
 
 	
@@ -284,11 +284,11 @@
   </url>
   <url>
     <loc>https://ksu-cs-textbooks.github.io/cis308/5-chapter/</loc>
-    <lastmod>2022-06-15T14:34:10-05:00</lastmod>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
     <loc>https://ksu-cs-textbooks.github.io/cis308/6-chapter/</loc>
-    <lastmod>2022-05-12T14:51:39-05:00</lastmod>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
     <loc>https://ksu-cs-textbooks.github.io/cis308/7-chapter/</loc>
@@ -423,36 +423,36 @@
     <lastmod>2022-05-12T14:51:39-05:00</lastmod>
   </url>
   <url>
-    <loc>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_1-enum/</loc>
-    <lastmod>2022-08-03T11:47:25-05:00</lastmod>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_1-headerfiles/</loc>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
-    <loc>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_2-union/</loc>
-    <lastmod>2022-08-03T11:47:25-05:00</lastmod>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_2-makefiles/</loc>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
-    <loc>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_3-typedef/</loc>
-    <lastmod>2022-08-03T11:47:25-05:00</lastmod>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_3-externvariables/</loc>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
-    <loc>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_4-usertypes_w_ptrs/</loc>
-    <lastmod>2022-05-12T12:26:50-05:00</lastmod>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_1-enum/</loc>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
-    <loc>https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_5-preprocessor/</loc>
-    <lastmod>2022-08-03T11:47:25-05:00</lastmod>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_2-union/</loc>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
-    <loc>https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_1-headerfiles/</loc>
-    <lastmod>2022-08-03T11:47:25-05:00</lastmod>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_3-typedef/</loc>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
-    <loc>https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_2-makefiles/</loc>
-    <lastmod>2022-08-03T11:47:25-05:00</lastmod>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_4-usertypes_w_ptrs/</loc>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
-    <loc>https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_3-externvariables/</loc>
-    <lastmod>2022-08-03T11:47:25-05:00</lastmod>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_5-preprocessor/</loc>
+    <lastmod>2022-09-28T11:30:45-05:00</lastmod>
   </url>
   <url>
     <loc>https://ksu-cs-textbooks.github.io/cis308/7-chapter/7_1-fnptrbasics/</loc>
