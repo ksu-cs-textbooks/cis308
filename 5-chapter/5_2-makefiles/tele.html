@@ -275,23 +275,23 @@
     <link href="https://ksu-cs-textbooks.github.io/cis308/_print/5-chapter/5_2-makefiles/" rel="alternate" type="text/html" title="CIS 308 Textbook">
     <link href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_2-makefiles/embed.html" rel="alternate" type="text/html" title="CIS 308 Textbook">
     
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1664382674" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1664382674" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1664382674" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1665590062" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1665590062" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1665590062" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
     <noscript>
-      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1664382674" rel="stylesheet">
-      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1664382674" rel="stylesheet">
-      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1664382674" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1665590062" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/featherlight.min.css?1665590062" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1665590062" rel="stylesheet">
     </noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1664382674" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1664382674" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1664382674" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1664382674" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1664382674" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1664382674" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1664382674" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1664382674" rel="stylesheet" media="print">
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1664382674"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1665590062" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1665590062" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1665590062" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1665590062" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-light-theme.css?1665590062" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1665590062" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1665590062" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1665590062" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1665590062"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -308,8 +308,8 @@
       variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1664382674" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1664382674" defer></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1665590062" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/jquery.min.js?1665590062" defer></script>
 
   </head>
   <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_2-makefiles/">
@@ -332,52 +332,63 @@
 <p>It now takes three lines to compile our program, which is a pain to
 have to type every time we make a change. We can simplify
 compilation by placing all of the compilation instructions in a
-single file called a <em>Makefile</em>.</p>
+single file called a <em>Makefile</em> (with NO extension).</p>
 <h2 id="here-is-the-format-of-a-makefile">Here is the format of a Makefile:</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>compiler declaration
+</span></span><span style="display:flex;"><span>compiler flags declaration
+</span></span><span style="display:flex;"><span>executable name declaration
+</span></span><span style="display:flex;"><span>header list declaration
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>object list declaration
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>compiling/linking instruction
 </span></span><span style="display:flex;"><span>cleaning instruction (removing output files)
-</span></span></code></pre></div><p>Here is the Makefile for our 
+</span></span></code></pre></div><p>(There are many other options for creating Makefiles, but we will use the template above in this class.) Here is the Makefile for our 
 
 <a href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_1-headerfiles/">statistics program</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//saved in a file name Makefile, with no extension
 </span></span><span style="display:flex;"><span>CC = gcc
-</span></span><span style="display:flex;"><span>OBJECTS = prog.o stats.o
+</span></span><span style="display:flex;"><span>CFLAGS = -g -Wall
+</span></span><span style="display:flex;"><span>EXE = nums
+</span></span><span style="display:flex;"><span>HEADERS = stats.h
+</span></span><span style="display:flex;"><span>CODE = stats.c prog.c
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nums: $(OBJECTS)
-</span></span><span style="display:flex;"><span>    $(CC) $(OBJECTS) –o nums
+</span></span><span style="display:flex;"><span>OBJECTS = $(CODE:.c=.o)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nums: $(OBJECTS) $(HEADERS)
+</span></span><span style="display:flex;"><span>    $(CC) $(CFLAGS) $(OBJECTS) –o $(EXE)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>clean:
-</span></span><span style="display:flex;"><span>    rm *.o num
+</span></span><span style="display:flex;"><span>    rm -f *.o *.exe *.out
 </span></span></code></pre></div><p>Now, let&rsquo;s go through the Makefile one line at a time:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>CC = gcc
 </span></span></code></pre></div><p>This line declares the variable <code>CC</code>, and says that we&rsquo;re using the
 gcc compiler.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>OBJECTS = prog.o stats.o
-</span></span></code></pre></div><p>This declares the variable <code>OBJECTS</code>, which contains a list of all
-object files for the program. (An object file is a single file
-converted to machine code.) We have a .o file for every .c file in
-our program. So, since we have the files <code>prog.c</code> and <code>stats.c</code>,
-will we get the object files <code>prog.o</code> and <code>stats.o</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>nums: $(OBJECTS)
-</span></span><span style="display:flex;"><span>    $(CC) $(OBJECTS) –o nums
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>CFLAGS = -g -Wall
+</span></span></code></pre></div><p>This line declares the variable <code>CFLAGS</code> and states that we will use two compiler flags &ndash; <code>-g</code> and <code>-Wall</code>. You don&rsquo;t have to include this line, but it can be useful. The <code>-g</code> option means that our executable is always built with debugging information, so that we can debug it in gdb. The <code>-Wall</code> option tells the compiler to display warnings. Often times these compiler warnings can give insight into why a program isn&rsquo;t working, as C will let you do many things that you probably don&rsquo;t intend to do (especially with pointers).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>EXE = nums
+</span></span></code></pre></div><p>This line declares the variable <code>EXE</code> and states that we wish to name our executable &ldquo;nums&rdquo;, instead of the default &ldquo;a.out&rdquo; or a.exe&quot;. We can replace &ldquo;nums&rdquo; with whatever we want to use as our executable name. Again, this line is optional.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>HEADERS = stats.h
+</span></span></code></pre></div><p>This line declared the variable <code>HEADERS</code> and lists all the (user-created) header files used in the program.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>CODE = stats.c prog.c
+</span></span></code></pre></div><p>This line declares the variable <code>CODE</code> and lists all the code files (.c files) used in the program.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>OBJECTS = $(CODE:.c=.o)
+</span></span></code></pre></div><p>This declares the variable <code>OBJECTS</code> and instructions to create an object file (.o) for every .c file listed in the <code>CODE</code> variable. (An object file is a single file converted to machine code.) So, since we have the files <code>prog.c</code> and <code>stats.c</code>, will we get the object files <code>prog.o</code> and <code>stats.o</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>nums: $(OBJECTS) $(HEADERS)
+</span></span><span style="display:flex;"><span>    $(CC) $(CFLAGS) $(OBJECTS) –o $(EXE)
 </span></span></code></pre></div><p>This line describes how to compile our program. The<code>nums</code> at
 the beginning is a name we&rsquo;re giving this compilation instruction –
-we could have called it anything. For our program to compile, all
-the .o files must be generated. The <code>$(OBJECTS)</code> on the top line
-gets the value out of the <code>OBJECTS</code> variable. This line says that to
-compile the program, all the object files must be made.</p>
-<p>When we substitute the values of the variables, the next line
+we could have called it anything. When we put $(OBJECTS) on the top line (and similarly for other variables), this gets the value out of the <code>OBJECTS</code> variable. The top line, <code>$(OBJECTS) $(HEADERS)</code>, states that our program is dependent on all the header files and all the object files. This line says that to compile the program, all the object files must first be made. By listing the header files as a dependency as well, it ensures that if a change was made to a header file then the entire program will be rebuilt.</p>
+<p>When we substitute the values of the variables, the second line
 becomes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc prog.o stats.o –o nums
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc -g -Wall prog.o stats.o –o nums
 </span></span></code></pre></div><p>This line says to link together the two object files, and rename the
-executable to <code>nums</code>. (That&rsquo;s the <code>–o nums</code> part).</p>
+executable to <code>nums</code>. (That&rsquo;s the <code>–o nums</code> part). It also says to build the executable with debugging information (<code>g</code>) and to display compiler warnings (<code>-Wall</code>).</p>
 <p>Next, we have:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>clean:
-</span></span><span style="display:flex;"><span>    rm *.o nums
+</span></span><span style="display:flex;"><span>    rm -f *.o *.exe *.out
 </span></span></code></pre></div><p>This line says that to clean our program, we want to delete the
-object files (*.o) and the executable (<code>nums</code>).</p>
+object files (<code>*.o</code>), all executable files (<code>*.exe</code> and <code>*.out</code>). The <code>-f</code> option ensures that we will not see a warning if there are no files to remove that match one of the wildcards.</p>
 <h2 id="using-a-makefile">Using a Makefile</h2>
 <p>Now that we have a Makefile, we want to use it to compile our
 program. To compile a program with a Makefile, type:</p>
@@ -387,10 +398,10 @@ create the executable called <code>nums</code>.</p>
 <p>To run our program, we do:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>./nums
 </span></span></code></pre></div><p>This is the same as what we&rsquo;ve done before to run our program,
-but now the executable is named <code>nums</code> instead of <code>a.out</code>.</p>
+but now the executable is named <code>nums</code> instead of <code>a.exe</code>.</p>
 <p>To remove all the output files, we type:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>make clean
-</span></span></code></pre></div><p>This will remove all the .o files and the executable <code>nums</code>.</p>
+</span></span></code></pre></div><p>This will remove all .o files and executable files.</p>
 <h2 id="makefile-rules">Makefile Rules</h2>
 <p>We could spend the rest of the semester talking about exactly how
 Makefiles work and different intricacies and still not cover
@@ -399,18 +410,29 @@ scratched the surface to be able to compile our program in a
 specific way.</p>
 <p>Here are some rules to follow as you write your own Makefiles:</p>
 <ul>
-<li>You should always define the variables <code>CC</code> and
-<code>OBJECTS</code>. The value of <code>OBJECTS</code> should include a .o
-file for every .c file in your program.</li>
-<li>You can rename your executable (<code>-o nums</code>) to be
-whatever you want.</li>
+<li>You should always define the variables <code>CC</code>, <code>HEADERS</code>, <code>CODE</code>, and
+<code>OBJECTS</code>. The value of <code>HEADERS</code> should be a list of all .h files in your project, and the value of <code>CODE</code> should be a list of all .co files in your program. Your <code>OBJECTS</code> value should always be the same &ndash; <code>$(CODE:.c=.o)</code> (create an object file for every .c file).</li>
+<li>The <code>CFLAGS</code> declaration is optional, but recommended</li>
+<li>The <code>EXE</code> declaration is optional &ndash; if you leave it off (along with the <code>-o $EXE</code> in the compilation instruction), then your executable will be named <code>a.exe</code> (or <code>a.out</code>).</li>
 <li>There should be a tab character at the beginning of the
 second line for the <code>nums: instruction</code> and the <code>clean: instruction</code>. This MUST be a tab – spaces won&rsquo;t work.</li>
 <li>For the most part, your Makefiles will remain the same
 from program to program. You&rsquo;ll just change the
-<code>OBJECTS</code> list and change the name of the executable.</li>
+<code>HEADERS</code> and <code>CODE</code> lists and change the name of the executable.</li>
 </ul>
-
+<h2 id="getting-make">Getting make</h2>
+<p>The <code>make</code> tool may have already be installed when you installed the <code>gcc</code> compiler. To test, open a terminal and type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>make
+</span></span></code></pre></div><p>If you see an error that says something about &ldquo;No targets specified and no makefile found&rdquo;, then <code>make</code> is correctly installed. If you see an error that says something like: &ldquo;The term make is not recognized&hellip;&rdquo;, then <code>make</code> is either not installed or the PATH variable does not include its location.</p>
+<h3 id="windows-users">Windows users</h3>
+<p>For Windows users who don&rsquo;t already have <code>make</code>, open an MSYS2 terminal and type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>pacman -S make
+</span></span></code></pre></div><p>Then, you will need to add the location of <code>make.exe</code> to your PATH environment variable. Look in both <code>C:\msys64\mingw64\bin</code> and <code>C:\msys64\usr\bin</code> &ndash; copy the address of whichever location contains <code>make.exe</code>.</p>
+<p>Click Start, type <em>Environment variables</em>, and select &ldquo;Edit the system environment variables&rdquo;). Click &ldquo;Environment Variables..&rdquo;, then find Path under System variables and click &ldquo;Edit&hellip;&rdquo;. Click &ldquo;New&rdquo;, paste in the address you copied in the previous step, and click OK three times to dismiss each frame.</p>
+<h3 id="mac-users">Mac users</h3>
+<p>For Windows users who don&rsquo;t already have <code>make</code>, open the terminal and enter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>xcode-select --install
+</span></span></code></pre></div>
             <footer class="footline">
             </footer>
           </article>
@@ -425,14 +447,14 @@ from program to program. You&rsquo;ll just change the
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1664382674" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1664382674" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1664382674" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1664382674" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1665590062" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1665590062" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/featherlight.min.js?1665590062" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1665590062" defer></script>
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/tele-scroll.js?1664382674 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/tele-scroll.js?1665590062 defer"></script>
     
   </body>
 </html>
