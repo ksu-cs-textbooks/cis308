@@ -35,6 +35,11 @@
 	
 			
 			
+
+	
+	
+			
+			
 			
 
 	
@@ -311,6 +316,13 @@ Summary of common terminal commands Here is a summary table of the most common t
 Getting gdb First, ensure that you have gdb installed.
 gdb on Windows Type in a terminal:
 gdb -- version If you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon-&amp;gt;type MSYS2) and then type the following in MSYS2:</description>
+    </item>
+    <item>
+      <title>Remote Access</title>
+      <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_6_remoteaccess/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_6_remoteaccess/</guid>
+      <description>In the case that you are unable (or uninterested) to install some of the C tools on your own machine (such as gcc, gdb, or make), you can install the Remote - SSH extension in VS Code. This will allow you to remotely connect to the CS Linux server, which already has all the C tools installed. You will be able to use VS Code to edit files that are stored on your CS department U: drive the same way that you would edit local files.</description>
     </item>
   </channel>
 </rss>

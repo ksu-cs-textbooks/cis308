@@ -35,6 +35,11 @@
 	
 			
 			
+
+	
+	
+			
+			
 			
 
 	
@@ -313,6 +318,10 @@
   <url>
     <loc>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/</loc>
     <lastmod>2022-09-21T09:13:12-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_6_remoteaccess/</loc>
+    <lastmod>2022-10-17T16:25:24-05:00</lastmod>
   </url>
   <url>
     <loc>https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_1-helloworld/</loc>
