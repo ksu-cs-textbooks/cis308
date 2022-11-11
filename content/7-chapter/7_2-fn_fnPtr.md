@@ -64,7 +64,7 @@ Added result: 7
 Multiplied result: 12
 ```
 
-The above example might seem unnecessarily complicated, as we could have directly called `plus` and `times` from `main` and bypassed the `doOperation` function altogether. However, using function pointers as arguments can be very powerful -- for example, the `stdlib` library defines a `qsort` function that accepts a comparator function pointer as an argument. This way, we can use the same sorting function to sort in a variety of ways -- ascending order, descending order, by length, etc. -- by passing in a different comparator function pointer. We will demonstrate this process in lab.
+The above example might seem unnecessarily complicated, as we could have directly called `plus` and `times` from `main` and bypassed the `doOperation` function altogether. However, using function pointers as arguments can be very powerful -- for example, the `stdlib` library defines a `qsort` function that accepts a comparator function pointer as an argument. This way, we can use the same sorting function to sort in a variety of ways -- ascending order, descending order, by length, etc. -- by passing in a different comparator function pointer. 
 
 ## Typedef and Function Pointers
 
