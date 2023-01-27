@@ -237,7 +237,7 @@ int index;
 printf("Enter a word: ");//Suppose you entered "hello"
 scanf("%s", str);
 
-index = strcpsn(str, "la"); //index is 2
+index = strcspn(str, "la"); //index is 2
 //2 characters appear in str before finding any character from "la"
 ```
 
