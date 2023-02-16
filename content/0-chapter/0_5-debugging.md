@@ -17,7 +17,7 @@ First, ensure that you have gdb installed.
 Type in a terminal:
 
 ```text
-gdb -- version
+gdb --version
 ```
 
 If you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon->type MSYS2) and then type the following in MSYS2:
