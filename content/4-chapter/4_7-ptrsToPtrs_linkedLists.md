@@ -65,10 +65,10 @@ list) that's the node whose next pointer will need adjusting. (Notice that if we
 would copy its next pointer over to 2, but since 3's next pointer is the null pointer, copying it to node 2
 would make node 2 the end of the list, as desired.)
 
-We will write another version of the list-deletion code as a lab activity, which will be (in some ways, at least)
+There is another way to write the list-deletion code, which is (in some ways, at least)
 much cleaner, by using a pointer to a pointer to a `struct node`.
 
 Hint: This pointer will point at the pointer which points at the node we're looking at; it will either
 point at the head pointer or at the next pointer of the node we looked at last time. Since this pointer
-points at the pointer that points at the node we're looking at (got that?), it points at the pointer which
+points at the pointer that points at the node we're looking at, it points at the pointer which
 we need to modify if the node we're looking at is the node we're deleting.
