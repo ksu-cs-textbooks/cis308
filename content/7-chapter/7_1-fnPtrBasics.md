@@ -86,8 +86,8 @@ int main() {
 
     fn_ptr = addToLength;       //now fn_ptr points to the addToLength function
 
-    int ans = fn_ptr(test, 3);  //call the function referenced by fn_ptr,
-                                //passing test and 5. Store the returned value
+    int ans = fn_ptr(3, test);  //call the function referenced by fn_ptr,
+                                //passing 3 and test. Store the returned value
                                 //in the ans variable
 
     printf("%d\n", ans);     //in our example, prints 8
@@ -100,24 +100,24 @@ int main() {
 Note that we use `fn_ptr` as follows:
 
 ```c
-int ans = fn_ptr(test, 3);
+int ans = fn_ptr(3, test);
 ```
 
-This calls the function referenced by `fn_ptr` (the `addToLength` function), passing the arguments `test` and 3. The value returned by the referenced (`addToLength`) function is stored in the `ans` variable.
+This calls the function referenced by `fn_ptr` (the `addToLength` function), passing the arguments 3 and `test`. The value returned by the referenced (`addToLength`) function is stored in the `ans` variable.
 
-The `fn_ptr` variable holds the memory address of the beginning of the executable code for the `addToLength` function. When we do `int ans = fn_ptr(test, 3)`, we want to go to the memory location stored in `fn_ptr`, and begin executing that code. In other words, we wish to dereference `fn_ptr`, which we can do with the `*` operator. We could more precisely write:
+The `fn_ptr` variable holds the memory address of the beginning of the executable code for the `addToLength` function. When we do `int ans = fn_ptr(3, test)`, we want to go to the memory location stored in `fn_ptr`, and begin executing that code. In other words, we wish to dereference `fn_ptr`, which we can do with the `*` operator. We could more precisely write:
 
 ```c
-int ans = (*fn_ptr)(test, 3);
+int ans = (*fn_ptr)(3, test);
 ```
 
-To first go to the executable code referenced by `fn_ptr`, and then to start executing that code with arguments `test` and `3`. As with using the `&` operator when initializing function pointers, using the dereferencing operator when using a function pointer is optional. There is no other possible meaning of `fn_ptr(test, 3)`, so the function pointer is dereferenced whether we explicitly use the operator or not.
+To first go to the executable code referenced by `fn_ptr`, and then to start executing that code with arguments `3` and `test`. As with using the `&` operator when initializing function pointers, using the dereferencing operator when using a function pointer is optional. There is no other possible meaning of `fn_ptr(3, test)`, so the function pointer is dereferenced whether we explicitly use the operator or not.
 
 If we do choose to explicitly dereference, we need to be careful with order of operations. If we instead did:
 
 ```c
 //THIS IS INCORRECT FOR USING A FUNCTION POINTER!
-int ans = *fn_ptr(test, 3);
+int ans = *fn_ptr(3, test);
 ```
 
-Then we would first go to the executable code referenced by `fn_ptr` (the `addToLength` function), passing our arguments `test` and `3`. That code would return `8`, which is the sum of the string length of the `test` string ("hello") and the argument `3`. Finally, we would assign to `ans` the result of dereferencing the `8`. This will lead to either a segmentation fault (the program crashing) or to grabbing an arbirtrary value in memory and claiming it as our answer.
+Then we would first go to the executable code referenced by `fn_ptr` (the `addToLength` function), passing our arguments `3` and `test`. That code would return `8`, which is the sum of and the argument `3` and the string length of `hello`. Finally, we would assign to `ans` the result of dereferencing the `8`. This will lead to either a segmentation fault (the program crashing) or to grabbing an arbirtrary value in memory and claiming it as our answer.
