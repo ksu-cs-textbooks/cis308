@@ -288,7 +288,7 @@ Arrays in C must be of a constant size (not a variable size from user input, for
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_2-strings/</guid>
       <description>We saw before that there is no string type in C. This is true – but you can simulate a string by using an array of characters that is terminated with a special end-of-string character, &amp;lsquo;\0&amp;rsquo;.
-String Variables A string constant can be declared as follows:
+String Variables A string literal can be declared as follows:
 char str[] = &amp;#34;Hello&amp;#34;; After this line, str references the following characters in memory:
 0 1 2 3 4 5 H e l l o \0 We could have created the same string like this:</description>
     </item>
