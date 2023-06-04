@@ -42,7 +42,7 @@ Later in this section, you will see a function called `strcpy` that copies the c
 
 
 ## String Input and Output
-Strings can be inputted and outputted just like any other variable. To print a string, use `printf` with the `%s` control string character. To get a string as input, use `scanf` (again with the `%s` control string character). 
+Strings can be inputted and outputted just like any other variable. To print a string, use `printf` with the `%s` control string character. To get a string as input, you can use `scanf` (again with the `%s` control string character). When reading in a string, `scanf` will read characters up to but not including the first whitespace it encounters ('\n', ' ', '\t', etc.).
 
 Here's an example:
 
