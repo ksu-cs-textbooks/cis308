@@ -7,7 +7,7 @@ pre: "2.2. "
 We saw before that there is no string type in C. This is true – but you can simulate a string by using an array of characters that is terminated with a special end-of-string character, '\0'.
 
 ## String Variables
-A *string constant* can be declared as follows:
+A *string literal* can be declared as follows:
 
 ```c
 char str[] = "Hello";
@@ -40,18 +40,6 @@ str = "hi"; //Compiler error!
 
 Later in this section, you will see a function called `strcpy` that copies the characters from one string to another.
 
-## String Variables
-If you want to be able to modify a string, you need to fill it like a normal array. For example:
-
-```c
-char str[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
-```
-
-(You can create and fill an array like this.) Now we can modify the characters in `str`:
-
-```c
-str[0] = 'h';
-```
 
 ## String Input and Output
 Strings can be inputted and outputted just like any other variable. To print a string, use `printf` with the `%s` control string character. To get a string as input, use `scanf` (again with the `%s` control string character). 

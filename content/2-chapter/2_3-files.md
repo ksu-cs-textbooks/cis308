@@ -17,7 +17,7 @@ Whenever you are doing file I/O, you need to add:
 Before we can interact with a file, we need to open it. The `fopen` function lets us open files for different kinds of input and output. Here's the prototype:
 
 ```c
-FILE* fopen(char[] filename, char[] mode)
+FILE* fopen(char filename[], char mode[])
 ```
 
 The `FILE*` return type means that the function is returning the address of a `FILE` object. We'll learn more about pointers in the next section. If the file could not be opened, fopen returns `NULL`.
