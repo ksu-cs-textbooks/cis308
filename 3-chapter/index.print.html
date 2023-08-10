@@ -1,0 +1,802 @@
+
+
+
+
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.117.0">
+    <meta name="generator" content="Relearn 5.18.0">
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Pointers and Dynamic Memory :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/index.html" rel="canonical" type="text/html" title="Pointers and Dynamic Memory :: CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/index.xml" rel="alternate" type="application/rss+xml" title="Pointers and Dynamic Memory :: CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/tele.html" rel="alternate" type="text/html" title="Pointers and Dynamic Memory :: CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/embed.html" rel="alternate" type="text/html" title="Pointers and Dynamic Memory :: CIS 308 Textbook">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-auto.css?1691698089" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1691698089" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/format-print.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1691698089" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/url.js?1691698089"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1691698089"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="https://ksu-cs-textbooks.github.io/cis308/index.search.js";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1691698089" rel="stylesheet">
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/3-chapter/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/index.html"><span itemprop="name">CIS 308 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Pointers and Dynamic Memory</span><meta itemprop="position" content="2"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+            <header class="headline">
+            </header>
+
+
+<div class="article-subheading">Chapter 3</div>
+<h1 id="pointers-and-dynamic-memory">Pointers and Dynamic Memory</h1>
+
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Pointers and Dynamic Memory</h1>
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="pointers">Pointers</h1>
+
+<p>Pointers in C are variables that store the memory address of some other variable or data. They have an associated type of what kind of value they reference.</p>
+<p>Pointers are one of the most difficult concepts in the C language. However, mastering pointers allows you do have a deeper understanding of what actually happens when your program runs. Higher-level languages do not explicitly use pointers, but they do use pointers &ldquo;behind the scenes&rdquo;. Learning pointers in C can also help you understand what&rsquo;s going on in Java/C#/etc. programs.</p>
+<h2 id="declaring">Declaring</h2>
+<p>The type of a pointer variable is:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>type*</span></span></code></pre></div><p>where <em>type</em> is the type of data this pointer will reference. For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> intPtr;</span></span></code></pre></div><p><em>intPtr</em> can hold the address of an int variable. Another:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> charPtr;</span></span></code></pre></div><p><em>charPtr</em> can hold the address of a char variable.</p>
+<p>When you are declaring pointers, the * can go any where between the type and the variable name. For example, all of the following are acceptable:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> intPtr;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span> intPtr;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>intPtr;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>intPtr;</span></span></code></pre></div><p>Variables in C are not automatically initialized – and this includes pointers. After declaring a pointer, it holds some garbage value that was left in that spot in memory.</p>
+<h2 id="-operator-address-of">&amp; Operator (Address-Of)</h2>
+<p>The &amp; operator returns the memory address of a variable. For example, if we have:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;</span></span></code></pre></div><p>And the <em>x</em> variable is stored at spot 1714 in memory (every variable is given a certain spot in memory, and these spots have an associated number), then if we do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#f92672">&amp;</span>x</span></span></code></pre></div><p>this will give us the 1714 spot.</p>
+<p>The address-of operator isn&rsquo;t very useful unless we&rsquo;re using pointers. Since pointers are supposed to hold memory addresses, we can initialize them to be the address of some other variable.</p>
+<p>So, suppose we have the following variable declarations:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>; <span style="color:#75715e">//x is given spot 1714 in memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>xPtr;</span></span></code></pre></div><p>We can make the <em>xPtr</em> variable reference <em>x</em>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xPtr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>x; <span style="color:#75715e">//Now xPtr &#34;points to&#34; x – it holds address 1714
+</span></span></span></code></pre></div><p>Notice that when we DECLARE a pointer, we include the *. However, when we INITIALIZE the pointer, we don&rsquo;t include the *.</p>
+<h2 id="-operator-dereferencing">* Operator (Dereferencing)</h2>
+<p>The * operator is an operator specifically for pointer variables. It returns the value of what is being pointed at.</p>
+<p>For example, if we have:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>; <span style="color:#75715e">//x is given spot 1714 in memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>xPtr;
+</span></span><span style="display:flex;"><span>xPtr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>x;</span></span></code></pre></div><p>Then saying *<em>xPtr</em> gets us the value pointed to by <em>xPtr</em>. <em>xPtr</em> holds memory address 1714, so if I say *<em>xPtr</em>, then I get the value stored in spot 1714 – which is a 4. I can also use this operator to modify the value at that spot in memory. For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#f92672">*</span>xPtr <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;</span></span></code></pre></div><p>Now the value at spot 1714 is a 6. The <em>x</em> variable is stored in spot 1714, so now <em>x</em> has the value 6.</p>
+<h2 id="example">Example</h2>
+<p>The following example illustrates how pointers work:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;      <span style="color:#75715e">//i gets a memory location, say 3245, and has some random value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>ip;    <span style="color:#75715e">//ip has some random address
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>i <span style="color:#f92672">=</span> <span style="color:#ae81ff">36</span>;     <span style="color:#75715e">//i has the value 36
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">*</span>ip <span style="color:#f92672">=</span> <span style="color:#ae81ff">72</span>;   <span style="color:#75715e">//Most likely, causes a segmentation fault
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ip <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>i;    <span style="color:#75715e">//ip references memory address 3245
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">*</span>ip <span style="color:#f92672">=</span> <span style="color:#ae81ff">72</span>;   <span style="color:#75715e">//Memory address 3245 has value 72 (so i = 72)
+</span></span></span></code></pre></div><p>The reason <code>*ip = 72</code> will cause problems is that <code>*ip</code> currently holds some random memory address, since it has not been initialized. When we say <code>*ip</code>, we&rsquo;re trying to access the memory at that random spot. This is most likely not the program&rsquo;s memory, so we will get a segmentation fault when we try to change it. (The other possibility is that we could end up overwriting one of the other program variables.)</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="pointers-vs-arrays">Pointers vs. Arrays</h1>
+
+<p>Arrays and pointers have a lot in common. When we do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> nums[<span style="color:#ae81ff">10</span>];</span></span></code></pre></div><p>Then we get a spot in memory that looks like this:</p>
+<p>
+<a href="#image-25bb34227cfd5b066955f1c45eb9375a" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/emptyArray.png" alt="new array" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-25bb34227cfd5b066955f1c45eb9375a">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/emptyArray.png" alt="new array" class="lightbox-image" loading="lazy">
+</a></p>
+<p>But what is <em>nums</em>? It is actually a constant pointer to the first spot in the array, <code>nums[0]</code>. So really, the picture looks like this:</p>
+<p>
+<a href="#image-b6e7d2093b10da4c8f1b382a000febc1" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/numsArray.png" alt="nums array" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-b6e7d2093b10da4c8f1b382a000febc1">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/numsArray.png" alt="nums array" class="lightbox-image" loading="lazy">
+</a></p>
+<p>So, <code>&amp;nums[0]</code> (the address of the first element in the array) is the same thing as <code>nums</code>.</p>
+<h2 id="pointer-notation">Pointer Notation</h2>
+<p>Because pointers and arrays are essentially the same thing (except array addresses cannot be
+changed), we can also access elements in an array by treating it as a pointer. In the above
+example, <code>nums</code> is a pointer to the first spot in the array. Space for arrays is reserved
+contiguously, so the second element in the array is physically next to the first element. This
+means that I can say:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>nums+1</span></span></code></pre></div><p>to get the memory address of the second element in the array.</p>
+<p>Note: an integer uses 4 bytes of space. However, you don’t say <code>nums+4</code> to move to the next
+integer. This is because pointers have a particular type associated with them – like an int – and
+the compiler will automatically move over the space of an int when you say <code>+1</code>.</p>
+<p>Suppose now that you want to initialize the value at index 4 in the <code>nums</code> array to 7. You could
+say:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>nums[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;</span></span></code></pre></div><p>However, you could do the same thing by treating <em>nums</em> as a pointer. You can get the address of
+the array element at index 4 by saying:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>nums<span style="color:#f92672">+</span><span style="color:#ae81ff">4</span></span></span></code></pre></div><p>This is a pointer, so if we want to change the contents of that location to 7, we need to
+dereference it:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#f92672">*</span>(nums<span style="color:#f92672">+</span><span style="color:#ae81ff">4</span>) <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;</span></span></code></pre></div><h2 id="example">Example</h2>
+<p>Recall that an array is a constant pointer to a block of reserved memory. This means that we can
+change the values stored in the array, but we can’t change the array itself (make it reference
+another piece of memory). Consider the following statements – which are legal?</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a[<span style="color:#ae81ff">10</span>]; 		<span style="color:#75715e">//OK – a points to a block of 10 ints in memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>a<span style="color:#f92672">++</span>; 			<span style="color:#75715e">//NO – The address of an array can’t change
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>xp <span style="color:#f92672">=</span> a;	<span style="color:#75715e">//OK – Now xp also points to the beginning of the array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>a <span style="color:#f92672">=</span> xp; 		<span style="color:#75715e">//NO – The address of an array can’t change
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> b[<span style="color:#ae81ff">5</span>]; 		<span style="color:#75715e">//OK – b points to a block of 5 ints in memory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>bp <span style="color:#f92672">=</span> b;	<span style="color:#75715e">//OK – Now b also points to the beginning of the array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>xp<span style="color:#f92672">++</span>; 			<span style="color:#75715e">//OK – Now xp points to the second element in the array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">*</span>xp <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>; 		<span style="color:#75715e">//OK – The second element in the array is set to 14 (a[1] = 14)
+</span></span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="iteration-with-pointers">Iteration with Pointers</h1>
+
+<p>This is how we have initialized array elements in the past:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> nums[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	nums[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>However, now that we can treat arrays like pointers, there is a different way to initialize array
+elements:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>ip;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> nums[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (ip <span style="color:#f92672">=</span> nums; ip <span style="color:#f92672">&lt;</span> nums<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>; ip<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">*</span>ip <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, <code>ip</code> is a pointer that starts by pointing to the first element in the array. We loop while the
+value of <code>ip</code> (the memory address) is less than <code>nums+10</code> – which is the address of the last
+element in the array. Each time, <code>ip++</code> advances <code>ip</code> to point at the next element in the array.
+Inside the loop, we dereference <code>ip</code> to get the current array element, and set that element to 0.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="pointers-to-pointers">Pointers to Pointers</h1>
+
+<p>Just like a variable can be a pointer, we can also declare pointers to pointers. (We can take it
+even further than that, but it starts to get pretty confusing!) You can denote the &ldquo;level&rdquo; of the
+pointer by how many *’s you use in the declaration.</p>
+<p>Here&rsquo;s an example of using pointers to pointers:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i; 		<span style="color:#75715e">//declares the int i
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>ip; 	<span style="color:#75715e">//declares the int pointer ip
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>ipp; 	<span style="color:#75715e">//declares a pointer to a pointer to an int, ipp
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>i <span style="color:#f92672">=</span> <span style="color:#ae81ff">36</span>; 	<span style="color:#75715e">//gives i the value 36
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ip <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>i; 	<span style="color:#75715e">//now ip points to i
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">*</span>ip <span style="color:#f92672">=</span> <span style="color:#ae81ff">72</span>; 	<span style="color:#75715e">//dereferences ip to get i, and sets it to 72 (now i=72)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ipp <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>ip; 	<span style="color:#75715e">//ipp points to ip, which points to i
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">**</span>ipp <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>; <span style="color:#75715e">//dereferences ipp to get ip, then dereferences again to get i,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#75715e">//and sets it to 24 (now i = 24)
+</span></span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="call-by-reference">Call by Reference</h1>
+
+<p>C functions are naturally call-by-value, which means that we don’t pass variables themselves –
+we pass their value. So, if we modify one of the parameters in our function, it does not modify
+the original variable passed to the function. Consider the following example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//This example doesn’t work!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> a;
+</span></span><span style="display:flex;"><span>	a <span style="color:#f92672">=</span> b;
+</span></span><span style="display:flex;"><span>	b <span style="color:#f92672">=</span> temp;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//assume the test code below is in another function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">swap</span>(x, y);</span></span></code></pre></div><p>This code fragment is supposed to swap the values in <code>x</code> and <code>y</code>, so that <code>x == 4</code> and <code>y == 3</code>.
+However, when we call <code>swap</code>, only the VALUES 3 and 4 are passed – not <code>x</code> and <code>y</code> themselves.
+The values 3 and 4 get bound to the function parameters <code>a</code> and <code>b</code>. By the end of the function, we
+do have that <code>a == 4</code> and <code>b == 3</code>. However, <code>x</code> and <code>y</code> don’t change because they are completely
+different from <code>a</code> and <code>b</code>.
+If we do want to change <code>x</code> and <code>y</code>, we need to pass in the address of <code>x</code> and the address of <code>y</code>. Then,
+we can update the values at those memory locations. Here is our revised <code>swap</code> function:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//Take two memory addresses (pointers)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>a, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>b) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>a; 	<span style="color:#75715e">//Store the value pointed to by a
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>b; 		<span style="color:#75715e">//Update the contents of a to be the contents of b
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>b <span style="color:#f92672">=</span> temp; 		<span style="color:#75715e">//Update the contents of a to be temp
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div><p>Now, when we call <code>swap</code>, we will need to pass the memory address of the variables we want to
+swap. This means we need to use the &amp; operator:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">swap</span>(<span style="color:#f92672">&amp;</span>x, <span style="color:#f92672">&amp;</span>y);</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="sizeof">sizeof</h1>
+
+<p>The <code>sizeof</code> function in C returns the number of bytes needed to store a specified type. It is
+needed for dynamic memory allocation because we need to know how many bytes we want to
+allocate.</p>
+<p>Here is the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sizeof</span>(type);</span></span></code></pre></div><p>where <code>type</code> is a defined type in C, like <code>char</code> or <code>int</code>. Here are a few examples:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>) 	<span style="color:#75715e">//evaluates to 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">char</span>) 	<span style="color:#75715e">//evaluates to 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">double</span>) 	<span style="color:#75715e">//evaluates to 8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>) 	<span style="color:#75715e">//evaluates to 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>) 	<span style="color:#75715e">//evaluates to 4
+</span></span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="dynamic-memory">Dynamic Memory</h1>
+
+<p>Currently, we can only declare arrays to be of a constant size (like 10). This is not always
+convenient – sometimes we want to make the size based on some user input. If we want to
+allocate a dynamic amount of space, we need to use C&rsquo;s dynamic memory functions. Each of
+these functions is in <code>&lt;stdlib.h&gt;</code>.</p>
+<h2 id="malloc">malloc</h2>
+<p>This function allocates a contiguous block of memory with the specifies size (number of bytes).
+It returns a void pointer to the block of memory. (This pointer will be automatically cast to the
+correct type when you store it.)</p>
+<p>Here is the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">int</span> numBytes);</span></span></code></pre></div><p>For example, we could allocate an array like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> nums1[<span style="color:#ae81ff">5</span>];</span></span></code></pre></div><p>Or we could do the same thing using <code>malloc</code>. If we use <code>malloc</code>, we need to specify the
+number of bytes to reserve. We want 5 ints, and each int takes up <code>sizeof(int)</code> bytes. So,
+the total needed is <code>5*sizeof(int)</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//The result of malloc is automatically cast to an int*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));</span></span></code></pre></div><p>Now, we can treat <code>nums2</code> just like an array. For instance, if we wanted to initialize all elements
+in <code>nums2</code> to 0:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	nums2[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; 	<span style="color:#75715e">//The compiler converts this to *(nums2+i) = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div><p>Allocating arrays with malloc has several key difference from standard array allocation:</p>
+<ul>
+<li><code>malloc</code> can handle a variable for the desired size; a standard array cannot</li>
+<li>The result of <code>malloc</code> is a pointer; the result of a standard array allocation is a constant pointer</li>
+<li><code>malloc</code> memory is allocated on the heap. If there is not enough space to do the allocation, <code>malloc</code> will return NULL. An array is allocated on the program stack – if there is not enough space, the program simply won&rsquo;t compile.</li>
+</ul>
+<h2 id="calloc">calloc</h2>
+<p>The <code>calloc</code> function is very similar to <code>malloc</code>. The only difference is that when arrays are
+allocated using <code>calloc</code>, all elements are automatically initialized to 0.</p>
+<p>Here is the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">calloc</span>(<span style="color:#66d9ef">int</span> numElems, <span style="color:#66d9ef">int</span> sizePerElem);</span></span></code></pre></div><p>The prototype of <code>calloc</code> is also a little different than the one for <code>malloc</code>. It takes two
+arguments – the number of elements you want in the array, and the number of bytes needed for
+each elements. Like <code>malloc</code>, <code>calloc</code> returns a void pointer to the contiguous block of
+memory it allocated. This pointer will be automatically cast to the appropriate type when you
+store it.</p>
+<p>Here&rsquo;s how to create an array of 10 ints, all initialized to 0:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">calloc</span>(<span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));</span></span></code></pre></div><p>Now you can use <code>nums</code> just like an array. For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>nums[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;</span></span></code></pre></div><p>Like <code>malloc</code>, <code>calloc</code> will return NULL if there is not enough space to do the allocation. In
+both cases, it&rsquo;s a good idea to check if the pointer is NULL before you use it.</p>
+<p>For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">calloc</span>(<span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (nums <span style="color:#f92672">==</span> NULL) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Not enough space.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//Use nums as usual
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div><h2 id="realloc">realloc</h2>
+<p>The <code>realloc</code> function allows you to easily expand and shrink the space allocated for an array.</p>
+<p>Here is the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">realloc</span>(<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> origPtr, <span style="color:#66d9ef">int</span> newSize);</span></span></code></pre></div><p>This function takes your original pointer and the desired new size in bytes. It looks for a
+contiguous block of memory with the desired size. If it can find one, it copies the contents of the
+old array into the new block of memory. Then it releases the space needed for the old array, and
+returns a void pointer to the new block of memory.</p>
+<p>The <code>realloc</code> function doesn&rsquo;t always behave as you intend. Here are the possible return
+values of <code>realloc</code>:</p>
+<ul>
+<li>NULL (if not enough space is found)</li>
+<li>The original pointer (if there is enough space at that location)</li>
+<li>A new pointer to a different spot in memory</li>
+</ul>
+<p>Suppose we allocate the <code>nums</code> array like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));</span></span></code></pre></div><p>Now we decide that we want <code>nums</code> to hold 15 elements instead of 10. Here&rsquo;s what we might
+try:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">realloc</span>(nums, <span style="color:#ae81ff">15</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));</span></span></code></pre></div><p>Suppose that <code>realloc</code> could not find enough space to grant the request – so it returns NULL.
+This means that we assign NULL to our original <code>nums</code> pointer. Now <code>nums</code> does not reference
+the original array – in fact, nothing does. The original array is stuck in memory with no way to
+get at it – this is called a <em>memory leak</em>.</p>
+<p>To fix this problem, assign a temporary pointer to the result of <code>realloc</code>. Then, if it&rsquo;s not
+NULL, reassign the original pointer. This keeps you from losing your array:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>temp <span style="color:#f92672">=</span> <span style="color:#a6e22e">realloc</span>(nums, <span style="color:#ae81ff">15</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (temp <span style="color:#f92672">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>	nums <span style="color:#f92672">=</span> temp;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="free">free</h2>
+<p>In Java and C#, any memory that you&rsquo;re no longer using will be cleaned up by the garbage collector. C
+has no garbage collector, so you are in charge of releasing memory that you&rsquo;re done with. If you
+never release any allocated memory, you will eventually run out of space.</p>
+<p>The C function that releases dynamic memory is called <code>free</code>. Here is the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">free</span>(<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> pointer);</span></span></code></pre></div><p>Note that even though <code>free</code> takes a void pointer, it can take any type of pointer that has been
+dynamically allocated.</p>
+<p>Here&rsquo;s an example of using <code>free</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	nums[i] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//done using nums
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">free</span>(nums);</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="multi-dimensional-dynamic-arrays">Multi-dimensional Dynamic Arrays</h1>
+
+<p>We can also create multi-dimensional dynamic arrays using <code>malloc</code>. This section will focus on
+creating two-dimensional arrays. You can get more dimensions by adapting the following
+process:</p>
+<ol>
+<li>Use <code>malloc</code> to create an array of pointers. Each pointer in the array will point to a row
+in the two-dimensional array.</li>
+</ol>
+<p>For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//Final array will have 3 rows
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>matrix <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>));</span></span></code></pre></div><ol start="2">
+<li>Use <code>malloc</code> to allocate space for each row:</li>
+</ol>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//Final array will have 4 columns
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	matrix [i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><ol start="3">
+<li>Now we can treat the pointer like a traditional two-dimensional array. For example, we
+could set every element to 0:</li>
+</ol>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> j;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>		matrix [i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><ol start="4">
+<li>When we are done using a multi-dimensional array, we release the memory in reverse order of
+how we allocated it. So, first we release each row:</li>
+</ol>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">free</span>(matrix [i]);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>And then we release the top-level array of pointers:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">free</span>(matrix);</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="returning-pointers-from-functions">Returning Pointers from Functions</h1>
+
+<p>We can also return pointers from functions via
+pointer arguments rather than as the formal return value. To explain this, let&rsquo;s first step back and
+consider the case of returning a simple type, such as int, from a function via a pointer argument.</p>
+<p>If we write the function:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">f</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>ip) {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>ip <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>And then call it like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">f</span>(<span style="color:#f92672">&amp;</span>i);</span></span></code></pre></div><p>then <code>f</code> will &ldquo;return&rdquo; the value 5 by writing it to the location specified by the pointer passed by the
+caller; in this case, to the caller&rsquo;s variable <code>i</code>. A function might &ldquo;return&rdquo; values in this way if it had
+multiple things to return, since a function can only have one formal return value (that is, it can only
+return one value via the return statement.) The important thing to notice is that for the function to
+return a value of type int, it used a parameter of type pointer-to-int.</p>
+<p>Now,	suppose	that	a	function	wants	to	return	a pointer in	this	way.	The	corresponding	parameter	will
+then	have	to	be	a	pointer	to	a	pointer.	For	example,	here	is	a	function	which	tries	to	allocate
+memory	for	a	string	of	length <code>n</code>,	and	which	returns	zero	(<code>false</code>)	if	it	fails	and	1	(nonzero,	or	<code>true</code>)
+if	it	succeeds,	returning	the	actual	pointer	to	the	allocated	memory	via	a	pointer:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">allocstr</span>(<span style="color:#66d9ef">int</span> len, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>retptr) {
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e">//+1 for the \0 character
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(len <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(p <span style="color:#f92672">==</span> NULL) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>retptr <span style="color:#f92672">=</span> p;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The caller can then do something like:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello, world!&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>copystr;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">allocstr</span>(<span style="color:#a6e22e">strlen</span>(string), <span style="color:#f92672">&amp;</span>copystr)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strcpy</span>(copystr, string);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(stderr, <span style="color:#e6db74">&#34;out of memory</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          </section>
+
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Russell Feldhausen
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis308-textbook/-/commit/67149f1b1c3dfffeaf11fa09cef14508de147aac">Aug 10, 2023</a>
+</p>
+</div>
+
+    
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1691698089" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1691698089" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1691698089" defer></script>
+  </body>
+</html>

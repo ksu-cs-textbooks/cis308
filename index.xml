@@ -1,334 +1,334 @@
+
+
+
+
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-
-
-
-
-	
-	
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homepage on CIS 308 Textbook</title>
-    <link>https://ksu-cs-textbooks.github.io/cis308/</link>
-    <description>Recent content in Homepage on CIS 308 Textbook</description>
+    <title>CIS 308 Textbook</title>
+    <link>https://ksu-cs-textbooks.github.io/cis308/index.html</link>
+    <description>Recent content on CIS 308 Textbook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 24 Aug 2018 10:53:05 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis308/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://ksu-cs-textbooks.github.io/cis308/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis308/0-chapter/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/</guid>
-      <description>Getting Started </description>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/0-chapter/index.html</guid>
+      <description></description>
     </item>
     <item>
       <title>C Basics</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/1-chapter/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis308/1-chapter/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/1-chapter/</guid>
-      <description>Chapter 1 C Basics </description>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/1-chapter/index.html</guid>
+      <description></description>
     </item>
     <item>
       <title>Arrays, Strings, and Files</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/2-chapter/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis308/2-chapter/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/2-chapter/</guid>
-      <description>Chapter 2 Arrays, Strings, and Files </description>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/2-chapter/index.html</guid>
+      <description></description>
     </item>
     <item>
       <title>Pointers and Dynamic Memory</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/3-chapter/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis308/3-chapter/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/3-chapter/</guid>
-      <description>Chapter 3 Pointers and Dynamic Memory </description>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/3-chapter/index.html</guid>
+      <description></description>
     </item>
     <item>
       <title>Structs</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/4-chapter/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis308/4-chapter/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/4-chapter/</guid>
-      <description>Chapter 4 Structs </description>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/4-chapter/index.html</guid>
+      <description></description>
     </item>
     <item>
       <title>Multiple Files</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/5-chapter/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis308/5-chapter/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/5-chapter/</guid>
-      <description>Chapter 5 Multiple Files Up to this point, all of our programs have been written within a single file. There is nothing wrong with this – a C program is just a bunch of functions, and it&#39;s fine to group those functions within a single file. However, as your programs get bigger, it&#39;s nice to physically separate functions into different files. This makes it easier to find certain pieces of your program.</description>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/5-chapter/index.html</guid>
+      <description>Up to this point, all of our programs have been written within a single file. There is nothing wrong with this – a C program is just a bunch of functions, and it&amp;rsquo;s fine to group those functions within a single file. However, as your programs get bigger, it&amp;rsquo;s nice to physically separate functions into different files. This makes it easier to find certain pieces of your program.
+Separating functions also promotes reuse.</description>
     </item>
     <item>
       <title>User-Defined Types</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/6-chapter/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis308/6-chapter/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/6-chapter/</guid>
-      <description>Chapter 6 User-Defined Types </description>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/6-chapter/index.html</guid>
+      <description></description>
     </item>
     <item>
       <title>Pointers to Functions</title>
-      <link>https://ksu-cs-textbooks.github.io/cis308/7-chapter/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis308/7-chapter/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis308/7-chapter/</guid>
-      <description>Chapter 7 Pointers to Functions The	pointers we	have looked	at	so	far	have	all	been	pointers	to	various	types	of	data	objects,	(such	as	int,	char,	double,	struct	person,	and	pointer-to-int),	but	it	is	also	possible	to	have	pointers	to	functions.	Pointers	to	functions	are	useful	for	approximately	the	same	reasons	as	pointers	to	data:	when	you	want	an	extra	level	of	indirection, or	when	you&#39;d	like	the	same	piece	of	code	to	call	different	functions	depending	on	circumstances.</description>
+      <guid>https://ksu-cs-textbooks.github.io/cis308/7-chapter/index.html</guid>
+      <description>The	pointers we	have looked	at	so	far	have	all	been	pointers	to	various	types	of	data	objects, (such	as	int,	char,	double,	struct	person,	and	pointer-to-int),	but	it	is	also	possible	to	have pointers	to	functions.	Pointers	to	functions	are	useful	for	approximately	the	same	reasons	as pointers	to	data:	when	you	want	an	extra	level	of	indirection, or	when	you&amp;rsquo;d	like	the	same	piece	of code	to	call	different	functions	depending	on	circumstances.</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,786 @@
+
+
+
+
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.117.0">
+    <meta name="generator" content="Relearn 5.18.0">
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Arrays, Strings, and Files :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/index.html" rel="canonical" type="text/html" title="Arrays, Strings, and Files :: CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/index.xml" rel="alternate" type="application/rss+xml" title="Arrays, Strings, and Files :: CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/tele.html" rel="alternate" type="text/html" title="Arrays, Strings, and Files :: CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/embed.html" rel="alternate" type="text/html" title="Arrays, Strings, and Files :: CIS 308 Textbook">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-auto.css?1691698089" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1691698089" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/format-print.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1691698089" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/url.js?1691698089"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1691698089"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="https://ksu-cs-textbooks.github.io/cis308/index.search.js";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1691698089" rel="stylesheet">
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/2-chapter/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/index.html"><span itemprop="name">CIS 308 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Arrays, Strings, and Files</span><meta itemprop="position" content="2"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+            <header class="headline">
+            </header>
+
+
+<div class="article-subheading">Chapter 2</div>
+<h1 id="arrays-strings-and-files">Arrays, Strings, and Files</h1>
+
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Arrays, Strings, and Files</h1>
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="arrays">Arrays</h1>
+
+<p>Arrays in C are, for the most part, the same as arrays in Java or C#. Here are the key differences:</p>
+<ul>
+<li>Arrays in C must be of a <strong>constant size</strong> (not a variable size from user input, for example)</li>
+<li>Arrays in C <strong>do not have an associated length field</strong> that keep track of the number of slots in the array (you must keep track of this information yourself)</li>
+</ul>
+<h2 id="declaring">Declaring</h2>
+<p>Here is the format for declaring an array:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>type name[size];</span></span></code></pre></div><p>Here, <em>type</em> is the type of elements you want to store in the array (like int), <em>name</em> is the name of the array, and <em>size</em> is how many slots you want to reserve. <strong>Note that <em>size</em> MUST be a constant.</strong></p>
+<p>Here is an example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> nums[<span style="color:#ae81ff">10</span>];</span></span></code></pre></div><p>However, the following will not compile because the size is given by a variable:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//this code will not compile as size is not constant
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> nums[size];</span></span></code></pre></div><h2 id="initializing">Initializing</h2>
+<p>Unlike Java, arrays in C are not initialized to any value. Instead, each slot in the array holds some random garbage value that is leftover in that spot in memory.</p>
+<p>Here is how you could initialize all the values in the <em>nums</em> array to 0:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	nums[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Notice that the first index in the array is 0, and the last index is <em>size-1</em>. Also, recall that arrays do not have a length field – we must remember that we reserved 10 spaces for <em>nums</em>.</p>
+<h2 id="arrays-and-functions">Arrays and Functions</h2>
+<p>Arrays can be passed to functions just like any other variable. Because arrays don&rsquo;t have a length field, you will almost always want to pass the size of the array and the array itself. Here&rsquo;s an example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//function prototype – takes an array of ints and its size
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">int</span>[], <span style="color:#66d9ef">int</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() 
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> nums[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) 
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		nums[i] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">print</span>(nums, <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">int</span> arr[], <span style="color:#66d9ef">int</span> size) 
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; i<span style="color:#f92672">++</span>) 
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, arr[i]);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="multi-dimensional-arrays">Multi-Dimensional Arrays</h2>
+<p>You can create multi-dimensional arrays in C by specifying extra dimensions at the time of declaration. For example, this declares a 5x10 array of characters:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> array[<span style="color:#ae81ff">5</span>][<span style="color:#ae81ff">10</span>];</span></span></code></pre></div><p>The first dimension is the row and the second dimension is the column. To access an array element, specify the desired row and column number. For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//sets element at row 2, column 3 to &#39;A&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>array[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>; 
+</span></span></code></pre></div><h2 id="be-careful">Be Careful!</h2>
+<p>If you access an array element in Java or C# with an index that is either negative or too big, you will get some kind of array index exception. Those languages will even tell you in what file and on what line the error occurred.
+C is not as friendly about this mistake. If you access an element with a bad index, such as:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> nums[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span>nums[<span style="color:#ae81ff">10</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">//10 is past the bounds of the array
+</span></span></span></code></pre></div><p>Then one of two things will happen:</p>
+<ol>
+<li>C will allow you to modify the memory that is just past the end of your array (where spot 10 would be if there were that many spots). This memory might belong to one of your other variables!</li>
+<li>Your program will crash with a segmentation fault (seg fault). You will see this error quite a bit when you get started in C – it means that you tried to access memory that isn&rsquo;t yours. Unfortunately, the error message does not give you any information about where the problem occurred – you will have to find it yourself.</li>
+</ol>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="strings">Strings</h1>
+
+<p>We saw before that there is no string type in C. This is true – but you can simulate a string by using an array of characters that is terminated with a special end-of-string character, &lsquo;\0&rsquo;.</p>
+<h2 id="string-variables">String Variables</h2>
+<p>A <em>string literal</em> can be declared as follows:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> str[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>;</span></span></code></pre></div><p>After this line, str references the following characters in memory:</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H</td>
+<td>e</td>
+<td>l</td>
+<td>l</td>
+<td>o</td>
+<td>\0</td>
+</tr>
+</tbody>
+</table>
+<p>We could have created the same string like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> str[<span style="color:#ae81ff">6</span>] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;H&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;l&#39;</span>, <span style="color:#e6db74">&#39;l&#39;</span>, <span style="color:#e6db74">&#39;o&#39;</span>, <span style="color:#e6db74">&#39;\0&#39;</span>};</span></span></code></pre></div><p>Arrays (and strings) are constant memory addresses. We can change values in strings and arrays, but we can&rsquo;t change the memory address. So, we can do things like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>str[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;h&#39;</span>; <span style="color:#75715e">//OK
+</span></span></span></code></pre></div><p>But we can&rsquo;t change the memory address (the entire string):</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hi&#34;</span>; <span style="color:#75715e">//Compiler error!
+</span></span></span></code></pre></div><p>Later in this section, you will see a function called <code>strcpy</code> that copies the characters from one string to another.</p>
+<h2 id="string-input-and-output">String Input and Output</h2>
+<p>Strings can be inputted and outputted just like any other variable. To print a string, use <code>printf</code> with the <code>%s</code> control string character. To get a string as input, you can use <code>scanf</code> (again with the <code>%s</code> control string character). When reading in a string, <code>scanf</code> will read characters up to but not including the first whitespace it encounters (&rsquo;\n&rsquo;, &rsquo; &lsquo;, &lsquo;\t&rsquo;, etc.).</p>
+<p>Here&rsquo;s an example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> name[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter your name: &#34;</span>); <span style="color:#75715e">//Suppose you enter &#34;Fred&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, name);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello, %s!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name); <span style="color:#75715e">//Will print &#34;Hello, Fred!&#34;
+</span></span></span></code></pre></div><p>Notice that when you use <code>scanf</code> to read in a string, you do not need to put an &amp; in front of the string variable name. This is because a string is an array of characters, and arrays are already memory addresses. (We&rsquo;ll learn more about this in the section on Pointers.)</p>
+<p>The trouble with using <code>scanf</code> to input strings is that the function doesn&rsquo;t check the size of the array when it is reading input. So, if you typed the name &ldquo;George Washington&rdquo; in the above example (which needs 18 characters of space), <code>scanf</code> wouldn&rsquo;t stop writing once it reached the end of the array. Instead, it would try to write past the end of the array. This would
+cause some of your variables to be overwritten, or a segmentation fault. In the worst case, it could be exploited by a hacker with a <em>buffer overflow attack</em>, where the hacker knowingly inserted program instructions beyond the bounds of the input buffer.</p>
+<p>A better choice for reading in strings is the <code>fgets</code> function. Here&rsquo;s the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span>[] <span style="color:#a6e22e">fgets</span>(<span style="color:#66d9ef">char</span> s[], <span style="color:#66d9ef">int</span> size, FILE <span style="color:#f92672">*</span>stream);</span></span></code></pre></div><p>You pass <code>fgets</code> the string buffer (<code>s</code>), the size of the buffer (<code>size</code>), and the stream you&rsquo;re reading from (use <code>stdin</code> to read as regular user input). It returns the string it read, or <code>NULL</code> if it was unable to read anything.</p>
+<p>It will stop reading user input when either:</p>
+<ul>
+<li>It has read <code>size-1</code> characters (it needs the last spot for a &lsquo;\0&rsquo;)</li>
+<li>It has reached the end of the input</li>
+<li>It has reached a newline</li>
+</ul>
+<p>Here is same example using <code>fgets</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> name[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter your name: &#34;</span>); <span style="color:#75715e">//Suppose you enter &#34;Fred&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">fgets</span>(name, <span style="color:#ae81ff">10</span>, stdin);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello, %s&#34;</span>, name); <span style="color:#75715e">//Will print &#34;Hello, Fred&#34;
+</span></span></span></code></pre></div><p>NOTE: if <code>fgets</code> reaches a newline character before reading <code>size-1</code> characters, it WILL store the newline as its last character (just before the <code>\0</code>). If the user enters &ldquo;Fred&rdquo; in the example above, the <code>name</code> array will hold: <code>{'F', 'r', 'e', 'd', '\n', '\0', (garbage), (garbage), (garbage), (garbage)}</code>.</p>
+<p>If you want to remove that <code>\n</code> character, you will need to overwrite the <code>\n</code> to hold the end-of-string character instead (<code>\0</code>). We will see a convenient trick for doing this in the <code>strcspn</code> section below.</p>
+<h2 id="conversions">Conversions</h2>
+<p>It is sometimes necessary to convert between strings, ints, and doubles.</p>
+<h3 id="from-string-to-intdouble">From string to int/double</h3>
+<p>There are two conversion functions from a string to an int or double:</p>
+<ul>
+<li><code>atoi</code>: converts from a string to an int</li>
+<li><code>atof</code>: converts from a string to a double</li>
+</ul>
+<p>To use any of these functions, you need to add:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#include &lt;stdlib.h&gt;</span></span></code></pre></div><p>To the top of the file.</p>
+<p>Here is an example of using the conversion functions:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> buff[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> d;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter an integer: &#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fgets</span>(buff, <span style="color:#ae81ff">10</span>, stdin); <span style="color:#75715e">//Suppose you enter &#34;47&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>num <span style="color:#f92672">=</span> <span style="color:#a6e22e">atoi</span>(buff); <span style="color:#75715e">//num = 47
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter a real number: &#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fgets</span>(buff, <span style="color:#ae81ff">10</span>, stdin); <span style="color:#75715e">//Suppose you enter &#34;4.75&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">=</span> <span style="color:#a6e22e">atof</span>(buff); <span style="color:#75715e">//d = 4.75
+</span></span></span></code></pre></div><h3 id="from-intdouble-to-string">From int/double to string</h3>
+<p>The easiest way to convert from an int or double to a string is to use the <code>sprintf</code> function, which is part of <code>stdio.h</code>. <code>sprintf</code> works exactly like <code>printf</code>, but lets you &ldquo;print&rdquo; to a string instead of to standard out. You can either print a single int or double (thus converting it to a string), or you can print longer a longer string that mixes variable values with other text. Here is an example of using <code>sprintf</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> buff1[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> buff2[<span style="color:#ae81ff">40</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> dec <span style="color:#f92672">=</span> <span style="color:#ae81ff">14.23</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sprintf</span>(buff1, <span style="color:#e6db74">&#34;%d&#34;</span>, num);						<span style="color:#75715e">//buff1 is now &#34;7&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">sprintf</span>(buff2, <span style="color:#e6db74">&#34;Decimal value: %lf.&#34;</span>, dec);		<span style="color:#75715e">//buff2 is now &#34;Decimal value: 14.23.&#34;
+</span></span></span></code></pre></div><h2 id="string-functions">String Functions</h2>
+<p>Below is a list of common string functions. To use any of these, you need to add:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#include &lt;string.h&gt;</span></span></code></pre></div><p>To to the top of the file.</p>
+<h3 id="strcat">strcat</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span>[] <span style="color:#a6e22e">strcat</span>(<span style="color:#66d9ef">char</span> str1[], <span style="color:#66d9ef">char</span> str2[]);</span></span></code></pre></div><p>This function copies the characters in <code>str2</code> onto the end of <code>str1</code>. It returns the newly concatenated string (although <code>str1</code> also references the concatenated string).</p>
+<p>For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> str1[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> str2[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter two words: &#34;</span>); <span style="color:#75715e">//Suppose you entered &#34;hi hello&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s %s&#34;</span>, str1, str2);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">strcat</span>(str1, str2); 		<span style="color:#75715e">//str1 = &#34;hihello&#34;, str2 = &#34;hello&#34;
+</span></span></span></code></pre></div><h3 id="strcmp">strcmp</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">strcmp</span>(<span style="color:#66d9ef">char</span> str1[], <span style="color:#66d9ef">char</span> str2[]);</span></span></code></pre></div><p>This function compares <code>str1</code> and <code>str2</code> to see which string comes alphabetically before the other. It returns:</p>
+<ul>
+<li>A number less than 0, if <code>str1</code> comes alphabetically before <code>str2</code></li>
+<li>0, if <code>str1</code> equals <code>str2</code></li>
+<li>A number greater than 0, if <code>str1</code> comes alphabetically after <code>str2</code></li>
+</ul>
+<p>For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> str1[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> str2[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter two words: &#34;</span>); <span style="color:#75715e">//Suppose you entered &#34;hi hello&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s %s&#34;</span>, str1, str2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strcmp</span>(str1, str2) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s comes first</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, str1);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strcmp</span>(str1, str2) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s comes first</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, str2);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The strings are equal</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The code above would print &ldquo;hello comes first&rdquo;.</p>
+<h3 id="strcpy">strcpy</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span>[] <span style="color:#a6e22e">strcpy</span>(<span style="color:#66d9ef">char</span> str1[], <span style="color:#66d9ef">char</span> str2[]);</span></span></code></pre></div><p>This function copies the characters in <code>str2</code> into <code>str1</code>, overwriting anything that was already in <code>str1</code>. It returns the newly copied string (although <code>str1</code> also references the copied string).</p>
+<p>For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> src[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> dest[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter a word: &#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, src); 			<span style="color:#75715e">//Suppose you entered &#34;hello&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">strcpy</span>(dest, src); 			<span style="color:#75715e">//Now dest also holds &#34;hello&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>src[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;B&#39;</span>; 				<span style="color:#75715e">//Now src is &#34;Bello&#34;, and dest is &#34;hello&#34;
+</span></span></span></code></pre></div><h3 id="strcspn">strcspn</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">strcspn</span>(<span style="color:#66d9ef">char</span> str1[], <span style="color:#66d9ef">char</span> str2[]);</span></span></code></pre></div><p>This function returns the number of characters that appear in <code>str1</code> before reaching ANY character from <code>str2</code>. (If the first character in <code>str1</code> also appears in <code>str2</code>, then <code>strcspn</code> returns 0.)</p>
+<p>For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> str[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> index;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter a word: &#34;</span>);<span style="color:#75715e">//Suppose you entered &#34;hello&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, str);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>index <span style="color:#f92672">=</span> <span style="color:#a6e22e">strcspn</span>(str, <span style="color:#e6db74">&#34;la&#34;</span>); <span style="color:#75715e">//index is 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//2 characters appear in str before finding any character from &#34;la&#34;
+</span></span></span></code></pre></div><p><code>strcspn</code> is especially handy for removing the trailing <code>\n</code> that gets added to strings when using <code>fgets</code>. As we saw earlier in this section, if we do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> name[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter your name: &#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fgets</span>(name, <span style="color:#ae81ff">10</span>, stdin);</span></span></code></pre></div><p>And enter &ldquo;Fred&rdquo;, then the <code>name</code> array will hold <code>{'F', 'r', 'e', 'd', '\n', '\0', (garbage), (garbage), (garbage), (garbage)}</code>. We can use <code>strcspn</code> to find the index of <code>\n</code> and then replace it with a <code>\0</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>name[<span style="color:#a6e22e">strcspn</span>(name, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;\0&#39;</span>;</span></span></code></pre></div><p>When <code>strcspn</code> gives us the number of characters read before reaching a <code>\n</code>, that IS the index of <code>\n</code>. In the same line, we can replace that position to be the end-of-string marker, which effectively deletes the newline from the end of the string.</p>
+<h3 id="strlen">strlen</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">strlen</span>(<span style="color:#66d9ef">char</span> str[]);</span></span></code></pre></div><p>This function returns the number of characters in <code>str</code>.</p>
+<p>For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> str[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter a word: &#34;</span>);		<span style="color:#75715e">//Suppose you entered &#34;hello&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, str);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#a6e22e">strlen</span>(str)); 	<span style="color:#75715e">//prints 5
+</span></span></span></code></pre></div><h3 id="strtok">strtok</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span>[] <span style="color:#a6e22e">strtok</span>(<span style="color:#66d9ef">char</span> str[], <span style="color:#66d9ef">char</span> delim[]);</span></span></code></pre></div><p>This function returns the first token found in <code>str</code> before the occurrence of any character in <code>delim</code>. (After the first call to <code>strtok</code>, pass <code>NULL</code> as <code>str</code>. This will tell it to continue looking for tokens in the original string.)</p>
+<p>For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> buff[<span style="color:#ae81ff">200</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>token; <span style="color:#75715e">//We&#39;ll learn about this notation in &#34;Pointers&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter names, separated by commas: &#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Suppose you entered &#34;Fred,James,Jane,Lynn&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, buff);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>token <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtok</span>(buff, <span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (token <span style="color:#f92672">!=</span> NULL) 
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, token);
+</span></span><span style="display:flex;"><span>	token <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtok</span>(NULL, <span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The code above will print:</p>
+<div class="wrap-code highlight"><pre tabindex="0"><code>Fred
+James
+Jane
+Lynn</code></pre></div><h3 id="strncpy">strncpy</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span>[] <span style="color:#a6e22e">strncpy</span>(<span style="color:#66d9ef">char</span> str1[], <span style="color:#66d9ef">char</span> str2[], <span style="color:#66d9ef">int</span> n);</span></span></code></pre></div><p>This function copies the first <code>n</code> characters from <code>str2</code> to <code>str1</code>, overwriting anything that was already in <code>str1</code>. It returns the newly copied string (although <code>str1</code> also references the copied string).</p>
+<h3 id="strncmp">strncmp</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">strncmp</span>(<span style="color:#66d9ef">char</span> str1[], <span style="color:#66d9ef">char</span> str2[], <span style="color:#66d9ef">int</span> n);</span></span></code></pre></div><p>This function compares the first <code>n</code> characters in <code>str1</code> and <code>str2</code> to see which length-n prefix comes first alphabetically. It returns:</p>
+<ul>
+<li>A number less than 0, if the first <code>n</code> characters in <code>str1</code> come alphabetically before the first <code>n</code> characters in <code>str2</code></li>
+<li>0, if the first <code>n</code> characters in <code>str1</code> equal the first <code>n</code> characters in <code>str2</code></li>
+<li>A number greater than 0, if the first <code>n</code> characters in <code>str1</code> come alphabetically after the first <code>n</code> characters in <code>str2</code></li>
+</ul>
+<h3 id="strrchr">strrchr</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span>[] <span style="color:#a6e22e">strrchr</span>(<span style="color:#66d9ef">char</span> str[], <span style="color:#66d9ef">char</span> c);</span></span></code></pre></div><p>This function finds the LAST occurrence of <code>c</code> in <code>str</code>. It returns the suffix of <code>str</code> that begins with the last occurrence of <code>c</code>.</p>
+<h3 id="strspn">strspn</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">strspn</span>(<span style="color:#66d9ef">char</span> str1[], <span style="color:#66d9ef">char</span> str2[]);</span></span></code></pre></div><p>This function returns the number of characters read in <code>str1</code> before reaching a character that is NOT in <code>str2</code>.</p>
+<h3 id="strstr">strstr</h3>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span>[] <span style="color:#a6e22e">strstr</span>(<span style="color:#66d9ef">char</span> str1[], <span style="color:#66d9ef">char</span> str2[]);</span></span></code></pre></div><p>This function determines whether <code>str2</code> is a substring of <code>str1</code>. If <code>str2</code> is not a substring of <code>str1</code>, it returns <code>NULL</code>. If <code>str2</code> is a substring of <code>str1</code>, it returns the suffix of <code>str1</code> beginning with the <code>str2</code> substring.</p>
+<h2 id="be-careful">Be Careful!</h2>
+<p>It&rsquo;s very easy to make a mistake when using strings. Strings are arrays, so you will get in trouble if you try to access memory beyond the end of the array.</p>
+<p>For example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> buff[<span style="color:#ae81ff">5</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter a word: &#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Suppose you enter &#34;Hello&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%s&#34;</span>, buff);</span></span></code></pre></div><p><code>scanf</code> will copy the characters &lsquo;H&rsquo;, &rsquo;e&rsquo;, &rsquo;l&rsquo;, &rsquo;l&rsquo;, &lsquo;o&rsquo; into the array. However, it will then try to add the end-of-string character, &lsquo;\0&rsquo;, into the 6th spot in the array. This is past the end of the array, so your program will either crash with a segmentation fault, or you will overwrite the
+value of some other variable. A lot of the string functions involve writing to strings, and none of them will handle an out-of-bounds error gracefully.</p>
+<p>When you use the following functions, <strong>MAKE SURE you have enough memory allocated</strong>:</p>
+<ul>
+<li><code>scanf</code></li>
+<li><code>strcpy</code></li>
+<li><code>strcat</code></li>
+<li><code>strncpy</code></li>
+</ul>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="files">Files</h1>
+
+<p>This section contains information on opening a file, reading from a file, and writing to a file. I only cover how to interact with text files – it is also possible to read from and write to binary files.</p>
+<p>Whenever you are doing file I/O, you need to add:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#include &lt;stdio.h&gt;</span></span></code></pre></div><h2 id="opening-a-file">Opening a File</h2>
+<p>Before we can interact with a file, we need to open it. The <code>fopen</code> function lets us open files for different kinds of input and output. Here&rsquo;s the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>FILE<span style="color:#f92672">*</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#66d9ef">char</span> filename[], <span style="color:#66d9ef">char</span> mode[])</span></span></code></pre></div><p>The <code>FILE*</code> return type means that the function is returning the address of a <code>FILE</code> object. We&rsquo;ll learn more about pointers in the next section. If the file could not be opened, fopen returns <code>NULL</code>.</p>
+<p>Here, <code>filename</code> is a string representation of the filename, such as &ldquo;data.txt&rdquo;. <code>fopen</code> searches the current directory for the file if no absolute path is given. The string <code>mode</code> specifies what type of operations you want to do on the file.</p>
+<p>Here are the different options for the mode:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&ldquo;r&rdquo;</td>
+<td>Open for reading (file must exist)</td>
+</tr>
+<tr>
+<td>&ldquo;w&rdquo;</td>
+<td>Open for writing (overwrites old data)</td>
+</tr>
+<tr>
+<td>&ldquo;a&rdquo;</td>
+<td>Open for appending (creates file if necessary)</td>
+</tr>
+<tr>
+<td>&ldquo;r+&rdquo;</td>
+<td>Open for reading and writing (file must exist)</td>
+</tr>
+<tr>
+<td>&ldquo;w+&rdquo;</td>
+<td>Open for reading and writing (overwrites old data)</td>
+</tr>
+<tr>
+<td>&ldquo;a+&rdquo;</td>
+<td>Open for reading and appending (opens at end of file)</td>
+</tr>
+</tbody>
+</table>
+<p>For example, we can open the file &ldquo;data.txt&rdquo; for reading, and print an error if we were unsuccessful:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>FILE <span style="color:#f92672">*</span>fp <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;data.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (fp <span style="color:#f92672">==</span> NULL) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Error opening file</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>After we are done reading from a file or writing to a file, we must close the file with the <code>fclose</code> function. Here&rsquo;s the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fclose</span>(FILE<span style="color:#f92672">*</span> fp)</span></span></code></pre></div><p>To close data.txt, we&rsquo;d do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">fclose</span>(fp);</span></span></code></pre></div><h2 id="reading-from-a-file">Reading from a File</h2>
+<p>There are two major functions for reading from a file – <code>fscanf</code> and <code>fgets</code>. <code>fgets</code> works exactly like we&rsquo;ve seen before, except now we specify a <code>FILE*</code> instead of <code>stdin</code>. <code>fscanf</code> works exactly like <code>scanf</code>, except we first specify the <code>FILE*</code>. We&rsquo;ll start with <code>fscanf</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fscanf</span>(FILE <span style="color:#f92672">*</span>stream, <span style="color:#66d9ef">char</span> str[], variable addresses...)</span></span></code></pre></div><p><code>fscanf</code>, like <code>scanf</code>, returns the number of variables that were correctly read in. If it was unable to read any more input, the <code>EOF</code> constant is returned. Thus we can compare the return value of <code>fscanf</code> to <code>EOF</code> to see if we&rsquo;ve reached the end of the file.</p>
+<p>Suppose the file data.txt looks like this (a bunch of names and ages, each on separate lines):</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Bob 20
+</span></span><span style="display:flex;"><span>Jill 15
+</span></span><span style="display:flex;"><span>Tony 17
+</span></span><span style="display:flex;"><span>Lisa 22</span></span></code></pre></div><p>We want to read this file, and print something like &ldquo;Bob is 20 years old&rdquo; to the console for each person in the file. Here&rsquo;s how:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>FILE <span style="color:#f92672">*</span>fp <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;data.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> name[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (fp <span style="color:#f92672">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">fscanf</span>(fp, <span style="color:#e6db74">&#34;%s %d&#34;</span>, name, <span style="color:#f92672">&amp;</span>age) <span style="color:#f92672">!=</span> EOF) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s is %d years old</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name, age);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fclose</span>(fp);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now, lets try to do the same thing with the <code>fgets</code> function. Here&rsquo;s the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span>[] <span style="color:#a6e22e">fgets</span>(<span style="color:#66d9ef">char</span> s[], <span style="color:#66d9ef">int</span> size, FILE <span style="color:#f92672">*</span>stream)</span></span></code></pre></div><p><code>fgets</code> reads a string from a specified file into the <code>s</code> array. The <code>size</code> parameter specifies the size of the string – it will not write past the end of the array. It returns a reference to the string that was read. If no string was read (specifying an error or the end of file), <code>NULL</code> is returned.
+<code>fgets</code> will attempt to read <code>size-1</code> characters <em>unless it reaches a newline or the end of the file</em>.</p>
+<p>Here&rsquo;s the same example repeated with <code>fgets</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>FILE <span style="color:#f92672">*</span>fp <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;data.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> name[<span style="color:#ae81ff">20</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> buf[<span style="color:#ae81ff">30</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (fp <span style="color:#f92672">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">fgets</span>(buf, <span style="color:#ae81ff">30</span>, fp) <span style="color:#f92672">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//parse the current line
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>token <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtok</span>(buf, <span style="color:#e6db74">&#34; &#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strcpy</span>(name, token);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//get the age
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    token <span style="color:#f92672">=</span> <span style="color:#a6e22e">strtok</span>(buf, <span style="color:#e6db74">&#34; &#34;</span>);
+</span></span><span style="display:flex;"><span>    age <span style="color:#f92672">=</span> <span style="color:#a6e22e">atoi</span>(token);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s is %d years old</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name, age);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fclose</span>(fp);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>As we saw when using <code>fgets</code> to read from <code>stdin</code>, it WILL store the newline character at the end of each string when reading from a file (assuming there is still room in the array). You may want to use <code>strcspn</code> to overwrite the <code>\n</code> with a <code>\0</code>.</p>
+<p>Reading files with <code>fscanf</code> is usually simpler (since it doesn&rsquo;t involve parsing lines), but it is more error-prone than <code>fgets</code>.</p>
+<h2 id="writing-to-a-file">Writing to a File</h2>
+<p>The primary function for writing to a file is <code>fprintf</code>. This function works exactly like <code>printf</code>, but the first argument is now a <code>FILE*</code>. Here&rsquo;s the prototype:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fprintf</span>(FILE<span style="color:#f92672">*</span> fp, <span style="color:#66d9ef">char</span> str[], variables to print...)</span></span></code></pre></div><p>Here is an example that will ask the user to input 10 numbers. Each number will be written on a separate line to the file out.txt:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>FILE <span style="color:#f92672">*</span>fp <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;out.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (fp <span style="color:#f92672">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> num, i;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Type a number: &#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, num);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fprintf</span>(fp, <span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, num);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fclose</span>(fp);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          </section>
+
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Russell Feldhausen
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis308-textbook/-/commit/67149f1b1c3dfffeaf11fa09cef14508de147aac">Aug 10, 2023</a>
+</p>
+</div>
+
+    
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1691698089" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1691698089" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1691698089" defer></script>
+  </body>
+</html>

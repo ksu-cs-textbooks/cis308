@@ -1,0 +1,925 @@
+
+
+
+
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.117.0">
+    <meta name="generator" content="Relearn 5.18.0">
+    <meta name="description" content="CIS 308: C Language Lab">
+    <meta name="author" content="Julie Thornton">
+    <title>Getting Started :: CIS 308 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/index.html" rel="canonical" type="text/html" title="Getting Started :: CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/index.xml" rel="alternate" type="application/rss+xml" title="Getting Started :: CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/tele.html" rel="alternate" type="text/html" title="Getting Started :: CIS 308 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/embed.html" rel="alternate" type="text/html" title="Getting Started :: CIS 308 Textbook">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-auto.css?1691698089" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1691698089" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/format-print.css?1691698089" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1691698089" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/url.js?1691698089"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1691698089"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="https://ksu-cs-textbooks.github.io/cis308/index.search.js";
+      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
+      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1691698089" rel="stylesheet">
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/0-chapter/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/index.html"><span itemprop="name">CIS 308 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Getting Started</span><meta itemprop="position" content="2"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+            <header class="headline">
+            </header>
+
+
+<div class="article-subheading">Chapter 0</div>
+<h1 id="getting-started">Getting Started</h1>
+
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Getting Started</h1>
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="vs-code">VS Code</h1>
+
+<h2 id="vs-code">VS Code</h2>
+<p>In CIS 308, we will edit our C programs using VS Code with C/C++ extensions. You likely already have Visual Studio (2019 or 2022) installed on your computer from CIS 300 and/or 400 &ndash; however, we will not be using Visual Studio in CIS 308. While it does have a C++ compiler, it behaves differently than more widely accepted C compilers (versions of gcc and clang). Finally, this class has a secondary goal of exposing students to a variety of Unix/Linux tools &ndash; something that cannot be done as easily in Visual Studio.</p>
+<p>You can download VS Code <a href="https://code.visualstudio.com/download" target="_blank">here</a>
+:</p>
+<p>
+<a href="#image-99994404d15e103105f09fd9b9c40677" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/vsCodeDownload.png" alt="VS Code download" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-99994404d15e103105f09fd9b9c40677">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/vsCodeDownload.png" alt="VS Code download" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Install VS Code. When you see the prompt below, I recommend adding the &ldquo;Open with code&rdquo; action for both files and directories:</p>
+<p>
+<a href="#image-13c9f0cb93bf9626ff215c5887c0fecd" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/addAction.png" alt="Open with code" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-13c9f0cb93bf9626ff215c5887c0fecd">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/addAction.png" alt="Open with code" class="lightbox-image" loading="lazy">
+</a></p>
+<h3 id="cc-extensions">C/C++ extensions</h3>
+<p>If you are prompted to install C/C++, do so. If you are not, launch VS Code and select &ldquo;Extensions&rdquo; from the left-hand toolbar. From there, you can find and install &ldquo;C/C++&rdquo; (this will add syntax highlighting to our C programs).</p>
+<p>We ONLY need C/C++, not the whole extension pack.</p>
+<h3 id="vs-code-integrated-terminal">VS Code integrated terminal</h3>
+<p>We will be using the integrated terminal within VS Code, so that we can have the editor and the terminal (for compiling and running) within the same frame. If you do not see the Terminal at the bottom of VS code, select Terminal-&gt;New Terminal.</p>
+<p>Windows users will want to select <em>powershell</em> as their terminal type, and Mac users will want to select the Mac terminal.</p>
+<h2 id="get-the-compiler">Get the compiler</h2>
+<p>VS code does not contain a C compiler (even with the C/C++ extensions) &ndash; we will need to install one.</p>
+<h3 id="windows-users">Windows users</h3>
+<p>I recommend using either MSYS2 or WSL. (I prefer WSL, but on some systems it requires a BIOS edit before it will work.) You can download MSYS2 <a href="https://www.msys2.org/" target="_blank">here</a>
+. Follow the installation instructions.</p>
+<p>Then, launch an MSYS2 shell (click Start, type MSYS2, and run the app). In the resulting shell, type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>pacman -S base-devel gcc</span></span></code></pre></div><p>When prompted, say Y. You should now have both <code>gcc</code> and <code>make</code> installed.</p>
+<p>In order to use these commands from the command prompt, you will need to add their location to your Path. Check both <code>C:\msys64\mingw64\bin</code> and <code>C:\msys64\usr\bin</code> &ndash; copy the address of whichever location contains <code>gcc.exe</code>.</p>
+<p>Next, add that location to your Path. Click Start, type <em>Environment variables</em>, and select &ldquo;Edit the system environment variables&rdquo;). Click &ldquo;Environment Variables..&rdquo;, then find Path under System variables and click &ldquo;Edit&hellip;&rdquo;. Click &ldquo;New&rdquo;, paste in the address you copied in the previous step, and click OK three times to dismiss each frame.</p>
+<p>Open VS Code with an integrated terminal. Try typing:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc</span></span></code></pre></div><p>and then:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>make</span></span></code></pre></div><p>You should see an error that no input files were provided (and not that the term is unrecognized).</p>
+<h3 id="mac-users">Mac users</h3>
+<p>After installing VS Code with C/C++, follow this <a href="https://code.visualstudio.com/docs/cpp/config-clang-mac" target="_blank">user guide</a>
+ to get gcc and make.</p>
+<p>Open VS Code with an integrated terminal, and type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc --version</span></span></code></pre></div><p>If you get an error that <code>gcc</code> is unrecognized, run the command:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>xcode-select --install</span></span></code></pre></div><p>If you try <code>gcc --version</code> again, it should give you a version number.</p>
+<h2 id="organizing-labs">Organizing labs</h2>
+<p>I recommend that you create a folder specifically for CIS 308, and then create subfolders within that folder for each lab assignment. If you are using the lab machines, you will want to put this folder on the U: drive, as files saved in other locations may be deleted.</p>
+<p>When you are ready to start a lab assignment, right-click your CIS 308 folder and select &ldquo;Open with Code&rdquo;:</p>
+<p>
+<a href="#image-4d77f87b706410087dbd37019c5ee4ca" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/openWithCode.png" alt="Open with code" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-4d77f87b706410087dbd37019c5ee4ca">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/openWithCode.png" alt="Open with code" class="lightbox-image" loading="lazy">
+</a></p>
+<p>This will open everything within your CIS 308 subfolder in VS Code:</p>
+<p>
+<a href="#image-d360c75afb59e1d1bdf371ad1bb4b924" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/vsCodeProjView.png" alt="Project view" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-d360c75afb59e1d1bdf371ad1bb4b924">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/vsCodeProjView.png" alt="Project view" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Now, display the integrated terminal in VS Code (Terminal-&gt;New Terminal):</p>
+<p>
+<a href="#image-fa67790c0236c141a9250f441a5d578d" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/vsCodeWithTerminal.png" alt="Terminal" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-fa67790c0236c141a9250f441a5d578d">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/vsCodeWithTerminal.png" alt="Terminal" class="lightbox-image" loading="lazy">
+</a></p>
+<p>(My directory structure might look strange because I created a second CIS 308 folder for the purposes of making these screenshots.)</p>
+<h3 id="starting-the-next-lab">Starting the next lab</h3>
+<p>After following the instructions above to open VS Code to your CIS 308 folder with the integrated terminal displayed, you are ready to create a new, empty folder for the current lab. Suppose we are ready for lab 3. In the integrated terminal, type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>mkdir lab3</span></span></code></pre></div><p>You should see a new <em>lab3</em> folder in the project view on the left:</p>
+<p>
+<a href="#image-f6da559ba35f41fd1f8cc07251617d5d" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/newFolder.png" alt="New folder" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-f6da559ba35f41fd1f8cc07251617d5d">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/newFolder.png" alt="New folder" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Next, use the <code>cd</code> command in the integrated terminal to change directories to your new folder. Type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cd lab3</span></span></code></pre></div><p>(or whatever the current lab is). You should notice that the directory listed in the terminal prompt ends with you new folder, like this:</p>
+<p>
+<a href="#image-71d66a1db8eb913c896aecd9438ca3b1" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/cd.png" alt="Change directories" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-71d66a1db8eb913c896aecd9438ca3b1">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/cd.png" alt="Change directories" class="lightbox-image" loading="lazy">
+</a></p>
+<p>You are now ready to follow the steps in the next section, &ldquo;Using Git&rdquo;, to clone the starting repository for your lab.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="using-git">Using git</h1>
+
+<p>This class will use GitHub links to create initial repositories for both labs and programming projects, similarly to what you have done in CIS 300 and 301.</p>
+<h2 id="github-account">GitHub account</h2>
+<p>First, you will need to create a GitHub account <a href="https://github.com/" target="_blank">here</a>
+. If you already have one, you can use your existing account.</p>
+<h2 id="verify-a-git-install">Verify a git install</h2>
+<p>You will likely already have a command-line version of <code>git</code> installed on your machine. To check, open a folder in VS Code, display the integrated terminal, and type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git --version</span></span></code></pre></div><p>You should see a version number printing out. If you see that, <code>git</code> is already installed.</p>
+<p>If you see an error that <code>git</code> is unrecognized, then you will need to install it. Go <a href="https://git-scm.com/downloads" target="_blank">here</a>
+ to download and install the latest version.</p>
+<p>Windows users may need to add the <code>git.exe</code> location to the system <code>Path</code> environment variables. Most likely, <code>git.exe</code> will be installed to <code>C:\Program Files\Git\bin</code>. Check this location, copy its address, and type &ldquo;Environment variables&rdquo; in the Windows search. Click &ldquo;Environment Variables&rdquo; and find &ldquo;Path&rdquo; under System variables. Click &ldquo;Edit&hellip;&rdquo;. Verify that <code>C:\Program Files\Git\bin</code> (or whatever your <code>git</code> location) is the last item listed. If it isn&rsquo;t, add a new entry for <code>C:\Program Files\Git\bin</code>.</p>
+<h2 id="clone-the-repository">Clone the repository</h2>
+<p>When you get a new assignment, first click the assignment link &ndash; this will create an initial GitHub repository.</p>
+<p>After opening your GitHub repository, click the green &ldquo;Code&rdquo; button and click the copy icon next to the URL name. This will copy the URL of your GitHub repository:</p>
+<p>
+<a href="#image-081ae75a40a820aa45703f6de7ddaf05" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/gitHubRepo.png" alt="Clone repo" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-081ae75a40a820aa45703f6de7ddaf05">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/gitHubRepo.png" alt="Clone repo" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>For labs</strong>, follow the instructions under &ldquo;Organizing Labs&rdquo; in section 0.1 to open your CIS 308 folder in VS Code, create a new lab folder, and change directories to your empty folder.</p>
+<p><strong>For projects</strong>, create an empty folder on your machine, right-click the folder name, and select &ldquo;Open with Code&rdquo;. Then open the Terminal within VS Code by selecting &ldquo;Terminal-&gt;New Terminal&rdquo;. The terminal should automatically display the empty folder you just created.</p>
+<p>Clone your GitHub repository to your new, empty folder by typing in the terminal:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git clone {repository-url} ./</span></span></code></pre></div><p>Where <code>{repository-url}</code> is the URL you copied from your GitHub repository (leave off the <code>{</code> and <code>}</code> when you insert your URL). The <code>./</code> tells git to clone the repository to the current directory.</p>
+<h2 id="add-code-and-test">Add code and test</h2>
+<p>Add the necessary programming files to your project. You can add a file in VS Code by clicking your project name under &ldquo;Explorer&rdquo;, and then clicking the icon labeled &ldquo;New File&rdquo; (it looks a piece of paper with a plus sign). Type the name of your new file and hit Enter to save it:</p>
+<p>
+<a href="#image-335b674f90f610b2a24105816e7b67d3" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/vsCodeAddFile.png" alt="add file" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-335b674f90f610b2a24105816e7b67d3">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/vsCodeAddFile.png" alt="add file" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Write the code for your project. As you go, save it and test it with the <code>gcc</code> compiler. If it builds, run the resulting executable (either <code>a.exe</code> or <code>a.out</code>). Here is an example of compiling and running a Hello, World! program:</p>
+<p>
+<a href="#image-d0c1f4a663216122d9b324679f9e21f1" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/compileRunHello.png" alt="compile run" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-d0c1f4a663216122d9b324679f9e21f1">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/compileRunHello.png" alt="compile run" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="commit-and-push">Commit and push</h2>
+<p>Once you are ready to commit your changes, type the following in the integrated terminal:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git add .</span></span></code></pre></div><p>This will add all changes to the current commit. Then type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git commit -m &#34;descriptive message&#34;</span></span></code></pre></div><p>to create a local commit, where &ldquo;descriptive message&rdquo; is replaced with a message describing your changes (you DO need to include the quotations). Finally, push your local commit to the current branch:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git push</span></span></code></pre></div><p>If you go to your GitHub repository URL, you should see the latest changes.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="compiling-and-running">Compiling and Running</h1>
+
+<p>After you have installed VS Code along with <code>gcc</code>, you can write C programs in the VS Code editor and then use the integrated terminal to compile and run.</p>
+<h2 id="hello-world-in-vs-code">Hello, World! in VS Code</h2>
+<p>Here is a Hello, World! program written in C using VS Code. It is saved to the file <code>hello.c</code> (note that <code>.c</code> is the extension for C programs):</p>
+<p>
+<a href="#image-e9a6297afb18928932e88235868ae0ac" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/helloC.png" alt="Hello C" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-e9a6297afb18928932e88235868ae0ac">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/helloC.png" alt="Hello C" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="find-code-in-terminal">Find code in terminal</h2>
+<p>To compile and run a C program, make sure the integrated terminal appears below the code in VS Code (as shown above). If it doesn&rsquo;t, select &ldquo;Terminal-&gt;New Terminal&rdquo;. This will open a new terminal in your current directory.</p>
+<h3 id="list-directory-contents">List directory contents</h3>
+<p>In the integrated terminal, type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ls</span></span></code></pre></div><p>This should list the contents of the current directory, which hopefully includes your <code>hello.c</code> file. If you get an error that <code>ls</code> is unrecognized (which it might be, depending on what kind of terminal you are using), try:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>dir</span></span></code></pre></div><p>instead.</p>
+<h3 id="change-directory">Change directory</h3>
+<p>If you do not see your code file displayed after typing <code>ls</code> or <code>dir</code>, then you are likely not in the folder that contains your code. If your code is contained within a subfolder of the current directory path displayed in the terminal, do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cd {dir-name}</span></span></code></pre></div><p>where <code>dir-name</code> is the name of a subfolder within the terminal&rsquo;s current directory. (Make sure to leave off the <code>{</code> and <code>}</code> when substiting a directory name.) This will change the terminal&rsquo;s current directory to be: <code>dir-name</code>.</p>
+<p>Alternatively, you may need to back out to the parent folder of the current directory. If you do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cd ..</span></span></code></pre></div><p>Then the terminal&rsquo;s current directory will update to be its parent folder.</p>
+<h2 id="compile-and-run">Compile and run</h2>
+<p>Once you have found the directory with your code (which was most likely the original terminal directory without having to make any changes), you are ready to compile your code. To compile our <code>hello.c</code> program, we type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc hello.c</span></span></code></pre></div><p>(replacing <code>hello.c</code> with the name of our C program file). If there were no errors, it will generate an executable file. If you type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ls</span></span></code></pre></div><p>(or <code>dir</code>), you should see either <code>a.out</code> or <code>a.exe</code> &ndash; this is the executable file for your program.</p>
+<p>To run your executable, type either:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>./a.out</span></span></code></pre></div><p>or:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>./a.exe</span></span></code></pre></div><p>Depending on the name of your executable file. You should see your program running in the terminal.</p>
+<p>Here is an example of compiling and running our Hello, World! program in the VS Code terminal:</p>
+<p>
+<a href="#image-24d945fe03d9457b9e74d3dff15bf49e" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/compileRunHello.png" alt="C compile run" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-24d945fe03d9457b9e74d3dff15bf49e">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/compileRunHello.png" alt="C compile run" class="lightbox-image" loading="lazy">
+</a></p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="terminal-commands">Terminal commands</h1>
+
+<p>A side goal of this class is for students to become more comfortable with using the terminal. With practice, you will find that you are faster at navigating folders, creating files/folders, compiling/running programs, using tools stuch as git, etc. using the terminal than you are using a GUI. Familiarity with a terminal is especially useful in system administration and web development.</p>
+<h2 id="summary-of-common-terminal-commands">Summary of common terminal commands</h2>
+<p>Here is a summary table of the most common terminal commands for this course:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dir</td>
+<td>Lists the current directory contents (only available in Windows)</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>Lists the current directory contents (not available in Windows command prompt)</td>
+</tr>
+<tr>
+<td>cd dirName</td>
+<td>Changes the current directory in the terminal to be <code>dirName</code>. (Note: dirName must be a subfolder of the current directory.)</td>
+</tr>
+<tr>
+<td>mkdir dirName</td>
+<td>Makes a new, empty directory called <code>dirName</code></td>
+</tr>
+<tr>
+<td>ni fileName</td>
+<td>Creates a new, empty file called <code>fileName</code>. We can do <code>ni prog.c</code> to create a new C program called <code>prog.c</code> (only available in Windows)</td>
+</tr>
+<tr>
+<td>touch fileName</td>
+<td>Creates a new, empty file called fileName. We can do <code>touch prog.c</code> to create a new C program called <code>prog.c</code> (only available in Mac/Linux/Unix)</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td>Updates the current directory in the terminal to be its parent directory. For example, if the current directory is <code>C:\Users\Julie</code>, then <code>cd ..</code> makes the current directory be <code>C:\Users</code></td>
+</tr>
+<tr>
+<td>del fileName</td>
+<td>Deletes the file called <code>fileName</code>, which must be in the current directory (only available in Windows)</td>
+</tr>
+<tr>
+<td>rm fileName</td>
+<td>Deletes the file called <code>fileName</code>, which must be in the current directory (only available in Mac/Linux/Unix)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-terminal-tips">Other terminal tips</h2>
+<p>When you are typing a directory name or file name in the terminal, you can type a few letters and hit <em>Tab</em> &ndash; the terminal will attempt to autocomplete the rest of the name.</p>
+<p>To recall a command you recently typed in the terminal, you can use the up or down arrows. This saves you from typing the same commands over and over.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="debugging-c-programs">Debugging C programs</h1>
+
+<p><code>gdb</code> is the C debugger. It allows you to create an executable specifically for debugging purposes.</p>
+<h2 id="getting-gdb">Getting gdb</h2>
+<p>First, ensure that you have gdb installed.</p>
+<h3 id="gdb-on-windows">gdb on Windows</h3>
+<p>Type in a terminal:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gdb --version</span></span></code></pre></div><p>If you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon-&gt;type MSYS2) and then type the following in MSYS2:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>pacman -S mingw-w64-x86_64-gdb</span></span></code></pre></div><p>This should install gdb. Next, you will need to add the <code>gdb.exe</code> location to your Path. It may be in the same location as <code>gcc</code>, which for me is <code>C:\msys64\mingw64\bin</code>, but it may be in a different location. The <code>gdb.exe</code> file should be in a <code>\bin</code> folder somewhere within the <code>C:\msys64</code> folder - you may need to search for it. Copy the address where you find the <code>gdb.exe</code> file.</p>
+<p>Next, add the location of your <code>gdb.exe</code> file to your Path (if it is a different location than your <code>gcc.exe</code> file). Click Start, type <em>Environment variables</em>, and select &ldquo;Edit the system environment variables&rdquo;). Click &ldquo;Environment Variables..&rdquo;, then find Path under System variables and click &ldquo;Edit&hellip;&rdquo;. Look to see if the location of your <code>gdb.exe</code> file is already listed &ndash; if it is, you don&rsquo;t need to add anything. If it&rsquo;s not, click &ldquo;New&rdquo;, paste in the address you copied in the previous step, and click OK three times to dismiss each frame.</p>
+<h3 id="gdb-on-mac">gdb on Mac</h3>
+<p>I recommend following <a href="https://dev.to/jasonelwood/setup-gdb-on-macos-in-2020-489k" target="_blank">this tutorial</a>
+ to get <code>gdb</code> on your machine.</p>
+<h2 id="first-tutorial">First tutorial</h2>
+<p>Suppose we have the following program, <code>test.c</code>. This program is supposed to multiply together the numbers 1 * 2 * 3 * 4 * 5, but it has some problems:</p>
+<p>First, build an executable with debugging information:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc -g test.c -o debug</span></span></code></pre></div><p>This will create the executable <code>debug</code>. You can run <code>gdb</code> on <code>debug</code> as follows (this will launch <code>gdb</code>, but will not yet start running your program):</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gdb debug</span></span></code></pre></div><p>You will see something like:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>GNU gdb (GDB) 12.1
+</span></span><span style="display:flex;"><span>Copyright (C) 2022 Free Software Foundation, Inc.
+</span></span><span style="display:flex;"><span>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>Type &#34;show copying&#34; and &#34;show warranty&#34; for details.
+</span></span><span style="display:flex;"><span>This GDB was configured as &#34;x86_64-w64-mingw32&#34;.
+</span></span><span style="display:flex;"><span>Type &#34;show configuration&#34; for configuration details.
+</span></span><span style="display:flex;"><span>For bug reporting instructions, please see:
+</span></span><span style="display:flex;"><span>&lt;https://www.gnu.org/software/gdb/bugs/&gt;.
+</span></span><span style="display:flex;"><span>Find the GDB manual and other documentation resources online at:
+</span></span><span style="display:flex;"><span>    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>For help, type &#34;help&#34;.
+</span></span><span style="display:flex;"><span>Type &#34;apropos word&#34; to search for commands related to &#34;word&#34;...
+</span></span><span style="display:flex;"><span>Reading symbols from debug...
+</span></span><span style="display:flex;"><span>(gdb)</span></span></code></pre></div><p>That last <code>(gdb)</code> at the end is the debugging prompt.</p>
+<p>Before you execute your program in the debugger, you&rsquo;ll want to set a breakpoint (or several). For example, suppose we want to set a breakpoint at the start of the <code>main</code> function. Then we can type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>break main</span></span></code></pre></div><p>(We could have also typed <code>break 3</code>, which sets a breakpoint on line 3 &ndash; which is the beginning of the main function.) You can add more than one breakpoint in this way.</p>
+<p>When we have added our breakpoint(s) and are ready to run our program with debugging, we type at the debugging prompt:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>run</span></span></code></pre></div><p>(If our program accepts command-line arguments, we include them after the <code>run</code> command.) We see:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Starting program: C:\...\debug.exe 
+</span></span><span style="display:flex;"><span>[New Thread 9144.0x47d8]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Thread 1 hit Breakpoint 1, main () at test.c:4
+</span></span><span style="display:flex;"><span>4           int prod = 0;</span></span></code></pre></div><p>Which tells us that our program has stopped at our breakpoint just before executing line 4 (which is the first statement that performs an operation in our main function). From here, we can graphically view the current line in the program by typing:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>layout src</span></span></code></pre></div><p>In this example, we will see:</p>
+<p>
+<a href="#image-bc9ed1e9365becb99c3f44264c28f300" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/debug.png" alt="debugger" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-bc9ed1e9365becb99c3f44264c28f300">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/debug.png" alt="debugger" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Notice that the line that will be executed next (line 4, where we declare and initialized <code>prod</code>) is highlighted. We can also see our main function breakpoint indicated with a <code>B+</code>. To step line by line through the code, we can use the <code>next</code> command. If we now do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>next</span></span></code></pre></div><p>Then our layout view will highlight the next line in the program (the for loop), like this:</p>
+<p>
+<a href="#image-507ccb0c06768ac024525530e015e572" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/nextDebug.png" alt="next statement" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-507ccb0c06768ac024525530e015e572">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/nextDebug.png" alt="next statement" class="lightbox-image" loading="lazy">
+</a></p>
+<p>We can also examine the values of different variables. If we enter:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>next
+</span></span><span style="display:flex;"><span>print i</span></span></code></pre></div><p>We will see:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$3 = 1</span></span></code></pre></div><p>Which tells us that <code>i</code> is currently 1. If we do <code>next</code> again (thus executing the <code>prod = prod * i</code> statement) and then do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>print prod</span></span></code></pre></div><p>We see:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$4 = 0</span></span></code></pre></div><p>Which tells us that <code>prod</code> is still 0, even after multiplying on the first value of <code>i</code>. We can likely already see the first bug &ndash; <code>prod</code> should have been initialized to 1 instead of 0.</p>
+<p>We can continuing stepping though the lines of code, printing values as we go. When we step to the end of the for loop, we may realize that we never multiply <code>prod</code> by 5 &ndash; and we can see that this is because our for loop condition (<code>i &lt; 5</code>) does not include an iteration when <code>i</code> is 5.</p>
+<h2 id="invalid-memory-access">Invalid memory access</h2>
+<p>As another example, suppose we have this C program (test.c):</p>
+<p>If we build our program as usual (<code>gcc test.c</code>) and then run the executable (<code>./a.exe</code>) WITHOUT any debugging, we will likely see nothing at all. It appears as if our program mysteriously never makes it to the print statement.</p>
+<p>On the other hand, if we build our program for debugging (<code>gcc -g test.c -o debug</code>) and then run it in the debugger (<code>gdb debug</code>), we can get more information. In gdb, we might first set a breakpoint at our print statement:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>b 8</span></span></code></pre></div><p>And then run the program until it hits our breakpoint:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>run</span></span></code></pre></div><p>We will see:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Starting program: C:\...\debug.exe 
+</span></span><span style="display:flex;"><span>[New Thread 17448.0x425c]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Thread 1 received signal SIGSEGV, Segmentation fault.
+</span></span><span style="display:flex;"><span>main () at test.c:6
+</span></span><span style="display:flex;"><span>6           int x = arr[100000];</span></span></code></pre></div><p>Which tells us that our program had a segmentation fault on line 6. A <em>segmentation fault</em> means we are trying to access memory that does not belong to us, which is very clear in this example &ndash; our array only has 10 spots, but we&rsquo;re trying to access spot 100000. Now we can see where we went wrong in our program. (This was a trivial example, but a similar approach is a great way to debug a program that is not producing any output. Most likely such a program is crashing with a segmentation fault, but without the debugger we have no way of knowing where the program crashed.)</p>
+<h2 id="debugging-recursive-functions">Debugging recursive functions</h2>
+<p>As a final example, suppose we have this C program in test.c:</p>
+<p>If we build and run this program as usual, it will just hang &ndash; suggesting an infinite loop or infinite recursion. (You can kill a program in the terminal with Ctrl-C.) To find the problem, we can build our program with debugging information and run it with gdb. We might set a breakpoint at the factorial function:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>b factorial</span></span></code></pre></div><p>And then:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>run</span></span></code></pre></div><p>It will pause on line 4 in the first call of the factorial function. We can view the program stack up to this point by typing:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>bt</span></span></code></pre></div><p>We will see the current program stack:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#0  factorial (x=2) at test.c:4
+</span></span><span style="display:flex;"><span>#1  0x00007ff6956015ba in main () at test.c:8</span></span></code></pre></div><p>Which shows us that the main function called the factorial function with parameter <code>x = 2</code>. If we do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>s</span></span></code></pre></div><p>To step INTO the recursive function call, our program will pause again on line 4 in the next call to factorial. If we do:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>bt</span></span></code></pre></div><p>again, we will see the program stack:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#0  factorial (x=1) at test.c:4
+</span></span><span style="display:flex;"><span>#1  0x00007ff695601599 in factorial (x=2) at test.c:4
+</span></span><span style="display:flex;"><span>#2  0x00007ff6956015ba in main () at test.c:8</span></span></code></pre></div><p>Which shows us that our program started in main, then called factorial with parameter <code>x=2</code>, then called factorial again with <code>x=1</code>. Suppose we type <code>s</code> two more times, and then try <code>bt</code> again. We would then see:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>factorial (x=-1) at test.c:4
+</span></span><span style="display:flex;"><span>#1  0x00007ff695601599 in factorial (x=0) at test.c:4
+</span></span><span style="display:flex;"><span>#2  0x00007ff695601599 in factorial (x=1) at test.c:4
+</span></span><span style="display:flex;"><span>#3  0x00007ff695601599 in factorial (x=2) at test.c:4
+</span></span><span style="display:flex;"><span>#4  0x00007ff6956015ba in main () at test.c:8</span></span></code></pre></div><p>Now we can see that we made a recursive call with a parameter of -1, which is clearly incorrect. This can help us identify our error &ndash; we forgot to include a base case.</p>
+<h2 id="summary-of-gdb-commands">Summary of gdb commands</h2>
+<p>Here is a summary table of the most common gdb commands:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>break lineNumber</code> (or <code>b lineNumber</code>)</td>
+<td>Sets a breakpoint at the given line number. You can add breakpoints at any point &ndash; either before running the program in the debugger or in the middle of a debugging session.</td>
+</tr>
+<tr>
+<td><code>break functionName</code> (or <code>b functioNname</code>)</td>
+<td>Sets a breakpoint at the given function name</td>
+</tr>
+<tr>
+<td><code>run</code> (or <code>r</code>)</td>
+<td>Executes your program from the beginning, and lets it run until it hits your first breakpoint</td>
+</tr>
+<tr>
+<td><code>layout src</code></td>
+<td>Displays a graphical view of your code and highlights the line that will be executed next</td>
+</tr>
+<tr>
+<td><code>continue</code> (or <code>c</code>)</td>
+<td>Runs your program from its current point of execution until it hits the next breakpoint</td>
+</tr>
+<tr>
+<td><code>print variableName</code> (or <code>p variableName</code>)</td>
+<td>Prints the current value of the given variable</td>
+</tr>
+<tr>
+<td><code>print expression</code> (or <code>p expression</code>)</td>
+<td>Prints the result of the given expression using current variable values. For example, <code>print *ptr</code> would print the current value at the memory location held in <code>ptr</code>. Similarly, <code>print arr[2]+10</code> would print 10 more than the element at position 2 in the <code>arr</code> array.</td>
+</tr>
+<tr>
+<td><code>next</code> (or <code>n</code>)</td>
+<td>Steps to the next line in the program. If the next line is a function call, it steps OVER it (and does not go into the function).</td>
+</tr>
+<tr>
+<td><code>step</code> (or <code>s</code>)</td>
+<td>Steps to the next line in the program. If the next line is a function call, it steps INTO that function.</td>
+</tr>
+<tr>
+<td><code>disable breakPoint</code></td>
+<td>Disables an existing breakpoint, where <code>breakPoint</code> is either a line number or a function name</td>
+</tr>
+<tr>
+<td><code>enable breakPoint</code></td>
+<td>Enables an existing breakpoint, where <code>breakPoint</code> is either a line number or a function name</td>
+</tr>
+<tr>
+<td><code>list</code> (or <code>l</code>)</td>
+<td>Prints the 10 lines of source code around the current line in the debugger</td>
+</tr>
+<tr>
+<td><code>bt</code></td>
+<td>Prints the stack trace leading to the current point of execution</td>
+</tr>
+<tr>
+<td><code>kill</code></td>
+<td>Kills the program being run in the debugger</td>
+</tr>
+<tr>
+<td><code>quit</code></td>
+<td>Exits gdb</td>
+</tr>
+</tbody>
+</table>
+<h2 id="visualizing-program-memory">Visualizing program memory</h2>
+<p>I recommend using <a href="https://pythontutor.com/visualize.html#mode=edit" target="_blank">Python Tutor</a>
+ with C/gcc selected as another tool for debugging. You can paste your C program into the text area and choose &ldquo;Visualize Execution&rdquo;. Then you can step line by line through your program. The site shows what memory is allocated on the stack and what is allocated on the heap, and shows how different variables are updated as you progress. It is especially useful for visualizing pointers. The only drawback is that it will only work on programs with no user/file input &ndash; but you could always hardcode any input values for debugging purposes.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="remote-access">Remote Access</h1>
+
+<p>In the case that you are unable (or uninterested) to install some of the C tools on your own machine (such as <code>gcc</code>, <code>gdb</code>, or <code>make</code>), you can install the <em>Remote - SSH extension</em> in VS Code. This will allow you to remotely connect to the CS Linux server, which already has all the C tools installed. You will be able to use VS Code to edit files that are stored on your CS department U: drive the same way that you would edit local files.</p>
+<h2 id="getting-the-remote---ssh-extension">Getting the Remote - SSH extension</h2>
+<p>In VS Code, find the <em>extensions</em> icon on the left hand side (it looks like four squares with one corner pulled away). Search for <em>remote</em> and find <em>Remote - SSH</em> (the current version is v0.90.1, but install the latest version if you see a newer version number). Click <em>Install</em>.</p>
+<p>You should now see the <em>remote explorer</em> icon on the left bar in VS code, like this:</p>
+<p>
+<a href="#image-7e39e5c0c5c6e05e4bec9c8457df70ae" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/remoteExplorer.png" alt="remote explorer" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-7e39e5c0c5c6e05e4bec9c8457df70ae">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/remoteExplorer.png" alt="remote explorer" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="k-state-vpn">K-State VPN</h2>
+<p>If you are off-campus, you will need to connect to the VPN used by K-State (GlobalProtect) before you can make a remote connection. If you already have GlobalProtect installed, connect to it. If you don&rsquo;t, go <a href="https://www.k-state.edu/it/cybersecurity/vpn/" target="_blank">here</a>
+ for installation links.</p>
+<p>If you are on-campus (and on a K-State network connection), you do not need to connect to a VPN.</p>
+<h2 id="connecting-to-cs-linux">Connecting to CS Linux</h2>
+<p>To connect to CS Linux, click the remote explorer icon here:</p>
+<p>
+<a href="#image-537c6eb766c4b9f948dea6c14cf5f7a9" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/remoteExplorer.png" alt="remote explorer" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-537c6eb766c4b9f948dea6c14cf5f7a9">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/remoteExplorer.png" alt="remote explorer" class="lightbox-image" loading="lazy">
+</a></p>
+<p>If this is your first time making a remote connection, you will see this page:</p>
+<p>
+<a href="#image-1a2547a0c1a67fa8e920e8ed343e3ae7" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/sshTargets.png" alt="ssh targets" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1a2547a0c1a67fa8e920e8ed343e3ae7">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/sshTargets.png" alt="ssh targets" class="lightbox-image" loading="lazy">
+</a></p>
+<p>When you hover over <em>SSH Targets</em>, you should see a plus (+) icon that says &ldquo;Add New&rdquo; (as shown above). Click it. You will see a prompt that says: *Enter SSH Connection Command&quot;. Type:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ssh eID@cslinux.cs.ksu.edu</span></span></code></pre></div><p>where <code>eID</code> is your eID. Press Enter to connect.</p>
+<p>It may ask you to set up an SSH client, if one isn&rsquo;t already installed. If so, go <a href="https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client" target="_blank">here</a>
+ for SSH client installation information.</p>
+<p>If an SSH client is already installed, it will ask you to select an SSh configuration file. Select one from the menu. At this point, you should see <code>cslinux.cs.ksu.edu</code> under <em>SSH Targets</em>. Hover over the <code>cslinux.cs.ksu.edu</code> name and select <em>Connect to Host in New Window</em>:</p>
+<p>
+<a href="#image-7e947b62b99aafd3eac84c72dde910ed" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/connect.png" alt="ssh connect" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-7e947b62b99aafd3eac84c72dde910ed">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/connect.png" alt="ssh connect" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Select &ldquo;Linux&rdquo; as the platform:</p>
+<p>
+<a href="#image-9c35fe39318328f7a86a2a0087be5386" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/linux.png" alt="Linux" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-9c35fe39318328f7a86a2a0087be5386">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/linux.png" alt="Linux" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Click <em>Continue</em> when prompted, and then enter your CS password (NOT your eID password) to login. You should see:</p>
+<p>
+<a href="#image-4b1c8f6550961945bfa23a58a32e8fa8" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/loggedin.png" alt="logged in" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-4b1c8f6550961945bfa23a58a32e8fa8">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/loggedin.png" alt="logged in" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Click <em>Open Folder</em>, and navigate to a folder on your department U: drive. If you are prompted to log in again, do so. You should see the folder on the left side and a Linux terminal in the same directory on the bottom. You can also open files in that directory the same way you might with local files. For example, I might see:</p>
+<p>
+<a href="#image-a10108dcfa70f43fc62671b985b1748b" class="lightbox-link">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/displayLinux.png" alt="display" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a10108dcfa70f43fc62671b985b1748b">
+<img src="https://ksu-cs-textbooks.github.io/cis308/images/displayLinux.png" alt="display" class="lightbox-image" loading="lazy">
+</a></p>
+<p>From there, you can use <code>gcc</code>, <code>gdb</code>, or <code>make</code> to compile, debug, or build your projects.</p>
+<p>Once you are done with your connection, close the connection by going to <em>File-&gt;Close Remote Connection</em> (you might need to scroll down in the menu).</p>
+<p>The next time you click *Remote Explorer&quot; to connect to CS Linux, you should see <code>cslinux.cs.ksu.edu</code> already listed under <code>SSH targets</code>.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          </section>
+
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Russell Feldhausen
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis308-textbook/-/commit/67149f1b1c3dfffeaf11fa09cef14508de147aac">Aug 10, 2023</a>
+</p>
+</div>
+
+    
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1691698089" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1691698089" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1691698089" defer></script>
+  </body>
+</html>
