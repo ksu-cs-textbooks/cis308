@@ -24,7 +24,7 @@ compiling/linking instruction
 cleaning instruction (removing output files)
 ```
 
-(There are many other options for creating Makefiles, but we will use the template above in this class.) Here is the Makefile for our [statistics program]({{<ref "5-chapter/5_1-headerFiles.md" >}})
+(There are many other options for creating Makefiles, but we will use the template above in this class.) Here is the Makefile for our [statistics program]({{% ref "5-chapter/5_1-headerFiles.md"  %}})
 
 ```text
 //saved in a file name Makefile, with no extension

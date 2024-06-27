@@ -5,7 +5,7 @@ weight: 52
 date: 2018-08-24T10:53:26-05:00
 ---
 
-We could have also written the [point example]({{<ref "4-chapter/4_2-structExample.md" >}})
+We could have also written the [point example]({{% ref "4-chapter/4_2-structExample.md"  %}})
 by passing the point structs to the `getSlope` and
 `getIntercept` functions (instead of passing their fields). This works just like passing other
 variable types, except `struct point` will be an argument type.

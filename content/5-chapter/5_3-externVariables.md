@@ -28,7 +28,7 @@ compiler not to create a new variable, but instead to
 find the variable name declared in another file.
 
 As an example, suppose we want to make the array size a global
-variable in our for our earlier [statistics program]({{<ref "5-chapter/5_1-headerFiles.md" >}}). Here's
+variable in our for our earlier [statistics program]({{% ref "5-chapter/5_1-headerFiles.md"  %}}). Here's
 what we'd do:
 
 ```c
