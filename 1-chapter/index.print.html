@@ -1,814 +1,191 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 308: C Language Lab">
-    <meta name="author" content="Julie Thornton">
-    <title>C Basics :: CIS 308 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/index.html" rel="canonical" type="text/html" title="C Basics :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/index.xml" rel="alternate" type="application/rss+xml" title="C Basics :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/tele.html" rel="alternate" type="text/html" title="C Basics :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/embed.html" rel="alternate" type="text/html" title="C Basics :: CIS 308 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-auto.css?1691698089" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1691698089" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/format-print.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1691698089" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/url.js?1691698089"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1691698089"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis308/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1691698089" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/1-chapter/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/index.html"><span itemprop="name">CIS 308 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">C Basics</span><meta itemprop="position" content="2"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="chapter">
-            <header class="headline">
-            </header>
-
-
-<div class="article-subheading">Chapter 1</div>
-<h1 id="c-basics">C Basics</h1>
-
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <section>
-            <h1 class="a11y-only">Subsections of C Basics</h1>
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="hello-world">Hello, World</h1>
-
-<p>The first program students write in any new language is the &ldquo;Hello, World&rdquo;
-program. Here’s how it looks in C:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello, World!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>To write and run this program see the Tools Guide in section 0.1 for more information. It should print &ldquo;Hello, World!&rdquo; to the console.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="variables">Variables</h1>
-
-<h2 id="declaring-variables">Declaring Variables</h2>
-<p>Variables in C are declared exactly like variables in Java or C#. Just say:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>type name;</span></span></code></pre></div><p>where <code>type</code> is the type of the variable, and <code>name</code> is its name. The most common types in C are:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span></span></span></code></pre></div><p>Notice that C does not have a boolean type or a string type. Some examples:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> c;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> val;</span></span></code></pre></div><h2 id="initializing-variables">Initializing Variables</h2>
-<p>To initialize:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>name = value;</span></span></code></pre></div><p>Where <code>name</code> is the name of the variable, and <code>value</code> is the value you want to store in it. You can also do:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>type name = value;</span></span></code></pre></div><p>to declare and initialize all on one line. Some examples:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> c <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">‘</span>A<span style="color:#960050;background-color:#1e0010">’</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> val;
-</span></span><span style="display:flex;"><span>num <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">4.7</span>;</span></span></code></pre></div><p>The values of uninitialized variables in C are undefined. Some compilers <em>may</em> give default variables to such variables, but such behavior is not guaranteed. Other copmilers will do nothing, which will cause these uninitialized variables to <strong>hold whatever garbage value was left in the memory spot reserved for the variable.</strong> (usually a really big or really negative integer). In Java or C#, if you try to use a variable that has not been initialized, you will get a compiler error. The C compiler will NOT complain – it will just use whatever undefined value the variable happens to have.</p>
-<p>For example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num; <span style="color:#75715e">//holds some garbage value, say 13145687
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>num <span style="color:#f92672">=</span> num<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">//compiler error in Java – num not initialized
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//in C, num now has the value 13145688
-</span></span></span></code></pre></div><p>You will find that C is far more lenient in compilation than Java or C#. Remember that just because your program compiles doesn’t mean that it’s right!</p>
-<h2 id="where-to-declare">Where to Declare</h2>
-<p>There are probably a hundred different versions of C compilers. Consequently, a program may compile with one compiler (say, on cslinux) but not compile on another (such as when using Visual Studio .NET). Certain compilers require that variables only be initialized at the beginning of a block
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="C Basics :: CIS 308 Textbook"><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis308/1-chapter/"><meta property="og:site_name" content="CIS 308 Textbook"><meta property="og:title" content="C Basics :: CIS 308 Textbook"><meta property="og:locale" content="en-us"><meta property="og:type" content="website"><meta itemprop=name content="C Basics :: CIS 308 Textbook"><meta itemprop=datePublished content="2018-08-24T10:53:05-05:00"><meta itemprop=dateModified content="2023-08-10T15:07:40-05:00"><title>C Basics :: CIS 308 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis308/1-chapter/ rel=canonical type=text/html title="C Basics :: CIS 308 Textbook"><link href=/cis308/1-chapter/index.xml rel=alternate type=application/rss+xml title="C Basics :: CIS 308 Textbook"><link href=/cis308/1-chapter/tele.html rel=alternate type=text/html title="C Basics :: CIS 308 Textbook"><link href=/cis308/1-chapter/embed.html rel=alternate type=text/html title="C Basics :: CIS 308 Textbook"><link href=/cis308/css/fontawesome-all.min.css?1719515427 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fontawesome-all.min.css?1719515427 rel=stylesheet></noscript><link href=/cis308/css/nucleus.css?1719515427 rel=stylesheet><link href=/cis308/css/auto-complete.css?1719515427 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/auto-complete.css?1719515427 rel=stylesheet></noscript><link href=/cis308/css/perfect-scrollbar.min.css?1719515427 rel=stylesheet><link href=/cis308/css/fonts.css?1719515427 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fonts.css?1719515427 rel=stylesheet></noscript><link href=/cis308/css/theme.css?1719515427 rel=stylesheet><link href=/cis308/css/theme-auto.css?1719515427 rel=stylesheet id=R-variant-style><link href=/cis308/css/chroma-auto.css?1719515427 rel=stylesheet id=R-variant-chroma-style><link href=/cis308/css/variant.css?1719515427 rel=stylesheet><link href=/cis308/css/print.css?1719515427 rel=stylesheet media=print><link href=/cis308/css/format-print.css?1719515427 rel=stylesheet><script src=/cis308/js/variant.js?1719515427></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis308",window.index_js_url="/cis308/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis308/css/custom.css?1719515427 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis308/1-chapter/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>C Basics</span><meta itemprop=position content="1"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis308/0-chapter/0_6_remoteaccess/ title="Remote Access (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis308/1-chapter/1_1-helloworld/ title="Hello, World (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable chapter narrow" tabindex=-1><div class=flex-block-wrapper><article class=chapter><header class=headline></header><div class=article-subheading>Chapter 1</div><h1 id=c-basics>C Basics</h1><footer class=footline></footer></article><section><h1 class=a11y-only>Subsections of C Basics</h1><article class=default><header class=headline></header><h1 id=hello-world>Hello, World</h1><p>The first program students write in any new language is the &ldquo;Hello, World&rdquo;
+program. Here’s how it looks in C:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Hello, World!</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>To write and run this program see the Tools Guide in section 0.1 for more information. It should print &ldquo;Hello, World!&rdquo; to the console.</p><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=variables>Variables</h1><h2 id=declaring-variables>Declaring Variables</h2><p>Variables in C are declared exactly like variables in Java or C#. Just say:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>type name;</span></span></code></pre></div><p>where <code>type</code> is the type of the variable, and <code>name</code> is its name. The most common types in C are:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span>
+</span></span><span class=line><span class=cl><span class=kt>double</span>
+</span></span><span class=line><span class=cl><span class=kt>float</span>
+</span></span><span class=line><span class=cl><span class=kt>char</span></span></span></code></pre></div><p>Notice that C does not have a boolean type or a string type. Some examples:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>char</span> <span class=n>c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>double</span> <span class=n>val</span><span class=p>;</span></span></span></code></pre></div><h2 id=initializing-variables>Initializing Variables</h2><p>To initialize:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>name = value;</span></span></code></pre></div><p>Where <code>name</code> is the name of the variable, and <code>value</code> is the value you want to store in it. You can also do:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>type name = value;</span></span></code></pre></div><p>to declare and initialize all on one line. Some examples:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>char</span> <span class=n>c</span> <span class=o>=</span> <span class=err>‘</span><span class=n>A</span><span class=err>’</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>double</span> <span class=n>val</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>num</span> <span class=o>=</span> <span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>val</span> <span class=o>=</span> <span class=mf>4.7</span><span class=p>;</span></span></span></code></pre></div><p>The values of uninitialized variables in C are undefined. Some compilers <em>may</em> give default variables to such variables, but such behavior is not guaranteed. Other copmilers will do nothing, which will cause these uninitialized variables to <strong>hold whatever garbage value was left in the memory spot reserved for the variable.</strong> (usually a really big or really negative integer). In Java or C#, if you try to use a variable that has not been initialized, you will get a compiler error. The C compiler will NOT complain – it will just use whatever undefined value the variable happens to have.</p><p>For example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span><span class=p>;</span> <span class=c1>//holds some garbage value, say 13145687
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>num</span> <span class=o>=</span> <span class=n>num</span><span class=o>+</span><span class=mi>1</span><span class=p>;</span> <span class=c1>//compiler error in Java – num not initialized
+</span></span></span><span class=line><span class=cl><span class=c1>//in C, num now has the value 13145688
+</span></span></span></code></pre></div><p>You will find that C is far more lenient in compilation than Java or C#. Remember that just because your program compiles doesn’t mean that it’s right!</p><h2 id=where-to-declare>Where to Declare</h2><p>There are probably a hundred different versions of C compilers. Consequently, a program may compile with one compiler (say, on cslinux) but not compile on another (such as when using Visual Studio .NET). Certain compilers require that variables only be initialized at the beginning of a block
 (a block begins when a brace { is opened). Because some compilers have this
-requirement, we will uphold this custom in our programs. For example, the following is fine:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span> a;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;T&#39;</span>; <span style="color:#75715e">//all declarations are together
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				  <span style="color:#75715e">//at the beginning of the block
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	a <span style="color:#f92672">=</span> <span style="color:#ae81ff">7.2</span>;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>But this is not:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span> a;
-</span></span><span style="display:flex;"><span>	a <span style="color:#f92672">=</span> <span style="color:#ae81ff">7.2</span>; 		<span style="color:#75715e">//code begins – this is not a declaration
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">char</span> b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;T&#39;</span>; 	<span style="color:#75715e">//b is declared AFTER the code begins
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div><h2 id="operations">Operations</h2>
-<p>Mathematical operations in C work exactly like mathematical operations in Java or C#. You can use +, -, *, /, and %. You can also use things like ++ and +=.</p>
-<p>Casting in C is also the same as casting in Java or C#:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> d <span style="color:#f92672">=</span> (<span style="color:#66d9ef">double</span>) num; <span style="color:#75715e">//casts num to a double, d is now 7.0
-</span></span></span></code></pre></div><h2 id="simulating-booleans">Simulating Booleans</h2>
-<p>As was mentioned, there is no boolean type in C. Instead, ints are used to
+requirement, we will uphold this custom in our programs. For example, the following is fine:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>double</span> <span class=n>a</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>char</span> <span class=n>b</span> <span class=o>=</span> <span class=sc>&#39;T&#39;</span><span class=p>;</span> <span class=c1>//all declarations are together
+</span></span></span><span class=line><span class=cl><span class=c1></span>				  <span class=c1>//at the beginning of the block
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=n>a</span> <span class=o>=</span> <span class=mf>7.2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>But this is not:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>double</span> <span class=n>a</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>a</span> <span class=o>=</span> <span class=mf>7.2</span><span class=p>;</span> 		<span class=c1>//code begins – this is not a declaration
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>char</span> <span class=n>b</span> <span class=o>=</span> <span class=sc>&#39;T&#39;</span><span class=p>;</span> 	<span class=c1>//b is declared AFTER the code begins
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span></span></span></code></pre></div><h2 id=operations>Operations</h2><p>Mathematical operations in C work exactly like mathematical operations in Java or C#. You can use +, -, *, /, and %. You can also use things like ++ and +=.</p><p>Casting in C is also the same as casting in Java or C#:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span> <span class=o>=</span> <span class=mi>7</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>double</span> <span class=n>d</span> <span class=o>=</span> <span class=p>(</span><span class=kt>double</span><span class=p>)</span> <span class=n>num</span><span class=p>;</span> <span class=c1>//casts num to a double, d is now 7.0
+</span></span></span></code></pre></div><h2 id=simulating-booleans>Simulating Booleans</h2><p>As was mentioned, there is no boolean type in C. Instead, ints are used to
 simulate booleans. In this simulation, 0 means false, and anything else means
-true. For example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">//flag is false
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>; <span style="color:#75715e">//flag is true
-</span></span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="printing">Printing</h1>
-
-<h2 id="printf-function"><em>printf</em> Function</h2>
-<p>As you&rsquo;ve seen, the <code>printf</code> function is used to display output in C. For example, to display a string of text:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);</span></span></code></pre></div><p>Note that you always need to specify the newline character (\n). There is
-no <em>println</em> equivalent in C.</p>
-<h2 id="printing-variables">Printing Variables</h2>
-<p>Printing variables works a bit differently. First, you specify the kind of variable that&rsquo;s going to be printed (called a control string). Then, outside the string, you give the corresponding variable name.</p>
-<p>Here are the different control strings:</p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Control String</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>int</td>
-<td>%d</td>
-</tr>
-<tr>
-<td>double</td>
-<td>%lf</td>
-</tr>
-<tr>
-<td>float</td>
-<td>%f</td>
-</tr>
-<tr>
-<td>char</td>
-<td>%c</td>
-</tr>
-<tr>
-<td>char* (string)</td>
-<td>%s (see String section)</td>
-</tr>
-</tbody>
-</table>
-<p>It&rsquo;s easiest to see an example to figure out how printing works. Here&rsquo;s how to print the value of an integer to the screen:</p>
-<pre><code>int num = 4;
+true. For example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>flag</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=c1>//flag is false
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>flag</span> <span class=o>=</span> <span class=mi>6</span><span class=p>;</span> <span class=c1>//flag is true
+</span></span></span></code></pre></div><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=printing>Printing</h1><h2 id=printf-function><em>printf</em> Function</h2><p>As you&rsquo;ve seen, the <code>printf</code> function is used to display output in C. For example, to display a string of text:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Hello</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span></span></span></code></pre></div><p>Note that you always need to specify the newline character (\n). There is
+no <em>println</em> equivalent in C.</p><h2 id=printing-variables>Printing Variables</h2><p>Printing variables works a bit differently. First, you specify the kind of variable that&rsquo;s going to be printed (called a control string). Then, outside the string, you give the corresponding variable name.</p><p>Here are the different control strings:</p><table><thead><tr><th>Type</th><th>Control String</th></tr></thead><tbody><tr><td>int</td><td>%d</td></tr><tr><td>double</td><td>%lf</td></tr><tr><td>float</td><td>%f</td></tr><tr><td>char</td><td>%c</td></tr><tr><td>char* (string)</td><td>%s (see String section)</td></tr></tbody></table><p>It&rsquo;s easiest to see an example to figure out how printing works. Here&rsquo;s how to print the value of an integer to the screen:</p><pre><code>int num = 4;
 printf(&quot;The value of num is %d\n&quot;, num);
-</code></pre>
-<p>Notice that where we want to print a variable, we put the control string
-(<code>%d</code> for int). After we&rsquo;ve listed the entire string, we put the corresponding variable names as the next arguments to <code>printf</code>. The above example will print:</p>
-<pre><code>&quot;The value of num is 4&quot; 
-</code></pre>
-<p>to the screen.</p>
-<p>We can also print several variables at once:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> letter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> val <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span>) letter;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The ASCII value of %c is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, letter, val);</span></span></code></pre></div><p>This prints:</p>
-<pre><code>&quot;The ASCII value of A is 65&quot;
-</code></pre>
-<p>to the screen. Notice that the <code>%c</code> corresponds to the <code>letter</code> argument, and the <code>%d</code> corresponds to the <code>val</code> argument.</p>
-<h2 id="formatting">Formatting</h2>
-<p>The <code>printf</code> function also allows you some control over formatting your output. For example, if you want a value to take up exactly 6 spaces (padded with space characters on the left, if necessary), put a 6 between the % and the control string character.</p>
-<p>For example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The value of num is %6d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, num);</span></span></code></pre></div><p>This will print:</p>
-<pre><code>&quot;The value of num is 4&quot; 
-</code></pre>
-<p>to the screen (note the padding on the left of the 4).</p>
-<p>You can also only display a certain number of digits for decimal numbers. For
-example, put a .2 in between the % and the control string character to only display two decimal places.</p>
-<p>For example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> val <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14159</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Pi is %.2lf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, val);</span></span></code></pre></div><p>This will display:</p>
-<pre><code>&quot;Pi is 3.14&quot; 
-</code></pre>
-<p>You can specify both the width of the output (for example, six spaces) and the number of decimals to display by doing something like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> val <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14159</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Pi is %6.2lf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, val);</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="user-input">User Input</h1>
-
-<p>User input in C is, in short, a pain. There are three major input functions:
-<code>getchar()</code>, <code>scanf(...)</code>, and <code>fgets(...)</code>. To use any of these functions, you must include the <code>stdio.h</code> library.</p>
-<h2 id="getchar"><code>getchar()</code></h2>
-<p>The <code>getchar()</code> function takes no arguments and returns the very next character in the standard input stream. If there are no more characters in the input stream, it returns the constant <code>EOF</code>.</p>
-<p>Here&rsquo;s an example that reads a student&rsquo;s letter grade and then prints it back to the console.</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> grade;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter your grade: &#34;</span>);
-</span></span><span style="display:flex;"><span>grade <span style="color:#f92672">=</span> <span style="color:#a6e22e">getchar</span>();
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Your grade is %c</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, grade);</span></span></code></pre></div><p>Note that if you are using <code>getchar</code> to read characters one at a time from standard input, you will NEVEr reach <code>EOF</code> &ndash; instead, the program will wait for you to type new input. If you have piped the contents of a file to be the input stream for the program, though, <code>getchar</code> will return <code>EOF</code> when you have reached the end of that file. If you want to use <code>getchar</code> to read all characters from standard input, a better check is to read until you reach <code>\n</code> (which would signify the user pressing Enter after supplying user input).</p>
-<h2 id="scanf"><code>scanf(...)</code></h2>
-<p>The <code>scanf(...)</code> function allows us to read formatted input, like ints and
-doubles.</p>
-<p>The first argument to <code>scanf</code> is the format string, which specifies the kind of data you expect to read. To specify the data types you expect, use the same control string characters you used for printf &ndash; %d, %f, %lf, %c, and %s. If you want to read an int, the first argument to scanf should be &ldquo;%d&rdquo;. If you want to read two ints, put &ldquo;%d %d&rdquo;.</p>
-<p>The next arguments to <code>scanf</code> are the corresponding variables that you want to store the input in. We won&rsquo;t go into details now, but <code>scanf</code> needs the memory address of these variables so it can modify their value. To get the address of a variable, put a &amp; in front of the variable name.</p>
-<p>Here&rsquo;s a simple example that prompts the user for an integer, and then reads in the value:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter a number: &#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>num); 
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//%d: we&#39;re reading in an integer
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//&amp;num: we&#39;re storing that integer in the num variable
-</span></span></span></code></pre></div><p>Here&rsquo;s an example that reads in an integer and a double:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num1;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> num2;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter an int and a double: &#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d %lf&#34;</span>, <span style="color:#f92672">&amp;</span>num1, <span style="color:#f92672">&amp;</span>num2);</span></span></code></pre></div><p>The first number typed will get stored in <code>num1</code>, and the second number will get stored in <code>num2</code>. Our format string specified that these numbers should be separated by a space, but they can be separated by any amount of whitespace (multiple spaces, tabs, or newlines).</p>
-<p>Suppose that the user is entering a fraction, like 9/5. Here&rsquo;s how we could read in that information:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> numerator, denominator;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter a fraction (like 9/5): &#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d/%d&#34;</span>, <span style="color:#f92672">&amp;</span>numerator, <span style="color:#f92672">&amp;</span>denominator);</span></span></code></pre></div><p>By putting the &ldquo;/&rdquo; in the format string, we specify that we expect the input to have a / there, but we don&rsquo;t wish to store it in a variable.</p>
-<p><code>scanf</code> returns the number of variables that were correctly read in.</p>
-<p>Here is an (incomplete) list of subtleties when using <code>scanf</code>:</p>
-<ul>
-<li>In most cases, <code>scanf</code> skips whitespace. However, if you type a space (or tab or newline) where <code>scanf</code> expects a character,
-it will read the whitespace into your <code>char</code> variable.</li>
-<li>If you use <code>scanf</code> to read a single character, then the user will type an input character and then hit return. <code>scanf</code> will read the input character, but
+</code></pre><p>Notice that where we want to print a variable, we put the control string
+(<code>%d</code> for int). After we&rsquo;ve listed the entire string, we put the corresponding variable names as the next arguments to <code>printf</code>. The above example will print:</p><pre><code>&quot;The value of num is 4&quot; 
+</code></pre><p>to the screen.</p><p>We can also print several variables at once:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>char</span> <span class=n>letter</span> <span class=o>=</span> <span class=sc>&#39;A&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>val</span> <span class=o>=</span> <span class=p>(</span><span class=kt>int</span><span class=p>)</span> <span class=n>letter</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;The ASCII value of %c is %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>letter</span><span class=p>,</span> <span class=n>val</span><span class=p>);</span></span></span></code></pre></div><p>This prints:</p><pre><code>&quot;The ASCII value of A is 65&quot;
+</code></pre><p>to the screen. Notice that the <code>%c</code> corresponds to the <code>letter</code> argument, and the <code>%d</code> corresponds to the <code>val</code> argument.</p><h2 id=formatting>Formatting</h2><p>The <code>printf</code> function also allows you some control over formatting your output. For example, if you want a value to take up exactly 6 spaces (padded with space characters on the left, if necessary), put a 6 between the % and the control string character.</p><p>For example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span> <span class=o>=</span> <span class=mi>4</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;The value of num is %6d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>num</span><span class=p>);</span></span></span></code></pre></div><p>This will print:</p><pre><code>&quot;The value of num is 4&quot; 
+</code></pre><p>to the screen (note the padding on the left of the 4).</p><p>You can also only display a certain number of digits for decimal numbers. For
+example, put a .2 in between the % and the control string character to only display two decimal places.</p><p>For example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>double</span> <span class=n>val</span> <span class=o>=</span> <span class=mf>3.14159</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Pi is %.2lf</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>val</span><span class=p>);</span></span></span></code></pre></div><p>This will display:</p><pre><code>&quot;Pi is 3.14&quot; 
+</code></pre><p>You can specify both the width of the output (for example, six spaces) and the number of decimals to display by doing something like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>double</span> <span class=n>val</span> <span class=o>=</span> <span class=mf>3.14159</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Pi is %6.2lf</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>val</span><span class=p>);</span></span></span></code></pre></div><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=user-input>User Input</h1><p>User input in C is, in short, a pain. There are three major input functions:
+<code>getchar()</code>, <code>scanf(...)</code>, and <code>fgets(...)</code>. To use any of these functions, you must include the <code>stdio.h</code> library.</p><h2 id=getchar><code>getchar()</code></h2><p>The <code>getchar()</code> function takes no arguments and returns the very next character in the standard input stream. If there are no more characters in the input stream, it returns the constant <code>EOF</code>.</p><p>Here&rsquo;s an example that reads a student&rsquo;s letter grade and then prints it back to the console.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>char</span> <span class=n>grade</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Enter your grade: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>grade</span> <span class=o>=</span> <span class=nf>getchar</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Your grade is %c</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>grade</span><span class=p>);</span></span></span></code></pre></div><p>Note that if you are using <code>getchar</code> to read characters one at a time from standard input, you will NEVEr reach <code>EOF</code> &ndash; instead, the program will wait for you to type new input. If you have piped the contents of a file to be the input stream for the program, though, <code>getchar</code> will return <code>EOF</code> when you have reached the end of that file. If you want to use <code>getchar</code> to read all characters from standard input, a better check is to read until you reach <code>\n</code> (which would signify the user pressing Enter after supplying user input).</p><h2 id=scanf><code>scanf(...)</code></h2><p>The <code>scanf(...)</code> function allows us to read formatted input, like ints and
+doubles.</p><p>The first argument to <code>scanf</code> is the format string, which specifies the kind of data you expect to read. To specify the data types you expect, use the same control string characters you used for printf &ndash; %d, %f, %lf, %c, and %s. If you want to read an int, the first argument to scanf should be &ldquo;%d&rdquo;. If you want to read two ints, put &ldquo;%d %d&rdquo;.</p><p>The next arguments to <code>scanf</code> are the corresponding variables that you want to store the input in. We won&rsquo;t go into details now, but <code>scanf</code> needs the memory address of these variables so it can modify their value. To get the address of a variable, put a & in front of the variable name.</p><p>Here&rsquo;s a simple example that prompts the user for an integer, and then reads in the value:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Enter a number: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nf>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>num</span><span class=p>);</span> 
+</span></span><span class=line><span class=cl><span class=c1>//%d: we&#39;re reading in an integer
+</span></span></span><span class=line><span class=cl><span class=c1>//&amp;num: we&#39;re storing that integer in the num variable
+</span></span></span></code></pre></div><p>Here&rsquo;s an example that reads in an integer and a double:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>double</span> <span class=n>num2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Enter an int and a double: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nf>scanf</span><span class=p>(</span><span class=s>&#34;%d %lf&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>num1</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>num2</span><span class=p>);</span></span></span></code></pre></div><p>The first number typed will get stored in <code>num1</code>, and the second number will get stored in <code>num2</code>. Our format string specified that these numbers should be separated by a space, but they can be separated by any amount of whitespace (multiple spaces, tabs, or newlines).</p><p>Suppose that the user is entering a fraction, like 9/5. Here&rsquo;s how we could read in that information:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>numerator</span><span class=p>,</span> <span class=n>denominator</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Enter a fraction (like 9/5): &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nf>scanf</span><span class=p>(</span><span class=s>&#34;%d/%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>numerator</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>denominator</span><span class=p>);</span></span></span></code></pre></div><p>By putting the &ldquo;/&rdquo; in the format string, we specify that we expect the input to have a / there, but we don&rsquo;t wish to store it in a variable.</p><p><code>scanf</code> returns the number of variables that were correctly read in.</p><p>Here is an (incomplete) list of subtleties when using <code>scanf</code>:</p><ul><li>In most cases, <code>scanf</code> skips whitespace. However, if you type a space (or tab or newline) where <code>scanf</code> expects a character,
+it will read the whitespace into your <code>char</code> variable.</li><li>If you use <code>scanf</code> to read a single character, then the user will type an input character and then hit return. <code>scanf</code> will read the input character, but
 the newline will remain in the input buffer. This can cause problems if you
 call <code>scanf</code> a second time – the newline character will then be read, and not
 any new input. To fix this problem, add a call to <code>getchar()</code> after reading
-a char to read the extra newline character.</li>
-<li>If <code>scanf</code> reads input that it does not expect (for example, if it sees a
+a char to read the extra newline character.</li><li>If <code>scanf</code> reads input that it does not expect (for example, if it sees a
 character but is supposed to be reading an int), it will not discard the bad
 input. The bad input will still be in the input buffer if you
 call <code>scanf</code> again. To fix this, call <code>getchar()</code> until you reach <code>\n</code>. This
-will clear the input buffer.</li>
-</ul>
-<p>In the next chapter, we will see that <code>scanf</code> can be very dangerous to use when reading strings from user input. In short, if the user enters a string that is longer than expected, <code>scanf</code> can accidentally overwrite other parts of memory. This can even be exploited using a <em>buffer overflow attack</em> by tricking <code>scanf</code> into reading in program instructions.</p>
-<p>When we reach the section on strings (2.2), we will learn about the <code>fgets</code> function, which is a safer option for reading strings from both standard input and files.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="selection-structures">Selection Structures</h1>
-
-<p>C has if-statements and switch statements that work just like those in Jav and C#.</p>
-<p>Here is a sample if-statement:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> age;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//initialize age
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//print either Child, Teenager, or Adult, depending on age
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">11</span>) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Child</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Teenager</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Adult</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);</span></span></code></pre></div><p>Here is a sample switch statement. The expression in the switch clause must evaluate to either a character or an integer:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> grade;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter your grade: &#34;</span>);
-</span></span><span style="display:flex;"><span>grade <span style="color:#f92672">=</span> <span style="color:#a6e22e">getchar</span>();
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getchar</span>(); <span style="color:#75715e">//read and discard newline character
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> (grade) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;A&#39;</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Excellent</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;B&#39;</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Good</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;C&#39;</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Average</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;D&#39;</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Poor</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;F&#39;</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Failing</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Invalid grade</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="loops">Loops</h1>
-
-<p>There are three kinds of loops in C – while, do-while, and for. Their syntax is exactly the same as loops in Java and C#.</p>
-<h2 id="while-loop">While Loop</h2>
-<p>The code in a while loop executes repeatedly until a specified condition becomes false. If the condition is false before the first execution of the loop, then the entire loop will be skipped.</p>
-<p>This example will read and print every character typed by the user (up until they press enter):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> c <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Type some text: &#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (c <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;\n&#39;</span>) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	c <span style="color:#f92672">=</span> <span style="color:#a6e22e">getchar</span>();
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%c</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, c);
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="do-while-loop">Do-While Loop</h2>
-<p>Like a while loop, the code in a do-while loop executes repeatedly until a specified condition becomes false. However, the condition in a do-while loop is not checked until after the first iteration of a loop. So, a do-while loop always executes at least once.</p>
-<p>Here&rsquo;s the same example using a do-while loop:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> c;s
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Type some text: &#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span> 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	c <span style="color:#f92672">=</span> <span style="color:#a6e22e">getchar</span>();
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%c</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, c);
-</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">while</span> (c <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;\n&#39;</span>);</span></span></code></pre></div><p>Notice that we don&rsquo;t have to give <code>c</code> a dummy initial value, as we did in the while loop. However, the loop will print the newline character from the user input in its last iteration.</p>
-<h2 id="for-loop">For-Loop</h2>
-<p>The syntax of a for-loop is just like it is in other languages:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>for (initialization; condition; update) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	//code
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The only caveat is that the loop variable should not be declared in the initialization section (like <code>int i = 0</code>), and should instead be declared at the beginning of a block (an opening { ). If you forget, your code may compile for you, but it won&rsquo;t necessarily compile elsewhere.</p>
-<p>Here&rsquo;s an example that adds together 10 numbers entered by the user:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i, num;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter an integer: &#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>num);
-</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">+=</span> num;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Sum is: %d&#34;</span><span style="color:#960050;background-color:#1e0010">\</span>n<span style="color:#e6db74">&#34;, sum);</span></span></span></code></pre></div><h2 id="break">Break</h2>
-<p>The <code>break</code> statement immediately stops execution of a loop. For example, this code allows us to get and print 10 numbers, unless the user types a 0:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i, num;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter a number: &#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>num);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (num <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;You entered %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, num);
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="continue">Continue</h2>
-<p>The <code>continue</code> statement skips the remaining code inside the loop, and continues with the next iteration. For example, this code allows us to add together 10 numbers inputted by the user, except any numbers that are negative:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i, num;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter a number: &#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>num);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">continue</span>; <span style="color:#75715e">//Won&#39;t add num to sum
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	sum<span style="color:#f92672">+=</span>num;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The sum of the positive numbers is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum);</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="functions">Functions</h1>
-
-<p>Functions in C are very similar to methods in other languages, except functions are not associated with any class. (They are like static methods in Java and C#.) They take a number of parameters, perform on operation on those parameters, and may or may not return a value.</p>
-<h2 id="function-prototypes">Function Prototypes</h2>
-<p>Some C compilers will complain if they see a call to a function before they’ve seen the function itself. To avoid this problem, it’s best to include a prototype for a function at the top of the file, and then to implement it someplace else in the file.</p>
-<p>A <em>prototype</em> lists the name, return type, and parameters for a function – but it does not implement the function. Here’s an example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> num1, <span style="color:#66d9ef">int</span> num2);</span></span></code></pre></div><p>We list the return type (<code>int</code>), the function name (<code>max</code>), and the parameters with their types (<code>int num1</code> and <code>int num2</code>). This is a prototype, so we don’t implement the function here. Instead, we end it with a semi-colon. (Note that this already looks very similar to other languages – the only difference is that C functions are not associated with classes, so they don&rsquo;t need a visibility modifier like <code>private</code> or <code>public</code>.)</p>
-<p>Return types can be any valid type (like <code>char</code>, <code>int</code>, <code>double</code>, etc.). If the function does not return a value, its return type should be <code>void</code>.</p>
-<p>In a prototype, you don’t have to list the names of the parameters – you just need to list the types. For example, this would also be a valid prototype for the <code>max</code> function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>);</span></span></code></pre></div><p>If you are writing a prototype for a function that takes no parameters, you can leave the parameter list blank, like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getNum</span>();</span></span></code></pre></div><p>However, a better way would be to put <code>void</code> in the parameter list, like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getNum</span>(<span style="color:#66d9ef">void</span>);</span></span></code></pre></div><p>When the compiler sees a blank parameter list in the prototype, it will allow ANY parameter list in the function implementation. However, if it sees <code>void</code> in the prototype’s parameter list, then the implementation must also have a <code>void</code> parameter list.</p>
-<h2 id="function-implementations">Function Implementations</h2>
-<p>A function implementation starts off the same as a prototype. Instead of ending with a semi-colon, it includes the code for the function in brackets { }.</p>
-<p>Here’s the implementation of the <code>max</code> function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> num1, <span style="color:#66d9ef">int</span> num2) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (num1 <span style="color:#f92672">&gt;=</span> num2) <span style="color:#66d9ef">return</span> num1;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> num2;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Like in other languages, if a C function has a non-void return type, it must include a <em>return statement</em> that returns a value of the designated type.</p>
-<h2 id="calling-functions">Calling Functions</h2>
-<p>For now, all our programs are in one file, so calling functions is pretty easy. You just put the function name and include appropriate parameters, as if you were calling function from within the same class in Java or C#.</p>
-<p>Here’s a full example of a C program that uses the <code>max</code> function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//max function prototype
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>); 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> val1, val2, big;
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter two ints, separated by spaces: &#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d %d&#34;</span>, <span style="color:#f92672">&amp;</span>val1, <span style="color:#f92672">&amp;</span>val2);
-</span></span><span style="display:flex;"><span>	big <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>(val1, val2);
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The max is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, big);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//This indicates the program is ending normally
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; 
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//max function implementation
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> num1, <span style="color:#66d9ef">int</span> num2) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (num1 <span style="color:#f92672">&gt;=</span> num2) <span style="color:#66d9ef">return</span> num1;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> num2;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="global-variables">Global Variables</h1>
-
-<p>All the variables we’ve seen so far have been <em>local variables</em> – variables that are defined within a function. These variables are only visible within that function.</p>
-<p>Consider this function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">count</span>(<span style="color:#66d9ef">void</span>) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>	sum<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> sum;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Each time we call <code>count</code>, the <code>sum</code> variable is set back to 0, and the return value is 1. <code>sum</code> does not retain its value across function calls.</p>
-<p>If we did want this function to keep track of how many times it had been called, we could store <code>sum</code> as a <em>global variable</em>. Global variables are declared outside any function, and are visible to any function in the same file:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">count</span>(<span style="color:#66d9ef">void</span>) 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	sum<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> sum;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now, <code>sum</code> does not get set back to 0 each time the function is called.</p>
-<p>Global variables should be declared at the top of the file, near the function
+will clear the input buffer.</li></ul><p>In the next chapter, we will see that <code>scanf</code> can be very dangerous to use when reading strings from user input. In short, if the user enters a string that is longer than expected, <code>scanf</code> can accidentally overwrite other parts of memory. This can even be exploited using a <em>buffer overflow attack</em> by tricking <code>scanf</code> into reading in program instructions.</p><p>When we reach the section on strings (2.2), we will learn about the <code>fgets</code> function, which is a safer option for reading strings from both standard input and files.</p><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=selection-structures>Selection Structures</h1><p>C has if-statements and switch statements that work just like those in Jav and C#.</p><p>Here is a sample if-statement:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>age</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=c1>//initialize age
+</span></span></span><span class=line><span class=cl><span class=c1>//print either Child, Teenager, or Adult, depending on age
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>if</span> <span class=p>(</span><span class=n>num</span> <span class=o>&lt;</span> <span class=mi>11</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Child</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>num</span> <span class=o>&lt;</span> <span class=mi>18</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Teenager</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=k>else</span> <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Adult</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span></span></span></code></pre></div><p>Here is a sample switch statement. The expression in the switch clause must evaluate to either a character or an integer:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>char</span> <span class=n>grade</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Enter your grade: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>grade</span> <span class=o>=</span> <span class=nf>getchar</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=nf>getchar</span><span class=p>();</span> <span class=c1>//read and discard newline character
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=k>switch</span> <span class=p>(</span><span class=n>grade</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>case</span> <span class=sc>&#39;A&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>		<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Excellent</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>case</span> <span class=sc>&#39;B&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>		<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Good</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>case</span> <span class=sc>&#39;C&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>		<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Average</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>case</span> <span class=sc>&#39;D&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>		<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Poor</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>case</span> <span class=sc>&#39;F&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>		<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Failing</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>default</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>		<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Invalid grade</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=loops>Loops</h1><p>There are three kinds of loops in C – while, do-while, and for. Their syntax is exactly the same as loops in Java and C#.</p><h2 id=while-loop>While Loop</h2><p>The code in a while loop executes repeatedly until a specified condition becomes false. If the condition is false before the first execution of the loop, then the entire loop will be skipped.</p><p>This example will read and print every character typed by the user (up until they press enter):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>char</span> <span class=n>c</span> <span class=o>=</span> <span class=sc>&#39; &#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Type some text: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=k>while</span> <span class=p>(</span><span class=n>c</span> <span class=o>!=</span> <span class=sc>&#39;\n&#39;</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>c</span> <span class=o>=</span> <span class=nf>getchar</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;%c</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>c</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><h2 id=do-while-loop>Do-While Loop</h2><p>Like a while loop, the code in a do-while loop executes repeatedly until a specified condition becomes false. However, the condition in a do-while loop is not checked until after the first iteration of a loop. So, a do-while loop always executes at least once.</p><p>Here&rsquo;s the same example using a do-while loop:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>char</span> <span class=n>c</span><span class=p>;</span><span class=n>s</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Type some text: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=k>do</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>c</span> <span class=o>=</span> <span class=nf>getchar</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;%c</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>c</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> <span class=k>while</span> <span class=p>(</span><span class=n>c</span> <span class=o>!=</span> <span class=sc>&#39;\n&#39;</span><span class=p>);</span></span></span></code></pre></div><p>Notice that we don&rsquo;t have to give <code>c</code> a dummy initial value, as we did in the while loop. However, the loop will print the newline character from the user input in its last iteration.</p><h2 id=for-loop>For-Loop</h2><p>The syntax of a for-loop is just like it is in other languages:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>for (initialization; condition; update) 
+</span></span><span class=line><span class=cl>{
+</span></span><span class=line><span class=cl>	//code
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>The only caveat is that the loop variable should not be declared in the initialization section (like <code>int i = 0</code>), and should instead be declared at the beginning of a block (an opening { ). If you forget, your code may compile for you, but it won&rsquo;t necessarily compile elsewhere.</p><p>Here&rsquo;s an example that adds together 10 numbers entered by the user:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>i</span><span class=p>,</span> <span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Enter an integer: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nf>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>num</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=n>sum</span> <span class=o>+=</span> <span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Sum is: %d&#34;</span><span class=err>\</span><span class=n>n</span><span class=s>&#34;, sum);</span></span></span></code></pre></div><h2 id=break>Break</h2><p>The <code>break</code> statement immediately stops execution of a loop. For example, this code allows us to get and print 10 numbers, unless the user types a 0:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>i</span><span class=p>,</span> <span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Enter a number: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nf>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>num</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=n>num</span> <span class=o>==</span> <span class=mi>0</span><span class=p>)</span> <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;You entered %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>num</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><h2 id=continue>Continue</h2><p>The <code>continue</code> statement skips the remaining code inside the loop, and continues with the next iteration. For example, this code allows us to add together 10 numbers inputted by the user, except any numbers that are negative:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>i</span><span class=p>,</span> <span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Enter a number: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nf>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>num</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=n>num</span> <span class=o>&lt;</span> <span class=mi>0</span><span class=p>)</span> <span class=k>continue</span><span class=p>;</span> <span class=c1>//Won&#39;t add num to sum
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=n>sum</span><span class=o>+=</span><span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nf>printf</span><span class=p>(</span><span class=s>&#34;The sum of the positive numbers is %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>sum</span><span class=p>);</span></span></span></code></pre></div><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=functions>Functions</h1><p>Functions in C are very similar to methods in other languages, except functions are not associated with any class. (They are like static methods in Java and C#.) They take a number of parameters, perform on operation on those parameters, and may or may not return a value.</p><h2 id=function-prototypes>Function Prototypes</h2><p>Some C compilers will complain if they see a call to a function before they’ve seen the function itself. To avoid this problem, it’s best to include a prototype for a function at the top of the file, and then to implement it someplace else in the file.</p><p>A <em>prototype</em> lists the name, return type, and parameters for a function – but it does not implement the function. Here’s an example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>max</span><span class=p>(</span><span class=kt>int</span> <span class=n>num1</span><span class=p>,</span> <span class=kt>int</span> <span class=n>num2</span><span class=p>);</span></span></span></code></pre></div><p>We list the return type (<code>int</code>), the function name (<code>max</code>), and the parameters with their types (<code>int num1</code> and <code>int num2</code>). This is a prototype, so we don’t implement the function here. Instead, we end it with a semi-colon. (Note that this already looks very similar to other languages – the only difference is that C functions are not associated with classes, so they don&rsquo;t need a visibility modifier like <code>private</code> or <code>public</code>.)</p><p>Return types can be any valid type (like <code>char</code>, <code>int</code>, <code>double</code>, etc.). If the function does not return a value, its return type should be <code>void</code>.</p><p>In a prototype, you don’t have to list the names of the parameters – you just need to list the types. For example, this would also be a valid prototype for the <code>max</code> function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>max</span><span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=kt>int</span><span class=p>);</span></span></span></code></pre></div><p>If you are writing a prototype for a function that takes no parameters, you can leave the parameter list blank, like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>getNum</span><span class=p>();</span></span></span></code></pre></div><p>However, a better way would be to put <code>void</code> in the parameter list, like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>getNum</span><span class=p>(</span><span class=kt>void</span><span class=p>);</span></span></span></code></pre></div><p>When the compiler sees a blank parameter list in the prototype, it will allow ANY parameter list in the function implementation. However, if it sees <code>void</code> in the prototype’s parameter list, then the implementation must also have a <code>void</code> parameter list.</p><h2 id=function-implementations>Function Implementations</h2><p>A function implementation starts off the same as a prototype. Instead of ending with a semi-colon, it includes the code for the function in brackets { }.</p><p>Here’s the implementation of the <code>max</code> function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>max</span><span class=p>(</span><span class=kt>int</span> <span class=n>num1</span><span class=p>,</span> <span class=kt>int</span> <span class=n>num2</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=n>num1</span> <span class=o>&gt;=</span> <span class=n>num2</span><span class=p>)</span> <span class=k>return</span> <span class=n>num1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>else</span> <span class=k>return</span> <span class=n>num2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Like in other languages, if a C function has a non-void return type, it must include a <em>return statement</em> that returns a value of the designated type.</p><h2 id=calling-functions>Calling Functions</h2><p>For now, all our programs are in one file, so calling functions is pretty easy. You just put the function name and include appropriate parameters, as if you were calling function from within the same class in Java or C#.</p><p>Here’s a full example of a C program that uses the <code>max</code> function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=c1>//max function prototype
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=nf>max</span><span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=kt>int</span><span class=p>);</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>val1</span><span class=p>,</span> <span class=n>val2</span><span class=p>,</span> <span class=n>big</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Enter two ints, separated by spaces: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nf>scanf</span><span class=p>(</span><span class=s>&#34;%d %d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>val1</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>val2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=n>big</span> <span class=o>=</span> <span class=nf>max</span><span class=p>(</span><span class=n>val1</span><span class=p>,</span> <span class=n>val2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;The max is %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>big</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c1>//This indicates the program is ending normally
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>return</span> <span class=mi>0</span><span class=p>;</span> 
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//max function implementation
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=nf>max</span><span class=p>(</span><span class=kt>int</span> <span class=n>num1</span><span class=p>,</span> <span class=kt>int</span> <span class=n>num2</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=n>num1</span> <span class=o>&gt;=</span> <span class=n>num2</span><span class=p>)</span> <span class=k>return</span> <span class=n>num1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>else</span> <span class=k>return</span> <span class=n>num2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=global-variables>Global Variables</h1><p>All the variables we’ve seen so far have been <em>local variables</em> – variables that are defined within a function. These variables are only visible within that function.</p><p>Consider this function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>count</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>sum</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=n>sum</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Each time we call <code>count</code>, the <code>sum</code> variable is set back to 0, and the return value is 1. <code>sum</code> does not retain its value across function calls.</p><p>If we did want this function to keep track of how many times it had been called, we could store <code>sum</code> as a <em>global variable</em>. Global variables are declared outside any function, and are visible to any function in the same file:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>count</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>sum</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=n>sum</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>Now, <code>sum</code> does not get set back to 0 each time the function is called.</p><p>Global variables should be declared at the top of the file, near the function
 prototypes (but before any function implementation). If a global variable is
-declared in the middle of a file, some compilers will not allow you to refer to that variable in any function that comes before its declaration.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          </section>
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Russell Feldhausen
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis308-textbook/-/commit/67149f1b1c3dfffeaf11fa09cef14508de147aac">Aug 10, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1691698089" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1691698089" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1691698089" defer></script>
-  </body>
-</html>
+declared in the middle of a file, some compilers will not allow you to refer to that variable in any function that comes before its declaration.</p><footer class=footline></footer></article></section></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Russell Feldhausen
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis308/commit/67149f1b1c3dfffeaf11fa09cef14508de147aac>Aug 10, 2023</a></p></div></div><script src=/cis308/js/clipboard.min.js?1719515427 defer></script><script src=/cis308/js/perfect-scrollbar.min.js?1719515427 defer></script><script src=/cis308/js/theme.js?1719515427 defer></script></body></html>

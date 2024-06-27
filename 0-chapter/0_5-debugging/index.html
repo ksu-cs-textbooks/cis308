@@ -1,724 +1,93 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 308: C Language Lab">
-    <meta name="author" content="Julie Thornton">
-    <title>Debugging C programs :: CIS 308 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/index.xml" rel="alternate" type="application/rss+xml" title="Debugging C programs :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/index.print.html" rel="alternate" type="text/html" title="Debugging C programs :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/tele.html" rel="alternate" type="text/html" title="Debugging C programs :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/embed.html" rel="alternate" type="text/html" title="Debugging C programs :: CIS 308 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698088" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698088" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1691698088" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698088" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698088" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1691698088" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698088" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698088" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1691698088" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-auto.css?1691698088" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1691698088" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1691698088" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1691698088" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/url.js?1691698088"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1691698088"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis308/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1691698088" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div class="navigation">
-            <a class="nav nav-next topbar-link" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_6_remoteaccess/index.html" title="Remote Access (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
-          </div>
-          <div class="navigation">
-            <a class="nav nav-prev topbar-link" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_4-terminal/index.html" title="Terminal commands (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
-          </div>
-          <div id="top-print-link">
-            <a class="print-link topbar-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/index.print.html">
-              <i class="fas fa-print fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-github-link">
-            <a class="github-link topbar-link" title='Edit (CTRL+ALT+w)' href="https://gitlab.cs.ksu.edu/-/ide/project/cs-textbooks/cis308-textbook/edit/master/-/content/0-chapter/0_5-debugging.md" target="_blank">
-              <i class="fas fa-pen fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/index.html"><span itemprop="name">CIS 308 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/index.html"><span itemprop="name">Getting Started</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Debugging C programs</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-          <div class="default-animation progress">
-            <div class="toc-wrapper"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#getting-gdb">Getting gdb</a>
-      <ul>
-        <li><a href="#gdb-on-windows">gdb on Windows</a></li>
-        <li><a href="#gdb-on-mac">gdb on Mac</a></li>
-      </ul>
-    </li>
-    <li><a href="#first-tutorial">First tutorial</a></li>
-    <li><a href="#invalid-memory-access">Invalid memory access</a></li>
-    <li><a href="#debugging-recursive-functions">Debugging recursive functions</a></li>
-    <li><a href="#summary-of-gdb-commands">Summary of gdb commands</a></li>
-    <li><a href="#visualizing-program-memory">Visualizing program memory</a></li>
-  </ul>
-</nav>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="debugging-c-programs">Debugging C programs</h1>
-
-<p><code>gdb</code> is the C debugger. It allows you to create an executable specifically for debugging purposes.</p>
-<h2 id="getting-gdb">Getting gdb</h2>
-<p>First, ensure that you have gdb installed.</p>
-<h3 id="gdb-on-windows">gdb on Windows</h3>
-<p>Type in a terminal:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gdb --version</span></span></code></pre></div><p>If you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon-&gt;type MSYS2) and then type the following in MSYS2:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>pacman -S mingw-w64-x86_64-gdb</span></span></code></pre></div><p>This should install gdb. Next, you will need to add the <code>gdb.exe</code> location to your Path. It may be in the same location as <code>gcc</code>, which for me is <code>C:\msys64\mingw64\bin</code>, but it may be in a different location. The <code>gdb.exe</code> file should be in a <code>\bin</code> folder somewhere within the <code>C:\msys64</code> folder - you may need to search for it. Copy the address where you find the <code>gdb.exe</code> file.</p>
-<p>Next, add the location of your <code>gdb.exe</code> file to your Path (if it is a different location than your <code>gcc.exe</code> file). Click Start, type <em>Environment variables</em>, and select &ldquo;Edit the system environment variables&rdquo;). Click &ldquo;Environment Variables..&rdquo;, then find Path under System variables and click &ldquo;Edit&hellip;&rdquo;. Look to see if the location of your <code>gdb.exe</code> file is already listed &ndash; if it is, you don&rsquo;t need to add anything. If it&rsquo;s not, click &ldquo;New&rdquo;, paste in the address you copied in the previous step, and click OK three times to dismiss each frame.</p>
-<h3 id="gdb-on-mac">gdb on Mac</h3>
-<p>I recommend following <a href="https://dev.to/jasonelwood/setup-gdb-on-macos-in-2020-489k" target="_blank">this tutorial</a>
- to get <code>gdb</code> on your machine.</p>
-<h2 id="first-tutorial">First tutorial</h2>
-<p>Suppose we have the following program, <code>test.c</code>. This program is supposed to multiply together the numbers 1 * 2 * 3 * 4 * 5, but it has some problems:</p>
-<p>First, build an executable with debugging information:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gcc -g test.c -o debug</span></span></code></pre></div><p>This will create the executable <code>debug</code>. You can run <code>gdb</code> on <code>debug</code> as follows (this will launch <code>gdb</code>, but will not yet start running your program):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gdb debug</span></span></code></pre></div><p>You will see something like:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>GNU gdb (GDB) 12.1
-</span></span><span style="display:flex;"><span>Copyright (C) 2022 Free Software Foundation, Inc.
-</span></span><span style="display:flex;"><span>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
-</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
-</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
-</span></span><span style="display:flex;"><span>Type &#34;show copying&#34; and &#34;show warranty&#34; for details.
-</span></span><span style="display:flex;"><span>This GDB was configured as &#34;x86_64-w64-mingw32&#34;.
-</span></span><span style="display:flex;"><span>Type &#34;show configuration&#34; for configuration details.
-</span></span><span style="display:flex;"><span>For bug reporting instructions, please see:
-</span></span><span style="display:flex;"><span>&lt;https://www.gnu.org/software/gdb/bugs/&gt;.
-</span></span><span style="display:flex;"><span>Find the GDB manual and other documentation resources online at:
-</span></span><span style="display:flex;"><span>    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>For help, type &#34;help&#34;.
-</span></span><span style="display:flex;"><span>Type &#34;apropos word&#34; to search for commands related to &#34;word&#34;...
-</span></span><span style="display:flex;"><span>Reading symbols from debug...
-</span></span><span style="display:flex;"><span>(gdb)</span></span></code></pre></div><p>That last <code>(gdb)</code> at the end is the debugging prompt.</p>
-<p>Before you execute your program in the debugger, you&rsquo;ll want to set a breakpoint (or several). For example, suppose we want to set a breakpoint at the start of the <code>main</code> function. Then we can type:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>break main</span></span></code></pre></div><p>(We could have also typed <code>break 3</code>, which sets a breakpoint on line 3 &ndash; which is the beginning of the main function.) You can add more than one breakpoint in this way.</p>
-<p>When we have added our breakpoint(s) and are ready to run our program with debugging, we type at the debugging prompt:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>run</span></span></code></pre></div><p>(If our program accepts command-line arguments, we include them after the <code>run</code> command.) We see:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Starting program: C:\...\debug.exe 
-</span></span><span style="display:flex;"><span>[New Thread 9144.0x47d8]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Thread 1 hit Breakpoint 1, main () at test.c:4
-</span></span><span style="display:flex;"><span>4           int prod = 0;</span></span></code></pre></div><p>Which tells us that our program has stopped at our breakpoint just before executing line 4 (which is the first statement that performs an operation in our main function). From here, we can graphically view the current line in the program by typing:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>layout src</span></span></code></pre></div><p>In this example, we will see:</p>
-<p>
-<a href="#image-bc9ed1e9365becb99c3f44264c28f300" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis308/images/debug.png" alt="debugger" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-bc9ed1e9365becb99c3f44264c28f300">
-<img src="https://ksu-cs-textbooks.github.io/cis308/images/debug.png" alt="debugger" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Notice that the line that will be executed next (line 4, where we declare and initialized <code>prod</code>) is highlighted. We can also see our main function breakpoint indicated with a <code>B+</code>. To step line by line through the code, we can use the <code>next</code> command. If we now do:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>next</span></span></code></pre></div><p>Then our layout view will highlight the next line in the program (the for loop), like this:</p>
-<p>
-<a href="#image-507ccb0c06768ac024525530e015e572" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis308/images/nextDebug.png" alt="next statement" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-507ccb0c06768ac024525530e015e572">
-<img src="https://ksu-cs-textbooks.github.io/cis308/images/nextDebug.png" alt="next statement" class="lightbox-image" loading="lazy">
-</a></p>
-<p>We can also examine the values of different variables. If we enter:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>next
-</span></span><span style="display:flex;"><span>print i</span></span></code></pre></div><p>We will see:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$3 = 1</span></span></code></pre></div><p>Which tells us that <code>i</code> is currently 1. If we do <code>next</code> again (thus executing the <code>prod = prod * i</code> statement) and then do:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>print prod</span></span></code></pre></div><p>We see:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$4 = 0</span></span></code></pre></div><p>Which tells us that <code>prod</code> is still 0, even after multiplying on the first value of <code>i</code>. We can likely already see the first bug &ndash; <code>prod</code> should have been initialized to 1 instead of 0.</p>
-<p>We can continuing stepping though the lines of code, printing values as we go. When we step to the end of the for loop, we may realize that we never multiply <code>prod</code> by 5 &ndash; and we can see that this is because our for loop condition (<code>i &lt; 5</code>) does not include an iteration when <code>i</code> is 5.</p>
-<h2 id="invalid-memory-access">Invalid memory access</h2>
-<p>As another example, suppose we have this C program (test.c):</p>
-<p>If we build our program as usual (<code>gcc test.c</code>) and then run the executable (<code>./a.exe</code>) WITHOUT any debugging, we will likely see nothing at all. It appears as if our program mysteriously never makes it to the print statement.</p>
-<p>On the other hand, if we build our program for debugging (<code>gcc -g test.c -o debug</code>) and then run it in the debugger (<code>gdb debug</code>), we can get more information. In gdb, we might first set a breakpoint at our print statement:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>b 8</span></span></code></pre></div><p>And then run the program until it hits our breakpoint:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>run</span></span></code></pre></div><p>We will see:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Starting program: C:\...\debug.exe 
-</span></span><span style="display:flex;"><span>[New Thread 17448.0x425c]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Thread 1 received signal SIGSEGV, Segmentation fault.
-</span></span><span style="display:flex;"><span>main () at test.c:6
-</span></span><span style="display:flex;"><span>6           int x = arr[100000];</span></span></code></pre></div><p>Which tells us that our program had a segmentation fault on line 6. A <em>segmentation fault</em> means we are trying to access memory that does not belong to us, which is very clear in this example &ndash; our array only has 10 spots, but we&rsquo;re trying to access spot 100000. Now we can see where we went wrong in our program. (This was a trivial example, but a similar approach is a great way to debug a program that is not producing any output. Most likely such a program is crashing with a segmentation fault, but without the debugger we have no way of knowing where the program crashed.)</p>
-<h2 id="debugging-recursive-functions">Debugging recursive functions</h2>
-<p>As a final example, suppose we have this C program in test.c:</p>
-<p>If we build and run this program as usual, it will just hang &ndash; suggesting an infinite loop or infinite recursion. (You can kill a program in the terminal with Ctrl-C.) To find the problem, we can build our program with debugging information and run it with gdb. We might set a breakpoint at the factorial function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>b factorial</span></span></code></pre></div><p>And then:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>run</span></span></code></pre></div><p>It will pause on line 4 in the first call of the factorial function. We can view the program stack up to this point by typing:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>bt</span></span></code></pre></div><p>We will see the current program stack:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#0  factorial (x=2) at test.c:4
-</span></span><span style="display:flex;"><span>#1  0x00007ff6956015ba in main () at test.c:8</span></span></code></pre></div><p>Which shows us that the main function called the factorial function with parameter <code>x = 2</code>. If we do:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>s</span></span></code></pre></div><p>To step INTO the recursive function call, our program will pause again on line 4 in the next call to factorial. If we do:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>bt</span></span></code></pre></div><p>again, we will see the program stack:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#0  factorial (x=1) at test.c:4
-</span></span><span style="display:flex;"><span>#1  0x00007ff695601599 in factorial (x=2) at test.c:4
-</span></span><span style="display:flex;"><span>#2  0x00007ff6956015ba in main () at test.c:8</span></span></code></pre></div><p>Which shows us that our program started in main, then called factorial with parameter <code>x=2</code>, then called factorial again with <code>x=1</code>. Suppose we type <code>s</code> two more times, and then try <code>bt</code> again. We would then see:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>factorial (x=-1) at test.c:4
-</span></span><span style="display:flex;"><span>#1  0x00007ff695601599 in factorial (x=0) at test.c:4
-</span></span><span style="display:flex;"><span>#2  0x00007ff695601599 in factorial (x=1) at test.c:4
-</span></span><span style="display:flex;"><span>#3  0x00007ff695601599 in factorial (x=2) at test.c:4
-</span></span><span style="display:flex;"><span>#4  0x00007ff6956015ba in main () at test.c:8</span></span></code></pre></div><p>Now we can see that we made a recursive call with a parameter of -1, which is clearly incorrect. This can help us identify our error &ndash; we forgot to include a base case.</p>
-<h2 id="summary-of-gdb-commands">Summary of gdb commands</h2>
-<p>Here is a summary table of the most common gdb commands:</p>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>break lineNumber</code> (or <code>b lineNumber</code>)</td>
-<td>Sets a breakpoint at the given line number. You can add breakpoints at any point &ndash; either before running the program in the debugger or in the middle of a debugging session.</td>
-</tr>
-<tr>
-<td><code>break functionName</code> (or <code>b functioNname</code>)</td>
-<td>Sets a breakpoint at the given function name</td>
-</tr>
-<tr>
-<td><code>run</code> (or <code>r</code>)</td>
-<td>Executes your program from the beginning, and lets it run until it hits your first breakpoint</td>
-</tr>
-<tr>
-<td><code>layout src</code></td>
-<td>Displays a graphical view of your code and highlights the line that will be executed next</td>
-</tr>
-<tr>
-<td><code>continue</code> (or <code>c</code>)</td>
-<td>Runs your program from its current point of execution until it hits the next breakpoint</td>
-</tr>
-<tr>
-<td><code>print variableName</code> (or <code>p variableName</code>)</td>
-<td>Prints the current value of the given variable</td>
-</tr>
-<tr>
-<td><code>print expression</code> (or <code>p expression</code>)</td>
-<td>Prints the result of the given expression using current variable values. For example, <code>print *ptr</code> would print the current value at the memory location held in <code>ptr</code>. Similarly, <code>print arr[2]+10</code> would print 10 more than the element at position 2 in the <code>arr</code> array.</td>
-</tr>
-<tr>
-<td><code>next</code> (or <code>n</code>)</td>
-<td>Steps to the next line in the program. If the next line is a function call, it steps OVER it (and does not go into the function).</td>
-</tr>
-<tr>
-<td><code>step</code> (or <code>s</code>)</td>
-<td>Steps to the next line in the program. If the next line is a function call, it steps INTO that function.</td>
-</tr>
-<tr>
-<td><code>disable breakPoint</code></td>
-<td>Disables an existing breakpoint, where <code>breakPoint</code> is either a line number or a function name</td>
-</tr>
-<tr>
-<td><code>enable breakPoint</code></td>
-<td>Enables an existing breakpoint, where <code>breakPoint</code> is either a line number or a function name</td>
-</tr>
-<tr>
-<td><code>list</code> (or <code>l</code>)</td>
-<td>Prints the 10 lines of source code around the current line in the debugger</td>
-</tr>
-<tr>
-<td><code>bt</code></td>
-<td>Prints the stack trace leading to the current point of execution</td>
-</tr>
-<tr>
-<td><code>kill</code></td>
-<td>Kills the program being run in the debugger</td>
-</tr>
-<tr>
-<td><code>quit</code></td>
-<td>Exits gdb</td>
-</tr>
-</tbody>
-</table>
-<h2 id="visualizing-program-memory">Visualizing program memory</h2>
-<p>I recommend using <a href="https://pythontutor.com/visualize.html#mode=edit" target="_blank">Python Tutor</a>
- with C/gcc selected as another tool for debugging. You can paste your C program into the text area and choose &ldquo;Visualize Execution&rdquo;. Then you can step line by line through your program. The site shows what memory is allocated on the stack and what is allocated on the heap, and shows how different variables are updated as you progress. It is especially useful for visualizing pointers. The only drawback is that it will only work on programs with no user/file input &ndash; but you could always hardcode any input values for debugging purposes.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Julie Thornton
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis308-textbook/-/commit/459e5ec3ac6fb9a22e405fae77875fcb45cd4e4c">Feb 16, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <aside id="sidebar" class="default-animation">
-      <div id="header-wrapper" class="default-animation">
-        <div id="header" class="default-animation">
-
-<a id="logo" href="https://ksu-cs-textbooks.github.io/cis308/">
-  CIS 308: C Language Lab
-</a>
-
-
-        </div>
-        <form action="https://ksu-cs-textbooks.github.io/cis308/search.html" method="get"><div class="searchbox default-animation">
-          <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
-          <label class="a11y-only" for="search-by">Search</label>
-          <input data-search-input id="search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div></form>
-        <script>
-          var contentLangs=['en'];
-        </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis308/js/auto-complete.js?1691698088" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis308/js/lunr/lunr.min.js?1691698088" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis308/js/lunr/lunr.stemmer.support.min.js?1691698088" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis308/js/lunr/lunr.multi.min.js?1691698088" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis308/js/lunr/lunr.en.min.js?1691698088" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis308/js/search.js?1691698088" defer></script>
-      </div>
-      <div id="content-wrapper" class="highlightable">
-        <ul class="topics enlarge morespace collapsible-menu">
-          <li data-nav-id="/0-chapter/index.html" class="parent "><input type="checkbox" id="section-c55c9f751a28ecc9415234375cddd395" aria-controls="subsections-c55c9f751a28ecc9415234375cddd395" checked><label for="section-c55c9f751a28ecc9415234375cddd395"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Getting Started</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/index.html"><b>0. </b>Getting Started</a><ul id="subsections-c55c9f751a28ecc9415234375cddd395" class="morespace collapsible-menu">
-          <li data-nav-id="/0-chapter/0_1-vscode/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_1-vscode/index.html">0.1. VS Code</a></li>
-          <li data-nav-id="/0-chapter/0_2-usinggit/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_2-usinggit/index.html">0.2 Using git</a></li>
-          <li data-nav-id="/0-chapter/0_3-compilerun/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_3-compilerun/index.html">0.3. Compiling and Running</a></li>
-          <li data-nav-id="/0-chapter/0_4-terminal/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_4-terminal/index.html">0.4 Terminal commands</a></li>
-          <li data-nav-id="/0-chapter/0_5-debugging/index.html" class="active"><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_5-debugging/index.html">0.5 Debugging C programs</a></li>
-          <li data-nav-id="/0-chapter/0_6_remoteaccess/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/0-chapter/0_6_remoteaccess/index.html">0.6 Remote Access</a></li></ul></li>
-          <li data-nav-id="/1-chapter/index.html" class=""><input type="checkbox" id="section-7a71fe25dd66b523fca4004b7c4d01d0" aria-controls="subsections-7a71fe25dd66b523fca4004b7c4d01d0"><label for="section-7a71fe25dd66b523fca4004b7c4d01d0"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu C Basics</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/index.html"><b>1. </b>C Basics</a><ul id="subsections-7a71fe25dd66b523fca4004b7c4d01d0" class="morespace collapsible-menu">
-          <li data-nav-id="/1-chapter/1_1-helloworld/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_1-helloworld/index.html">1.1. Hello, World</a></li>
-          <li data-nav-id="/1-chapter/1_2-variables/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_2-variables/index.html">1.2. Variables</a></li>
-          <li data-nav-id="/1-chapter/1_3-printing/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_3-printing/index.html">1.3. Printing</a></li>
-          <li data-nav-id="/1-chapter/1_4-userinput/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_4-userinput/index.html">1.4. User Input</a></li>
-          <li data-nav-id="/1-chapter/1_5-selectionstructures/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_5-selectionstructures/index.html">1.5. Selection Structures</a></li>
-          <li data-nav-id="/1-chapter/1_6-loops/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_6-loops/index.html">1.6. Loops</a></li>
-          <li data-nav-id="/1-chapter/1_7-functions/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_7-functions/index.html">1.7. Functions</a></li>
-          <li data-nav-id="/1-chapter/1_8-globalvariables/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_8-globalvariables/index.html">1.8. Global Variables</a></li></ul></li>
-          <li data-nav-id="/2-chapter/index.html" class=""><input type="checkbox" id="section-c23f766dd7728aa0e1cff094001eac05" aria-controls="subsections-c23f766dd7728aa0e1cff094001eac05"><label for="section-c23f766dd7728aa0e1cff094001eac05"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Arrays, Strings, and Files</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/index.html"><b>2. </b>Arrays, Strings, and Files</a><ul id="subsections-c23f766dd7728aa0e1cff094001eac05" class="morespace collapsible-menu">
-          <li data-nav-id="/2-chapter/2_1-arrays/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_1-arrays/index.html">2.1. Arrays</a></li>
-          <li data-nav-id="/2-chapter/2_2-strings/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_2-strings/index.html">2.2. Strings</a></li>
-          <li data-nav-id="/2-chapter/2_3-files/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/2-chapter/2_3-files/index.html">2.3. Files</a></li></ul></li>
-          <li data-nav-id="/3-chapter/index.html" class=""><input type="checkbox" id="section-ccb531d159d5247057d21618514721b6" aria-controls="subsections-ccb531d159d5247057d21618514721b6"><label for="section-ccb531d159d5247057d21618514721b6"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Pointers and Dynamic Memory</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/index.html"><b>3. </b>Pointers and Dynamic Memory</a><ul id="subsections-ccb531d159d5247057d21618514721b6" class="morespace collapsible-menu">
-          <li data-nav-id="/3-chapter/3_1-pointers/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_1-pointers/index.html">3.1. Pointers</a></li>
-          <li data-nav-id="/3-chapter/3_2-pointersvsarrays/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_2-pointersvsarrays/index.html">3.2. Pointers vs. Arrays</a></li>
-          <li data-nav-id="/3-chapter/3_3-interationwithpointers/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_3-interationwithpointers/index.html">3.3. Iteration with Pointers</a></li>
-          <li data-nav-id="/3-chapter/3_4-pointerstopointers/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_4-pointerstopointers/index.html">3.4. Pointers to Pointers</a></li>
-          <li data-nav-id="/3-chapter/3_5-callbyreference/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_5-callbyreference/index.html">3.5. Call by Reference</a></li>
-          <li data-nav-id="/3-chapter/3_6-sizeof/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_6-sizeof/index.html">3.6. sizeof</a></li>
-          <li data-nav-id="/3-chapter/3_7-dynamicmemory/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/index.html">3.7. Dynamic Memory</a></li>
-          <li data-nav-id="/3-chapter/3_8-multidimdynarrays/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_8-multidimdynarrays/index.html">3.8. Multi-dimensional Dynamic Arrays</a></li>
-          <li data-nav-id="/3-chapter/3_9-returningptrsfromfns/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_9-returningptrsfromfns/index.html">3.9. Returning Pointers from Functions</a></li></ul></li>
-          <li data-nav-id="/4-chapter/index.html" class=""><input type="checkbox" id="section-8ebf970484325d93d52075c7c72ba517" aria-controls="subsections-8ebf970484325d93d52075c7c72ba517"><label for="section-8ebf970484325d93d52075c7c72ba517"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Structs</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/index.html"><b>4. </b>Structs</a><ul id="subsections-8ebf970484325d93d52075c7c72ba517" class="morespace collapsible-menu">
-          <li data-nav-id="/4-chapter/4_1-structsyntax/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_1-structsyntax/index.html">4.1. Struct Syntax</a></li>
-          <li data-nav-id="/4-chapter/4_2-structexample/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_2-structexample/index.html">4.2. Struct Example</a></li>
-          <li data-nav-id="/4-chapter/4_3-structsandfunctions/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_3-structsandfunctions/index.html">4.3. Structs and Functions</a></li>
-          <li data-nav-id="/4-chapter/4_4-arraysofstructs/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_4-arraysofstructs/index.html">4.4. Arrays of Structs</a></li>
-          <li data-nav-id="/4-chapter/4_5-pointerstostructs/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_5-pointerstostructs/index.html">4.5. Pointers to Structs</a></li>
-          <li data-nav-id="/4-chapter/4_6-linkedlists/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_6-linkedlists/index.html">4.6. Linked Lists</a></li>
-          <li data-nav-id="/4-chapter/4_7-ptrstoptrs_linkedlists/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/4-chapter/4_7-ptrstoptrs_linkedlists/index.html">4.7. Pointers to Pointers in Linked Lists</a></li></ul></li>
-          <li data-nav-id="/5-chapter/index.html" class=""><input type="checkbox" id="section-b69c30f957b0ff55c1e9673979ceb29d" aria-controls="subsections-b69c30f957b0ff55c1e9673979ceb29d"><label for="section-b69c30f957b0ff55c1e9673979ceb29d"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Multiple Files</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/index.html"><b>5. </b>Multiple Files</a><ul id="subsections-b69c30f957b0ff55c1e9673979ceb29d" class="morespace collapsible-menu">
-          <li data-nav-id="/5-chapter/5_1-headerfiles/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_1-headerfiles/index.html">5.1. Header Files</a></li>
-          <li data-nav-id="/5-chapter/5_2-makefiles/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_2-makefiles/index.html">5.2. Makefiles</a></li>
-          <li data-nav-id="/5-chapter/5_3-externvariables/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/5-chapter/5_3-externvariables/index.html">5.3. Extern Variables</a></li></ul></li>
-          <li data-nav-id="/6-chapter/index.html" class=""><input type="checkbox" id="section-482218cb3a05b9572157ed70ed9a5c02" aria-controls="subsections-482218cb3a05b9572157ed70ed9a5c02"><label for="section-482218cb3a05b9572157ed70ed9a5c02"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu User-Defined Types</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/index.html"><b>6. </b>User-Defined Types</a><ul id="subsections-482218cb3a05b9572157ed70ed9a5c02" class="morespace collapsible-menu">
-          <li data-nav-id="/6-chapter/6_1-enum/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_1-enum/index.html">6.1. Enums</a></li>
-          <li data-nav-id="/6-chapter/6_2-union/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_2-union/index.html">6.2. Unions</a></li>
-          <li data-nav-id="/6-chapter/6_3-typedef/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_3-typedef/index.html">6.3. typedef</a></li>
-          <li data-nav-id="/6-chapter/6_4-usertypes_w_ptrs/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_4-usertypes_w_ptrs/index.html">6.4. User-Defined Types with Pointers</a></li>
-          <li data-nav-id="/6-chapter/6_5-preprocessor/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/6-chapter/6_5-preprocessor/index.html">6.5. Preprocessor Directives</a></li></ul></li>
-          <li data-nav-id="/7-chapter/index.html" class=""><input type="checkbox" id="section-fc25ecfcb3d8e929949e8db759e88bab" aria-controls="subsections-fc25ecfcb3d8e929949e8db759e88bab"><label for="section-fc25ecfcb3d8e929949e8db759e88bab"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Pointers to Functions</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/7-chapter/index.html"><b>7. </b>Pointers to Functions</a><ul id="subsections-fc25ecfcb3d8e929949e8db759e88bab" class="morespace collapsible-menu">
-          <li data-nav-id="/7-chapter/7_1-fnptrbasics/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/7-chapter/7_1-fnptrbasics/index.html">7.1. Function Pointer Basics</a></li>
-          <li data-nav-id="/7-chapter/7_2-fn_fnptr/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/7-chapter/7_2-fn_fnptr/index.html">7.2. Functions and Function Pointers</a></li>
-          <li data-nav-id="/7-chapter/7_3-arraysfnptrs/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis308/7-chapter/7_3-arraysfnptrs/index.html">7.3. Arrays of Function Pointers</a></li></ul></li>
-        </ul>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
-        <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
-        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
-          <ul>
-            <li id="select-language-container" class="footerLangSwitch">
-              <div class="padding menu-control">
-                <i class="fas fa-language fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <label class="a11y-only" for="select-language">Language</label>
-                  <select id="select-language" onchange="location = baseUri + this.value;">
-                  </select>
-                </div>
-                <div class="clear"></div>
-              </div>
-            </li>
-            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
-              <div class="padding menu-control">
-                <i class="fas fa-paint-brush fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <label class="a11y-only" for="select-variant">Theme</label>
-                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                    <option id="auto" value="auto" selected>Auto</option>
-                    <option id="light-theme" value="light-theme">Light Theme</option>
-                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
-                  </select>
-                </div>
-                <div class="clear"></div>
-              </div>
-              <script>window.variants && variants.markSelectedVariant();</script>
-            </li>
-            <li class="footerVisitedLinks">
-              <div class="padding menu-control">
-                <i class="fas fa-history fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <button onclick="clearHistory();">Clear History</button>
-                </div>
-                <div class="clear"></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div id="footer" class="footerFooter showFooter"><style>
-  #footer {
-      font-size: 13px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem 1rem;
-      min-width: 230px;
-      max-width: 300px;
-  }
-  #footer p {
-      margin: 0;
-  }
-</style>
-  
-<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/K-State-Computational-Core/hugo-theme-relearn/tree/main">Hugo Relearn Theme</a>.</p>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: .5rem auto" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
-
-        </div>
-      </div>
-    </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1691698088" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1691698088" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1691698088" defer></script>
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="gdb is the C debugger. It allows you to create an executable specifically for debugging purposes.
+Getting gdb First, ensure that you have gdb installed.
+gdb on Windows Type in a terminal:
+gdb --versionIf you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon->type MSYS2) and then type the following in MSYS2:"><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Debugging C programs :: CIS 308 Textbook"><meta name=twitter:description content="gdb is the C debugger. It allows you to create an executable specifically for debugging purposes.
+Getting gdb First, ensure that you have gdb installed.
+gdb on Windows Type in a terminal:
+gdb --versionIf you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon->type MSYS2) and then type the following in MSYS2:"><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis308/0-chapter/0_5-debugging/"><meta property="og:site_name" content="CIS 308 Textbook"><meta property="og:title" content="Debugging C programs :: CIS 308 Textbook"><meta property="og:description" content="gdb is the C debugger. It allows you to create an executable specifically for debugging purposes.
+Getting gdb First, ensure that you have gdb installed.
+gdb on Windows Type in a terminal:
+gdb --versionIf you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon->type MSYS2) and then type the following in MSYS2:"><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Getting Started"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2023-02-16T15:35:41-06:00"><meta itemprop=name content="Debugging C programs :: CIS 308 Textbook"><meta itemprop=description content="gdb is the C debugger. It allows you to create an executable specifically for debugging purposes.
+Getting gdb First, ensure that you have gdb installed.
+gdb on Windows Type in a terminal:
+gdb --versionIf you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon->type MSYS2) and then type the following in MSYS2:"><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2023-02-16T15:35:41-06:00"><meta itemprop=wordCount content="1860"><title>Debugging C programs :: CIS 308 Textbook</title>
+<link href=/cis308/0-chapter/0_5-debugging/index.xml rel=alternate type=application/rss+xml title="Debugging C programs :: CIS 308 Textbook"><link href=/cis308/0-chapter/0_5-debugging/index.print.html rel=alternate type=text/html title="Debugging C programs :: CIS 308 Textbook"><link href=/cis308/0-chapter/0_5-debugging/tele.html rel=alternate type=text/html title="Debugging C programs :: CIS 308 Textbook"><link href=/cis308/0-chapter/0_5-debugging/embed.html rel=alternate type=text/html title="Debugging C programs :: CIS 308 Textbook"><link href=/cis308/css/fontawesome-all.min.css?1719515425 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fontawesome-all.min.css?1719515425 rel=stylesheet></noscript><link href=/cis308/css/nucleus.css?1719515425 rel=stylesheet><link href=/cis308/css/auto-complete.css?1719515425 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/auto-complete.css?1719515425 rel=stylesheet></noscript><link href=/cis308/css/perfect-scrollbar.min.css?1719515425 rel=stylesheet><link href=/cis308/css/fonts.css?1719515425 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fonts.css?1719515425 rel=stylesheet></noscript><link href=/cis308/css/theme.css?1719515425 rel=stylesheet><link href=/cis308/css/theme-auto.css?1719515425 rel=stylesheet id=R-variant-style><link href=/cis308/css/chroma-auto.css?1719515425 rel=stylesheet id=R-variant-chroma-style><link href=/cis308/css/variant.css?1719515425 rel=stylesheet><link href=/cis308/css/print.css?1719515425 rel=stylesheet media=print><script src=/cis308/js/variant.js?1719515425></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis308",window.index_js_url="/cis308/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis308/css/custom.css?1719515425 rel=stylesheet></head><body class="mobile-support html disableInlineCopyToClipboard" data-url=/cis308/0-chapter/0_5-debugging/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div><div class="topbar-button topbar-button-toc" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Table of Contents (CTRL+ALT+t)"><i class="fa-fw fas fa-list-alt"></i></button><div class=topbar-content><div class=topbar-content-wrapper><nav class=TableOfContents><ul><li><a href=#getting-gdb>Getting gdb</a><ul><li><a href=#gdb-on-windows>gdb on Windows</a></li><li><a href=#gdb-on-mac>gdb on Mac</a></li></ul></li><li><a href=#first-tutorial>First tutorial</a></li><li><a href=#invalid-memory-access>Invalid memory access</a></li><li><a href=#debugging-recursive-functions>Debugging recursive functions</a></li><li><a href=#summary-of-gdb-commands>Summary of gdb commands</a></li><li><a href=#visualizing-program-memory>Visualizing program memory</a></li></ul></nav></div></div></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis308/0-chapter/><span itemprop=name>Getting Started</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Debugging C programs</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-edit" data-content-empty=disable data-width-s=area-more data-width-m=show data-width-l=show><a class=topbar-control href=https://github.com/ksu-cs-textbooks/cis308/edit/main/content/0-chapter/0_5-debugging.md target=_blank title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></div><div class="topbar-button topbar-button-print" data-content-empty=disable data-width-s=area-more data-width-m=show data-width-l=show><a class=topbar-control href=/cis308/0-chapter/0_5-debugging/index.print.html title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a></div><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis308/0-chapter/0_4-terminal/ title="Terminal commands (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis308/0-chapter/0_6_remoteaccess/ title="Remote Access (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div><div class="topbar-button topbar-button-more" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title=More><i class="fa-fw fas fa-ellipsis-v"></i></button><div class=topbar-content><div class=topbar-content-wrapper><div class="topbar-area topbar-area-more" data-area=more><div class="topbar-button topbar-button-embed" data-content-empty=disable data-width-s=area-more data-width-m=area-more data-width-l=area-more><a class=topbar-control href=/cis308/0-chapter/0_5-debugging/embed.html title="Embeddable Version"><i class="fa-fw fas fa-expand-arrows-alt"></i></a></div><div class="topbar-button topbar-button-tele" data-content-empty=disable data-width-s=area-more data-width-m=area-more data-width-l=area-more><a class=topbar-control href=/cis308/0-chapter/0_5-debugging/tele.html title="Teleprompter View"><i class="fa-fw fas fa-tv"></i></a></div></div></div></div></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=debugging-c-programs>Debugging C programs</h1><p><code>gdb</code> is the C debugger. It allows you to create an executable specifically for debugging purposes.</p><h2 id=getting-gdb>Getting gdb</h2><p>First, ensure that you have gdb installed.</p><h3 id=gdb-on-windows>gdb on Windows</h3><p>Type in a terminal:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>gdb --version</span></span></code></pre></div><p>If you see a version number, then you already have gdb installed. If you see an error that gdb is unrecognized, you will need to install it. Launch a MSYS2 prompt (Windows icon->type MSYS2) and then type the following in MSYS2:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>pacman -S mingw-w64-x86_64-gdb</span></span></code></pre></div><p>This should install gdb. Next, you will need to add the <code>gdb.exe</code> location to your Path. It may be in the same location as <code>gcc</code>, which for me is <code>C:\msys64\mingw64\bin</code>, but it may be in a different location. The <code>gdb.exe</code> file should be in a <code>\bin</code> folder somewhere within the <code>C:\msys64</code> folder - you may need to search for it. Copy the address where you find the <code>gdb.exe</code> file.</p><p>Next, add the location of your <code>gdb.exe</code> file to your Path (if it is a different location than your <code>gcc.exe</code> file). Click Start, type <em>Environment variables</em>, and select &ldquo;Edit the system environment variables&rdquo;). Click &ldquo;Environment Variables..&rdquo;, then find Path under System variables and click &ldquo;Edit&mldr;&rdquo;. Look to see if the location of your <code>gdb.exe</code> file is already listed &ndash; if it is, you don&rsquo;t need to add anything. If it&rsquo;s not, click &ldquo;New&rdquo;, paste in the address you copied in the previous step, and click OK three times to dismiss each frame.</p><h3 id=gdb-on-mac>gdb on Mac</h3><p>I recommend following <a href=https://dev.to/jasonelwood/setup-gdb-on-macos-in-2020-489k rel=external target=_blank>this tutorial</a> to get <code>gdb</code> on your machine.</p><h2 id=first-tutorial>First tutorial</h2><p>Suppose we have the following program, <code>test.c</code>. This program is supposed to multiply together the numbers 1 * 2 * 3 * 4 * 5, but it has some problems:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=ln> 1</span><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=ln> 2</span><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=ln> 3</span><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=ln> 4</span><span class=cl>    <span class=kt>int</span> <span class=n>prod</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=ln> 5</span><span class=cl>
+</span></span><span class=line><span class=ln> 6</span><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=ln> 7</span><span class=cl>        <span class=n>prod</span> <span class=o>=</span> <span class=n>prod</span> <span class=o>*</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=ln> 8</span><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=ln> 9</span><span class=cl>
+</span></span><span class=line><span class=ln>10</span><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Product is: %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>prod</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>11</span><span class=cl>
+</span></span><span class=line><span class=ln>12</span><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=ln>13</span><span class=cl><span class=p>}</span></span></span></code></pre></div><p>First, build an executable with debugging information:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>gcc -g test.c -o debug</span></span></code></pre></div><p>This will create the executable <code>debug</code>. You can run <code>gdb</code> on <code>debug</code> as follows (this will launch <code>gdb</code>, but will not yet start running your program):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>gdb debug</span></span></code></pre></div><p>You will see something like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>GNU gdb (GDB) 12.1
+</span></span><span class=line><span class=cl>Copyright (C) 2022 Free Software Foundation, Inc.
+</span></span><span class=line><span class=cl>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+</span></span><span class=line><span class=cl>This is free software: you are free to change and redistribute it.
+</span></span><span class=line><span class=cl>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span class=line><span class=cl>Type &#34;show copying&#34; and &#34;show warranty&#34; for details.
+</span></span><span class=line><span class=cl>This GDB was configured as &#34;x86_64-w64-mingw32&#34;.
+</span></span><span class=line><span class=cl>Type &#34;show configuration&#34; for configuration details.
+</span></span><span class=line><span class=cl>For bug reporting instructions, please see:
+</span></span><span class=line><span class=cl>&lt;https://www.gnu.org/software/gdb/bugs/&gt;.
+</span></span><span class=line><span class=cl>Find the GDB manual and other documentation resources online at:
+</span></span><span class=line><span class=cl>    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>For help, type &#34;help&#34;.
+</span></span><span class=line><span class=cl>Type &#34;apropos word&#34; to search for commands related to &#34;word&#34;...
+</span></span><span class=line><span class=cl>Reading symbols from debug...
+</span></span><span class=line><span class=cl>(gdb)</span></span></code></pre></div><p>That last <code>(gdb)</code> at the end is the debugging prompt.</p><p>Before you execute your program in the debugger, you&rsquo;ll want to set a breakpoint (or several). For example, suppose we want to set a breakpoint at the start of the <code>main</code> function. Then we can type:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>break main</span></span></code></pre></div><p>(We could have also typed <code>break 3</code>, which sets a breakpoint on line 3 &ndash; which is the beginning of the main function.) You can add more than one breakpoint in this way.</p><p>When we have added our breakpoint(s) and are ready to run our program with debugging, we type at the debugging prompt:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>run</span></span></code></pre></div><p>(If our program accepts command-line arguments, we include them after the <code>run</code> command.) We see:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Starting program: C:\...\debug.exe 
+</span></span><span class=line><span class=cl>[New Thread 9144.0x47d8]
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Thread 1 hit Breakpoint 1, main () at test.c:4
+</span></span><span class=line><span class=cl>4           int prod = 0;</span></span></code></pre></div><p>Which tells us that our program has stopped at our breakpoint just before executing line 4 (which is the first statement that performs an operation in our main function). From here, we can graphically view the current line in the program by typing:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>layout src</span></span></code></pre></div><p>In this example, we will see:</p><p><a href=#R-image-356550a159e96f7361ac75b4601e6862 class=lightbox-link><img alt=debugger class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis308/images/debug.png style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-356550a159e96f7361ac75b4601e6862><img alt=debugger class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis308/images/debug.png></a></p><p>Notice that the line that will be executed next (line 4, where we declare and initialized <code>prod</code>) is highlighted. We can also see our main function breakpoint indicated with a <code>B+</code>. To step line by line through the code, we can use the <code>next</code> command. If we now do:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>next</span></span></code></pre></div><p>Then our layout view will highlight the next line in the program (the for loop), like this:</p><p><a href=#R-image-5ffcb83dd0009ebe9881712e2a0557d4 class=lightbox-link><img alt="next statement" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis308/images/nextDebug.png style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-5ffcb83dd0009ebe9881712e2a0557d4><img alt="next statement" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis308/images/nextDebug.png></a></p><p>We can also examine the values of different variables. If we enter:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>next
+</span></span><span class=line><span class=cl>print i</span></span></code></pre></div><p>We will see:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>$3 = 1</span></span></code></pre></div><p>Which tells us that <code>i</code> is currently 1. If we do <code>next</code> again (thus executing the <code>prod = prod * i</code> statement) and then do:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>print prod</span></span></code></pre></div><p>We see:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>$4 = 0</span></span></code></pre></div><p>Which tells us that <code>prod</code> is still 0, even after multiplying on the first value of <code>i</code>. We can likely already see the first bug &ndash; <code>prod</code> should have been initialized to 1 instead of 0.</p><p>We can continuing stepping though the lines of code, printing values as we go. When we step to the end of the for loop, we may realize that we never multiply <code>prod</code> by 5 &ndash; and we can see that this is because our for loop condition (<code>i &lt; 5</code>) does not include an iteration when <code>i</code> is 5.</p><h2 id=invalid-memory-access>Invalid memory access</h2><p>As another example, suppose we have this C program (test.c):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=ln> 1</span><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=ln> 2</span><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=ln> 3</span><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=ln> 4</span><span class=cl>    <span class=kt>int</span> <span class=n>arr</span><span class=p>[</span><span class=mi>10</span><span class=p>];</span>
+</span></span><span class=line><span class=ln> 5</span><span class=cl>
+</span></span><span class=line><span class=ln> 6</span><span class=cl>    <span class=kt>int</span> <span class=n>x</span> <span class=o>=</span> <span class=n>arr</span><span class=p>[</span><span class=mi>100000</span><span class=p>];</span>
+</span></span><span class=line><span class=ln> 7</span><span class=cl>
+</span></span><span class=line><span class=ln> 8</span><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;X is: %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>x</span><span class=p>);</span>
+</span></span><span class=line><span class=ln> 9</span><span class=cl>
+</span></span><span class=line><span class=ln>10</span><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=ln>11</span><span class=cl><span class=p>}</span></span></span></code></pre></div><p>If we build our program as usual (<code>gcc test.c</code>) and then run the executable (<code>./a.exe</code>) WITHOUT any debugging, we will likely see nothing at all. It appears as if our program mysteriously never makes it to the print statement.</p><p>On the other hand, if we build our program for debugging (<code>gcc -g test.c -o debug</code>) and then run it in the debugger (<code>gdb debug</code>), we can get more information. In gdb, we might first set a breakpoint at our print statement:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>b 8</span></span></code></pre></div><p>And then run the program until it hits our breakpoint:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>run</span></span></code></pre></div><p>We will see:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Starting program: C:\...\debug.exe 
+</span></span><span class=line><span class=cl>[New Thread 17448.0x425c]
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Thread 1 received signal SIGSEGV, Segmentation fault.
+</span></span><span class=line><span class=cl>main () at test.c:6
+</span></span><span class=line><span class=cl>6           int x = arr[100000];</span></span></code></pre></div><p>Which tells us that our program had a segmentation fault on line 6. A <em>segmentation fault</em> means we are trying to access memory that does not belong to us, which is very clear in this example &ndash; our array only has 10 spots, but we&rsquo;re trying to access spot 100000. Now we can see where we went wrong in our program. (This was a trivial example, but a similar approach is a great way to debug a program that is not producing any output. Most likely such a program is crashing with a segmentation fault, but without the debugger we have no way of knowing where the program crashed.)</p><h2 id=debugging-recursive-functions>Debugging recursive functions</h2><p>As a final example, suppose we have this C program in test.c:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=ln> 1</span><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=ln> 2</span><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=ln> 3</span><span class=cl><span class=kt>int</span> <span class=nf>factorial</span><span class=p>(</span><span class=kt>int</span> <span class=n>x</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=ln> 4</span><span class=cl>    <span class=k>return</span> <span class=n>x</span> <span class=o>*</span> <span class=nf>factorial</span><span class=p>(</span><span class=n>x</span><span class=o>-</span><span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=ln> 5</span><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=ln> 6</span><span class=cl>
+</span></span><span class=line><span class=ln> 7</span><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=ln> 8</span><span class=cl>    <span class=kt>int</span> <span class=n>result</span> <span class=o>=</span> <span class=nf>factorial</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=ln> 9</span><span class=cl>
+</span></span><span class=line><span class=ln>10</span><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Factorial of 2 is: %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>result</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>11</span><span class=cl>
+</span></span><span class=line><span class=ln>12</span><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=ln>13</span><span class=cl><span class=p>}</span></span></span></code></pre></div><p>If we build and run this program as usual, it will just hang &ndash; suggesting an infinite loop or infinite recursion. (You can kill a program in the terminal with Ctrl-C.) To find the problem, we can build our program with debugging information and run it with gdb. We might set a breakpoint at the factorial function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>b factorial</span></span></code></pre></div><p>And then:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>run</span></span></code></pre></div><p>It will pause on line 4 in the first call of the factorial function. We can view the program stack up to this point by typing:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>bt</span></span></code></pre></div><p>We will see the current program stack:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>#0  factorial (x=2) at test.c:4
+</span></span><span class=line><span class=cl>#1  0x00007ff6956015ba in main () at test.c:8</span></span></code></pre></div><p>Which shows us that the main function called the factorial function with parameter <code>x = 2</code>. If we do:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>s</span></span></code></pre></div><p>To step INTO the recursive function call, our program will pause again on line 4 in the next call to factorial. If we do:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>bt</span></span></code></pre></div><p>again, we will see the program stack:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>#0  factorial (x=1) at test.c:4
+</span></span><span class=line><span class=cl>#1  0x00007ff695601599 in factorial (x=2) at test.c:4
+</span></span><span class=line><span class=cl>#2  0x00007ff6956015ba in main () at test.c:8</span></span></code></pre></div><p>Which shows us that our program started in main, then called factorial with parameter <code>x=2</code>, then called factorial again with <code>x=1</code>. Suppose we type <code>s</code> two more times, and then try <code>bt</code> again. We would then see:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>factorial (x=-1) at test.c:4
+</span></span><span class=line><span class=cl>#1  0x00007ff695601599 in factorial (x=0) at test.c:4
+</span></span><span class=line><span class=cl>#2  0x00007ff695601599 in factorial (x=1) at test.c:4
+</span></span><span class=line><span class=cl>#3  0x00007ff695601599 in factorial (x=2) at test.c:4
+</span></span><span class=line><span class=cl>#4  0x00007ff6956015ba in main () at test.c:8</span></span></code></pre></div><p>Now we can see that we made a recursive call with a parameter of -1, which is clearly incorrect. This can help us identify our error &ndash; we forgot to include a base case.</p><h2 id=summary-of-gdb-commands>Summary of gdb commands</h2><p>Here is a summary table of the most common gdb commands:</p><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>break lineNumber</code> (or <code>b lineNumber</code>)</td><td>Sets a breakpoint at the given line number. You can add breakpoints at any point &ndash; either before running the program in the debugger or in the middle of a debugging session.</td></tr><tr><td><code>break functionName</code> (or <code>b functioNname</code>)</td><td>Sets a breakpoint at the given function name</td></tr><tr><td><code>run</code> (or <code>r</code>)</td><td>Executes your program from the beginning, and lets it run until it hits your first breakpoint</td></tr><tr><td><code>layout src</code></td><td>Displays a graphical view of your code and highlights the line that will be executed next</td></tr><tr><td><code>continue</code> (or <code>c</code>)</td><td>Runs your program from its current point of execution until it hits the next breakpoint</td></tr><tr><td><code>print variableName</code> (or <code>p variableName</code>)</td><td>Prints the current value of the given variable</td></tr><tr><td><code>print expression</code> (or <code>p expression</code>)</td><td>Prints the result of the given expression using current variable values. For example, <code>print *ptr</code> would print the current value at the memory location held in <code>ptr</code>. Similarly, <code>print arr[2]+10</code> would print 10 more than the element at position 2 in the <code>arr</code> array.</td></tr><tr><td><code>next</code> (or <code>n</code>)</td><td>Steps to the next line in the program. If the next line is a function call, it steps OVER it (and does not go into the function).</td></tr><tr><td><code>step</code> (or <code>s</code>)</td><td>Steps to the next line in the program. If the next line is a function call, it steps INTO that function.</td></tr><tr><td><code>disable breakPoint</code></td><td>Disables an existing breakpoint, where <code>breakPoint</code> is either a line number or a function name</td></tr><tr><td><code>enable breakPoint</code></td><td>Enables an existing breakpoint, where <code>breakPoint</code> is either a line number or a function name</td></tr><tr><td><code>list</code> (or <code>l</code>)</td><td>Prints the 10 lines of source code around the current line in the debugger</td></tr><tr><td><code>bt</code></td><td>Prints the stack trace leading to the current point of execution</td></tr><tr><td><code>kill</code></td><td>Kills the program being run in the debugger</td></tr><tr><td><code>quit</code></td><td>Exits gdb</td></tr></tbody></table><h2 id=visualizing-program-memory>Visualizing program memory</h2><p>I recommend using <a href="https://pythontutor.com/visualize.html#mode=edit" rel=external target=_blank>Python Tutor</a> with C/gcc selected as another tool for debugging. You can paste your C program into the text area and choose &ldquo;Visualize Execution&rdquo;. Then you can step line by line through your program. The site shows what memory is allocated on the stack and what is allocated on the heap, and shows how different variables are updated as you progress. It is especially useful for visualizing pointers. The only drawback is that it will only work on programs with no user/file input &ndash; but you could always hardcode any input values for debugging purposes.</p><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Julie Thornton
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis308/commit/459e5ec3ac6fb9a22e405fae77875fcb45cd4e4c>Feb 16, 2023</a></p></div></div><aside id=R-sidebar class=default-animation><div id=R-header-topbar class=default-animation></div><div id=R-header-wrapper class=default-animation><div id=R-header class=default-animation><a id=logo href=/cis308/>CIS 308: C Language Lab</a></div><search><form action=/cis308/search.html method=get><div class="searchbox default-animation"><button class=search-detail type=submit title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+<label class=a11y-only for=R-search-by>Search</label>
+<input data-search-input id=R-search-by name=search-by class=search-by type=search placeholder=Search...>
+<button class=search-clear type=button data-search-clear title="Clear search"><i class="fas fa-times" title="Clear search"></i></button></div></form></search><script>var contentLangs=["en"]</script><script src=/cis308/js/auto-complete.js?1719515425 defer></script><script src=/cis308/js/lunr/lunr.min.js?1719515425 defer></script><script src=/cis308/js/lunr/lunr.stemmer.support.min.js?1719515425 defer></script><script src=/cis308/js/lunr/lunr.multi.min.js?1719515425 defer></script><script src=/cis308/js/lunr/lunr.en.min.js?1719515425 defer></script><script src=/cis308/js/search.js?1719515425 defer></script></div><div id=R-homelinks class=default-animation><hr class=padding></div><div id=R-content-wrapper class=highlightable><div id=R-topics><ul class="enlarge morespace collapsible-menu"><li data-nav-id=/cis308/0-chapter/ class=parent><input type=checkbox id=R-section-4dd9ea2241609372e21522ad467bdbcf aria-controls=R-subsections-4dd9ea2241609372e21522ad467bdbcf checked><label for=R-section-4dd9ea2241609372e21522ad467bdbcf><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Getting Started</span></label><a class=padding href=/cis308/0-chapter/><b>0. </b>Getting Started</a><ul id=R-subsections-4dd9ea2241609372e21522ad467bdbcf class="morespace collapsible-menu"><li data-nav-id=/cis308/0-chapter/0_1-vscode/><a class=padding href=/cis308/0-chapter/0_1-vscode/>0.1. VS Code</a></li><li data-nav-id=/cis308/0-chapter/0_2-usinggit/><a class=padding href=/cis308/0-chapter/0_2-usinggit/>0.2 Using git</a></li><li data-nav-id=/cis308/0-chapter/0_3-compilerun/><a class=padding href=/cis308/0-chapter/0_3-compilerun/>0.3. Compiling and Running</a></li><li data-nav-id=/cis308/0-chapter/0_4-terminal/><a class=padding href=/cis308/0-chapter/0_4-terminal/>0.4 Terminal commands</a></li><li data-nav-id=/cis308/0-chapter/0_5-debugging/ class=active><a class=padding href=/cis308/0-chapter/0_5-debugging/>0.5 Debugging C programs</a></li><li data-nav-id=/cis308/0-chapter/0_6_remoteaccess/><a class=padding href=/cis308/0-chapter/0_6_remoteaccess/>0.6 Remote Access</a></li></ul></li><li data-nav-id=/cis308/1-chapter/><input type=checkbox id=R-section-17929730d34290b059d2edff1c690239 aria-controls=R-subsections-17929730d34290b059d2edff1c690239><label for=R-section-17929730d34290b059d2edff1c690239><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu C Basics</span></label><a class=padding href=/cis308/1-chapter/><b>1. </b>C Basics</a><ul id=R-subsections-17929730d34290b059d2edff1c690239 class="morespace collapsible-menu"><li data-nav-id=/cis308/1-chapter/1_1-helloworld/><a class=padding href=/cis308/1-chapter/1_1-helloworld/>1.1. Hello, World</a></li><li data-nav-id=/cis308/1-chapter/1_2-variables/><a class=padding href=/cis308/1-chapter/1_2-variables/>1.2. Variables</a></li><li data-nav-id=/cis308/1-chapter/1_3-printing/><a class=padding href=/cis308/1-chapter/1_3-printing/>1.3. Printing</a></li><li data-nav-id=/cis308/1-chapter/1_4-userinput/><a class=padding href=/cis308/1-chapter/1_4-userinput/>1.4. User Input</a></li><li data-nav-id=/cis308/1-chapter/1_5-selectionstructures/><a class=padding href=/cis308/1-chapter/1_5-selectionstructures/>1.5. Selection Structures</a></li><li data-nav-id=/cis308/1-chapter/1_6-loops/><a class=padding href=/cis308/1-chapter/1_6-loops/>1.6. Loops</a></li><li data-nav-id=/cis308/1-chapter/1_7-functions/><a class=padding href=/cis308/1-chapter/1_7-functions/>1.7. Functions</a></li><li data-nav-id=/cis308/1-chapter/1_8-globalvariables/><a class=padding href=/cis308/1-chapter/1_8-globalvariables/>1.8. Global Variables</a></li></ul></li><li data-nav-id=/cis308/2-chapter/><input type=checkbox id=R-section-97391a296e58f4aff54bb6b925a2776b aria-controls=R-subsections-97391a296e58f4aff54bb6b925a2776b><label for=R-section-97391a296e58f4aff54bb6b925a2776b><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Arrays, Strings, and Files</span></label><a class=padding href=/cis308/2-chapter/><b>2. </b>Arrays, Strings, and Files</a><ul id=R-subsections-97391a296e58f4aff54bb6b925a2776b class="morespace collapsible-menu"><li data-nav-id=/cis308/2-chapter/2_1-arrays/><a class=padding href=/cis308/2-chapter/2_1-arrays/>2.1. Arrays</a></li><li data-nav-id=/cis308/2-chapter/2_2-strings/><a class=padding href=/cis308/2-chapter/2_2-strings/>2.2. Strings</a></li><li data-nav-id=/cis308/2-chapter/2_3-files/><a class=padding href=/cis308/2-chapter/2_3-files/>2.3. Files</a></li></ul></li><li data-nav-id=/cis308/3-chapter/><input type=checkbox id=R-section-b4e2df8934a6b804e9336da7e38d4126 aria-controls=R-subsections-b4e2df8934a6b804e9336da7e38d4126><label for=R-section-b4e2df8934a6b804e9336da7e38d4126><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Pointers and Dynamic Memory</span></label><a class=padding href=/cis308/3-chapter/><b>3. </b>Pointers and Dynamic Memory</a><ul id=R-subsections-b4e2df8934a6b804e9336da7e38d4126 class="morespace collapsible-menu"><li data-nav-id=/cis308/3-chapter/3_1-pointers/><a class=padding href=/cis308/3-chapter/3_1-pointers/>3.1. Pointers</a></li><li data-nav-id=/cis308/3-chapter/3_2-pointersvsarrays/><a class=padding href=/cis308/3-chapter/3_2-pointersvsarrays/>3.2. Pointers vs. Arrays</a></li><li data-nav-id=/cis308/3-chapter/3_3-interationwithpointers/><a class=padding href=/cis308/3-chapter/3_3-interationwithpointers/>3.3. Iteration with Pointers</a></li><li data-nav-id=/cis308/3-chapter/3_4-pointerstopointers/><a class=padding href=/cis308/3-chapter/3_4-pointerstopointers/>3.4. Pointers to Pointers</a></li><li data-nav-id=/cis308/3-chapter/3_5-callbyreference/><a class=padding href=/cis308/3-chapter/3_5-callbyreference/>3.5. Call by Reference</a></li><li data-nav-id=/cis308/3-chapter/3_6-sizeof/><a class=padding href=/cis308/3-chapter/3_6-sizeof/>3.6. sizeof</a></li><li data-nav-id=/cis308/3-chapter/3_7-dynamicmemory/><a class=padding href=/cis308/3-chapter/3_7-dynamicmemory/>3.7. Dynamic Memory</a></li><li data-nav-id=/cis308/3-chapter/3_8-multidimdynarrays/><a class=padding href=/cis308/3-chapter/3_8-multidimdynarrays/>3.8. Multi-dimensional Dynamic Arrays</a></li><li data-nav-id=/cis308/3-chapter/3_9-returningptrsfromfns/><a class=padding href=/cis308/3-chapter/3_9-returningptrsfromfns/>3.9. Returning Pointers from Functions</a></li></ul></li><li data-nav-id=/cis308/4-chapter/><input type=checkbox id=R-section-619d3749907cd3e1af90a59cf2fcd6bd aria-controls=R-subsections-619d3749907cd3e1af90a59cf2fcd6bd><label for=R-section-619d3749907cd3e1af90a59cf2fcd6bd><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Structs</span></label><a class=padding href=/cis308/4-chapter/><b>4. </b>Structs</a><ul id=R-subsections-619d3749907cd3e1af90a59cf2fcd6bd class="morespace collapsible-menu"><li data-nav-id=/cis308/4-chapter/4_1-structsyntax/><a class=padding href=/cis308/4-chapter/4_1-structsyntax/>4.1. Struct Syntax</a></li><li data-nav-id=/cis308/4-chapter/4_2-structexample/><a class=padding href=/cis308/4-chapter/4_2-structexample/>4.2. Struct Example</a></li><li data-nav-id=/cis308/4-chapter/4_3-structsandfunctions/><a class=padding href=/cis308/4-chapter/4_3-structsandfunctions/>4.3. Structs and Functions</a></li><li data-nav-id=/cis308/4-chapter/4_4-arraysofstructs/><a class=padding href=/cis308/4-chapter/4_4-arraysofstructs/>4.4. Arrays of Structs</a></li><li data-nav-id=/cis308/4-chapter/4_5-pointerstostructs/><a class=padding href=/cis308/4-chapter/4_5-pointerstostructs/>4.5. Pointers to Structs</a></li><li data-nav-id=/cis308/4-chapter/4_6-linkedlists/><a class=padding href=/cis308/4-chapter/4_6-linkedlists/>4.6. Linked Lists</a></li><li data-nav-id=/cis308/4-chapter/4_7-ptrstoptrs_linkedlists/><a class=padding href=/cis308/4-chapter/4_7-ptrstoptrs_linkedlists/>4.7. Pointers to Pointers in Linked Lists</a></li></ul></li><li data-nav-id=/cis308/5-chapter/><input type=checkbox id=R-section-fbe0105598b5fc5de0d6a9a8eea1a2d7 aria-controls=R-subsections-fbe0105598b5fc5de0d6a9a8eea1a2d7><label for=R-section-fbe0105598b5fc5de0d6a9a8eea1a2d7><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Multiple Files</span></label><a class=padding href=/cis308/5-chapter/><b>5. </b>Multiple Files</a><ul id=R-subsections-fbe0105598b5fc5de0d6a9a8eea1a2d7 class="morespace collapsible-menu"><li data-nav-id=/cis308/5-chapter/5_1-headerfiles/><a class=padding href=/cis308/5-chapter/5_1-headerfiles/>5.1. Header Files</a></li><li data-nav-id=/cis308/5-chapter/5_2-makefiles/><a class=padding href=/cis308/5-chapter/5_2-makefiles/>5.2. Makefiles</a></li><li data-nav-id=/cis308/5-chapter/5_3-externvariables/><a class=padding href=/cis308/5-chapter/5_3-externvariables/>5.3. Extern Variables</a></li></ul></li><li data-nav-id=/cis308/6-chapter/><input type=checkbox id=R-section-1afc7d1d7b98dcc397b91690230bcb55 aria-controls=R-subsections-1afc7d1d7b98dcc397b91690230bcb55><label for=R-section-1afc7d1d7b98dcc397b91690230bcb55><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu User-Defined Types</span></label><a class=padding href=/cis308/6-chapter/><b>6. </b>User-Defined Types</a><ul id=R-subsections-1afc7d1d7b98dcc397b91690230bcb55 class="morespace collapsible-menu"><li data-nav-id=/cis308/6-chapter/6_1-enum/><a class=padding href=/cis308/6-chapter/6_1-enum/>6.1. Enums</a></li><li data-nav-id=/cis308/6-chapter/6_2-union/><a class=padding href=/cis308/6-chapter/6_2-union/>6.2. Unions</a></li><li data-nav-id=/cis308/6-chapter/6_3-typedef/><a class=padding href=/cis308/6-chapter/6_3-typedef/>6.3. typedef</a></li><li data-nav-id=/cis308/6-chapter/6_4-usertypes_w_ptrs/><a class=padding href=/cis308/6-chapter/6_4-usertypes_w_ptrs/>6.4. User-Defined Types with Pointers</a></li><li data-nav-id=/cis308/6-chapter/6_5-preprocessor/><a class=padding href=/cis308/6-chapter/6_5-preprocessor/>6.5. Preprocessor Directives</a></li></ul></li><li data-nav-id=/cis308/7-chapter/><input type=checkbox id=R-section-48461595e2f67d1468fbd78e51714428 aria-controls=R-subsections-48461595e2f67d1468fbd78e51714428><label for=R-section-48461595e2f67d1468fbd78e51714428><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Pointers to Functions</span></label><a class=padding href=/cis308/7-chapter/><b>7. </b>Pointers to Functions</a><ul id=R-subsections-48461595e2f67d1468fbd78e51714428 class="morespace collapsible-menu"><li data-nav-id=/cis308/7-chapter/7_1-fnptrbasics/><a class=padding href=/cis308/7-chapter/7_1-fnptrbasics/>7.1. Function Pointer Basics</a></li><li data-nav-id=/cis308/7-chapter/7_2-fn_fnptr/><a class=padding href=/cis308/7-chapter/7_2-fn_fnptr/>7.2. Functions and Function Pointers</a></li><li data-nav-id=/cis308/7-chapter/7_3-arraysfnptrs/><a class=padding href=/cis308/7-chapter/7_3-arraysfnptrs/>7.3. Arrays of Function Pointers</a></li></ul></li></ul></div><div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div><div id=R-menu-footer><hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"><div id=R-prefooter class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch"><ul><li id=R-select-language-container class=footerLangSwitch><div class="padding menu-control"><i class="fa-fw fas fa-language"></i>
+<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-language>Language</label>
+<select id=R-select-language onchange="location=this.querySelector(this.value).dataset.url"><option id=R-select-language-en value=#R-select-language-en data-url=/cis308/0-chapter/0_5-debugging/ lang=en-us selected></option></select></div><div class=clear></div></div></li><li id=R-select-variant-container class="footerVariantSwitch showVariantSwitch"><div class="padding menu-control"><i class="fa-fw fas fa-paint-brush"></i>
+<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-variant>Theme</label>
+<select id=R-select-variant onchange=window.variants&&variants.changeVariant(this.value)><option id=R-select-variant-auto value=auto selected>KSU Auto</option><option id=R-select-variant-light-theme value=light-theme>KSU Light</option><option id=R-select-variant-dark-theme value=dark-theme>KSU Dark</option></select></div><div class=clear></div></div><script>window.variants&&variants.markSelectedVariant()</script></li><li class=footerVisitedLinks><div class="padding menu-control"><i class="fa-fw fas fa-history"></i>
+<span>&nbsp;</span><div class=control-style><button onclick=clearHistory()>Clear History</button></div><div class=clear></div></div></li></ul></div><div id=R-footer class="footerFooter showFooter"><p>Built using <a href=http://gohugo.io/>Hugo</a> and <a href=https://github.com/ksu-cs-textbooks/hugo-theme-relearn>Hugo Relearn Theme</a>.</p><p><a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/><img alt="Creative Commons License" style="border-width:0;margin:.5rem auto" src=https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p></div></div></div></aside><script src=/cis308/js/clipboard.min.js?1719515425 defer></script><script src=/cis308/js/perfect-scrollbar.min.js?1719515425 defer></script><script src=/cis308/js/theme.js?1719515425 defer></script></body></html>

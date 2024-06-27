@@ -1,428 +1,52 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 308: C Language Lab">
-    <meta name="author" content="Julie Thornton">
-    <title>Dynamic Memory :: CIS 308 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/index.html" rel="canonical" type="text/html" title="Dynamic Memory :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/index.xml" rel="alternate" type="application/rss+xml" title="Dynamic Memory :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/index.print.html" rel="alternate" type="text/html" title="Dynamic Memory :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/tele.html" rel="alternate" type="text/html" title="Dynamic Memory :: CIS 308 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-auto.css?1691698089" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1691698089" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1691698089" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/url.js?1691698089"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1691698089"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis308/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1691698089" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_7-dynamicmemory/embed.html">
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-    
-    
-    
-<p>Currently, we can only declare arrays to be of a constant size (like 10). This is not always
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="Currently, we can only declare arrays to be of a constant size (like 10). This is not always convenient – sometimes we want to make the size based on some user input. If we want to allocate a dynamic amount of space, we need to use C’s dynamic memory functions. Each of these functions is in <stdlib.h>.
+malloc This function allocates a contiguous block of memory with the specifies size (number of bytes)."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Dynamic Memory :: CIS 308 Textbook"><meta name=twitter:description content="Currently, we can only declare arrays to be of a constant size (like 10). This is not always convenient – sometimes we want to make the size based on some user input. If we want to allocate a dynamic amount of space, we need to use C’s dynamic memory functions. Each of these functions is in <stdlib.h>.
+malloc This function allocates a contiguous block of memory with the specifies size (number of bytes)."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis308/3-chapter/3_7-dynamicmemory/embed.html"><meta property="og:site_name" content="CIS 308 Textbook"><meta property="og:title" content="Dynamic Memory :: CIS 308 Textbook"><meta property="og:description" content="Currently, we can only declare arrays to be of a constant size (like 10). This is not always convenient – sometimes we want to make the size based on some user input. If we want to allocate a dynamic amount of space, we need to use C’s dynamic memory functions. Each of these functions is in <stdlib.h>.
+malloc This function allocates a contiguous block of memory with the specifies size (number of bytes)."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Pointers and Dynamic Memory"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2022-08-03T11:47:25-05:00"><meta itemprop=name content="Dynamic Memory :: CIS 308 Textbook"><meta itemprop=description content="Currently, we can only declare arrays to be of a constant size (like 10). This is not always convenient – sometimes we want to make the size based on some user input. If we want to allocate a dynamic amount of space, we need to use C’s dynamic memory functions. Each of these functions is in <stdlib.h>.
+malloc This function allocates a contiguous block of memory with the specifies size (number of bytes)."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2022-08-03T11:47:25-05:00"><meta itemprop=wordCount content="869"><title>Dynamic Memory :: CIS 308 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis308/3-chapter/3_7-dynamicmemory/ rel=canonical type=text/html title="Dynamic Memory :: CIS 308 Textbook"><link href=/cis308/3-chapter/3_7-dynamicmemory/index.xml rel=alternate type=application/rss+xml title="Dynamic Memory :: CIS 308 Textbook"><link href=/cis308/3-chapter/3_7-dynamicmemory/index.print.html rel=alternate type=text/html title="Dynamic Memory :: CIS 308 Textbook"><link href=/cis308/3-chapter/3_7-dynamicmemory/tele.html rel=alternate type=text/html title="Dynamic Memory :: CIS 308 Textbook"><link href=/cis308/css/fontawesome-all.min.css?1719515426 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fontawesome-all.min.css?1719515426 rel=stylesheet></noscript><link href=/cis308/css/nucleus.css?1719515426 rel=stylesheet><link href=/cis308/css/auto-complete.css?1719515426 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/auto-complete.css?1719515426 rel=stylesheet></noscript><link href=/cis308/css/perfect-scrollbar.min.css?1719515426 rel=stylesheet><link href=/cis308/css/fonts.css?1719515426 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fonts.css?1719515426 rel=stylesheet></noscript><link href=/cis308/css/theme.css?1719515426 rel=stylesheet><link href=/cis308/css/theme-light-theme.css?1719515426 rel=stylesheet id=R-variant-style><link href=/cis308/css/chroma-relearn-light.css?1719515426 rel=stylesheet id=R-variant-chroma-style><link href=/cis308/css/variant.css?1719515426 rel=stylesheet><link href=/cis308/css/print.css?1719515426 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis308",window.index_js_url="/cis308/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis308/css/custom.css?1719515426 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis308/3-chapter/3_7-dynamicmemory/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><p>Currently, we can only declare arrays to be of a constant size (like 10). This is not always
 convenient – sometimes we want to make the size based on some user input. If we want to
 allocate a dynamic amount of space, we need to use C&rsquo;s dynamic memory functions. Each of
-these functions is in <code>&lt;stdlib.h&gt;</code>.</p>
-<h2 id="malloc">malloc</h2>
-<p>This function allocates a contiguous block of memory with the specifies size (number of bytes).
+these functions is in <code>&lt;stdlib.h></code>.</p><h2 id=malloc>malloc</h2><p>This function allocates a contiguous block of memory with the specifies size (number of bytes).
 It returns a void pointer to the block of memory. (This pointer will be automatically cast to the
-correct type when you store it.)</p>
-<p>Here is the prototype:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">int</span> numBytes);</span></span></code></pre></div><p>For example, we could allocate an array like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> nums1[<span style="color:#ae81ff">5</span>];</span></span></code></pre></div><p>Or we could do the same thing using <code>malloc</code>. If we use <code>malloc</code>, we need to specify the
+correct type when you store it.)</p><p>Here is the prototype:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>void</span><span class=o>*</span> <span class=nf>malloc</span><span class=p>(</span><span class=kt>int</span> <span class=n>numBytes</span><span class=p>);</span></span></span></code></pre></div><p>For example, we could allocate an array like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>nums1</span><span class=p>[</span><span class=mi>5</span><span class=p>];</span></span></span></code></pre></div><p>Or we could do the same thing using <code>malloc</code>. If we use <code>malloc</code>, we need to specify the
 number of bytes to reserve. We want 5 ints, and each int takes up <code>sizeof(int)</code> bytes. So,
-the total needed is <code>5*sizeof(int)</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//The result of malloc is automatically cast to an int*
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));</span></span></code></pre></div><p>Now, we can treat <code>nums2</code> just like an array. For instance, if we wanted to initialize all elements
-in <code>nums2</code> to 0:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>	nums2[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; 	<span style="color:#75715e">//The compiler converts this to *(nums2+i) = 0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div><p>Allocating arrays with malloc has several key difference from standard array allocation:</p>
-<ul>
-<li><code>malloc</code> can handle a variable for the desired size; a standard array cannot</li>
-<li>The result of <code>malloc</code> is a pointer; the result of a standard array allocation is a constant pointer</li>
-<li><code>malloc</code> memory is allocated on the heap. If there is not enough space to do the allocation, <code>malloc</code> will return NULL. An array is allocated on the program stack – if there is not enough space, the program simply won&rsquo;t compile.</li>
-</ul>
-<h2 id="calloc">calloc</h2>
-<p>The <code>calloc</code> function is very similar to <code>malloc</code>. The only difference is that when arrays are
-allocated using <code>calloc</code>, all elements are automatically initialized to 0.</p>
-<p>Here is the prototype:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">calloc</span>(<span style="color:#66d9ef">int</span> numElems, <span style="color:#66d9ef">int</span> sizePerElem);</span></span></code></pre></div><p>The prototype of <code>calloc</code> is also a little different than the one for <code>malloc</code>. It takes two
+the total needed is <code>5*sizeof(int)</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=c1>//The result of malloc is automatically cast to an int*
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span><span class=o>*</span> <span class=n>nums2</span> <span class=o>=</span> <span class=nf>malloc</span><span class=p>(</span><span class=mi>5</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>int</span><span class=p>));</span></span></span></code></pre></div><p>Now, we can treat <code>nums2</code> just like an array. For instance, if we wanted to initialize all elements
+in <code>nums2</code> to 0:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>nums2</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> 	<span class=c1>//The compiler converts this to *(nums2+i) = 0
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span></span></span></code></pre></div><p>Allocating arrays with malloc has several key difference from standard array allocation:</p><ul><li><code>malloc</code> can handle a variable for the desired size; a standard array cannot</li><li>The result of <code>malloc</code> is a pointer; the result of a standard array allocation is a constant pointer</li><li><code>malloc</code> memory is allocated on the heap. If there is not enough space to do the allocation, <code>malloc</code> will return NULL. An array is allocated on the program stack – if there is not enough space, the program simply won&rsquo;t compile.</li></ul><h2 id=calloc>calloc</h2><p>The <code>calloc</code> function is very similar to <code>malloc</code>. The only difference is that when arrays are
+allocated using <code>calloc</code>, all elements are automatically initialized to 0.</p><p>Here is the prototype:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>void</span><span class=o>*</span> <span class=nf>calloc</span><span class=p>(</span><span class=kt>int</span> <span class=n>numElems</span><span class=p>,</span> <span class=kt>int</span> <span class=n>sizePerElem</span><span class=p>);</span></span></span></code></pre></div><p>The prototype of <code>calloc</code> is also a little different than the one for <code>malloc</code>. It takes two
 arguments – the number of elements you want in the array, and the number of bytes needed for
 each elements. Like <code>malloc</code>, <code>calloc</code> returns a void pointer to the contiguous block of
 memory it allocated. This pointer will be automatically cast to the appropriate type when you
-store it.</p>
-<p>Here&rsquo;s how to create an array of 10 ints, all initialized to 0:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">calloc</span>(<span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));</span></span></code></pre></div><p>Now you can use <code>nums</code> just like an array. For example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>nums[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;</span></span></code></pre></div><p>Like <code>malloc</code>, <code>calloc</code> will return NULL if there is not enough space to do the allocation. In
-both cases, it&rsquo;s a good idea to check if the pointer is NULL before you use it.</p>
-<p>For example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">calloc</span>(<span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (nums <span style="color:#f92672">==</span> NULL) {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Not enough space.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//Use nums as usual
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div><h2 id="realloc">realloc</h2>
-<p>The <code>realloc</code> function allows you to easily expand and shrink the space allocated for an array.</p>
-<p>Here is the prototype:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">realloc</span>(<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> origPtr, <span style="color:#66d9ef">int</span> newSize);</span></span></code></pre></div><p>This function takes your original pointer and the desired new size in bytes. It looks for a
+store it.</p><p>Here&rsquo;s how to create an array of 10 ints, all initialized to 0:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span><span class=o>*</span> <span class=n>nums</span> <span class=o>=</span> <span class=nf>calloc</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span> <span class=k>sizeof</span><span class=p>(</span><span class=kt>int</span><span class=p>));</span></span></span></code></pre></div><p>Now you can use <code>nums</code> just like an array. For example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=n>nums</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=mi>4</span><span class=p>;</span></span></span></code></pre></div><p>Like <code>malloc</code>, <code>calloc</code> will return NULL if there is not enough space to do the allocation. In
+both cases, it&rsquo;s a good idea to check if the pointer is NULL before you use it.</p><p>For example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span><span class=o>*</span> <span class=n>nums</span> <span class=o>=</span> <span class=nf>calloc</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span> <span class=k>sizeof</span><span class=p>(</span><span class=kt>int</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>nums</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Not enough space.</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=c1>//Use nums as usual
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span></span></span></code></pre></div><h2 id=realloc>realloc</h2><p>The <code>realloc</code> function allows you to easily expand and shrink the space allocated for an array.</p><p>Here is the prototype:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>void</span><span class=o>*</span> <span class=nf>realloc</span><span class=p>(</span><span class=kt>void</span><span class=o>*</span> <span class=n>origPtr</span><span class=p>,</span> <span class=kt>int</span> <span class=n>newSize</span><span class=p>);</span></span></span></code></pre></div><p>This function takes your original pointer and the desired new size in bytes. It looks for a
 contiguous block of memory with the desired size. If it can find one, it copies the contents of the
 old array into the new block of memory. Then it releases the space needed for the old array, and
-returns a void pointer to the new block of memory.</p>
-<p>The <code>realloc</code> function doesn&rsquo;t always behave as you intend. Here are the possible return
-values of <code>realloc</code>:</p>
-<ul>
-<li>NULL (if not enough space is found)</li>
-<li>The original pointer (if there is enough space at that location)</li>
-<li>A new pointer to a different spot in memory</li>
-</ul>
-<p>Suppose we allocate the <code>nums</code> array like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));</span></span></code></pre></div><p>Now we decide that we want <code>nums</code> to hold 15 elements instead of 10. Here&rsquo;s what we might
-try:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">realloc</span>(nums, <span style="color:#ae81ff">15</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));</span></span></code></pre></div><p>Suppose that <code>realloc</code> could not find enough space to grant the request – so it returns NULL.
+returns a void pointer to the new block of memory.</p><p>The <code>realloc</code> function doesn&rsquo;t always behave as you intend. Here are the possible return
+values of <code>realloc</code>:</p><ul><li>NULL (if not enough space is found)</li><li>The original pointer (if there is enough space at that location)</li><li>A new pointer to a different spot in memory</li></ul><p>Suppose we allocate the <code>nums</code> array like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span><span class=o>*</span> <span class=n>nums</span> <span class=o>=</span> <span class=nf>malloc</span><span class=p>(</span><span class=mi>10</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>int</span><span class=p>));</span></span></span></code></pre></div><p>Now we decide that we want <code>nums</code> to hold 15 elements instead of 10. Here&rsquo;s what we might
+try:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=n>nums</span> <span class=o>=</span> <span class=nf>realloc</span><span class=p>(</span><span class=n>nums</span><span class=p>,</span> <span class=mi>15</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>int</span><span class=p>));</span></span></span></code></pre></div><p>Suppose that <code>realloc</code> could not find enough space to grant the request – so it returns NULL.
 This means that we assign NULL to our original <code>nums</code> pointer. Now <code>nums</code> does not reference
 the original array – in fact, nothing does. The original array is stuck in memory with no way to
-get at it – this is called a <em>memory leak</em>.</p>
-<p>To fix this problem, assign a temporary pointer to the result of <code>realloc</code>. Then, if it&rsquo;s not
-NULL, reassign the original pointer. This keeps you from losing your array:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>temp <span style="color:#f92672">=</span> <span style="color:#a6e22e">realloc</span>(nums, <span style="color:#ae81ff">15</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (temp <span style="color:#f92672">!=</span> NULL) {
-</span></span><span style="display:flex;"><span>	nums <span style="color:#f92672">=</span> temp;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="free">free</h2>
-<p>In Java and C#, any memory that you&rsquo;re no longer using will be cleaned up by the garbage collector. C
+get at it – this is called a <em>memory leak</em>.</p><p>To fix this problem, assign a temporary pointer to the result of <code>realloc</code>. Then, if it&rsquo;s not
+NULL, reassign the original pointer. This keeps you from losing your array:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=o>*</span><span class=n>temp</span> <span class=o>=</span> <span class=nf>realloc</span><span class=p>(</span><span class=n>nums</span><span class=p>,</span> <span class=mi>15</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>int</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>temp</span> <span class=o>!=</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>nums</span> <span class=o>=</span> <span class=n>temp</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><h2 id=free>free</h2><p>In Java and C#, any memory that you&rsquo;re no longer using will be cleaned up by the garbage collector. C
 has no garbage collector, so you are in charge of releasing memory that you&rsquo;re done with. If you
-never release any allocated memory, you will eventually run out of space.</p>
-<p>The C function that releases dynamic memory is called <code>free</code>. Here is the prototype:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">free</span>(<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span> pointer);</span></span></code></pre></div><p>Note that even though <code>free</code> takes a void pointer, it can take any type of pointer that has been
-dynamically allocated.</p>
-<p>Here&rsquo;s an example of using <code>free</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>	nums[i] <span style="color:#f92672">=</span> i;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//done using nums
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">free</span>(nums);</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1691698089" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1691698089" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1691698089" defer></script>
-  </body>
-</html>
+never release any allocated memory, you will eventually run out of space.</p><p>The C function that releases dynamic memory is called <code>free</code>. Here is the prototype:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>void</span> <span class=nf>free</span><span class=p>(</span><span class=kt>void</span><span class=o>*</span> <span class=n>pointer</span><span class=p>);</span></span></span></code></pre></div><p>Note that even though <code>free</code> takes a void pointer, it can take any type of pointer that has been
+dynamically allocated.</p><p>Here&rsquo;s an example of using <code>free</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span><span class=o>*</span> <span class=n>nums</span> <span class=o>=</span> <span class=nf>malloc</span><span class=p>(</span><span class=mi>10</span><span class=o>*</span><span class=k>sizeof</span><span class=p>(</span><span class=kt>int</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>nums</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//done using nums
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nf>free</span><span class=p>(</span><span class=n>nums</span><span class=p>);</span></span></span></code></pre></div><footer class=footline></footer></article></div></main></div><script src=/cis308/js/clipboard.min.js?1719515426 defer></script><script src=/cis308/js/perfect-scrollbar.min.js?1719515426 defer></script><script src=/cis308/js/theme.js?1719515426 defer></script><script src=/cis308/js/embed-iframe.js?1719515426 defer></script></body></html>

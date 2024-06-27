@@ -1,402 +1,49 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 308: C Language Lab">
-    <meta name="author" content="Julie Thornton">
-    <title>Variables :: CIS 308 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_2-variables/index.html" rel="canonical" type="text/html" title="Variables :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_2-variables/index.xml" rel="alternate" type="application/rss+xml" title="Variables :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_2-variables/index.print.html" rel="alternate" type="text/html" title="Variables :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_2-variables/embed.html" rel="alternate" type="text/html" title="Variables :: CIS 308 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-auto.css?1691698089" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1691698089" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1691698089" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/url.js?1691698089"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1691698089"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis308/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1691698089" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/1-chapter/1_2-variables/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="variables">Variables</h1>
-
-<h2 id="declaring-variables">Declaring Variables</h2>
-<p>Variables in C are declared exactly like variables in Java or C#. Just say:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>type name;</span></span></code></pre></div><p>where <code>type</code> is the type of the variable, and <code>name</code> is its name. The most common types in C are:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span></span></span></code></pre></div><p>Notice that C does not have a boolean type or a string type. Some examples:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> c;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> val;</span></span></code></pre></div><h2 id="initializing-variables">Initializing Variables</h2>
-<p>To initialize:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>name = value;</span></span></code></pre></div><p>Where <code>name</code> is the name of the variable, and <code>value</code> is the value you want to store in it. You can also do:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>type name = value;</span></span></code></pre></div><p>to declare and initialize all on one line. Some examples:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> c <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">‘</span>A<span style="color:#960050;background-color:#1e0010">’</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> val;
-</span></span><span style="display:flex;"><span>num <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">4.7</span>;</span></span></code></pre></div><p>The values of uninitialized variables in C are undefined. Some compilers <em>may</em> give default variables to such variables, but such behavior is not guaranteed. Other copmilers will do nothing, which will cause these uninitialized variables to <strong>hold whatever garbage value was left in the memory spot reserved for the variable.</strong> (usually a really big or really negative integer). In Java or C#, if you try to use a variable that has not been initialized, you will get a compiler error. The C compiler will NOT complain – it will just use whatever undefined value the variable happens to have.</p>
-<p>For example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num; <span style="color:#75715e">//holds some garbage value, say 13145687
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>num <span style="color:#f92672">=</span> num<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">//compiler error in Java – num not initialized
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//in C, num now has the value 13145688
-</span></span></span></code></pre></div><p>You will find that C is far more lenient in compilation than Java or C#. Remember that just because your program compiles doesn’t mean that it’s right!</p>
-<h2 id="where-to-declare">Where to Declare</h2>
-<p>There are probably a hundred different versions of C compilers. Consequently, a program may compile with one compiler (say, on cslinux) but not compile on another (such as when using Visual Studio .NET). Certain compilers require that variables only be initialized at the beginning of a block
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="Declaring Variables Variables in C are declared exactly like variables in Java or C#. Just say:
+type name;where type is the type of the variable, and name is its name. The most common types in C are:
+int double float charNotice that C does not have a boolean type or a string type. Some examples:
+int num; char c; double val;Initializing Variables To initialize:
+name = value;Where name is the name of the variable, and value is the value you want to store in it."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Variables :: CIS 308 Textbook"><meta name=twitter:description content="Declaring Variables Variables in C are declared exactly like variables in Java or C#. Just say:
+type name;where type is the type of the variable, and name is its name. The most common types in C are:
+int double float charNotice that C does not have a boolean type or a string type. Some examples:
+int num; char c; double val;Initializing Variables To initialize:
+name = value;Where name is the name of the variable, and value is the value you want to store in it."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis308/1-chapter/1_2-variables/"><meta property="og:site_name" content="CIS 308 Textbook"><meta property="og:title" content="Variables :: CIS 308 Textbook"><meta property="og:description" content="Declaring Variables Variables in C are declared exactly like variables in Java or C#. Just say:
+type name;where type is the type of the variable, and name is its name. The most common types in C are:
+int double float charNotice that C does not have a boolean type or a string type. Some examples:
+int num; char c; double val;Initializing Variables To initialize:
+name = value;Where name is the name of the variable, and value is the value you want to store in it."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="C Basics"><meta property="article:modified_time" content="2022-08-22T12:00:25-05:00"><meta itemprop=name content="Variables :: CIS 308 Textbook"><meta itemprop=description content="Declaring Variables Variables in C are declared exactly like variables in Java or C#. Just say:
+type name;where type is the type of the variable, and name is its name. The most common types in C are:
+int double float charNotice that C does not have a boolean type or a string type. Some examples:
+int num; char c; double val;Initializing Variables To initialize:
+name = value;Where name is the name of the variable, and value is the value you want to store in it."><meta itemprop=dateModified content="2022-08-22T12:00:25-05:00"><meta itemprop=wordCount content="510"><title>Variables :: CIS 308 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis308/1-chapter/1_2-variables/ rel=canonical type=text/html title="Variables :: CIS 308 Textbook"><link href=/cis308/1-chapter/1_2-variables/index.xml rel=alternate type=application/rss+xml title="Variables :: CIS 308 Textbook"><link href=/cis308/1-chapter/1_2-variables/index.print.html rel=alternate type=text/html title="Variables :: CIS 308 Textbook"><link href=/cis308/1-chapter/1_2-variables/embed.html rel=alternate type=text/html title="Variables :: CIS 308 Textbook"><link href=/cis308/css/fontawesome-all.min.css?1719515427 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fontawesome-all.min.css?1719515427 rel=stylesheet></noscript><link href=/cis308/css/nucleus.css?1719515427 rel=stylesheet><link href=/cis308/css/auto-complete.css?1719515427 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/auto-complete.css?1719515427 rel=stylesheet></noscript><link href=/cis308/css/perfect-scrollbar.min.css?1719515427 rel=stylesheet><link href=/cis308/css/fonts.css?1719515427 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fonts.css?1719515427 rel=stylesheet></noscript><link href=/cis308/css/theme.css?1719515427 rel=stylesheet><link href=/cis308/css/theme-auto.css?1719515427 rel=stylesheet id=R-variant-style><link href=/cis308/css/chroma-auto.css?1719515427 rel=stylesheet id=R-variant-chroma-style><link href=/cis308/css/variant.css?1719515427 rel=stylesheet><link href=/cis308/css/print.css?1719515427 rel=stylesheet media=print><script src=/cis308/js/variant.js?1719515427></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis308",window.index_js_url="/cis308/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis308/css/custom.css?1719515427 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis308/1-chapter/1_2-variables/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=variables>Variables</h1><h2 id=declaring-variables>Declaring Variables</h2><p>Variables in C are declared exactly like variables in Java or C#. Just say:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>type name;</span></span></code></pre></div><p>where <code>type</code> is the type of the variable, and <code>name</code> is its name. The most common types in C are:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span>
+</span></span><span class=line><span class=cl><span class=kt>double</span>
+</span></span><span class=line><span class=cl><span class=kt>float</span>
+</span></span><span class=line><span class=cl><span class=kt>char</span></span></span></code></pre></div><p>Notice that C does not have a boolean type or a string type. Some examples:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>char</span> <span class=n>c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>double</span> <span class=n>val</span><span class=p>;</span></span></span></code></pre></div><h2 id=initializing-variables>Initializing Variables</h2><p>To initialize:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>name = value;</span></span></code></pre></div><p>Where <code>name</code> is the name of the variable, and <code>value</code> is the value you want to store in it. You can also do:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>type name = value;</span></span></code></pre></div><p>to declare and initialize all on one line. Some examples:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>char</span> <span class=n>c</span> <span class=o>=</span> <span class=err>‘</span><span class=n>A</span><span class=err>’</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>double</span> <span class=n>val</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>num</span> <span class=o>=</span> <span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>val</span> <span class=o>=</span> <span class=mf>4.7</span><span class=p>;</span></span></span></code></pre></div><p>The values of uninitialized variables in C are undefined. Some compilers <em>may</em> give default variables to such variables, but such behavior is not guaranteed. Other copmilers will do nothing, which will cause these uninitialized variables to <strong>hold whatever garbage value was left in the memory spot reserved for the variable.</strong> (usually a really big or really negative integer). In Java or C#, if you try to use a variable that has not been initialized, you will get a compiler error. The C compiler will NOT complain – it will just use whatever undefined value the variable happens to have.</p><p>For example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span><span class=p>;</span> <span class=c1>//holds some garbage value, say 13145687
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>num</span> <span class=o>=</span> <span class=n>num</span><span class=o>+</span><span class=mi>1</span><span class=p>;</span> <span class=c1>//compiler error in Java – num not initialized
+</span></span></span><span class=line><span class=cl><span class=c1>//in C, num now has the value 13145688
+</span></span></span></code></pre></div><p>You will find that C is far more lenient in compilation than Java or C#. Remember that just because your program compiles doesn’t mean that it’s right!</p><h2 id=where-to-declare>Where to Declare</h2><p>There are probably a hundred different versions of C compilers. Consequently, a program may compile with one compiler (say, on cslinux) but not compile on another (such as when using Visual Studio .NET). Certain compilers require that variables only be initialized at the beginning of a block
 (a block begins when a brace { is opened). Because some compilers have this
-requirement, we will uphold this custom in our programs. For example, the following is fine:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span> a;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;T&#39;</span>; <span style="color:#75715e">//all declarations are together
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				  <span style="color:#75715e">//at the beginning of the block
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	a <span style="color:#f92672">=</span> <span style="color:#ae81ff">7.2</span>;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>But this is not:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">double</span> a;
-</span></span><span style="display:flex;"><span>	a <span style="color:#f92672">=</span> <span style="color:#ae81ff">7.2</span>; 		<span style="color:#75715e">//code begins – this is not a declaration
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">char</span> b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;T&#39;</span>; 	<span style="color:#75715e">//b is declared AFTER the code begins
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div><h2 id="operations">Operations</h2>
-<p>Mathematical operations in C work exactly like mathematical operations in Java or C#. You can use +, -, *, /, and %. You can also use things like ++ and +=.</p>
-<p>Casting in C is also the same as casting in Java or C#:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> d <span style="color:#f92672">=</span> (<span style="color:#66d9ef">double</span>) num; <span style="color:#75715e">//casts num to a double, d is now 7.0
-</span></span></span></code></pre></div><h2 id="simulating-booleans">Simulating Booleans</h2>
-<p>As was mentioned, there is no boolean type in C. Instead, ints are used to
+requirement, we will uphold this custom in our programs. For example, the following is fine:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>double</span> <span class=n>a</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>char</span> <span class=n>b</span> <span class=o>=</span> <span class=sc>&#39;T&#39;</span><span class=p>;</span> <span class=c1>//all declarations are together
+</span></span></span><span class=line><span class=cl><span class=c1></span>				  <span class=c1>//at the beginning of the block
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=n>a</span> <span class=o>=</span> <span class=mf>7.2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>But this is not:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> 
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>double</span> <span class=n>a</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>a</span> <span class=o>=</span> <span class=mf>7.2</span><span class=p>;</span> 		<span class=c1>//code begins – this is not a declaration
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>char</span> <span class=n>b</span> <span class=o>=</span> <span class=sc>&#39;T&#39;</span><span class=p>;</span> 	<span class=c1>//b is declared AFTER the code begins
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span></span></span></code></pre></div><h2 id=operations>Operations</h2><p>Mathematical operations in C work exactly like mathematical operations in Java or C#. You can use +, -, *, /, and %. You can also use things like ++ and +=.</p><p>Casting in C is also the same as casting in Java or C#:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>num</span> <span class=o>=</span> <span class=mi>7</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>double</span> <span class=n>d</span> <span class=o>=</span> <span class=p>(</span><span class=kt>double</span><span class=p>)</span> <span class=n>num</span><span class=p>;</span> <span class=c1>//casts num to a double, d is now 7.0
+</span></span></span></code></pre></div><h2 id=simulating-booleans>Simulating Booleans</h2><p>As was mentioned, there is no boolean type in C. Instead, ints are used to
 simulate booleans. In this simulation, 0 means false, and anything else means
-true. For example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">//flag is false
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>; <span style="color:#75715e">//flag is true
-</span></span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1691698089" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1691698089" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1691698089" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/tele-scroll.js?1691698089 defer"></script>
-    
-  </body>
-</html>
+true. For example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>flag</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=c1>//flag is false
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>flag</span> <span class=o>=</span> <span class=mi>6</span><span class=p>;</span> <span class=c1>//flag is true
+</span></span></span></code></pre></div><footer class=footline></footer></article></div></main></div></div><script src=/cis308/js/clipboard.min.js?1719515427 defer></script><script src=/cis308/js/perfect-scrollbar.min.js?1719515427 defer></script><script src=/cis308/js/theme.js?1719515427 defer></script><script src=/cis308/js/tele-scroll.js?1719515427 defer></script></body></html>

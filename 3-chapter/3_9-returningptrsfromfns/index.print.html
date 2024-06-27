@@ -1,411 +1,45 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 308: C Language Lab">
-    <meta name="author" content="Julie Thornton">
-    <title>Returning Pointers from Functions :: CIS 308 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_9-returningptrsfromfns/index.html" rel="canonical" type="text/html" title="Returning Pointers from Functions :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_9-returningptrsfromfns/index.xml" rel="alternate" type="application/rss+xml" title="Returning Pointers from Functions :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_9-returningptrsfromfns/tele.html" rel="alternate" type="text/html" title="Returning Pointers from Functions :: CIS 308 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_9-returningptrsfromfns/embed.html" rel="alternate" type="text/html" title="Returning Pointers from Functions :: CIS 308 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fontawesome-all.min.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/nucleus.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/auto-complete.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/perfect-scrollbar.min.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis308/css/fonts.css?1691698089" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/theme-auto.css?1691698089" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/variant.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/print.css?1691698089" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/format-print.css?1691698089" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/ie.css?1691698089" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/url.js?1691698089"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/variant.js?1691698089"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis308/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis308/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis308/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis308/css/custom.css?1691698089" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_9-returningptrsfromfns/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_9-returningptrsfromfns/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/3_9-returningptrsfromfns/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/index.html"><span itemprop="name">CIS 308 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis308/3-chapter/index.html"><span itemprop="name">Pointers and Dynamic Memory</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Returning Pointers from Functions</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="returning-pointers-from-functions">Returning Pointers from Functions</h1>
-
-<p>We can also return pointers from functions via
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="We can also return pointers from functions via pointer arguments rather than as the formal return value. To explain this, let’s first step back and consider the case of returning a simple type, such as int, from a function via a pointer argument.
+If we write the function:
+void f(int *ip) { *ip = 5; }And then call it like this:
+int i; f(&amp;i);then f will “return” the value 5 by writing it to the location specified by the pointer passed by the caller; in this case, to the caller’s variable i."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Returning Pointers from Functions :: CIS 308 Textbook"><meta name=twitter:description content="We can also return pointers from functions via pointer arguments rather than as the formal return value. To explain this, let’s first step back and consider the case of returning a simple type, such as int, from a function via a pointer argument.
+If we write the function:
+void f(int *ip) { *ip = 5; }And then call it like this:
+int i; f(&amp;i);then f will “return” the value 5 by writing it to the location specified by the pointer passed by the caller; in this case, to the caller’s variable i."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis308/3-chapter/3_9-returningptrsfromfns/"><meta property="og:site_name" content="CIS 308 Textbook"><meta property="og:title" content="Returning Pointers from Functions :: CIS 308 Textbook"><meta property="og:description" content="We can also return pointers from functions via pointer arguments rather than as the formal return value. To explain this, let’s first step back and consider the case of returning a simple type, such as int, from a function via a pointer argument.
+If we write the function:
+void f(int *ip) { *ip = 5; }And then call it like this:
+int i; f(&amp;i);then f will “return” the value 5 by writing it to the location specified by the pointer passed by the caller; in this case, to the caller’s variable i."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Pointers and Dynamic Memory"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2022-08-16T09:30:39-05:00"><meta itemprop=name content="Returning Pointers from Functions :: CIS 308 Textbook"><meta itemprop=description content="We can also return pointers from functions via pointer arguments rather than as the formal return value. To explain this, let’s first step back and consider the case of returning a simple type, such as int, from a function via a pointer argument.
+If we write the function:
+void f(int *ip) { *ip = 5; }And then call it like this:
+int i; f(&amp;i);then f will “return” the value 5 by writing it to the location specified by the pointer passed by the caller; in this case, to the caller’s variable i."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2022-08-16T09:30:39-05:00"><meta itemprop=wordCount content="281"><title>Returning Pointers from Functions :: CIS 308 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis308/3-chapter/3_9-returningptrsfromfns/ rel=canonical type=text/html title="Returning Pointers from Functions :: CIS 308 Textbook"><link href=/cis308/3-chapter/3_9-returningptrsfromfns/index.xml rel=alternate type=application/rss+xml title="Returning Pointers from Functions :: CIS 308 Textbook"><link href=/cis308/3-chapter/3_9-returningptrsfromfns/tele.html rel=alternate type=text/html title="Returning Pointers from Functions :: CIS 308 Textbook"><link href=/cis308/3-chapter/3_9-returningptrsfromfns/embed.html rel=alternate type=text/html title="Returning Pointers from Functions :: CIS 308 Textbook"><link href=/cis308/css/fontawesome-all.min.css?1719515427 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fontawesome-all.min.css?1719515427 rel=stylesheet></noscript><link href=/cis308/css/nucleus.css?1719515427 rel=stylesheet><link href=/cis308/css/auto-complete.css?1719515427 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/auto-complete.css?1719515427 rel=stylesheet></noscript><link href=/cis308/css/perfect-scrollbar.min.css?1719515427 rel=stylesheet><link href=/cis308/css/fonts.css?1719515427 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis308/css/fonts.css?1719515427 rel=stylesheet></noscript><link href=/cis308/css/theme.css?1719515427 rel=stylesheet><link href=/cis308/css/theme-auto.css?1719515427 rel=stylesheet id=R-variant-style><link href=/cis308/css/chroma-auto.css?1719515427 rel=stylesheet id=R-variant-chroma-style><link href=/cis308/css/variant.css?1719515427 rel=stylesheet><link href=/cis308/css/print.css?1719515427 rel=stylesheet media=print><link href=/cis308/css/format-print.css?1719515427 rel=stylesheet><script src=/cis308/js/variant.js?1719515427></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis308",window.index_js_url="/cis308/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis308/css/custom.css?1719515427 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis308/3-chapter/3_9-returningptrsfromfns/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis308/3-chapter/><span itemprop=name>Pointers and Dynamic Memory</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Returning Pointers from Functions</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis308/3-chapter/3_8-multidimdynarrays/ title="Multi-dimensional Dynamic Arrays (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis308/4-chapter/ title="Structs (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=returning-pointers-from-functions>Returning Pointers from Functions</h1><p>We can also return pointers from functions via
 pointer arguments rather than as the formal return value. To explain this, let&rsquo;s first step back and
-consider the case of returning a simple type, such as int, from a function via a pointer argument.</p>
-<p>If we write the function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">f</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>ip) {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>ip <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>And then call it like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">f</span>(<span style="color:#f92672">&amp;</span>i);</span></span></code></pre></div><p>then <code>f</code> will &ldquo;return&rdquo; the value 5 by writing it to the location specified by the pointer passed by the
+consider the case of returning a simple type, such as int, from a function via a pointer argument.</p><p>If we write the function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>void</span> <span class=nf>f</span><span class=p>(</span><span class=kt>int</span> <span class=o>*</span><span class=n>ip</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=o>*</span><span class=n>ip</span> <span class=o>=</span> <span class=mi>5</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>And then call it like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>int</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nf>f</span><span class=p>(</span><span class=o>&amp;</span><span class=n>i</span><span class=p>);</span></span></span></code></pre></div><p>then <code>f</code> will &ldquo;return&rdquo; the value 5 by writing it to the location specified by the pointer passed by the
 caller; in this case, to the caller&rsquo;s variable <code>i</code>. A function might &ldquo;return&rdquo; values in this way if it had
 multiple things to return, since a function can only have one formal return value (that is, it can only
 return one value via the return statement.) The important thing to notice is that for the function to
-return a value of type int, it used a parameter of type pointer-to-int.</p>
-<p>Now,	suppose	that	a	function	wants	to	return	a pointer in	this	way.	The	corresponding	parameter	will
-then	have	to	be	a	pointer	to	a	pointer.	For	example,	here	is	a	function	which	tries	to	allocate
-memory	for	a	string	of	length <code>n</code>,	and	which	returns	zero	(<code>false</code>)	if	it	fails	and	1	(nonzero,	or	<code>true</code>)
-if	it	succeeds,	returning	the	actual	pointer	to	the	allocated	memory	via	a	pointer:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">allocstr</span>(<span style="color:#66d9ef">int</span> len, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>retptr) {
-</span></span><span style="display:flex;"><span>     <span style="color:#75715e">//+1 for the \0 character
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(len <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(p <span style="color:#f92672">==</span> NULL) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>retptr <span style="color:#f92672">=</span> p;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The caller can then do something like:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello, world!&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>copystr;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">allocstr</span>(<span style="color:#a6e22e">strlen</span>(string), <span style="color:#f92672">&amp;</span>copystr)) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strcpy</span>(copystr, string);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(stderr, <span style="color:#e6db74">&#34;out of memory</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Julie Thornton
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis308-textbook/-/commit/84f815c7484e5370044b80199953a4046b69291b">Aug 16, 2022</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/clipboard.min.js?1691698089" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/perfect-scrollbar.min.js?1691698089" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis308/js/theme.js?1691698089" defer></script>
-  </body>
-</html>
+return a value of type int, it used a parameter of type pointer-to-int.</p><p>Now, suppose that a function wants to return a pointer in this way. The corresponding parameter will
+then have to be a pointer to a pointer. For example, here is a function which tries to allocate
+memory for a string of length <code>n</code>, and which returns zero (<code>false</code>) if it fails and 1 (nonzero, or <code>true</code>)
+if it succeeds, returning the actual pointer to the allocated memory via a pointer:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdlib.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=kt>int</span> <span class=nf>allocstr</span><span class=p>(</span><span class=kt>int</span> <span class=n>len</span><span class=p>,</span> <span class=kt>char</span> <span class=o>**</span><span class=n>retptr</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>     <span class=c1>//+1 for the \0 character
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>char</span> <span class=o>*</span><span class=n>p</span> <span class=o>=</span> <span class=nf>malloc</span><span class=p>(</span><span class=n>len</span> <span class=o>+</span> <span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span><span class=p>(</span><span class=n>p</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>*</span><span class=n>retptr</span> <span class=o>=</span> <span class=n>p</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><p>The caller can then do something like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=kt>char</span> <span class=o>*</span><span class=n>string</span> <span class=o>=</span> <span class=s>&#34;Hello, world!&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>char</span> <span class=o>*</span><span class=n>copystr</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>if</span><span class=p>(</span><span class=nf>allocstr</span><span class=p>(</span><span class=nf>strlen</span><span class=p>(</span><span class=n>string</span><span class=p>),</span> <span class=o>&amp;</span><span class=n>copystr</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nf>strcpy</span><span class=p>(</span><span class=n>copystr</span><span class=p>,</span> <span class=n>string</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nf>printf</span><span class=p>(</span><span class=n>stderr</span><span class=p>,</span> <span class=s>&#34;out of memory</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Julie Thornton
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis308/commit/84f815c7484e5370044b80199953a4046b69291b>Aug 16, 2022</a></p></div></div><script src=/cis308/js/clipboard.min.js?1719515427 defer></script><script src=/cis308/js/perfect-scrollbar.min.js?1719515427 defer></script><script src=/cis308/js/theme.js?1719515427 defer></script></body></html>
